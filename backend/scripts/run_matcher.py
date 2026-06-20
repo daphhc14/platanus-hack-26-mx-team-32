@@ -1,6 +1,7 @@
-"""Batch matcher: score every cuerpo against all personas → write candidatos.
+"""Batch matcher funnel: vector-retrieve top-K personas → rules score → candidatos.
 
-Connects via DATABASE_URL (direct Postgres, bypasses RLS). Run from backend/:
+Falls back to brute-force (all personas) for any cuerpo without an embedding.
+Run from backend/:
     uv run python -m scripts.run_matcher
 """
 import json
@@ -11,21 +12,30 @@ from psycopg.rows import dict_row
 from src.config import settings
 from src.features.matching.engine import rank_personas_for_cuerpo
 
-PERSONAS_SQL = r"""
-select id_victimadirecta::text as id_victimadirecta,
-       sexo::text as sexo,
-       nullif(regexp_replace(coalesce(edad_actual::text, ''), '\D', '', 'g'), '')::int as edad,
-       sana_particular::text as sana_particular,
-       media_filiacion::text as media_filiacion,
-       estado::text as estado,
-       fecha_percato::text as fecha_percato,
-       fecha_hechos::text as fecha_hechos
-from personas_desaparecidas
+RETRIEVE_K = 30  # wide net: vector top-K, then rules narrow it
+
+_PERSONA_COLS = r"""
+       p.id_victimadirecta::text as id_victimadirecta, p.sexo::text as sexo,
+       nullif(regexp_replace(coalesce(p.edad_actual::text, ''), '\D', '', 'g'), '')::int as edad,
+       p.sana_particular::text as sana_particular, p.media_filiacion::text as media_filiacion,
+       p.estado::text as estado, p.fecha_percato::text as fecha_percato,
+       p.fecha_hechos::text as fecha_hechos
 """
+
+RETRIEVE_SQL = f"""
+select {_PERSONA_COLS}
+from personas_desaparecidas p
+join persona_embeddings pe on pe.persona_victima_id = p.id_victimadirecta::text
+where pe.embedding is not null
+order by pe.embedding <=> %s::vector
+limit %s
+"""
+
+ALL_PERSONAS_SQL = f"select {_PERSONA_COLS} from personas_desaparecidas p"
 
 CUERPOS_SQL = """
 select id::text as id, codigo, sexo, edad_min, edad_max, estatura_cm,
-       sana_particular, media_filiacion, estado, fecha_hallazgo
+       sana_particular, media_filiacion, estado, fecha_hallazgo, embedding::text as embedding
 from cuerpos
 """
 
@@ -43,15 +53,22 @@ def main() -> None:
     assert settings.database_url, "DATABASE_URL not set"
     with psycopg.connect(settings.database_url) as conn:
         with conn.cursor(row_factory=dict_row) as cur:
-            cur.execute(PERSONAS_SQL)
-            personas = cur.fetchall()
             cur.execute(CUERPOS_SQL)
             cuerpos = cur.fetchall()
+            cur.execute(ALL_PERSONAS_SQL)
+            all_personas = cur.fetchall()
 
+        written, via_vector = 0, 0
         with conn.cursor() as cur:
-            cur.execute("delete from candidatos")  # fresh run
-            written = 0
+            cur.execute("delete from candidatos")
             for c in cuerpos:
+                if c["embedding"]:
+                    with conn.cursor(row_factory=dict_row) as rcur:
+                        rcur.execute(RETRIEVE_SQL, (c["embedding"], RETRIEVE_K))
+                        personas = rcur.fetchall()
+                    via_vector += 1
+                else:
+                    personas = all_personas
                 for r in rank_personas_for_cuerpo(c, personas, top_k=5):
                     cur.execute(
                         UPSERT_SQL,
@@ -62,7 +79,11 @@ def main() -> None:
                     )
                     written += 1
         conn.commit()
-    print(f"wrote {written} candidatos for {len(cuerpos)} cuerpos vs {len(personas)} personas")
+    print(
+        f"wrote {written} candidatos for {len(cuerpos)} cuerpos "
+        f"({via_vector} via vector retrieval, {len(cuerpos) - via_vector} brute-force) "
+        f"vs {len(all_personas)} personas"
+    )
 
 
 if __name__ == "__main__":
