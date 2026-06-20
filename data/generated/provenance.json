@@ -1,0 +1,21 @@
+{
+  "rnpdno": {
+    "source": "Registro Nacional de Personas Desaparecidas y No Localizadas (RNPDNO)",
+    "via": "Consulta Publica RNPDNO (consultapublicarnpdno.segob.gob.mx) / datamx.io (CC0)",
+    "repo": "github.com/lapanquecita/personas-desaparecidas",
+    "license": "CC0 1.0 (Public Domain Dedication)",
+    "note": "Individual records have NO names, photos, or senas particulares. Used for aggregates + demographic calibration only."
+  },
+  "fosas": {
+    "source": "Mapa de fosas clandestinas (Quinto Elemento Lab / Mapbox dataset)",
+    "via": "api.mapbox.com dataset (jorgerure/ckb9upb462fwg22msf7t3zcag)",
+    "note": "Aggregate point data: estado, municipio, # fosas, # cuerpos. No individual victim identity."
+  },
+  "poblacion": {
+    "source": "Proyecciones de poblacion municipal (inegi/conapo-style), via lapanquecita repo"
+  },
+  "sesnsp": {
+    "source": "SESNSP datos abiertos de incidencia delictiva (victimas)"
+  },
+  "generated_at": "2026-06-20T07:39:42"
+}
