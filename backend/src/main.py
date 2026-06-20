@@ -5,6 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from supabase import acreate_client
 
 from .config import settings
+from .features.auth.router import router as auth_router
 from .features.personas.router import router as personas_router
 
 
@@ -30,4 +31,5 @@ async def health():
     return {"status": "ok"}
 
 
+app.include_router(auth_router)
 app.include_router(personas_router)
