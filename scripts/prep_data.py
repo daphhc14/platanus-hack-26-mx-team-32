@@ -252,7 +252,13 @@ def _pop_by_state():
         cols = reader.fieldnames
         year_col = "2024" if "2024" in cols else cols[-12]
         for r in reader:
-            ent = (r.get("Entidad") or "").strip()
+            ent = (r.get("Entidad") or "").strip().upper()
+            ent = (ent.replace("MEXICO", "MÉXICO")
+                      .replace("LEON", "LEÓN")
+                      .replace("MICHOACAN", "MICHOACÁN")
+                      .replace("QUERETARO", "QUERÉTARO")
+                      .replace("POTOSI", "POTOSÍ")
+                      .replace("YUCATAN", "YUCATÁN"))
             try:
                 pop[ent] += int(float(r.get(year_col) or 0))
             except Exception:

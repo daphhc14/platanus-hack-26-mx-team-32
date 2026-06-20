@@ -21,8 +21,8 @@ async function main() {
       const buf = readFileSync(p);
       const b64 = buf.toString("base64");
       const v = await embedImage(b64, "image/png");
-      vecs[p.split("/").pop()!] = v;
-      console.log(`  ${C.d}embed${C.r} ${p.split("/").pop()} → ${v.length} dims`);
+      vecs[p.split(/[\\/]/).pop()!] = v;
+      console.log(`  ${C.d}embed${C.r} ${p.split(/[\\/]/).pop()} → ${v.length} dims`);
     }
     const names = Object.keys(vecs);
     const same = cosine(vecs["a_red.png"], vecs["c_red.png"]);

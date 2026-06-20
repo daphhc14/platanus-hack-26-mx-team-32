@@ -48,7 +48,7 @@ const TYPE_MAP: [RegExp, FeatureType][] = [
   [/cicatri|cic|herida|marca de|quemadura/i, "cicatriz"],
   [/lunar/i, "lunar"],
   [/piercing|arete|argolla/i, "piercing"],
-  [/protesis|prótesis|pie/i, "protesis"],
+  [/protesis|prótesis/i, "protesis"],
   [/amputac/i, "amputacion"],
   [/dental|diente|mordida/i, "dental"],
   [/vestimenta|ropa|playera|pantal/i, "vestimenta"],

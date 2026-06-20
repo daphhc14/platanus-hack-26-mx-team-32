@@ -11,8 +11,9 @@ function geminiKeyParam(cfg = loadLLMConfig()): string {
 
 /** Embed a single image (base64, no data: prefix) → vector. */
 export async function embedImage(b64: string, mimeType: string, cfg = loadLLMConfig()): Promise<number[]> {
+  if (!cfg.baseUrl) throw new Error("LLM_BASE_URL (Gemini endpoint) is required for image embeddings.");
   const model = process.env.EMBED_MODEL || "gemini-embedding-2";
-  const base = (cfg.baseUrl!.replace(/\/$/, "")).replace(/\/openai\/?$/i, "");
+  const base = (cfg.baseUrl.replace(/\/$/, "")).replace(/\/openai\/?$/i, "");
   const url = `${base}/models/${model}:embedContent${geminiKeyParam(cfg)}`;
   const body = {
     content: { parts: [{ inlineData: { mimeType, data: b64 } }] },
@@ -25,8 +26,9 @@ export async function embedImage(b64: string, mimeType: string, cfg = loadLLMCon
 
 /** Joint text+image embedding (same vector space) — caption + photo. */
 export async function embedTextImage(text: string, b64: string, mimeType: string, cfg = loadLLMConfig()): Promise<number[]> {
+  if (!cfg.baseUrl) throw new Error("LLM_BASE_URL (Gemini endpoint) is required for image embeddings.");
   const model = process.env.EMBED_MODEL || "gemini-embedding-2";
-  const base = (cfg.baseUrl!.replace(/\/$/, "")).replace(/\/openai\/?$/i, "");
+  const base = (cfg.baseUrl.replace(/\/$/, "")).replace(/\/openai\/?$/i, "");
   const url = `${base}/models/${model}:embedContent${geminiKeyParam(cfg)}`;
   const body = { content: { parts: [{ text }, { inlineData: { mimeType, data: b64 } }] } };
   const resp = await fetch(url, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
