@@ -3,8 +3,8 @@
     {
       "entidad": "ESTADO DE MÉXICO",
       "total": 14579,
-      "poblacion_2024": 0,
-      "tasa_por_100k": null,
+      "poblacion_2024": 17616018,
+      "tasa_por_100k": 82.8,
       "serie_anual": {
         "2016": 545,
         "2017": 659,
@@ -21,8 +21,8 @@
     {
       "entidad": "JALISCO",
       "total": 13766,
-      "poblacion_2024": 0,
-      "tasa_por_100k": null,
+      "poblacion_2024": 8820915,
+      "tasa_por_100k": 156.1,
       "serie_anual": {
         "2016": 404,
         "2017": 521,
@@ -39,8 +39,8 @@
     {
       "entidad": "TAMAULIPAS",
       "total": 13460,
-      "poblacion_2024": 0,
-      "tasa_por_100k": null,
+      "poblacion_2024": 3717618,
+      "tasa_por_100k": 362.1,
       "serie_anual": {
         "2016": 472,
         "2017": 318,
@@ -57,8 +57,8 @@
     {
       "entidad": "CIUDAD DE MÉXICO",
       "total": 7242,
-      "poblacion_2024": 0,
-      "tasa_por_100k": null,
+      "poblacion_2024": 9204018,
+      "tasa_por_100k": 78.7,
       "serie_anual": {
         "2016": 33,
         "2017": 26,
@@ -93,8 +93,8 @@
     {
       "entidad": "NUEVO LEÓN",
       "total": 7116,
-      "poblacion_2024": 0,
-      "tasa_por_100k": null,
+      "poblacion_2024": 6308199,
+      "tasa_por_100k": 112.8,
       "serie_anual": {
         "2016": 204,
         "2017": 209,
@@ -111,8 +111,8 @@
     {
       "entidad": "VERACRUZ",
       "total": 6968,
-      "poblacion_2024": 0,
-      "tasa_por_100k": null,
+      "poblacion_2024": 8127727,
+      "tasa_por_100k": 85.7,
       "serie_anual": {
         "2016": 215,
         "2017": 237,
@@ -129,8 +129,8 @@
     {
       "entidad": "SINALOA",
       "total": 6736,
-      "poblacion_2024": 0,
-      "tasa_por_100k": null,
+      "poblacion_2024": 3165686,
+      "tasa_por_100k": 212.8,
       "serie_anual": {
         "2016": 311,
         "2017": 363,
@@ -147,8 +147,8 @@
     {
       "entidad": "SONORA",
       "total": 5791,
-      "poblacion_2024": 0,
-      "tasa_por_100k": null,
+      "poblacion_2024": 3111704,
+      "tasa_por_100k": 186.1,
       "serie_anual": {
         "2016": 225,
         "2017": 375,
@@ -165,8 +165,8 @@
     {
       "entidad": "GUANAJUATO",
       "total": 5383,
-      "poblacion_2024": 0,
-      "tasa_por_100k": null,
+      "poblacion_2024": 6481538,
+      "tasa_por_100k": 83.1,
       "serie_anual": {
         "2016": 58,
         "2017": 91,
@@ -183,8 +183,8 @@
     {
       "entidad": "BAJA CALIFORNIA",
       "total": 4660,
-      "poblacion_2024": 0,
-      "tasa_por_100k": null,
+      "poblacion_2024": 4071872,
+      "tasa_por_100k": 114.4,
       "serie_anual": {
         "2016": 155,
         "2017": 158,
@@ -201,8 +201,8 @@
     {
       "entidad": "GUERRERO",
       "total": 4453,
-      "poblacion_2024": 0,
-      "tasa_por_100k": null,
+      "poblacion_2024": 3606733,
+      "tasa_por_100k": 123.5,
       "serie_anual": {
         "2016": 281,
         "2017": 325,
@@ -219,8 +219,8 @@
     {
       "entidad": "CHIHUAHUA",
       "total": 4133,
-      "poblacion_2024": 0,
-      "tasa_por_100k": null,
+      "poblacion_2024": 3996504,
+      "tasa_por_100k": 103.4,
       "serie_anual": {
         "2016": 251,
         "2017": 356,
@@ -237,8 +237,8 @@
     {
       "entidad": "ZACATECAS",
       "total": 3867,
-      "poblacion_2024": 0,
-      "tasa_por_100k": null,
+      "poblacion_2024": 1698252,
+      "tasa_por_100k": 227.7,
       "serie_anual": {
         "2016": 95,
         "2017": 117,
@@ -255,8 +255,8 @@
     {
       "entidad": "COAHUILA",
       "total": 3655,
-      "poblacion_2024": 0,
-      "tasa_por_100k": null,
+      "poblacion_2024": 3358991,
+      "tasa_por_100k": 108.8,
       "serie_anual": {
         "2016": 58,
         "2017": 46,
@@ -291,8 +291,8 @@
     {
       "entidad": "PUEBLA",
       "total": 2861,
-      "poblacion_2024": 0,
-      "tasa_por_100k": null,
+      "poblacion_2024": 6989402,
+      "tasa_por_100k": 40.9,
       "serie_anual": {
         "2016": 3,
         "2017": 15,
@@ -309,8 +309,8 @@
     {
       "entidad": "MORELOS",
       "total": 2063,
-      "poblacion_2024": 0,
-      "tasa_por_100k": null,
+      "poblacion_2024": 2043884,
+      "tasa_por_100k": 100.9,
       "serie_anual": {
         "2016": 116,
         "2017": 85,
@@ -327,8 +327,8 @@
     {
       "entidad": "TABASCO",
       "total": 2058,
-      "poblacion_2024": 0,
-      "tasa_por_100k": null,
+      "poblacion_2024": 2461555,
+      "tasa_por_100k": 83.6,
       "serie_anual": {
         "2016": 26,
         "2017": 8,
@@ -345,8 +345,8 @@
     {
       "entidad": "NAYARIT",
       "total": 1990,
-      "poblacion_2024": 0,
-      "tasa_por_100k": null,
+      "poblacion_2024": 1309432,
+      "tasa_por_100k": 152.0,
       "serie_anual": {
         "2016": 11,
         "2017": 74,
@@ -363,8 +363,8 @@
     {
       "entidad": "CHIAPAS",
       "total": 1776,
-      "poblacion_2024": 0,
-      "tasa_por_100k": null,
+      "poblacion_2024": 6028154,
+      "tasa_por_100k": 29.5,
       "serie_anual": {
         "2016": 6,
         "2017": 7,
@@ -381,8 +381,8 @@
     {
       "entidad": "QUINTANA ROO",
       "total": 1698,
-      "poblacion_2024": 0,
-      "tasa_por_100k": null,
+      "poblacion_2024": 2061131,
+      "tasa_por_100k": 82.4,
       "serie_anual": {
         "2016": 11,
         "2017": 19,
@@ -399,8 +399,8 @@
     {
       "entidad": "HIDALGO",
       "total": 1656,
-      "poblacion_2024": 0,
-      "tasa_por_100k": null,
+      "poblacion_2024": 3264395,
+      "tasa_por_100k": 50.7,
       "serie_anual": {
         "2016": 36,
         "2017": 52,
@@ -417,8 +417,8 @@
     {
       "entidad": "COLIMA",
       "total": 1440,
-      "poblacion_2024": 0,
-      "tasa_por_100k": null,
+      "poblacion_2024": 762387,
+      "tasa_por_100k": 188.9,
       "serie_anual": {
         "2016": 67,
         "2017": 195,
@@ -435,8 +435,8 @@
     {
       "entidad": "SAN LUIS POTOSÍ",
       "total": 1247,
-      "poblacion_2024": 0,
-      "tasa_por_100k": null,
+      "poblacion_2024": 2955841,
+      "tasa_por_100k": 42.2,
       "serie_anual": {
         "2016": 24,
         "2017": 5,
@@ -453,8 +453,8 @@
     {
       "entidad": "DURANGO",
       "total": 1076,
-      "poblacion_2024": 0,
-      "tasa_por_100k": null,
+      "poblacion_2024": 1913774,
+      "tasa_por_100k": 56.2,
       "serie_anual": {
         "2016": 18,
         "2017": 37,
@@ -471,8 +471,8 @@
     {
       "entidad": "BAJA CALIFORNIA SUR",
       "total": 1067,
-      "poblacion_2024": 0,
-      "tasa_por_100k": null,
+      "poblacion_2024": 886050,
+      "tasa_por_100k": 120.4,
       "serie_anual": {
         "2016": 17,
         "2017": 25,
@@ -489,8 +489,8 @@
     {
       "entidad": "OAXACA",
       "total": 755,
-      "poblacion_2024": 0,
-      "tasa_por_100k": null,
+      "poblacion_2024": 4308543,
+      "tasa_por_100k": 17.5,
       "serie_anual": {
         "2016": 2,
         "2017": 7,
@@ -507,8 +507,8 @@
     {
       "entidad": "QUERÉTARO",
       "total": 704,
-      "poblacion_2024": 0,
-      "tasa_por_100k": null,
+      "poblacion_2024": 2606698,
+      "tasa_por_100k": 27.0,
       "serie_anual": {
         "2016": 28,
         "2017": 21,
@@ -525,8 +525,8 @@
     {
       "entidad": "AGUASCALIENTES",
       "total": 501,
-      "poblacion_2024": 0,
-      "tasa_por_100k": null,
+      "poblacion_2024": 1530185,
+      "tasa_por_100k": 32.7,
       "serie_anual": {
         "2016": 11,
         "2017": 15,
@@ -543,8 +543,8 @@
     {
       "entidad": "YUCATÁN",
       "total": 313,
-      "poblacion_2024": 0,
-      "tasa_por_100k": null,
+      "poblacion_2024": 2483400,
+      "tasa_por_100k": 12.6,
       "serie_anual": {
         "2016": 7,
         "2017": 5,
@@ -561,8 +561,8 @@
     {
       "entidad": "TLAXCALA",
       "total": 206,
-      "poblacion_2024": 0,
-      "tasa_por_100k": null,
+      "poblacion_2024": 1430497,
+      "tasa_por_100k": 14.4,
       "serie_anual": {
         "2015": 6,
         "2016": 4,
@@ -579,8 +579,8 @@
     {
       "entidad": "CAMPECHE",
       "total": 148,
-      "poblacion_2024": 0,
-      "tasa_por_100k": null,
+      "poblacion_2024": 954659,
+      "tasa_por_100k": 15.5,
       "serie_anual": {
         "2014": 2,
         "2015": 3,

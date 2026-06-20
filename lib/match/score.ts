@@ -48,7 +48,7 @@ function bestFeatureScore(aF: Feature, bFeats: Feature[]): FeatureMatchResult {
     if (latConflict) { conflict = true; continue; }
     if (!regionCompatible(aF.body_region, bF.body_region)) continue;
     let s = 0.4; // base for same type
-    if (regionCompatible(aF.body_region, bF.body_region)) s += 0.15;
+    if (aF.body_region && bF.body_region && aF.body_region === bF.body_region) s += 0.15;
     if (aF.motif_category && aF.motif_category === bF.motif_category) s += 0.25;
     const lex = jaccard(aF.tokens ?? [], bF.tokens ?? []);
     s += 0.2 * lex;

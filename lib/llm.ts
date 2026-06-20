@@ -1,7 +1,7 @@
 // lib/llm.ts — Unified LLM client.
 // Supports:
-//   1) NATIVE Google Gemini (new AQ. auth keys need ?key= query param, not Bearer).
-//      Detected when baseURL contains "googleapis" or key starts with "AQ.".
+//   1) NATIVE Google Gemini (auth via ?key= query param, not Bearer).
+//      Detected when baseURL contains "googleapis" (see isGeminiNative).
 //   2) OpenAI-compatible providers (Anthropic/OpenAI/Groq/MiniMax/DeepSeek/...) via the openai SDK.
 //   3) Deterministic fallback when no key.
 // All paths return JSON (chatJSON) and embeddings (embedTexts).

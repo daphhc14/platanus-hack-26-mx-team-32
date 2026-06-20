@@ -20,6 +20,7 @@ import { scorePair } from "../lib/match/score.js";
 import { extractFeatures } from "../lib/ingest/features.js";
 import { detectOffer } from "../lib/detector/detect.js";
 import { loadRNPDNO, buildIndex, clusterRecruitment } from "../lib/embed/embed.js";
+import type { HiloRecord } from "../lib/types.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
@@ -58,7 +59,7 @@ function runPipeline() {
   const db = new Database(DB_PATH); db.pragma("foreign_keys = ON");
   for (const t of ["reviews", "candidate_matches"]) db.prepare(`DELETE FROM ${t}`).run();
   const records = db.prepare("SELECT * FROM records").all().map(normalizeRecord);
-  const allFeats = db.prepare("SELECT * FROM features").all().map(f => ({ ...f, tokens: f.tokens ? JSON.parse(f.tokens) : [] }));
+  const allFeats = db.prepare("SELECT * FROM features").all().map((f: any) => ({ ...f, tokens: f.tokens ? JSON.parse(f.tokens) : [] }));
   const scored = block(records).map(p => scorePair(p, allFeats, allFeats)).sort((a, b) => b.overall_score - a.overall_score);
   for (const p of scored.slice(0, 12)) {
     const v = detVerify(p);
@@ -107,12 +108,13 @@ console.log(`[recruitment] ${RECRUITMENT.total_clusters} clusters, ${RECRUITMENT
 
 // ─── helpers ───
 function canReadSecure(r: string) { return r === "reviewer" || r === "liaison" || r === "admin"; }
+function canWrite(r: string) { return r === "reviewer" || r === "liaison" || r === "admin"; }
 function jsonH() { return { "content-type": "application/json; charset=utf-8" }; }
-async function readBody(req: any): Promise<any> { return new Promise(res => { let d = ""; req.on("data", c => d += c); req.on("end", () => { try { res(JSON.parse(d || "{}")); } catch { res({}); } }); }); }
+async function readBody(req: any): Promise<any> { return new Promise(res => { let d = ""; req.on("data", (c: any) => d += c); req.on("end", () => { try { res(JSON.parse(d || "{}")); } catch { res({}); } }); }); }
 
 // ─── HTTP ───
 const server = createServer(async (req, res) => {
-  const url = new URL(req.url, `http://localhost:${PORT}`);
+  const url = new URL(req.url ?? "/", `http://localhost:${PORT}`);
   const role = url.searchParams.get("role") || "reviewer";
   const db = () => new Database(DB_PATH);
 
@@ -189,15 +191,26 @@ const server = createServer(async (req, res) => {
 
   if (url.pathname === "/api/state") { res.writeHead(200, jsonH()); res.end(JSON.stringify(state(role))); return; }
   if (url.pathname === "/api/confirm" && req.method === "POST") {
+    if (!canWrite(role)) {
+      const d = db(); d.prepare("INSERT INTO audit_log (actor,action,entity) VALUES (?,?,?)").run(role, "review_confirm_denied", url.searchParams.get("id")); d.close();
+      res.writeHead(403, jsonH()); res.end(JSON.stringify({ error: "DENIED", message: `role '${role}' cannot confirm matches` })); return;
+    }
     const id = url.searchParams.get("id"), reviewer = url.searchParams.get("reviewer") || "reviewer-luna";
-    const d = db(); const u = d.prepare("SELECT id FROM app_users WHERE pseudonym=?").get(reviewer);
+    if (!id) { res.writeHead(400, jsonH()); res.end(JSON.stringify({ error: "MISSING_ID" })); return; }
+    const d = db(); const u = d.prepare("SELECT id FROM app_users WHERE pseudonym=?").get(reviewer) as any;
     d.prepare("INSERT INTO reviews (id,match_id,reviewer_id,decision) VALUES (?,?,?,?)").run(randomUUID(), id, u.id, "confirmed");
     d.prepare("UPDATE candidate_matches SET status='confirmed' WHERE id=?").run(id);
     d.prepare("INSERT INTO audit_log (actor,action,entity) VALUES (?,?,?)").run(role, "review_confirmed", id); d.close();
     res.writeHead(200, jsonH()); res.end(JSON.stringify({ ok: true })); return;
   }
   if (url.pathname === "/api/reject" && req.method === "POST") {
-    const id = url.searchParams.get("id"); const d = db();
+    if (!canWrite(role)) {
+      const d = db(); d.prepare("INSERT INTO audit_log (actor,action,entity) VALUES (?,?,?)").run(role, "review_reject_denied", url.searchParams.get("id")); d.close();
+      res.writeHead(403, jsonH()); res.end(JSON.stringify({ error: "DENIED", message: `role '${role}' cannot reject matches` })); return;
+    }
+    const id = url.searchParams.get("id");
+    if (!id) { res.writeHead(400, jsonH()); res.end(JSON.stringify({ error: "MISSING_ID" })); return; }
+    const d = db();
     d.prepare("UPDATE candidate_matches SET status='rejected' WHERE id=?").run(id);
     d.prepare("INSERT INTO audit_log (actor,action,entity) VALUES (?,?,?)").run(role, "review_rejected", id); d.close();
     res.writeHead(200, jsonH()); res.end(JSON.stringify({ ok: true })); return;
@@ -215,7 +228,7 @@ function state(role: string) {
     return { ...m, field_scores: JSON.parse(m.field_scores), missing: normalizeRecord(miss), unidentified: normalizeRecord(unk), missingFeatures: mf, unidentifiedFeatures: uf };
   });
   const ctx = JSON.parse(readFileSync(join(GEN, "context_national.json"), "utf-8"));
-  const confirmed = d.prepare("SELECT COUNT(*) c FROM candidate_matches WHERE status='confirmed'").get().c;
+  const confirmed = (d.prepare("SELECT COUNT(*) c FROM candidate_matches WHERE status='confirmed'").get() as any).c;
   d.close();
   return { role, canReadSecure: canReadSecure(role), matches, context: ctx, confirmedCount: confirmed, recruitmentClusters: RECRUITMENT.total_clusters };
 }

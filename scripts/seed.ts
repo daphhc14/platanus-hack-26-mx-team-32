@@ -37,7 +37,7 @@ async function main() {
     const [lng, lat] = ft.geometry.coordinates;
     db.insertSecureLocation({
       id: randomUUID(), kind: "reporte_fosa", estado: ft.properties.estado,
-      municipio: ft.properties.municipio, lat, lng, fosas: ft.properties.fosas, cuerpos: ft.properties.cuerpos,
+      municipio: ft.properties.municipio, lat, lng, fosas: ft.properties.fosas, cuerpos: ft.properties.cuerpos_osamentas ?? ft.properties.cuerpos,
     });
     loaded++;
   }
