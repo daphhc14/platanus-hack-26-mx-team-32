@@ -22,10 +22,10 @@ with base as (
     media_filiacion,
     estado,
     municipio,
-    nullif(regexp_replace(coalesce(edad_actual, ''), '\D', '', 'g'), '')::int as edad,
-    (regexp_match(coalesce(media_filiacion, ''), 'ESTATURA:\s*(\d+)'))[1]::int  as estatura
+    nullif(regexp_replace(coalesce(edad_actual::text, ''), '\D', '', 'g'), '')::int as edad,
+    (regexp_match(coalesce(media_filiacion::text, ''), 'ESTATURA:\s*(\d+)'))[1]::int  as estatura
   from personas_desaparecidas
-  where sana_particular ~ '(IZQUIERDO|DERECHO)'   -- only personas whose señas carry laterality
+  where sana_particular::text ~ '(IZQUIERDO|DERECHO)'   -- only personas whose señas carry laterality
   order by id_victimadirecta
 ),
 tm as (select * from base limit 10),
@@ -35,16 +35,16 @@ insert into cuerpos
    sana_particular, media_filiacion, estado, municipio, fecha_hallazgo, estatus)
 -- TRUE MATCHES: same señas (same laterality)
 select
-  'TM-' || id_victimadirecta, sexo,
+  'TM-' || id_victimadirecta::text, sexo,
   greatest(edad - 2, 0), edad + 2, estatura,
   sana_particular, media_filiacion, estado, municipio, '2026-06-30', 'no_identificado'
 from tm
 union all
 -- NEAR MISSES: identical except laterality flipped (IZQUIERDO <-> DERECHO)
 select
-  'NM-' || id_victimadirecta, sexo,
+  'NM-' || id_victimadirecta::text, sexo,
   greatest(edad - 2, 0), edad + 2, estatura,
-  replace(replace(replace(sana_particular, 'IZQUIERDO', '__T__'), 'DERECHO', 'IZQUIERDO'), '__T__', 'DERECHO'),
+  replace(replace(replace(sana_particular::text, 'IZQUIERDO', '__T__'), 'DERECHO', 'IZQUIERDO'), '__T__', 'DERECHO'),
   media_filiacion, estado, municipio, '2026-06-30', 'no_identificado'
 from nm;
 
