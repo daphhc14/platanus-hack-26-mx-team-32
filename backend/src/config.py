@@ -8,6 +8,11 @@ class Settings(BaseSettings):
     supabase_key: str
     database_url: str | None = None  # direct Postgres for batch jobs (bypasses RLS)
     gemini_api_key: str | None = None  # embeddings (semantic retrieval)
+    # LLM verifier — only the key is secret; base_url + model are code defaults
+    # (still env-overridable). OpenAI-compatible, so any provider works.
+    llm_api_key: str | None = None
+    llm_base_url: str = "https://openrouter.ai/api/v1"
+    llm_model: str = "anthropic/claude-haiku-4.5"
     cors_origins: str = "http://localhost:5173,http://localhost:3000"
 
     @property

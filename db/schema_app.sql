@@ -61,6 +61,7 @@ create table if not exists candidatos (
   tier               text not null check (tier in ('alta','media','baja')),
   evidencia          jsonb not null default '[]'::jsonb,
   contradicciones    jsonb not null default '[]'::jsonb,
+  razonamiento       text,                          -- verifier narrative (LLM or template)
   estado             text not null default 'candidate'
                        check (estado in ('candidate','confirmed','rejected')),
   created_at         timestamptz not null default now(),
