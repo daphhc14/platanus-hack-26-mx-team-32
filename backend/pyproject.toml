@@ -8,6 +8,7 @@ dependencies = [
     "uvicorn[standard]>=0.34",
     "supabase>=2.9",
     "pydantic-settings>=2.6",
+    "psycopg[binary]>=3.2",
 ]
 
 [tool.uv]
