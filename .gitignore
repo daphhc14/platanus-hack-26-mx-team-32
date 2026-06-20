@@ -6,5 +6,6 @@ dist/
 .env
 .env.*
 GUIA_EQUIPO.md
+HANDOFF.md
 .DS_Store
 docs/
