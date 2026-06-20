@@ -186,7 +186,7 @@ export function clusterRecruitment(index: IndexEntry[], minSize = 3): Cluster[] 
     while (i < sorted.length) {
       const start = sorted[i].r;
       const win: IndexEntry[] = [];
-      const startY = start.r.year!, startM = start.r.month || 6;
+      const startY = start.year!, startM = start.month || 6;
       for (let k = i; k < sorted.length; k++) {
         const rr = sorted[k].r;
         const dm = (rr.year! - startY) * 12 + ((rr.month || 6) - startM);

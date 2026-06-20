@@ -30,7 +30,7 @@ function geminiKeyParam(cfg = loadLLMConfig()): string {
 /** Native Gemini chat (generateContent). Returns the text response. */
 async function geminiChat(system: string, user: string, cfg = loadLLMConfig()): Promise<string> {
   const model = cfg.model || "gemini-2.5-flash";
-  const base = (cfg.baseUrl!.replace(/\/$/, "")).replace(/\/openai\/?$/i, "/v1beta");
+  const base = (cfg.baseUrl!.replace(/\/$/, "")).replace(/\/openai\/?$/i, "");
   const url = `${base}/models/${model}:generateContent${geminiKeyParam(cfg)}`;
   const body = {
     systemInstruction: { parts: [{ text: system }] },
@@ -50,7 +50,7 @@ async function geminiChat(system: string, user: string, cfg = loadLLMConfig()): 
 /** Native Gemini embeddings (batch). Returns number[][] aligned to input. */
 export async function geminiEmbed(texts: string[], model?: string, cfg = loadLLMConfig()): Promise<number[][]> {
   const m = model || process.env.EMBED_MODEL || "gemini-embedding-2";
-  const base = (cfg.baseUrl!.replace(/\/$/, "")).replace(/\/openai\/?$/i, "/v1beta");
+  const base = (cfg.baseUrl!.replace(/\/$/, "")).replace(/\/openai\/?$/i, "");
   const url = `${base}/models/${m}:batchEmbedContents${geminiKeyParam(cfg)}`;
   const body = {
     requests: texts.map((t) => ({
