@@ -1,0 +1,26 @@
+{
+  "name": "hilo",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Hilo — dignity-first record-linkage engine for Mexico's disappeared-persons crisis. Cross-references fichas de busqueda against cuerpos no identificados via senas particulares. 100% synthetic individual records + REAL aggregate context (RNPDNO, fosas).",
+  "type": "module",
+  "scripts": {
+    "prep": "python3 scripts/prep_data.py",
+    "seed": "tsx scripts/seed.ts",
+    "demo": "tsx demo.ts",
+    "dev:ui": "tsx app/server.js",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.3.0"
+  },
+  "optionalDependencies": {
+    "openai": "^4.67.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.11",
+    "@types/node": "^22.7.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  }
+}

@@ -1,0 +1,9 @@
+node_modules/
+*.db
+*.db-wal
+*.db-shm
+dist/
+.env
+.env.*
+GUIA_EQUIPO.md
+.DS_Store

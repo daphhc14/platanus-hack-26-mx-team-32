@@ -1,0 +1,24 @@
+{
+  "state_prob": {
+    "ESTADO DE MÉXICO": 0.23,
+    "JALISCO": 0.2171,
+    "TAMAULIPAS": 0.2123,
+    "CIUDAD DE MÉXICO": 0.1142,
+    "MICHOACÁN": 0.1141,
+    "NUEVO LEÓN": 0.1122
+  },
+  "sex_prob": {
+    "HOMBRE": 0.7716,
+    "MUJER": 0.2284
+  },
+  "age_mean": 31.9,
+  "age_std": 14.5,
+  "note": "Used to shape synthetic individuals so demo demographics mirror real RNPDNO distributions.",
+  "age_bucket_prob": {
+    "45-59": 0.1254,
+    "0-17": 0.1282,
+    "30-44": 0.3388,
+    "60+": 0.0471,
+    "18-29": 0.3605
+  }
+}
