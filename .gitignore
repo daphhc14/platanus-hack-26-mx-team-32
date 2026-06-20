@@ -7,3 +7,4 @@ dist/
 .env.*
 GUIA_EQUIPO.md
 .DS_Store
+docs/
