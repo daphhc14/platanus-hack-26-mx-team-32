@@ -34,6 +34,19 @@
     --radius-circle: 50%;
 
     --font-family: 'Plus Jakarta Sans', sans-serif;
+
+  --app-bg:
+    radial-gradient(ellipse at 38% 42%, rgba(255,255,255,0.96) 0%, transparent 42%),
+    linear-gradient(155deg,
+      #CBC6DC 0%,
+      #DBD7EA 12%,
+      #EAE7F2 24%,
+      #F4F1F8 36%,
+      #FDFAF7 50%,
+      #FAF3E8 63%,
+      #F2E5D2 76%,
+      #EDD4B5 100%
+    );
   }
 
   * {

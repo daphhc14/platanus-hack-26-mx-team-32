@@ -23,7 +23,7 @@ export function Login() {
   return (
     <div
       className="min-h-screen w-full flex flex-col items-center justify-center relative overflow-hidden"
-      style={{ background: 'linear-gradient(160deg, #FDFAF7 0%, #F2E3D5 40%, rgba(242,195,133,0.5) 70%, rgba(242,146,29,0.22) 100%)' }}
+      style={{ background: 'var(--app-bg)' }}
     >
       {/* Ambient aura blobs */}
       <div

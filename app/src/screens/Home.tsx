@@ -107,7 +107,7 @@ export function Home() {
   return (
     <div
       className="min-h-screen w-full flex flex-col"
-      style={{ background: 'linear-gradient(160deg, #FDFAF7 0%, #F2E3D5 45%, rgba(242,195,133,0.35) 100%)' }}
+      style={{ background: 'var(--app-bg)', backgroundAttachment: 'fixed' }}
     >
       {/* Navbar */}
       <header
