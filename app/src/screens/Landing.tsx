@@ -426,14 +426,15 @@ export function Landing() {
             }
           }
           const color = n > 0 ? dateColor(avgRatio / n) : '#f97316'
+          const size = Math.min(72, 32 + Math.sqrt(count) * 6)
           const svg = encodeURIComponent(
-            `<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44"><circle cx="22" cy="22" r="20" fill="${color}" opacity="0.7"/></svg>`
+            `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 ${size} ${size}"><circle cx="${size/2}" cy="${size/2}" r="${size/2 - 2}" fill="${color}" opacity="0.7"/></svg>`
           )
           return new google.maps.Marker({
             position,
             icon: {
               url: `data:image/svg+xml;utf8,${svg}`,
-              scaledSize: new google.maps.Size(44, 44),
+              scaledSize: new google.maps.Size(size, size),
             },
             label: {
               text: String(count),
