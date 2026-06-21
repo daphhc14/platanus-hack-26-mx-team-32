@@ -7,7 +7,6 @@
   "scripts": {
     "prep": "python3 scripts/prep_data.py",
     "seed": "tsx scripts/seed.ts",
-
     "demo": "tsx demo.ts",
     "dev:ui": "tsx app/server.ts",
     "test:acquisition": "tsx scripts/test-acquisition.ts",
@@ -27,6 +26,8 @@
   "devDependencies": {
     "@types/better-sqlite3": "^7.6.11",
     "@types/node": "^22.7.0",
+    "@types/pg": "^8.20.0",
+    "pg": "^8.22.0",
     "tsx": "^4.19.0",
     "typescript": "^5.6.0"
   }

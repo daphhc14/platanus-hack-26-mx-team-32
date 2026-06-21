@@ -77,15 +77,21 @@ create index if not exists idx_fichas_edad on public.fichas (edad);
 create index if not exists idx_fichas_fecha_desap on public.fichas (fecha_desaparicion);
 create index if not exists idx_fichas_tipo on public.fichas (tipo);
 create index if not exists idx_fichas_status on public.fichas (status);
-create index if not exists idx_fichas_nombre on public.fichas using gin (to_tsvector('spanish', coalesce(nombre_completo, '')));
+-- Búsqueda por nombre (trigram para fuzzy matching de nombres)
+create extension if not exists pg_trgm;
+create index if not exists idx_fichas_nombre on public.fichas using gin (nombre_completo gin_trgm_ops);
 create index if not exists idx_fichas_senas on public.fichas using gin (senas_particulares jsonb_path_ops);
 create index if not exists idx_fichas_group on public.fichas (fb_group_id);
 create index if not exists idx_fichas_created on public.fichas (created_at desc);
 
 -- ═══ Dedupe: no insertar la misma ficha dos veces ═══
--- Usa el permalink o el nombre + fecha + estado como unique constraint
-create unique index if not exists idx_fichas_dedupe
-  on public.fichas (coalesce(fb_permalink, nombre_completo || '|' || coalesce(fecha_desaparicion::text, '') || '|' || coalesce(estado, '')));
+-- Partial unique indexes (evita casts no-immutable en expression indexes)
+create unique index if not exists idx_fichas_dedupe_permalink
+  on public.fichas (fb_permalink) where fb_permalink is not null;
+
+create unique index if not exists idx_fichas_dedupe_name
+  on public.fichas (nombre_completo, fecha_desaparicion, estado)
+  where fb_permalink is null and nombre_completo is not null;
 
 -- ═══ Trigger: updated_at automático ═══
 create or replace function public.update_updated_at()
@@ -110,15 +116,15 @@ alter table public.fichas enable row level security;
 create policy "service_all_fichas" on public.fichas
   for all using (auth.role() = 'service_role');
 
--- Anon: solo lectura, sin telefono ni permalink (PII)
+-- Anon: solo lectura de la vista safe (sin PII)
 create policy "anon_read_fichas_safe" on public.fichas
-  for select using (
-    true
-  ) with check (false);
+  for select using (true);
 
--- Comentar la línea de arriba si no quieres que anon lea nada
--- y descomentar esta:
--- create policy "anon_no_access" on public.fichas for select using (false);
+-- Anon: no puede escribir
+create policy "anon_no_write_fichas" on public.fichas
+  for insert with check (false);
+create policy "anon_no_update_fichas" on public.fichas
+  for update using (false);
 
 -- ═══ Vista: fichas_safe (sin PII sensible) ═══
 -- Para queries desde LangGraph que no necesitan teléfono/permalink
