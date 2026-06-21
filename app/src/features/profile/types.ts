@@ -41,6 +41,7 @@ export interface Vinculo {
 export interface VinculoOut {
   vinculo: Vinculo
   persona: PersonaDetail | null
+  chat_unlocked: boolean
 }
 
 export function fullName(p: { nombre: string | null; primer_apellido: string | null; segundo_apellido: string | null }): string {

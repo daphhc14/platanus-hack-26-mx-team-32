@@ -69,9 +69,15 @@ export function ProfileScreen({
       )}
 
       {persona && vinculo && (
-        <button className="hilo-btn chat-cta" onClick={() => setChatOpen(true)}>
-          💬 Chat con otras familias del caso
-        </button>
+        vinculo.chat_unlocked ? (
+          <button className="hilo-btn chat-cta" onClick={() => setChatOpen(true)}>
+            💬 Chat con otras familias del caso
+          </button>
+        ) : (
+          <p className="hilo-muted chat-locked">
+            🔒 El chat se activará cuando otra familia se vincule o aporte información a este caso.
+          </p>
+        )
       )}
 
       <button className="hilo-btn hilo-btn-ghost profile-signout" onClick={() => signOut()}>

@@ -1,4 +1,4 @@
-export type NotifTipo = 'match' | 'evidencia' | 'mensaje'
+export type NotifTipo = 'match' | 'evidencia' | 'mensaje' | 'chat'
 
 export interface Notificacion {
   id: string

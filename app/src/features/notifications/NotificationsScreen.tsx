@@ -7,6 +7,11 @@ const META: Record<Notificacion['tipo'], { icon: string; title: string; body: st
     title: 'Posible coincidencia',
     body: 'El sistema encontró un posible match para tu familiar. Ábrelo para revisarlo.',
   },
+  chat: {
+    icon: '🔓',
+    title: 'Chat disponible',
+    body: 'Otra familia se vinculó a tu caso. Ya pueden escribirse de forma anónima.',
+  },
   mensaje: {
     icon: '💬',
     title: 'Nuevo mensaje',
