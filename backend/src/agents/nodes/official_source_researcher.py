@@ -1,43 +1,43 @@
 """official_source_researcher — searches for official sources per estado."""
 import json
-from agents.state import AgentState
-from agents.config import ANTHROPIC_API_KEY, LLM_MODEL, llm_available
+
+from src.agents.state import AgentState
+from src.llm import chat
 
 
 def official_source_researcher(state: AgentState) -> AgentState:
     """Find official sources (fiscalías, comisiones) for Mexican states."""
     print(f"  [official_source_researcher] run_id={state['run_id']}")
 
-    if llm_available():
-        try:
-            import anthropic
-
-            client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
-            resp = client.messages.create(
-                model="claude-haiku-4-5",
-                max_tokens=2048,
-                system=(
-                    "Eres un investigador de fuentes oficiales sobre personas desaparecidas en México. "
-                    "Dada una lista de estados, devuelve JSON con fuentes oficiales (fiscalías, comisiones de búsqueda, CNB). "
-                    'Formato: {"sources": [{"name": "...", "url": "...", "estado": "...", "trust_tier": "oficial", "notes": "..."}]}'
-                ),
-                messages=[
-                    {"role": "user", "content": "Encuentra fuentes oficiales para: Baja California, Jalisco, Guerrero, Puebla, Chiapas, Hidalgo, Michoacán. Responde SOLO JSON."}
-                ],
-            )
-            text = resp.content[0].text
+    try:
+        text = chat(
+            [
+                {
+                    "role": "system",
+                    "content": (
+                        "Eres un investigador de fuentes oficiales sobre personas desaparecidas en México. "
+                        "Dada una lista de estados, devuelve JSON con fuentes oficiales (fiscalías, comisiones de búsqueda, CNB). "
+                        'Formato: {"sources": [{"name": "...", "url": "...", "estado": "...", "trust_tier": "oficial", "notes": "..."}]}'
+                    ),
+                },
+                {
+                    "role": "user",
+                    "content": "Encuentra fuentes oficiales para: Baja California, Jalisco, Guerrero, Puebla, Chiapas, Hidalgo, Michoacán. Responde SOLO JSON.",
+                },
+            ],
+            max_tokens=2048,
+        )
+        if not text:  # no LLM_API_KEY → deterministic fallback
+            sources = _fallback_sources()
+        else:
             start = text.find("{")
             end = text.rfind("}") + 1
             if start >= 0 and end > start:
-                parsed = json.loads(text[start:end])
-                sources = parsed.get("sources", [])
+                sources = json.loads(text[start:end]).get("sources", [])
             else:
                 raise ValueError("No JSON found in response")
-                sources = _fallback_sources()
-        except Exception as e:
-            print(f"  [official_source_researcher] LLM error: {e}, using fallback")
-            sources = _fallback_sources()
-    else:
+    except Exception as e:
+        print(f"  [official_source_researcher] LLM error: {e}, using fallback")
         sources = _fallback_sources()
 
     state["sources_found"] = sources

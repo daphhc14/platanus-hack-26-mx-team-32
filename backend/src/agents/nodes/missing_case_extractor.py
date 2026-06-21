@@ -2,8 +2,10 @@
 import json
 import os
 import subprocess
-from agents.state import AgentState
-from agents.config import DATABASE_URL
+from pathlib import Path
+
+from src.agents.state import AgentState
+from src.config import settings
 
 
 def missing_case_extractor(state: AgentState) -> AgentState:
@@ -11,10 +13,11 @@ def missing_case_extractor(state: AgentState) -> AgentState:
     print(f"  [missing_case_extractor] {len(state.get('fichas_to_match', []))} fichas to match")
 
     all_results = []
-    project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    # .../backend/src/agents/nodes/missing_case_extractor.py → repo root (5 levels up)
+    project_root = str(Path(__file__).resolve().parents[4])
     env = {
         **os.environ,
-        "DATABASE_URL": DATABASE_URL,
+        "DATABASE_URL": settings.database_url or "",
     }
 
     for ficha in state.get("fichas_to_match", []):

@@ -1,6 +1,6 @@
 """review_recommender — prioritizes match results for human review."""
-from agents.state import AgentState
-from agents.supabase_client import insert_many
+from src.agents.state import AgentState
+from src.agents.supabase_client import insert_many
 
 
 def review_recommender(state: AgentState) -> AgentState:

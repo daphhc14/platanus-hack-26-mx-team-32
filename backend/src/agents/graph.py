@@ -2,13 +2,13 @@
 import json
 import uuid
 from langgraph.graph import StateGraph, START, END
-from agents.state import AgentState
-from agents.nodes.official_source_researcher import official_source_researcher
-from agents.nodes.public_web_acquirer import public_web_acquirer
-from agents.nodes.social_intel_extractor import social_intel_extractor
-from agents.nodes.missing_case_extractor import missing_case_extractor
-from agents.nodes.review_recommender import review_recommender
-from agents.supabase_client import execute as db_execute
+from src.agents.state import AgentState
+from src.agents.nodes.official_source_researcher import official_source_researcher
+from src.agents.nodes.public_web_acquirer import public_web_acquirer
+from src.agents.nodes.social_intel_extractor import social_intel_extractor
+from src.agents.nodes.missing_case_extractor import missing_case_extractor
+from src.agents.nodes.review_recommender import review_recommender
+from src.agents.supabase_client import execute as db_execute
 
 
 def build_graph():
