@@ -1,12 +1,5 @@
-.hilo-app {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  background: #0f1115;
-  color: #e8eaed;
-}
-
-.demo-banner {
+/* Legacy styles cleared — new design system in index.css */
+.demo-banner-hidden {
   background: #b45309;
   color: #fff;
   text-align: center;
