@@ -8,6 +8,7 @@ from supabase import acreate_client
 
 from .config import settings
 from .features.auth.router import router as auth_router
+from .features.firecrawl.router import router as firecrawl_router
 from .features.matching.router import router as matching_router
 from .features.personas.router import router as personas_router
 from .features.vinculos.router import router as vinculos_router
@@ -49,3 +50,4 @@ app.include_router(auth_router)
 app.include_router(personas_router)
 app.include_router(matching_router)
 app.include_router(vinculos_router)
+app.include_router(firecrawl_router)
