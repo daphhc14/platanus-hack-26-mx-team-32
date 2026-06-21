@@ -32,3 +32,8 @@ report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
 
 # Finder (MacOS) folder config
 .DS_Store
+.venv/
+
+# large data files (exceed GitHub 100MB limit)
+final_dataset.json
+final_dataset.jsonl
