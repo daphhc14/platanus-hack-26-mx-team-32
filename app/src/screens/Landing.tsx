@@ -20,23 +20,60 @@ const MAP_CENTER = { lat: 23.6345, lng: -102.5528 }
 const MAP_ZOOM = 5
 const MAP_CONTAINER_STYLE = { width: '100%', height: '100%' }
 const MAP_STYLE_LIGHT: google.maps.MapTypeStyle[] = [
-  { elementType: 'geometry', stylers: [{ color: '#f5f0e8' }] },
-  { elementType: 'labels.text.fill', stylers: [{ color: '#9c9085' }] },
-  { elementType: 'labels.text.stroke', stylers: [{ visibility: 'off' }] },
-  { featureType: 'administrative', elementType: 'geometry', stylers: [{ visibility: 'simplified' }] },
-  { featureType: 'administrative.country', elementType: 'geometry.stroke', stylers: [{ color: '#d4c5b3', weight: 1.2 }] },
-  { featureType: 'administrative.province', elementType: 'geometry.stroke', stylers: [{ color: '#e0d5c7', weight: 0.8 }] },
-  { featureType: 'administrative.locality', elementType: 'labels', stylers: [{ visibility: 'simplified' }] },
-  { featureType: 'landscape', elementType: 'geometry', stylers: [{ color: '#f5f0e8' }] },
-  { featureType: 'landscape.natural', elementType: 'geometry', stylers: [{ color: '#ede6da' }] },
-  { featureType: 'poi', stylers: [{ visibility: 'off' }] },
-  { featureType: 'road', stylers: [{ visibility: 'simplified' }, { color: '#e8dfd2' }] },
-  { featureType: 'road.highway', stylers: [{ visibility: 'simplified' }, { color: '#dcd1c0' }] },
-  { featureType: 'road.arterial', stylers: [{ visibility: 'simplified' }] },
-  { featureType: 'road.local', stylers: [{ visibility: 'off' }] },
-  { featureType: 'transit', stylers: [{ visibility: 'off' }] },
-  { featureType: 'water', elementType: 'geometry', stylers: [{ color: '#dfe7e8' }] },
-  { featureType: 'water', elementType: 'labels.text', stylers: [{ color: '#a8b4b5' }] },
+    {
+        "featureType": "all",
+        "elementType": "labels.text",
+        "stylers": [
+            {
+                "color": "#878787"
+            }
+        ]
+    },
+    {
+        "featureType": "all",
+        "elementType": "labels.text.stroke",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape",
+        "elementType": "all",
+        "stylers": [
+            {
+                "color": "#f9f5ed"
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "all",
+        "stylers": [
+            {
+                "color": "#f5f5f5"
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "geometry.stroke",
+        "stylers": [
+            {
+                "color": "#c9c9c9"
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "all",
+        "stylers": [
+            {
+                "color": "#aee0f4"
+            }
+        ]
+    }
 ];
 
 const MAP_STYLE_DARK: google.maps.MapTypeStyle[] = [
