@@ -3,7 +3,7 @@ from supabase import AsyncClient
 TABLE = "personas_desaparecidas"
 
 LIST_COLS = (
-    "id,nombre,primer_apellido,segundo_apellido,sexo,"
+    "id,id_victimadirecta,nombre,primer_apellido,segundo_apellido,sexo,"
     "edad_actual,estado,municipio,estatus_victima"
 )
 DETAIL_COLS = (
@@ -28,6 +28,24 @@ def parse_senas(raw: str | None) -> list[str]:
     return [s for s in items if s.upper() != "NINGUNA"]
 
 
+def build_detail(row: dict) -> dict:
+    """Shape a raw personas row into the PersonaDetail field set (parsed señas +
+    filiación). Returned as a dict so callers can hand it to PersonaDetail(**...)."""
+    fields = (
+        "id", "id_victimadirecta", "nombre", "primer_apellido", "segundo_apellido",
+        "sexo", "edad_actual", "estado", "municipio", "estatus_victima",
+        "fecha_hechos", "fecha_percato", "fotografia",
+    )
+    return {
+        **{k: row.get(k) for k in fields},
+        "senas": parse_senas(row.get("sana_particular")),
+        "filiacion": {
+            "raw": row.get("media_filiacion"),
+            "parsed": parse_filiacion(row.get("media_filiacion")),
+        },
+    }
+
+
 async def list_personas(
     sb: AsyncClient,
     *,
@@ -43,7 +61,12 @@ async def list_personas(
     if sexo:
         query = query.eq("sexo", sexo)
     if q:
-        query = query.ilike("nombre", f"%{q}%")
+        pat = f"%{q}%"
+        query = query.or_(
+            f"nombre.ilike.{pat},"
+            f"primer_apellido.ilike.{pat},"
+            f"segundo_apellido.ilike.{pat}"
+        )
     query = query.order("id").range(offset, offset + limit - 1)
     res = await query.execute()
     return res.data, res.count or 0
@@ -54,6 +77,18 @@ async def get_persona(sb: AsyncClient, persona_id: int) -> dict | None:
         await sb.table(TABLE)
         .select(DETAIL_COLS)
         .eq("id", persona_id)
+        .limit(1)
+        .execute()
+    )
+    return res.data[0] if res.data else None
+
+
+async def get_persona_by_victima(sb: AsyncClient, victima_id: str) -> dict | None:
+    """Full detail row keyed by the stable natural key id_victimadirecta."""
+    res = (
+        await sb.table(TABLE)
+        .select(DETAIL_COLS + ",id_victimadirecta")
+        .eq("id_victimadirecta", victima_id)
         .limit(1)
         .execute()
     )

@@ -5,7 +5,7 @@ from supabase import AsyncClient
 from ...deps import get_supabase
 from . import service
 from .photos import to_thumbnail
-from .schemas import Filiacion, PersonaDetail, PersonaList
+from .schemas import PersonaDetail, PersonaList
 
 router = APIRouter(prefix="/personas", tags=["personas"])
 
@@ -54,18 +54,4 @@ async def get_persona(
     row = await service.get_persona(sb, persona_id)
     if not row:
         raise HTTPException(status_code=404, detail="Persona no encontrada")
-    return PersonaDetail(
-        **{
-            k: row.get(k)
-            for k in (
-                "id", "nombre", "primer_apellido", "segundo_apellido", "sexo",
-                "edad_actual", "estado", "municipio", "estatus_victima",
-                "fecha_hechos", "fecha_percato", "fotografia",
-            )
-        },
-        senas=service.parse_senas(row.get("sana_particular")),
-        filiacion=Filiacion(
-            raw=row.get("media_filiacion"),
-            parsed=service.parse_filiacion(row.get("media_filiacion")),
-        ),
-    )
+    return PersonaDetail(**service.build_detail(row))
