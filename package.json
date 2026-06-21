@@ -13,6 +13,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.105.0",
     "better-sqlite3": "^11.3.0"
   },
   "optionalDependencies": {

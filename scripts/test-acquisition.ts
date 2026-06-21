@@ -7,6 +7,7 @@ import {
   MockAcquisitionProvider,
   acquisitionIdempotencyKey,
   evaluateSourcePolicy,
+  extractFromArtifact,
 } from "../lib/acquisition/index.js";
 
 const now = "2026-06-21T00:00:00.000Z";
@@ -16,9 +17,9 @@ const db = new HiloDB(":memory:", "admin").init();
 const raw = (db as any).db as Database.Database;
 const acquisition = new AcquisitionRepository(raw);
 const provider = new MockAcquisitionProvider({
-  "https://example.test/ficha": {
+  "https://example.test/oferta": {
     title: "Oferta sospechosa demo",
-    markdown: "Trabajo de seguridad privada, sueldo alto, traslado inmediato, contacto por chat.",
+    markdown: "Vacante de guardia de seguridad. Contratacion inmediata sin experiencia. Sueldo $18000 semanal. Te mandamos Uber para entrevista en central de autobuses. Contacto por WhatsApp.",
   },
 });
 
@@ -60,17 +61,24 @@ const denied = evaluateSourcePolicy({
 assert.equal(denied.allowed, false);
 
 const runId = randomUUID();
-const searchResults = await provider.search({ run_id: runId, query: "seguridad privada", limit: 5 });
+const searchResults = await provider.search({ run_id: runId, query: "guardia de seguridad", limit: 5 });
 assert.equal(searchResults.length, 1);
-assert.equal(searchResults[0].url, "https://example.test/ficha");
+assert.equal(searchResults[0].url, "https://example.test/oferta");
 
 const scraped = await provider.scrape({
   run_id: runId,
-  url: "https://example.test/ficha",
+  url: "https://example.test/oferta",
   formats: ["markdown"],
 });
-assert.equal(scraped.url, "https://example.test/ficha");
+assert.equal(scraped.url, "https://example.test/oferta");
 assert.ok(scraped.content_hash.length > 20);
+const fakeJobExtraction = await extractFromArtifact(scraped, "hilo.fake_job_offer.v1");
+assert.equal(fakeJobExtraction.extractor_name, "deterministic-fallback");
+assert.equal(fakeJobExtraction.output.is_job_offer, true);
+assert.equal(fakeJobExtraction.output.privacy_level, "restricted");
+
+const socialExtraction = await extractFromArtifact(scraped, "hilo.social_risk_event.v1");
+assert.equal(socialExtraction.output.event_type, "oferta_laboral_sospechosa");
 
 acquisition.createRun({
   id: runId,
@@ -78,14 +86,14 @@ acquisition.createRun({
     provider: "mock",
     mode: "scrape",
     source_id: "src-cnb-demo",
-    seed_url: "https://example.test/ficha",
+    seed_url: "https://example.test/oferta",
   }),
   source_id: "src-cnb-demo",
   source_permission_id: "perm-cnb-demo",
   provider: "mock",
   mode: "scrape",
   status: "queued",
-  seed_url: "https://example.test/ficha",
+  seed_url: "https://example.test/oferta",
   policy_snapshot: policy,
 });
 
@@ -95,7 +103,7 @@ acquisition.insertRawArtifact({
   run_id: runId,
   source_id: "src-cnb-demo",
   source_permission_id: "perm-cnb-demo",
-  url: "https://example.test/ficha",
+  url: "https://example.test/oferta",
   content_hash: scraped.content_hash,
   content_type: "text/markdown",
   title: scraped.title,
@@ -109,36 +117,37 @@ acquisition.insertRawArtifact({
 acquisition.createExtractionJob({
   id: randomUUID(),
   raw_artifact_id: artifactId,
-  extractor_name: "mock-social-event",
-  extractor_version: "v1",
-  schema_name: "hilo.social_risk_event.v1",
+  extractor_name: fakeJobExtraction.extractor_name,
+  extractor_version: fakeJobExtraction.extractor_version,
+  schema_name: fakeJobExtraction.schema_name,
   status: "succeeded",
-  confidence: 0.91,
-  output: { event_type: "oferta_laboral_sospechosa" },
+  confidence: fakeJobExtraction.confidence,
+  output: fakeJobExtraction.output,
   finished_at: now,
 });
 
+const socialOutput = socialExtraction.output as any;
 acquisition.insertSocialRiskEvent({
   id: randomUUID(),
   source_id: "src-cnb-demo",
   raw_artifact_id: artifactId,
-  event_type: "oferta_laboral_sospechosa",
+  event_type: socialOutput.event_type,
   mechanism_type: "reclutamiento",
-  estado: "Jalisco",
-  municipio: "Guadalajara",
+  estado: socialOutput.estado,
+  municipio: socialOutput.municipio,
   reported_at: now,
-  confidence: 0.91,
+  confidence: socialExtraction.confidence,
   severity: 4,
-  privacy_level: "restricted",
+  privacy_level: socialOutput.privacy_level,
   review_status: "pending",
-  summary_public: "Patron contextual pendiente de revision",
-  evidence: { signals: ["salary_above_market", "remote_contact"] },
+  summary_public: socialOutput.summary,
+  evidence: { validator: socialExtraction.validator },
 });
 
 const events = acquisition.listSocialRiskEvents();
 assert.equal(events.length, 1);
 assert.equal(events[0].event_type, "oferta_laboral_sospechosa");
-assert.deepEqual(events[0].evidence, { signals: ["salary_above_market", "remote_contact"] });
+assert.deepEqual(events[0].evidence, { validator: socialExtraction.validator });
 
 db.close();
 console.log("✓ acquisition smoke test passed");
