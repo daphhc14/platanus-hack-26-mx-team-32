@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import type { Session } from '@supabase/supabase-js'
 import { signOut } from '../auth'
+import { ChatPanel } from '../chat'
 import { API_URL } from '../../lib/http'
 import { LinkedPersonModal } from './LinkedPersonModal'
 import { fullName } from './types'
@@ -16,6 +17,7 @@ export function ProfileScreen({
   onStartLink: () => void
 }) {
   const [modalOpen, setModalOpen] = useState(false)
+  const [chatOpen, setChatOpen] = useState(false)
   const persona = vinculo?.persona ?? null
 
   return (
@@ -66,6 +68,18 @@ export function ProfileScreen({
         </section>
       )}
 
+      {persona && vinculo && (
+        vinculo.chat_unlocked ? (
+          <button className="hilo-btn chat-cta" onClick={() => setChatOpen(true)}>
+            💬 Chat con otras familias del caso
+          </button>
+        ) : (
+          <p className="hilo-muted chat-locked">
+            🔒 El chat se activará cuando otra familia se vincule o aporte información a este caso.
+          </p>
+        )
+      )}
+
       <button className="hilo-btn hilo-btn-ghost profile-signout" onClick={() => signOut()}>
         Cerrar sesión
       </button>
@@ -75,6 +89,14 @@ export function ProfileScreen({
           persona={persona}
           parentesco={vinculo?.vinculo.parentesco ?? null}
           onClose={() => setModalOpen(false)}
+        />
+      )}
+
+      {chatOpen && persona && vinculo && (
+        <ChatPanel
+          personaVictimaId={vinculo.vinculo.persona_victima_id}
+          personaNombre={fullName(persona)}
+          onClose={() => setChatOpen(false)}
         />
       )}
     </div>

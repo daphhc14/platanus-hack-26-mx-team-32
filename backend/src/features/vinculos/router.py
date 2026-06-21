@@ -29,7 +29,10 @@ async def my_vinculo(
     if not row:
         return None
     persona = await _persona_detail(sb, row["persona_victima_id"])
-    return VinculoOut(vinculo=Vinculo(**row), persona=persona)
+    unlocked = await run_in_threadpool(
+        service.chat_unlocked, db, user.id, row["persona_victima_id"]
+    )
+    return VinculoOut(vinculo=Vinculo(**row), persona=persona, chat_unlocked=unlocked)
 
 
 @router.post("/vinculo", response_model=VinculoOut, status_code=status.HTTP_201_CREATED)
@@ -47,7 +50,10 @@ async def create_vinculo(
     row = await run_in_threadpool(
         service.set_vinculo, db, user.id, body.persona_victima_id, body.parentesco
     )
-    return VinculoOut(vinculo=Vinculo(**row), persona=persona)
+    unlocked = await run_in_threadpool(
+        service.chat_unlocked, db, user.id, body.persona_victima_id
+    )
+    return VinculoOut(vinculo=Vinculo(**row), persona=persona, chat_unlocked=unlocked)
 
 
 @router.delete("/vinculo", status_code=status.HTTP_204_NO_CONTENT)

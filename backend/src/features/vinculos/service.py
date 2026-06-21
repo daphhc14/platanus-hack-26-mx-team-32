@@ -55,6 +55,25 @@ def get_vinculo(conn, user_id: str) -> dict | None:
         return cur.fetchone()
 
 
+def chat_unlocked(conn, user_id: str, persona_victima_id: str) -> bool:
+    """True once another family touches the same case — another MB is linked to
+    the persona, or another MB added evidence. This gates the case chat."""
+    with conn.cursor() as cur:
+        cur.execute(
+            """
+            select (
+              exists (select 1 from vinculos v
+                      where v.persona_victima_id = %(pid)s and v.usuario_id <> %(uid)s)
+              or exists (select 1 from evidencia e
+                         where e.persona_victima_id = %(pid)s
+                           and e.usuario_id is distinct from %(uid)s)
+            ) as unlocked
+            """,
+            {"pid": persona_victima_id, "uid": user_id},
+        )
+        return bool(cur.fetchone()["unlocked"])
+
+
 def delete_vinculo(conn, user_id: str, vinculo_id: str | None = None) -> int:
     """Remove a link (all of the user's, or one by id). Returns rows deleted."""
     with conn.cursor() as cur:
