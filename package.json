@@ -7,7 +7,7 @@
   "scripts": {
     "prep": "python3 scripts/prep_data.py",
     "seed": "tsx scripts/seed.ts",
-    "seed:facebook": "tsx scripts/seed-facebook-patterns.ts",
+
     "demo": "tsx demo.ts",
     "dev:ui": "tsx app/server.ts",
     "test:acquisition": "tsx scripts/test-acquisition.ts",
