@@ -345,8 +345,8 @@ export function Home() {
                     </div>
                   </div>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 8 }}>
-                    <span style={{ fontSize: 12, color: '#6B6B6B' }}>{n.time}</span>
-                    <button className="btn-ghost" style={{ padding: '5px 14px', fontSize: 12 }}>
+                    <span style={{ fontSize: 12, color: 'var(--color-text-secondary)' }}>{n.time}</span>
+                    <button className="btn-ghost" style={{ padding: '5px 14px', fontSize: 12, color: 'var(--color-primary)' }}>
                       Ver detalle →
                     </button>
                   </div>
