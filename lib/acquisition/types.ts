@@ -175,3 +175,43 @@ export interface RevocationPropagationResult {
   event_ids_hidden: string[];
 }
 
+// ── Facebook Patterns ──
+
+export const TONE_KEYWORDS = [
+  "urgency", "job_offer", "payment_request", "data_harvest",
+  "off_platform_contact", "high_salary", "vague_company", "immediate_start",
+  "uniform_fee", "investment_return", "crypto", "delivery_job",
+] as const;
+
+export type ToneKeyword = (typeof TONE_KEYWORDS)[number];
+
+export interface FacebookPattern {
+  id: string;
+  post_url: string;
+  post_content: string;
+  tone_description: string | null;
+  tone_keywords: string[];
+  image_urls: string[];
+  image_descriptions: string[];
+  location_text: string | null;
+  location_latitude: number | null;
+  location_longitude: number | null;
+  location_region: string | null;
+  scraped_at: string;
+  created_at: string;
+}
+
+export interface ScrapedPost {
+  url: string;
+  content: string;
+  imageUrls: string[];
+}
+
+export interface ScrapeSummary {
+  inserted: number;
+  skipped: number;
+  failed: number;
+  errors: string[];
+  totalPostsSeen: number;
+}
+
