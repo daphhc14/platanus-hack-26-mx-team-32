@@ -3,6 +3,7 @@ from src.config import settings
 
 from .embeddings import embed_one, record_text, to_vector_literal
 from .engine import rank_personas_for_cuerpo
+from .tuning import CONFIG
 from .verify import verify_pair
 
 _PERSONA_COLS = r"""
@@ -59,7 +60,9 @@ def _senas_text(senas) -> str | None:
     return senas
 
 
-def preview_match(conn, query: dict, k_retrieve: int = 30, top_n: int = 5) -> tuple[int, str, list[dict]]:
+def preview_match(conn, query: dict, k_retrieve: int | None = None, top_n: int | None = None) -> tuple[int, str, list[dict]]:
+    k_retrieve = CONFIG.retrieve_k if k_retrieve is None else k_retrieve
+    top_n = CONFIG.top_k if top_n is None else top_n
     cuerpo = {
         "sexo": query.get("sexo"),
         "edad_min": query.get("edad_min"),

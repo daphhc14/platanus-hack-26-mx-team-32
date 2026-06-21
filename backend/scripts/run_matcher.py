@@ -11,8 +11,9 @@ from psycopg.rows import dict_row
 
 from src.config import settings
 from src.features.matching.engine import rank_personas_for_cuerpo
+from src.features.matching.tuning import CONFIG
 
-RETRIEVE_K = 30  # wide net: vector top-K, then rules narrow it
+RETRIEVE_K = CONFIG.retrieve_k  # wide net: vector top-K, then rules narrow it
 
 _PERSONA_COLS = r"""
        p.id_victimadirecta::text as id_victimadirecta, p.sexo::text as sexo,
@@ -69,7 +70,7 @@ def main() -> None:
                     via_vector += 1
                 else:
                     personas = all_personas
-                for r in rank_personas_for_cuerpo(c, personas, top_k=5):
+                for r in rank_personas_for_cuerpo(c, personas):
                     cur.execute(
                         UPSERT_SQL,
                         (
