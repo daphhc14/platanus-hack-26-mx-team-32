@@ -350,6 +350,10 @@ export async function scrapeAndSeedFacebookPatterns(): Promise<ScrapeSummary> {
 
   const supabase = createClient(supabaseUrl, supabaseKey);
 
+  if (!process.env.GOOGLE_MAPS_API_KEY) {
+    console.warn("Warning: GOOGLE_MAPS_API_KEY not set — geocoding will be skipped");
+  }
+
   let posts: ScrapedPost[] = [];
   try {
     posts = await fetchFacebookGroupPosts(FACEBOOK_GROUP_URL);
@@ -371,6 +375,14 @@ export async function scrapeAndSeedFacebookPatterns(): Promise<ScrapeSummary> {
       const extraction = await extractPatternWithClaude(post);
       const postDate = parseRelativeDate(post.content);
 
+      let geocode: GeocodeResult | null = null;
+      if (extraction.location_text) {
+        geocode = await geocodeLocation(extraction.location_text);
+        if (geocode) {
+          console.log(`Geocoded "${extraction.location_text}" → ${geocode.lat}, ${geocode.lng} (${geocode.region})`);
+        }
+      }
+
       const row = {
         id: randomUUID(),
         post_url: post.url,
@@ -380,9 +392,9 @@ export async function scrapeAndSeedFacebookPatterns(): Promise<ScrapeSummary> {
         image_urls: [],
         image_descriptions: extraction.image_descriptions,
         location_text: extraction.location_text,
-        location_latitude: null,
-        location_longitude: null,
-        location_region: null,
+        location_latitude: geocode?.lat ?? null,
+        location_longitude: geocode?.lng ?? null,
+        location_region: geocode?.region ?? null,
         scraped_at: new Date().toISOString(),
         post_date: postDate,
       };
