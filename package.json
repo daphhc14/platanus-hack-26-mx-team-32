@@ -7,15 +7,19 @@
   "scripts": {
     "prep": "python3 scripts/prep_data.py",
     "seed": "tsx scripts/seed.ts",
+    "seed:facebook": "tsx scripts/seed-facebook-patterns.ts",
     "demo": "tsx demo.ts",
     "dev:ui": "tsx app/server.ts",
     "test:acquisition": "tsx scripts/test-acquisition.ts",
     "test:extractor:live": "tsx scripts/test-extractor-live.ts",
+    "test:discovery": "tsx scripts/test-discovery.ts",
+    "test:geo": "tsx scripts/test-geo.ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.105.0",
-    "better-sqlite3": "^11.3.0"
+    "better-sqlite3": "^11.3.0",
+    "playwright": "^1.61.0"
   },
   "optionalDependencies": {
     "openai": "^4.67.0"

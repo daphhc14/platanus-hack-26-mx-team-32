@@ -5,4 +5,7 @@ export * from "./provider.js";
 export * from "./providers/firecrawl.js";
 export * from "./providers/mock.js";
 export * from "./safety.js";
+export * from "./risk_patterns.js";
+export * from "./extractors/index.js";
+export * from "./safety.js";
 export * from "./extractors/index.js";
