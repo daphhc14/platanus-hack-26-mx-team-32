@@ -1,0 +1,38 @@
+{
+  "buckets": [
+    "0-17",
+    "18-29",
+    "30-44",
+    "45-59",
+    "60+"
+  ],
+  "matrix": {
+    "45-59": {
+      "HOMBRE": 5714,
+      "MUJER": 755,
+      "NOINFO": 7
+    },
+    "0-17": {
+      "MUJER": 3495,
+      "NOINFO": 5,
+      "HOMBRE": 3122
+    },
+    "30-44": {
+      "MUJER": 2390,
+      "HOMBRE": 15082,
+      "NOINFO": 21
+    },
+    "60+": {
+      "HOMBRE": 2065,
+      "MUJER": 365,
+      "NOINFO": 2
+    },
+    "18-29": {
+      "MUJER": 3531,
+      "HOMBRE": 15062,
+      "NOINFO": 21
+    }
+  },
+  "edad_media": 31.9,
+  "edad_mediana": 30
+}

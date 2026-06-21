@@ -1,0 +1,7800 @@
+{
+  "type": "FeatureCollection",
+  "total_fosas": 1038,
+  "total_cuerpos_osamentas": 3187,
+  "num_sitios": 487,
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.522046,
+          17.169004
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Juan R. Escudero",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.018913,
+          32.53246
+        ]
+      },
+      "properties": {
+        "estado": "Baja California",
+        "municipio": "Tijuana",
+        "fosas": 1,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -101.853476,
+          19.501893
+        ]
+      },
+      "properties": {
+        "estado": "Michoacán de Ocampo",
+        "municipio": "Tingambato",
+        "fosas": 1,
+        "cuerpos_osamentas": 6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.886557,
+          16.861866
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Acapulco de Juárez",
+        "fosas": 1,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.554444,
+          28.186944
+        ]
+      },
+      "properties": {
+        "estado": "Chihuahua",
+        "municipio": "Rosales",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.062799,
+          19.420887
+        ]
+      },
+      "properties": {
+        "estado": "Michoacán de Ocampo",
+        "municipio": "Uruapan",
+        "fosas": 0,
+        "cuerpos_osamentas": 8
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.100633,
+          19.797123
+        ]
+      },
+      "properties": {
+        "estado": "Estado de México",
+        "municipio": "Zumpango",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.018721,
+          21.986536
+        ]
+      },
+      "properties": {
+        "estado": "San Luis Potosí",
+        "municipio": "Ciudad Valles",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.802553,
+          19.205903
+        ]
+      },
+      "properties": {
+        "estado": "Estado de México",
+        "municipio": "Tlalmanalco",
+        "fosas": 1,
+        "cuerpos_osamentas": 11
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.030975,
+          19.838223
+        ]
+      },
+      "properties": {
+        "estado": "Puebla",
+        "municipio": "Chignahuapan",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.227222,
+          20.613611
+        ]
+      },
+      "properties": {
+        "estado": "Jalisco",
+        "municipio": "Puerto Vallarta",
+        "fosas": 1,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.763929,
+          18.774277
+        ]
+      },
+      "properties": {
+        "estado": "Veracruz de Ignacio de la Llave",
+        "municipio": "Alvarado",
+        "fosas": 1,
+        "cuerpos_osamentas": 7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.183242,
+          18.840984
+        ]
+      },
+      "properties": {
+        "estado": "Morelos",
+        "municipio": "Emiliano Zapata",
+        "fosas": 1,
+        "cuerpos_osamentas": 12
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.827583,
+          19.860274
+        ]
+      },
+      "properties": {
+        "estado": "Michoacán de Ocampo",
+        "municipio": "Zinapécuaro",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.018913,
+          32.53246
+        ]
+      },
+      "properties": {
+        "estado": "Baja California",
+        "municipio": "Tijuana",
+        "fosas": 1,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.425277,
+          20.284444
+        ]
+      },
+      "properties": {
+        "estado": "Jalisco",
+        "municipio": "Jocotepec",
+        "fosas": 2,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.37077,
+          27.840659
+        ]
+      },
+      "properties": {
+        "estado": "Sonora",
+        "municipio": "Rosario",
+        "fosas": 1,
+        "cuerpos_osamentas": 5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.554444,
+          28.186944
+        ]
+      },
+      "properties": {
+        "estado": "Chihuahua",
+        "municipio": "Rosales",
+        "fosas": 0,
+        "cuerpos_osamentas": 6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.259897,
+          25.677325
+        ]
+      },
+      "properties": {
+        "estado": "Nuevo León",
+        "municipio": "Guadalupe",
+        "fosas": 0,
+        "cuerpos_osamentas": 8
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.15962,
+          24.848678
+        ]
+      },
+      "properties": {
+        "estado": "Tamaulipas",
+        "municipio": "San Fernando",
+        "fosas": 40,
+        "cuerpos_osamentas": 173
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.342222,
+          20.676388
+        ]
+      },
+      "properties": {
+        "estado": "Jalisco",
+        "municipio": "Guadalajara",
+        "fosas": 1,
+        "cuerpos_osamentas": 5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.866044,
+          28.406311
+        ]
+      },
+      "properties": {
+        "estado": "Chihuahua",
+        "municipio": "Cuauhtémoc",
+        "fosas": 1,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.062799,
+          19.420887
+        ]
+      },
+      "properties": {
+        "estado": "Michoacán de Ocampo",
+        "municipio": "Uruapan",
+        "fosas": 4,
+        "cuerpos_osamentas": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.09088,
+          25.646225
+        ]
+      },
+      "properties": {
+        "estado": "Nuevo León",
+        "municipio": "Juárez",
+        "fosas": 1,
+        "cuerpos_osamentas": 18
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.463778,
+          19.56796
+        ]
+      },
+      "properties": {
+        "estado": "Michoacán de Ocampo",
+        "municipio": "Tuxpan",
+        "fosas": 6,
+        "cuerpos_osamentas": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -101.046857,
+          19.747488
+        ]
+      },
+      "properties": {
+        "estado": "Michoacán de Ocampo",
+        "municipio": "Charo",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.453001,
+          18.137882
+        ]
+      },
+      "properties": {
+        "estado": "Veracruz de Ignacio de la Llave",
+        "municipio": "Coatzacoalcos",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.323701,
+          18.616875
+        ]
+      },
+      "properties": {
+        "estado": "Morelos",
+        "municipio": "Puente de Ixtla",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.670194,
+          24.023988
+        ]
+      },
+      "properties": {
+        "estado": "Durango",
+        "municipio": "Durango",
+        "fosas": 1,
+        "cuerpos_osamentas": 5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.322093,
+          15.836111
+        ]
+      },
+      "properties": {
+        "estado": "Oaxaca",
+        "municipio": "Santa María Huatulco",
+        "fosas": 2,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.826958,
+          25.189252
+        ]
+      },
+      "properties": {
+        "estado": "Nuevo León",
+        "municipio": "Montemorelos",
+        "fosas": 5,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.693888,
+          20.776111
+        ]
+      },
+      "properties": {
+        "estado": "Jalisco",
+        "municipio": "El Arenal",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.501062,
+          17.551649
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Chilpancingo de los Bravo",
+        "fosas": 1,
+        "cuerpos_osamentas": 6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.485018,
+          31.746465
+        ]
+      },
+      "properties": {
+        "estado": "Chihuahua",
+        "municipio": "Juárez",
+        "fosas": 1,
+        "cuerpos_osamentas": 5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.231462,
+          18.781865
+        ]
+      },
+      "properties": {
+        "estado": "Morelos",
+        "municipio": "Xochitepec",
+        "fosas": 0,
+        "cuerpos_osamentas": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.00845,
+          20.477392
+        ]
+      },
+      "properties": {
+        "estado": "Veracruz de Ignacio de la Llave",
+        "municipio": "Tecolutla",
+        "fosas": 1,
+        "cuerpos_osamentas": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.471111,
+          28.193333
+        ]
+      },
+      "properties": {
+        "estado": "Chihuahua",
+        "municipio": "Delicias",
+        "fosas": 1,
+        "cuerpos_osamentas": 80
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.147238,
+          18.138272
+        ]
+      },
+      "properties": {
+        "estado": "Veracruz de Ignacio de la Llave",
+        "municipio": "Agua Dulce",
+        "fosas": 1,
+        "cuerpos_osamentas": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.886557,
+          16.861866
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Acapulco de Juárez",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -107.69676,
+          24.767218
+        ]
+      },
+      "properties": {
+        "estado": "Sinaloa",
+        "municipio": "Navolato",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -101.610116,
+          19.513597
+        ]
+      },
+      "properties": {
+        "estado": "Michoacán de Ocampo",
+        "municipio": "Pátzcuaro",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.989923,
+          22.649403
+        ]
+      },
+      "properties": {
+        "estado": "Zacatecas",
+        "municipio": "Jerez-Fresnillo- Loreto-Sombrerete",
+        "fosas": 0,
+        "cuerpos_osamentas": 11
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.872222,
+          19.9275
+        ]
+      },
+      "properties": {
+        "estado": "Jalisco",
+        "municipio": "Quitupan",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.162662,
+          18.63003
+        ]
+      },
+      "properties": {
+        "estado": "Morelos",
+        "municipio": "Tlalquitenango",
+        "fosas": 1,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.390821,
+          18.161266
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "San Miguel Totolapan",
+        "fosas": 1,
+        "cuerpos_osamentas": 17
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.306023,
+          19.956321
+        ]
+      },
+      "properties": {
+        "estado": "Michoacán de Ocampo",
+        "municipio": "Jacona",
+        "fosas": 2,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.14771,
+          30.713811
+        ]
+      },
+      "properties": {
+        "estado": "Sonora",
+        "municipio": "Caborca",
+        "fosas": 1,
+        "cuerpos_osamentas": 7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -107.995949,
+          31.092176
+        ]
+      },
+      "properties": {
+        "estado": "Chihuahua",
+        "municipio": "Ascención",
+        "fosas": 2,
+        "cuerpos_osamentas": 14
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.09088,
+          25.646225
+        ]
+      },
+      "properties": {
+        "estado": "Nuevo León",
+        "municipio": "Juárez",
+        "fosas": 9,
+        "cuerpos_osamentas": 51
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.062799,
+          19.420887
+        ]
+      },
+      "properties": {
+        "estado": "Michoacán de Ocampo",
+        "municipio": "Uruapan",
+        "fosas": 2,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.935349,
+          18.894383
+        ]
+      },
+      "properties": {
+        "estado": "Veracruz de Ignacio de la Llave",
+        "municipio": "Córdoba",
+        "fosas": 15,
+        "cuerpos_osamentas": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.334641,
+          27.588551
+        ]
+      },
+      "properties": {
+        "estado": "Chihuahua",
+        "municipio": "San Francisco de Conchos",
+        "fosas": 1,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.917621,
+          28.487043
+        ]
+      },
+      "properties": {
+        "estado": "Coahuila de Zaragoza",
+        "municipio": "Zaragoza",
+        "fosas": 1,
+        "cuerpos_osamentas": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.485018,
+          31.746465
+        ]
+      },
+      "properties": {
+        "estado": "Chihuahua",
+        "municipio": "Juárez",
+        "fosas": 15,
+        "cuerpos_osamentas": 20
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.388333,
+          20.720555
+        ]
+      },
+      "properties": {
+        "estado": "Jalisco",
+        "municipio": "Zapopan",
+        "fosas": 1,
+        "cuerpos_osamentas": 14
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -108.994342,
+          25.783416
+        ]
+      },
+      "properties": {
+        "estado": "Sinaloa",
+        "municipio": "Ahome",
+        "fosas": 2,
+        "cuerpos_osamentas": 10
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.945785,
+          31.325897
+        ]
+      },
+      "properties": {
+        "estado": "Sonora",
+        "municipio": "Nogales",
+        "fosas": 1,
+        "cuerpos_osamentas": 9
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.153027,
+          19.190323
+        ]
+      },
+      "properties": {
+        "estado": "Veracruz de Ignacio de la Llave",
+        "municipio": "Veracruz",
+        "fosas": 100,
+        "cuerpos_osamentas": 59
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.118178,
+          18.682962
+        ]
+      },
+      "properties": {
+        "estado": "Morelos",
+        "municipio": "Tlaltizapán de Zapata",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.090276,
+          17.909325
+        ]
+      },
+      "properties": {
+        "estado": "Veracruz de Ignacio de la Llave",
+        "municipio": "Las Choapas",
+        "fosas": 1,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.11219,
+          16.803935
+        ]
+      },
+      "properties": {
+        "estado": "Oaxaca",
+        "municipio": "El Barrio de la Soledad",
+        "fosas": 0,
+        "cuerpos_osamentas": 7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.802553,
+          19.205903
+        ]
+      },
+      "properties": {
+        "estado": "Estado de México",
+        "municipio": "Tlalmanalco",
+        "fosas": 1,
+        "cuerpos_osamentas": 5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.443055,
+          20.473611
+        ]
+      },
+      "properties": {
+        "estado": "Jalisco",
+        "municipio": "Tlajomulco de Zúñiga",
+        "fosas": 1,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.351691,
+          19.36018
+        ]
+      },
+      "properties": {
+        "estado": "Estado de México",
+        "municipio": "Huixquilucan",
+        "fosas": 1,
+        "cuerpos_osamentas": 7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.869572,
+          18.371809
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Teloloapan",
+        "fosas": 1,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.018913,
+          32.53246
+        ]
+      },
+      "properties": {
+        "estado": "Baja California",
+        "municipio": "Tijuana",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.342222,
+          20.676388
+        ]
+      },
+      "properties": {
+        "estado": "Jalisco",
+        "municipio": "Guadalajara",
+        "fosas": 2,
+        "cuerpos_osamentas": 5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.763929,
+          18.774277
+        ]
+      },
+      "properties": {
+        "estado": "Veracruz de Ignacio de la Llave",
+        "municipio": "Alvarado",
+        "fosas": 1,
+        "cuerpos_osamentas": 9
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.814166,
+          21.683611
+        ]
+      },
+      "properties": {
+        "estado": "Jalisco",
+        "municipio": "San Martín de Bolaños",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.964369,
+          26.094515
+        ]
+      },
+      "properties": {
+        "estado": "Chihuahua",
+        "municipio": "Guadalupe y Calvo",
+        "fosas": 0,
+        "cuerpos_osamentas": 7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.357486,
+          19.43718
+        ]
+      },
+      "properties": {
+        "estado": "Michoacán de Ocampo",
+        "municipio": "Zitácuaro",
+        "fosas": 4,
+        "cuerpos_osamentas": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.824166,
+          20.3675
+        ]
+      },
+      "properties": {
+        "estado": "Jalisco",
+        "municipio": "Cocula",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.368072,
+          20.080605
+        ]
+      },
+      "properties": {
+        "estado": "Hidalgo",
+        "municipio": "Tulancingo de Bravo",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.234896,
+          18.921782
+        ]
+      },
+      "properties": {
+        "estado": "Morelos",
+        "municipio": "Cuernavaca",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.005394,
+          31.372067
+        ]
+      },
+      "properties": {
+        "estado": "Chihuahua",
+        "municipio": "Práxedis G. Guerrero",
+        "fosas": 0,
+        "cuerpos_osamentas": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.886557,
+          16.861866
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Acapulco de Juárez",
+        "fosas": 1,
+        "cuerpos_osamentas": 18
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.018913,
+          32.53246
+        ]
+      },
+      "properties": {
+        "estado": "Baja California",
+        "municipio": "Tijuana",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.893799,
+          21.507413
+        ]
+      },
+      "properties": {
+        "estado": "Nayarit",
+        "municipio": "Tepic",
+        "fosas": 5,
+        "cuerpos_osamentas": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.422221,
+          23.200315
+        ]
+      },
+      "properties": {
+        "estado": "Sinaloa",
+        "municipio": "Mazatlán",
+        "fosas": 1,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -101.792859,
+          19.818618
+        ]
+      },
+      "properties": {
+        "estado": "Michoacán de Ocampo",
+        "municipio": "Zacapu",
+        "fosas": 0,
+        "cuerpos_osamentas": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.369514,
+          18.600001
+        ]
+      },
+      "properties": {
+        "estado": "Morelos",
+        "municipio": "Amacuzac",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -108.619966,
+          26.421598
+        ]
+      },
+      "properties": {
+        "estado": "Sinaloa",
+        "municipio": "El Fuerte",
+        "fosas": 1,
+        "cuerpos_osamentas": 9
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.886557,
+          16.861866
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Acapulco de Juárez",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -107.069361,
+          26.819152
+        ]
+      },
+      "properties": {
+        "estado": "Chihuahua",
+        "municipio": "Guachochi",
+        "fosas": 1,
+        "cuerpos_osamentas": 7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.388333,
+          20.720555
+        ]
+      },
+      "properties": {
+        "estado": "Jalisco",
+        "municipio": "Zapopan",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.525936,
+          17.653197
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Eduardo Neri",
+        "fosas": 1,
+        "cuerpos_osamentas": 10
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.442725,
+          18.595481
+        ]
+      },
+      "properties": {
+        "estado": "Veracruz de Ignacio de la Llave",
+        "municipio": "Ángel R. Cabada",
+        "fosas": 1,
+        "cuerpos_osamentas": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.958534,
+          29.074899
+        ]
+      },
+      "properties": {
+        "estado": "Sonora",
+        "municipio": "Hermosillo",
+        "fosas": 1,
+        "cuerpos_osamentas": 5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.501062,
+          17.551649
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Chilpancingo de los Bravo",
+        "fosas": 1,
+        "cuerpos_osamentas": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.899724,
+          18.626425
+        ]
+      },
+      "properties": {
+        "estado": "Michoacán de Ocampo",
+        "municipio": "Huetamo",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.153402,
+          18.905696
+        ]
+      },
+      "properties": {
+        "estado": "Estado de México",
+        "municipio": "Tejupilco",
+        "fosas": 0,
+        "cuerpos_osamentas": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.390821,
+          18.161266
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "San Miguel Totolapan",
+        "fosas": 1,
+        "cuerpos_osamentas": 6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.688216,
+          20.545284
+        ]
+      },
+      "properties": {
+        "estado": "Guanajuato",
+        "municipio": "Apaseo el grande",
+        "fosas": 1,
+        "cuerpos_osamentas": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.670194,
+          24.023988
+        ]
+      },
+      "properties": {
+        "estado": "Durango",
+        "municipio": "Durango",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.191388,
+          20.346666
+        ]
+      },
+      "properties": {
+        "estado": "Jalisco",
+        "municipio": "Ixtlahuacán de los Membrillos",
+        "fosas": 1,
+        "cuerpos_osamentas": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.433515,
+          19.312258
+        ]
+      },
+      "properties": {
+        "estado": "Michoacán de Ocampo",
+        "municipio": "Juárez",
+        "fosas": 1,
+        "cuerpos_osamentas": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -108.994342,
+          25.783416
+        ]
+      },
+      "properties": {
+        "estado": "Sinaloa",
+        "municipio": "Ahome",
+        "fosas": 0,
+        "cuerpos_osamentas": 5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.062799,
+          19.420887
+        ]
+      },
+      "properties": {
+        "estado": "Michoacán de Ocampo",
+        "municipio": "Uruapan",
+        "fosas": 4,
+        "cuerpos_osamentas": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.390769,
+          17.835174
+        ]
+      },
+      "properties": {
+        "estado": "Tabasco",
+        "municipio": "Huimanguillo",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.621626,
+          20.457171
+        ]
+      },
+      "properties": {
+        "estado": "Guanajuato",
+        "municipio": "Apaseo el Alto",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.604594,
+          18.557381
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Taxco de Alarcón",
+        "fosas": 1,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.375022,
+          18.524801
+        ]
+      },
+      "properties": {
+        "estado": "Michoacán de Ocampo",
+        "municipio": "Tumbiscatío",
+        "fosas": 1,
+        "cuerpos_osamentas": 9
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.177681,
+          17.594232
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Chilapa de Álvarez",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.32764,
+          20.283811
+        ]
+      },
+      "properties": {
+        "estado": "Michoacán de Ocampo",
+        "municipio": "Tanhuato",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.19798,
+          17.962334
+        ]
+      },
+      "properties": {
+        "estado": "Michoacán de Ocampo",
+        "municipio": "Lázaro Cárdenas",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.360191,
+          23.77815
+        ]
+      },
+      "properties": {
+        "estado": "Durango",
+        "municipio": "Pueblo Nuevo",
+        "fosas": 1,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.167126,
+          19.288275
+        ]
+      },
+      "properties": {
+        "estado": "Ciudad de M�xico",
+        "municipio": "Tlalpan",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -108.619966,
+          26.421598
+        ]
+      },
+      "properties": {
+        "estado": "Sinaloa",
+        "municipio": "El fuerte",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.083831,
+          15.982643
+        ]
+      },
+      "properties": {
+        "estado": "Oaxaca",
+        "municipio": "San Pedro Mixtepec Dto. 22",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.66119,
+          18.235866
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Cocula",
+        "fosas": 2,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -107.393756,
+          24.808808
+        ]
+      },
+      "properties": {
+        "estado": "Sinaloa",
+        "municipio": "Culiacán",
+        "fosas": 1,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.643333,
+          19.485
+        ]
+      },
+      "properties": {
+        "estado": "Jalisco",
+        "municipio": "La Huerta",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.91387,
+          17.948822
+        ]
+      },
+      "properties": {
+        "estado": "Veracruz de Ignacio de la Llave",
+        "municipio": "Acayucan",
+        "fosas": 1,
+        "cuerpos_osamentas": 10
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -101.192046,
+          19.703383
+        ]
+      },
+      "properties": {
+        "estado": "Michoacán de Ocampo",
+        "municipio": "Morelia",
+        "fosas": 6,
+        "cuerpos_osamentas": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.390821,
+          18.161266
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "San Miguel Totolapan",
+        "fosas": 1,
+        "cuerpos_osamentas": 6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.224143,
+          18.845273
+        ]
+      },
+      "properties": {
+        "estado": "Morelos",
+        "municipio": "Temixco-Jiutepec",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.388333,
+          20.720555
+        ]
+      },
+      "properties": {
+        "estado": "Jalisco",
+        "municipio": "Zapopan",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.445546,
+          27.081597
+        ]
+      },
+      "properties": {
+        "estado": "Sonora",
+        "municipio": "Navojoa",
+        "fosas": 1,
+        "cuerpos_osamentas": 8
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.600573,
+          22.399846
+        ]
+      },
+      "properties": {
+        "estado": "San Luis Potosí",
+        "municipio": "Ciudad del Maíz",
+        "fosas": 1,
+        "cuerpos_osamentas": 28
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.153027,
+          19.190323
+        ]
+      },
+      "properties": {
+        "estado": "Veracruz de Ignacio de la Llave",
+        "municipio": "Veracruz",
+        "fosas": 0,
+        "cuerpos_osamentas": 5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.737,
+          20.122359
+        ]
+      },
+      "properties": {
+        "estado": "Hidalgo",
+        "municipio": "Pachuca de Soto",
+        "fosas": 1,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.189722,
+          20.293333
+        ]
+      },
+      "properties": {
+        "estado": "Jalisco",
+        "municipio": "Chapala",
+        "fosas": 2,
+        "cuerpos_osamentas": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.886557,
+          16.861866
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Acapulco de Juárez",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.453001,
+          18.137882
+        ]
+      },
+      "properties": {
+        "estado": "Veracruz de Ignacio de la Llave",
+        "municipio": "Coatzacoalcos",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.132436,
+          27.240647
+        ]
+      },
+      "properties": {
+        "estado": "Nuevo León",
+        "municipio": "Anáhuac",
+        "fosas": 1,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.461747,
+          25.674363
+        ]
+      },
+      "properties": {
+        "estado": "Nuevo León",
+        "municipio": "Santa Catarina",
+        "fosas": 5,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -101.550028,
+          27.060257
+        ]
+      },
+      "properties": {
+        "estado": "Coahuila de Zaragoza",
+        "municipio": "San Buenaventura",
+        "fosas": 1,
+        "cuerpos_osamentas": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.147238,
+          18.138272
+        ]
+      },
+      "properties": {
+        "estado": "Veracruz de Ignacio de la Llave",
+        "municipio": "Agua Dulce",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.390821,
+          18.161266
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "San Miguel Totolapan",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.849622,
+          25.45062
+        ]
+      },
+      "properties": {
+        "estado": "Coahuila de Zaragoza",
+        "municipio": "Artega",
+        "fosas": 8,
+        "cuerpos_osamentas": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.234896,
+          18.921782
+        ]
+      },
+      "properties": {
+        "estado": "Morelos",
+        "municipio": "Cuernavaca",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.422221,
+          23.200315
+        ]
+      },
+      "properties": {
+        "estado": "Sinaloa",
+        "municipio": "Mazatlán",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.053677,
+          25.783258
+        ]
+      },
+      "properties": {
+        "estado": "Nuevo León",
+        "municipio": "Pesquería",
+        "fosas": 2,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.018913,
+          32.53246
+        ]
+      },
+      "properties": {
+        "estado": "Baja california",
+        "municipio": "Tijuana",
+        "fosas": 1,
+        "cuerpos_osamentas": 30
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.538368,
+          18.344549
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Iguala de la Indepencia",
+        "fosas": 9,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.527628,
+          18.027513
+        ]
+      },
+      "properties": {
+        "estado": "Veracruz de Ignacio de la Llave",
+        "municipio": "Isla",
+        "fosas": 2,
+        "cuerpos_osamentas": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -107.471314,
+          29.843371
+        ]
+      },
+      "properties": {
+        "estado": "Chihuahua",
+        "municipio": "Buenaventura",
+        "fosas": 2,
+        "cuerpos_osamentas": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.983156,
+          25.757777
+        ]
+      },
+      "properties": {
+        "estado": "Coahuila de Zaragoza",
+        "municipio": "San Pedro",
+        "fosas": 1,
+        "cuerpos_osamentas": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.896943,
+          17.928185
+        ]
+      },
+      "properties": {
+        "estado": "Veracruz de Ignacio de la Llave",
+        "municipio": "Oluta",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -101.929166,
+          21.356388
+        ]
+      },
+      "properties": {
+        "estado": "Jalisco",
+        "municipio": "Lagos de Moreno",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.018721,
+          21.986536
+        ]
+      },
+      "properties": {
+        "estado": "San Luis Potosí",
+        "municipio": "Ciudad Valles",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.538368,
+          18.344549
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Iguala de la Indepencia",
+        "fosas": 4,
+        "cuerpos_osamentas": 15
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.724511,
+          18.972155
+        ]
+      },
+      "properties": {
+        "estado": "Veracruz de Ignacio de la Llave",
+        "municipio": "Paso del Macho",
+        "fosas": 1,
+        "cuerpos_osamentas": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.869572,
+          18.371809
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Teloloapan",
+        "fosas": 2,
+        "cuerpos_osamentas": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.422221,
+          23.200315
+        ]
+      },
+      "properties": {
+        "estado": "Sinaloa",
+        "municipio": "Mazatlán",
+        "fosas": 3,
+        "cuerpos_osamentas": 8
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.721734,
+          17.966068
+        ]
+      },
+      "properties": {
+        "estado": "Veracruz de Ignacio de la Llave",
+        "municipio": "Jáltipan",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.614733,
+          26.089869
+        ]
+      },
+      "properties": {
+        "estado": "Nuevo León",
+        "municipio": "Cerralvo",
+        "fosas": 1,
+        "cuerpos_osamentas": 7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.83645,
+          18.637789
+        ]
+      },
+      "properties": {
+        "estado": "Campeche",
+        "municipio": "Carmen",
+        "fosas": 1,
+        "cuerpos_osamentas": 6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.375,
+          19.2525
+        ]
+      },
+      "properties": {
+        "estado": "Jalisco",
+        "municipio": "Pihuamo",
+        "fosas": 1,
+        "cuerpos_osamentas": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.388333,
+          20.720555
+        ]
+      },
+      "properties": {
+        "estado": "Jalisco",
+        "municipio": "Zapopan",
+        "fosas": 1,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.422221,
+          23.200315
+        ]
+      },
+      "properties": {
+        "estado": "Sinaloa",
+        "municipio": "Mazatlán",
+        "fosas": 1,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.698461,
+          24.870939
+        ]
+      },
+      "properties": {
+        "estado": "Durango",
+        "municipio": "Cuencamé",
+        "fosas": 1,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.818685,
+          21.650006
+        ]
+      },
+      "properties": {
+        "estado": "San Luis Potosí",
+        "municipio": "San Ciro de Acosta",
+        "fosas": 1,
+        "cuerpos_osamentas": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -107.486923,
+          28.548192
+        ]
+      },
+      "properties": {
+        "estado": "Chihuahua",
+        "municipio": "Guerrero",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.873547,
+          18.910502
+        ]
+      },
+      "properties": {
+        "estado": "Colima",
+        "municipio": "Tecomán",
+        "fosas": 2,
+        "cuerpos_osamentas": 8
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -101.933671,
+          20.104468
+        ]
+      },
+      "properties": {
+        "estado": "Michoacán de Ocampo",
+        "municipio": "Penjamillo",
+        "fosas": 1,
+        "cuerpos_osamentas": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.181043,
+          18.616566
+        ]
+      },
+      "properties": {
+        "estado": "Morelos",
+        "municipio": "Jojutla",
+        "fosas": 1,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.886557,
+          16.861866
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Acapulco de Juárez",
+        "fosas": 3,
+        "cuerpos_osamentas": 9
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.548444,
+          17.990977
+        ]
+      },
+      "properties": {
+        "estado": "Veracruz de Ignacio de la Llave",
+        "municipio": "Minatitlán",
+        "fosas": 0,
+        "cuerpos_osamentas": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.886557,
+          16.861866
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Acapulco de Juárez",
+        "fosas": 0,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.118178,
+          18.682962
+        ]
+      },
+      "properties": {
+        "estado": "Morelos",
+        "municipio": "Tlaltizapán de Zapata",
+        "fosas": 1,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.869572,
+          18.371809
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Teloloapan",
+        "fosas": 1,
+        "cuerpos_osamentas": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -101.417224,
+          26.901242
+        ]
+      },
+      "properties": {
+        "estado": "Coahuila de Zaragoza",
+        "municipio": "Monclova",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.076306,
+          28.636793
+        ]
+      },
+      "properties": {
+        "estado": "Chihuahua",
+        "municipio": "Chihuahua",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.487801,
+          17.331528
+        ]
+      },
+      "properties": {
+        "estado": "Oaxaca",
+        "municipio": "Ixtlán de Juárez",
+        "fosas": 1,
+        "cuerpos_osamentas": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.983156,
+          25.757777
+        ]
+      },
+      "properties": {
+        "estado": "Coahuila de Zaragoza",
+        "municipio": "San Pedro",
+        "fosas": 1,
+        "cuerpos_osamentas": 8
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.915483,
+          18.847578
+        ]
+      },
+      "properties": {
+        "estado": "Veracruz de Ignacio de la Llave",
+        "municipio": "Amatlán de los Reyes",
+        "fosas": 11,
+        "cuerpos_osamentas": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.422221,
+          23.200315
+        ]
+      },
+      "properties": {
+        "estado": "Sinaloa",
+        "municipio": "Mazatlán",
+        "fosas": 1,
+        "cuerpos_osamentas": 7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.369514,
+          18.600001
+        ]
+      },
+      "properties": {
+        "estado": "Morelos",
+        "municipio": "Amacuzac",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -108.619966,
+          26.421598
+        ]
+      },
+      "properties": {
+        "estado": "Sinaloa",
+        "municipio": "El Fuerte",
+        "fosas": 1,
+        "cuerpos_osamentas": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.802553,
+          19.205903
+        ]
+      },
+      "properties": {
+        "estado": "Estado de México",
+        "municipio": "Tlalmanalco",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.19798,
+          17.962334
+        ]
+      },
+      "properties": {
+        "estado": "Michoacán de Ocampo",
+        "municipio": "Lázaro Cárdenas",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.241515,
+          19.304898
+        ]
+      },
+      "properties": {
+        "estado": "Ciudad de M�xico",
+        "municipio": "La Magdalena Contreras",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -101.189208,
+          20.13187
+        ]
+      },
+      "properties": {
+        "estado": "Guanajuato",
+        "municipio": "Moroleón",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.446894,
+          25.97565
+        ]
+      },
+      "properties": {
+        "estado": "Nuevo León",
+        "municipio": "Hidalgo",
+        "fosas": 1,
+        "cuerpos_osamentas": 17
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.585469,
+          25.800491
+        ]
+      },
+      "properties": {
+        "estado": "Nuevo León",
+        "municipio": "García",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -107.486923,
+          28.548192
+        ]
+      },
+      "properties": {
+        "estado": "Chihuahua",
+        "municipio": "Guerrero",
+        "fosas": 2,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.886557,
+          16.861866
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Acapulco de Juárez",
+        "fosas": 12,
+        "cuerpos_osamentas": 24
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.86349,
+          17.186387
+        ]
+      },
+      "properties": {
+        "estado": "Oaxaca",
+        "municipio": "San Andrés Zautla",
+        "fosas": 1,
+        "cuerpos_osamentas": 10
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.88136,
+          20.216117
+        ]
+      },
+      "properties": {
+        "estado": "Guanajuato",
+        "municipio": "Salvatierra",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.824811,
+          21.161416
+        ]
+      },
+      "properties": {
+        "estado": "Quintana Roo",
+        "municipio": "Benito Juárez",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.291505,
+          25.959566
+        ]
+      },
+      "properties": {
+        "estado": "Nuevo León",
+        "municipio": "Salinas Victoria",
+        "fosas": 1,
+        "cuerpos_osamentas": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.670194,
+          24.023988
+        ]
+      },
+      "properties": {
+        "estado": "Durango",
+        "municipio": "Durango",
+        "fosas": 0,
+        "cuerpos_osamentas": 40
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.886557,
+          16.861866
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Acapulco de Juárez",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.194278,
+          18.655408
+        ]
+      },
+      "properties": {
+        "estado": "Morelos",
+        "municipio": "Zacatepec",
+        "fosas": 1,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.68647,
+          30.373722
+        ]
+      },
+      "properties": {
+        "estado": "Sonora",
+        "municipio": "Nacozari de García",
+        "fosas": 1,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.135,
+          20.4475
+        ]
+      },
+      "properties": {
+        "estado": "Jalisco",
+        "municipio": "Degollado",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.15962,
+          24.848678
+        ]
+      },
+      "properties": {
+        "estado": "Tamaulipas",
+        "municipio": "El Mante",
+        "fosas": 1,
+        "cuerpos_osamentas": 19
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.868229,
+          23.174894
+        ]
+      },
+      "properties": {
+        "estado": "Zacatecas",
+        "municipio": "Fresnillo",
+        "fosas": 1,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.670194,
+          24.023988
+        ]
+      },
+      "properties": {
+        "estado": "Durango",
+        "municipio": "Durango",
+        "fosas": 8,
+        "cuerpos_osamentas": 259
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.231462,
+          18.781865
+        ]
+      },
+      "properties": {
+        "estado": "Morelos",
+        "municipio": "Xochitepec",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.060888,
+          18.802161
+        ]
+      },
+      "properties": {
+        "estado": "Veracruz de Ignacio de la Llave",
+        "municipio": "Tlalixcoyan",
+        "fosas": 0,
+        "cuerpos_osamentas": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.20413,
+          22.122545
+        ]
+      },
+      "properties": {
+        "estado": "Nayarit",
+        "municipio": "Rosamorada",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.434167,
+          18.908848
+        ]
+      },
+      "properties": {
+        "estado": "Puebla",
+        "municipio": "Atlixco",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.31638,
+          19.053205
+        ]
+      },
+      "properties": {
+        "estado": "Colima",
+        "municipio": "Manzanillo",
+        "fosas": 3,
+        "cuerpos_osamentas": 7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -108.994342,
+          25.783416
+        ]
+      },
+      "properties": {
+        "estado": "Sinaloa",
+        "municipio": "Ahomé",
+        "fosas": 2,
+        "cuerpos_osamentas": 12
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -108.994342,
+          25.783416
+        ]
+      },
+      "properties": {
+        "estado": "Sinaloa",
+        "municipio": "Ahomé",
+        "fosas": 1,
+        "cuerpos_osamentas": 6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.485018,
+          31.746465
+        ]
+      },
+      "properties": {
+        "estado": "Chihuahua",
+        "municipio": "Juárez",
+        "fosas": 1,
+        "cuerpos_osamentas": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.118481,
+          18.081164
+        ]
+      },
+      "properties": {
+        "estado": "Oaxaca",
+        "municipio": "San Juan Bautista Tuxtepec-Cosolapa-Acatlán de Pérez Figueroa",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.999721,
+          25.421664
+        ]
+      },
+      "properties": {
+        "estado": "Coahuila de Zaragoza",
+        "municipio": "Saltillo",
+        "fosas": 2,
+        "cuerpos_osamentas": 5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.346888,
+          23.293892
+        ]
+      },
+      "properties": {
+        "estado": "Zacatecas",
+        "municipio": "Zacatecas",
+        "fosas": 1,
+        "cuerpos_osamentas": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.424561,
+          26.498225
+        ]
+      },
+      "properties": {
+        "estado": "Nuevo León",
+        "municipio": "Villaldama",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.999721,
+          25.421664
+        ]
+      },
+      "properties": {
+        "estado": "Coahuila de Zaragoza",
+        "municipio": "Saltillo-Viesca",
+        "fosas": 1,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -107.589252,
+          27.840742
+        ]
+      },
+      "properties": {
+        "estado": "Chihuahua",
+        "municipio": "Bocoyna",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.398271,
+          17.566724
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Tixtla de Guerrero",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.955264,
+          18.812788
+        ]
+      },
+      "properties": {
+        "estado": "Morelos",
+        "municipio": "Cuautla",
+        "fosas": 2,
+        "cuerpos_osamentas": 117
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.19798,
+          17.962334
+        ]
+      },
+      "properties": {
+        "estado": "Michoacán de Ocampo",
+        "municipio": "Lázaro Cárdenas",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.567869,
+          24.859652
+        ]
+      },
+      "properties": {
+        "estado": "Nuevo León",
+        "municipio": "Linares",
+        "fosas": 0,
+        "cuerpos_osamentas": 5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.999631,
+          20.386441
+        ]
+      },
+      "properties": {
+        "estado": "Querétaro",
+        "municipio": "San Juan del Río",
+        "fosas": 1,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.092393,
+          21.936653
+        ]
+      },
+      "properties": {
+        "estado": "Zacatecas",
+        "municipio": "El Plateado de  Joaquín Amaro",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.886557,
+          16.861866
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Acapulco de Juárez",
+        "fosas": 1,
+        "cuerpos_osamentas": 7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.482916,
+          19.739138
+        ]
+      },
+      "properties": {
+        "estado": "Michoacán de Ocampo",
+        "municipio": "Tingüindín",
+        "fosas": 1,
+        "cuerpos_osamentas": 19
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -101.610116,
+          19.513597
+        ]
+      },
+      "properties": {
+        "estado": "Michoacán de Ocampo",
+        "municipio": "Pátzcuaro",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.390769,
+          17.835174
+        ]
+      },
+      "properties": {
+        "estado": "Tabasco",
+        "municipio": "Huimanguillo-Cárdenas",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.161944,
+          19.906388
+        ]
+      },
+      "properties": {
+        "estado": "Jalisco",
+        "municipio": "Ejutla",
+        "fosas": 1,
+        "cuerpos_osamentas": 7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.886557,
+          16.861866
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Acapulco de Juárez",
+        "fosas": 1,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.259897,
+          25.677325
+        ]
+      },
+      "properties": {
+        "estado": "Nuevo León",
+        "municipio": "Guadalupe",
+        "fosas": 8,
+        "cuerpos_osamentas": 9
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.851005,
+          20.118998
+        ]
+      },
+      "properties": {
+        "estado": "Michoacán de Ocampo",
+        "municipio": "Cojumatlán de Régules",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -101.457328,
+          19.235536
+        ]
+      },
+      "properties": {
+        "estado": "Michoacán de Ocampo",
+        "municipio": "Tacámbaro",
+        "fosas": 1,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.274333,
+          20.375245
+        ]
+      },
+      "properties": {
+        "estado": "Querétaro",
+        "municipio": "Huimilpan",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.310833,
+          24.142222
+        ]
+      },
+      "properties": {
+        "estado": "Baja California Sur",
+        "municipio": "La Paz",
+        "fosas": 5,
+        "cuerpos_osamentas": 5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.364122,
+          25.932227
+        ]
+      },
+      "properties": {
+        "estado": "Nuevo León",
+        "municipio": "El Carmen",
+        "fosas": 1,
+        "cuerpos_osamentas": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.184717,
+          18.80424
+        ]
+      },
+      "properties": {
+        "estado": "Veracruz de Ignacio de la Llave",
+        "municipio": "Camerino Z. Mendoza",
+        "fosas": 1,
+        "cuerpos_osamentas": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.233055,
+          21.524444
+        ]
+      },
+      "properties": {
+        "estado": "Jalisco",
+        "municipio": "Encarnación de Díaz",
+        "fosas": 1,
+        "cuerpos_osamentas": 8
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.538368,
+          18.344549
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Iguala de la Indepencia",
+        "fosas": 1,
+        "cuerpos_osamentas": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.351691,
+          19.36018
+        ]
+      },
+      "properties": {
+        "estado": "Estado de México",
+        "municipio": "Huehuetoca",
+        "fosas": 1,
+        "cuerpos_osamentas": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.958534,
+          29.074899
+        ]
+      },
+      "properties": {
+        "estado": "Sonora",
+        "municipio": "Hermosillo",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.886557,
+          16.861866
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Acapulco de Juárez",
+        "fosas": 1,
+        "cuerpos_osamentas": 6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.554444,
+          28.186944
+        ]
+      },
+      "properties": {
+        "estado": "Chihuahua",
+        "municipio": "Rosales",
+        "fosas": 4,
+        "cuerpos_osamentas": 6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.868229,
+          23.174894
+        ]
+      },
+      "properties": {
+        "estado": "Zacatecas",
+        "municipio": "Fresnillo",
+        "fosas": 7,
+        "cuerpos_osamentas": 9
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.886557,
+          16.861866
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Acapulco de Juárez",
+        "fosas": 2,
+        "cuerpos_osamentas": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.183242,
+          18.840984
+        ]
+      },
+      "properties": {
+        "estado": "Morelos",
+        "municipio": "Emiliano Zapata",
+        "fosas": 0,
+        "cuerpos_osamentas": 15
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.538368,
+          18.344549
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Iguala de la Indepencia",
+        "fosas": 6,
+        "cuerpos_osamentas": 10
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.758551,
+          19.369293
+        ]
+      },
+      "properties": {
+        "estado": "Estado de México",
+        "municipio": "Almoloya de Juárez",
+        "fosas": 1,
+        "cuerpos_osamentas": 5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.089367,
+          17.009001
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Coyuca de Benítez",
+        "fosas": 1,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.167126,
+          19.288275
+        ]
+      },
+      "properties": {
+        "estado": "Ciudad de M�xico",
+        "municipio": "Tlalpan",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.15962,
+          24.848678
+        ]
+      },
+      "properties": {
+        "estado": "Tamaulipas",
+        "municipio": "San Fernando",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.848193,
+          25.833323
+        ]
+      },
+      "properties": {
+        "estado": "Durango",
+        "municipio": "Mapimí",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.702262,
+          22.949037
+        ]
+      },
+      "properties": {
+        "estado": "Zacatecas",
+        "municipio": "Calera",
+        "fosas": 14,
+        "cuerpos_osamentas": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.45306,
+          25.541753
+        ]
+      },
+      "properties": {
+        "estado": "Coahuila de Zaragoza",
+        "municipio": "Torreón",
+        "fosas": 0,
+        "cuerpos_osamentas": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.185247,
+          17.69034
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Zitlala",
+        "fosas": 17,
+        "cuerpos_osamentas": 41
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.239316,
+          25.705913
+        ]
+      },
+      "properties": {
+        "estado": "Nuevo León",
+        "municipio": "China",
+        "fosas": 5,
+        "cuerpos_osamentas": 9
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.346923,
+          26.954107
+        ]
+      },
+      "properties": {
+        "estado": "Chihuahua",
+        "municipio": "Balleza",
+        "fosas": 1,
+        "cuerpos_osamentas": 5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.66119,
+          18.235866
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Cocula",
+        "fosas": 6,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.076306,
+          28.636793
+        ]
+      },
+      "properties": {
+        "estado": "Chihuahua",
+        "municipio": "Chihuahua",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -101.908896,
+          22.442701
+        ]
+      },
+      "properties": {
+        "estado": "Zacatecas",
+        "municipio": "Noria de Ángeles",
+        "fosas": 1,
+        "cuerpos_osamentas": 5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.538368,
+          18.344549
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Iguala de la Indepencia",
+        "fosas": 7,
+        "cuerpos_osamentas": 16
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.221332,
+          22.53447
+        ]
+      },
+      "properties": {
+        "estado": "Tamaulipas",
+        "municipio": "Nuevo Morelos",
+        "fosas": 1,
+        "cuerpos_osamentas": 28
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.869572,
+          18.371809
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Teloloapan",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.181666,
+          20.519444
+        ]
+      },
+      "properties": {
+        "estado": "Jalisco",
+        "municipio": "El Salto",
+        "fosas": 1,
+        "cuerpos_osamentas": 6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.528441,
+          28.708093
+        ]
+      },
+      "properties": {
+        "estado": "Coahuila de Zaragoza",
+        "municipio": "Piedras Negras",
+        "fosas": 1,
+        "cuerpos_osamentas": 37
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -107.069361,
+          26.819152
+        ]
+      },
+      "properties": {
+        "estado": "Chihuahua",
+        "municipio": "Guachochi",
+        "fosas": 1,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.31638,
+          19.053205
+        ]
+      },
+      "properties": {
+        "estado": "Colima",
+        "municipio": "Manzanillo",
+        "fosas": 1,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.541944,
+          20.290277
+        ]
+      },
+      "properties": {
+        "estado": "Jalisco",
+        "municipio": "La Barca",
+        "fosas": 15,
+        "cuerpos_osamentas": 7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.049158,
+          19.599069
+        ]
+      },
+      "properties": {
+        "estado": "Estado de México",
+        "municipio": "Ecatepec de Morelos",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.266648,
+          22.323209
+        ]
+      },
+      "properties": {
+        "estado": "San Luis Potosí",
+        "municipio": "Villa Juárez",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.524849,
+          25.536551
+        ]
+      },
+      "properties": {
+        "estado": "Durango",
+        "municipio": "Lerdo",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.893799,
+          21.507413
+        ]
+      },
+      "properties": {
+        "estado": "Nayarit",
+        "municipio": "Tepic",
+        "fosas": 1,
+        "cuerpos_osamentas": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.604594,
+          18.557381
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Taxco de Alarcón",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.538368,
+          18.344549
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Iguala de la Indepencia",
+        "fosas": 37,
+        "cuerpos_osamentas": 64
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.398271,
+          17.566724
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Tixtla de Guerrero",
+        "fosas": 5,
+        "cuerpos_osamentas": 14
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.996502,
+          20.511371
+        ]
+      },
+      "properties": {
+        "estado": "Guanajuato",
+        "municipio": "Villagrán",
+        "fosas": 1,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.183242,
+          18.840984
+        ]
+      },
+      "properties": {
+        "estado": "Morelos",
+        "municipio": "Emiliano Zapata",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.485018,
+          31.746465
+        ]
+      },
+      "properties": {
+        "estado": "Chihuahua",
+        "municipio": "Juárez",
+        "fosas": 2,
+        "cuerpos_osamentas": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.567869,
+          24.859652
+        ]
+      },
+      "properties": {
+        "estado": "Nuevo León",
+        "municipio": "Linares",
+        "fosas": 4,
+        "cuerpos_osamentas": 6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.027775,
+          22.886455
+        ]
+      },
+      "properties": {
+        "estado": "Tamaulipas",
+        "municipio": "Gómez Farías",
+        "fosas": 1,
+        "cuerpos_osamentas": 30
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.369514,
+          18.600001
+        ]
+      },
+      "properties": {
+        "estado": "Morelos",
+        "municipio": "Amacuzac",
+        "fosas": 1,
+        "cuerpos_osamentas": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.20413,
+          22.122545
+        ]
+      },
+      "properties": {
+        "estado": "Nayarit",
+        "municipio": "Rosamorada",
+        "fosas": 1,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.886557,
+          16.861866
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Acapulco de Juárez",
+        "fosas": 0,
+        "cuerpos_osamentas": 10
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -101.548175,
+          17.650457
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Zihuatanejo de Azueta",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.259897,
+          25.677325
+        ]
+      },
+      "properties": {
+        "estado": "Nuevo León",
+        "municipio": "Guadalupe",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.978317,
+          17.789448
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "General Heliodoro Castillo",
+        "fosas": 0,
+        "cuerpos_osamentas": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.310891,
+          25.664697
+        ]
+      },
+      "properties": {
+        "estado": "Nuevo León",
+        "municipio": "Monterrey",
+        "fosas": 0,
+        "cuerpos_osamentas": 7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.528441,
+          28.708093
+        ]
+      },
+      "properties": {
+        "estado": "Coahuila de Zaragoza",
+        "municipio": "Piedras Negras",
+        "fosas": 0,
+        "cuerpos_osamentas": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.47703,
+          28.154666
+        ]
+      },
+      "properties": {
+        "estado": "Chihuahua",
+        "municipio": "Belisario Domínguez",
+        "fosas": 1,
+        "cuerpos_osamentas": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.540495,
+          31.306354
+        ]
+      },
+      "properties": {
+        "estado": "Sonora",
+        "municipio": "Puerto Peñasco",
+        "fosas": 1,
+        "cuerpos_osamentas": 5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.800462,
+          22.217784
+        ]
+      },
+      "properties": {
+        "estado": "San Luis Potosí",
+        "municipio": "Cerro de San Pedro",
+        "fosas": 2,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -108.322351,
+          26.70701
+        ]
+      },
+      "properties": {
+        "estado": "Sinaloa",
+        "municipio": "Choix",
+        "fosas": 1,
+        "cuerpos_osamentas": 6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -107.995949,
+          31.092176
+        ]
+      },
+      "properties": {
+        "estado": "Chihuahua",
+        "municipio": "Ascención",
+        "fosas": 3,
+        "cuerpos_osamentas": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.563055,
+          19.238333
+        ]
+      },
+      "properties": {
+        "estado": "Jalisco",
+        "municipio": "Cihuatlán",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.185247,
+          17.69034
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Zitlala",
+        "fosas": 1,
+        "cuerpos_osamentas": 12
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.101753,
+          31.390106
+        ]
+      },
+      "properties": {
+        "estado": "Chihuahua",
+        "municipio": "Guadalupe",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.522046,
+          17.169004
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Juan R. Escudero",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.19798,
+          17.962334
+        ]
+      },
+      "properties": {
+        "estado": "Michoacán de Ocampo",
+        "municipio": "Lázaro Cárdenas",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.453001,
+          18.137882
+        ]
+      },
+      "properties": {
+        "estado": "Veracruz de Ignacio de la Llave",
+        "municipio": "Coatzacoalcos",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.478253,
+          18.408674
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Tlalchapa",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.886557,
+          16.861866
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Acapulco de Juárez",
+        "fosas": 2,
+        "cuerpos_osamentas": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.604594,
+          18.557381
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Taxco de Alarcón",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.886557,
+          16.861866
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Acapulco de Juárez",
+        "fosas": 1,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -101.277615,
+          19.39212
+        ]
+      },
+      "properties": {
+        "estado": "Michoacán de Ocampo",
+        "municipio": "Madero",
+        "fosas": 1,
+        "cuerpos_osamentas": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.525936,
+          17.653197
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Eduardo Neri",
+        "fosas": 1,
+        "cuerpos_osamentas": 10
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.554444,
+          28.186944
+        ]
+      },
+      "properties": {
+        "estado": "Chihuahua",
+        "municipio": "Rosales",
+        "fosas": 1,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.161944,
+          19.906388
+        ]
+      },
+      "properties": {
+        "estado": "Jalisco",
+        "municipio": "Ejutla",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.824811,
+          21.161416
+        ]
+      },
+      "properties": {
+        "estado": "Quintana Roo",
+        "municipio": "Benito Juárez",
+        "fosas": 1,
+        "cuerpos_osamentas": 6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.177681,
+          17.594232
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Chilapa de Álvarez",
+        "fosas": 2,
+        "cuerpos_osamentas": 13
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.849622,
+          25.45062
+        ]
+      },
+      "properties": {
+        "estado": "Coahuila de Zaragoza",
+        "municipio": "Artega",
+        "fosas": 1,
+        "cuerpos_osamentas": 11
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.181666,
+          20.519444
+        ]
+      },
+      "properties": {
+        "estado": "Jalisco",
+        "municipio": "El Salto",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -101.725043,
+          20.431794
+        ]
+      },
+      "properties": {
+        "estado": "Guanajuato",
+        "municipio": "Pénjamo",
+        "fosas": 1,
+        "cuerpos_osamentas": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.19798,
+          17.962334
+        ]
+      },
+      "properties": {
+        "estado": "Michoacán de Ocampo",
+        "municipio": "Lázaro Cárdenas",
+        "fosas": 2,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.109923,
+          22.664371
+        ]
+      },
+      "properties": {
+        "estado": "Zacatecas",
+        "municipio": "General Pánfilo Natera",
+        "fosas": 4,
+        "cuerpos_osamentas": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.531844,
+          26.001255
+        ]
+      },
+      "properties": {
+        "estado": "Nuevo León",
+        "municipio": "Mina",
+        "fosas": 1,
+        "cuerpos_osamentas": 12
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.554444,
+          28.186944
+        ]
+      },
+      "properties": {
+        "estado": "Chihuahua",
+        "municipio": "Rosales",
+        "fosas": 1,
+        "cuerpos_osamentas": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.653301,
+          16.515827
+        ]
+      },
+      "properties": {
+        "estado": "Chiapas",
+        "municipio": "Benemérito de las Américas",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.378725,
+          28.308418
+        ]
+      },
+      "properties": {
+        "estado": "Coahuila de Zaragoza",
+        "municipio": "Guerrero",
+        "fosas": 37,
+        "cuerpos_osamentas": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.076306,
+          28.636793
+        ]
+      },
+      "properties": {
+        "estado": "Chihuahua",
+        "municipio": "Chihuahua",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.005394,
+          31.372067
+        ]
+      },
+      "properties": {
+        "estado": "Chihuahua",
+        "municipio": "Práxedis G. Guerrero",
+        "fosas": 0,
+        "cuerpos_osamentas": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.999721,
+          25.421664
+        ]
+      },
+      "properties": {
+        "estado": "Coahuila de Zaragoza",
+        "municipio": "Saltillo",
+        "fosas": 1,
+        "cuerpos_osamentas": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.833571,
+          30.713338
+        ]
+      },
+      "properties": {
+        "estado": "Sonora",
+        "municipio": "Altar",
+        "fosas": 0,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.604594,
+          18.557381
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Taxco de Alarcón",
+        "fosas": 2,
+        "cuerpos_osamentas": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.713462,
+          17.461844
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Copanatoyac",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.076306,
+          28.636793
+        ]
+      },
+      "properties": {
+        "estado": "Chihuahua",
+        "municipio": "Chihuahua",
+        "fosas": 1,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.922644,
+          19.527084
+        ]
+      },
+      "properties": {
+        "estado": "Veracruz de Ignacio de la Llave",
+        "municipio": "Xalapa",
+        "fosas": 1,
+        "cuerpos_osamentas": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.718563,
+          19.989719
+        ]
+      },
+      "properties": {
+        "estado": "Michoacán de Ocampo",
+        "municipio": "Jiquilpan",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.958534,
+          29.074899
+        ]
+      },
+      "properties": {
+        "estado": "Sonora",
+        "municipio": "Hermosillo",
+        "fosas": 1,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.886557,
+          16.861866
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Acapulco de Juárez",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.15125,
+          23.731053
+        ]
+      },
+      "properties": {
+        "estado": "Tamaulipas",
+        "municipio": "Victoria",
+        "fosas": 2,
+        "cuerpos_osamentas": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.177681,
+          17.594232
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Chilapa de Álvarez",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.459225,
+          24.778255
+        ]
+      },
+      "properties": {
+        "estado": "Durango",
+        "municipio": "San Juán del Río",
+        "fosas": 1,
+        "cuerpos_osamentas": 7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.796358,
+          18.364773
+        ]
+      },
+      "properties": {
+        "estado": "Veracruz de Ignacio de la Llave",
+        "municipio": "Cosamaloapan de Carpio",
+        "fosas": 12,
+        "cuerpos_osamentas": 31
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.422221,
+          23.200315
+        ]
+      },
+      "properties": {
+        "estado": "Sinaloa",
+        "municipio": "Mazatlán",
+        "fosas": 0,
+        "cuerpos_osamentas": 5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.247924,
+          20.80676
+        ]
+      },
+      "properties": {
+        "estado": "Nayarit",
+        "municipio": "Bahía de Banderas",
+        "fosas": 0,
+        "cuerpos_osamentas": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.227222,
+          20.613611
+        ]
+      },
+      "properties": {
+        "estado": "Jalisco",
+        "municipio": "Puerto Vallarta",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.001594,
+          25.591008
+        ]
+      },
+      "properties": {
+        "estado": "Nuevo León",
+        "municipio": "Cadereyta Jiménez",
+        "fosas": 1,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.886557,
+          16.861866
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Acapulco de Juárez",
+        "fosas": 1,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.768055,
+          20.351388
+        ]
+      },
+      "properties": {
+        "estado": "Jalisco",
+        "municipio": "Ocotlán",
+        "fosas": 0,
+        "cuerpos_osamentas": 67
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.540495,
+          31.306354
+        ]
+      },
+      "properties": {
+        "estado": "Sonora",
+        "municipio": "Puerto Peñasco",
+        "fosas": 1,
+        "cuerpos_osamentas": 6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.632377,
+          17.222608
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Técpan de Galeana",
+        "fosas": 1,
+        "cuerpos_osamentas": 5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -108.994342,
+          25.783416
+        ]
+      },
+      "properties": {
+        "estado": "Sinaloa",
+        "municipio": "Ahomé",
+        "fosas": 1,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.934907,
+          17.714088
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Ahuacuotzingo-Chilapa de Álvarez",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.945299,
+          19.416907
+        ]
+      },
+      "properties": {
+        "estado": "Estado de México",
+        "municipio": "Chimalhuacán",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.886557,
+          16.861866
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Acapulco de Juárez",
+        "fosas": 1,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -107.486923,
+          28.548192
+        ]
+      },
+      "properties": {
+        "estado": "Chihuahua",
+        "municipio": "Guerrero",
+        "fosas": 1,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.621626,
+          20.457171
+        ]
+      },
+      "properties": {
+        "estado": "Guanajuato",
+        "municipio": "Apaseo el Alto",
+        "fosas": 1,
+        "cuerpos_osamentas": 8
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.504166,
+          20.550555
+        ]
+      },
+      "properties": {
+        "estado": "Jalisco",
+        "municipio": "Atotonilco el Alto",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.355264,
+          19.087227
+        ]
+      },
+      "properties": {
+        "estado": "Michoacán de Ocampo",
+        "municipio": "Apatzingán",
+        "fosas": 1,
+        "cuerpos_osamentas": 12
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.935349,
+          18.894383
+        ]
+      },
+      "properties": {
+        "estado": "Veracruz de Ignacio de la Llave",
+        "municipio": "Córdoba",
+        "fosas": 11,
+        "cuerpos_osamentas": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.459239,
+          19.107938
+        ]
+      },
+      "properties": {
+        "estado": "Puebla",
+        "municipio": "Calpan",
+        "fosas": 0,
+        "cuerpos_osamentas": 12
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.177681,
+          17.594232
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Chilapa de Álvarez",
+        "fosas": 6,
+        "cuerpos_osamentas": 21
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -101.253621,
+          21.016097
+        ]
+      },
+      "properties": {
+        "estado": "Guanajuato",
+        "municipio": "Guanajuato",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.604594,
+          18.557381
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Taxco de Alarcón",
+        "fosas": 1,
+        "cuerpos_osamentas": 12
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.398583,
+          18.728967
+        ]
+      },
+      "properties": {
+        "estado": "Morelos",
+        "municipio": "Tetecala",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.09088,
+          25.646225
+        ]
+      },
+      "properties": {
+        "estado": "Nuevo León",
+        "municipio": "Juárez",
+        "fosas": 1,
+        "cuerpos_osamentas": 6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.670194,
+          24.023988
+        ]
+      },
+      "properties": {
+        "estado": "Durango",
+        "municipio": "Durango",
+        "fosas": 7,
+        "cuerpos_osamentas": 26
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.540495,
+          31.306354
+        ]
+      },
+      "properties": {
+        "estado": "Sonora",
+        "municipio": "Puerto Peñasco",
+        "fosas": 1,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.964997,
+          18.937072
+        ]
+      },
+      "properties": {
+        "estado": "Colima",
+        "municipio": "Armería",
+        "fosas": 1,
+        "cuerpos_osamentas": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.310891,
+          25.664697
+        ]
+      },
+      "properties": {
+        "estado": "Nuevo León",
+        "municipio": "Monterrey",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.101753,
+          31.390106
+        ]
+      },
+      "properties": {
+        "estado": "Chihuahua",
+        "municipio": "Guadalupe",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.135,
+          20.4475
+        ]
+      },
+      "properties": {
+        "estado": "Jalisco",
+        "municipio": "Degollado",
+        "fosas": 1,
+        "cuerpos_osamentas": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.323701,
+          18.616875
+        ]
+      },
+      "properties": {
+        "estado": "Morelos",
+        "municipio": "Puente de Ixtla",
+        "fosas": 1,
+        "cuerpos_osamentas": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.360191,
+          23.77815
+        ]
+      },
+      "properties": {
+        "estado": "Durango",
+        "municipio": "Pueblo Nuevo",
+        "fosas": 0,
+        "cuerpos_osamentas": 5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.702777,
+          20.6525
+        ]
+      },
+      "properties": {
+        "estado": "Jalisco",
+        "municipio": "Tala",
+        "fosas": 3,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.083831,
+          15.982643
+        ]
+      },
+      "properties": {
+        "estado": "Oaxaca",
+        "municipio": "San Pedro Mixtepec Dto. 22",
+        "fosas": 2,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.67734,
+          17.660801
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Leonardo Bravo",
+        "fosas": 1,
+        "cuerpos_osamentas": 17
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.063067,
+          18.851066
+        ]
+      },
+      "properties": {
+        "estado": "Veracruz de Ignacio de la Llave",
+        "municipio": "Ixtaczoquitlán",
+        "fosas": 2,
+        "cuerpos_osamentas": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -101.333391,
+          19.899965
+        ]
+      },
+      "properties": {
+        "estado": "Michoacán de Ocampo",
+        "municipio": "Chucándiro",
+        "fosas": 1,
+        "cuerpos_osamentas": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.485018,
+          31.746465
+        ]
+      },
+      "properties": {
+        "estado": "Chihuahua",
+        "municipio": "Juárez",
+        "fosas": 2,
+        "cuerpos_osamentas": 5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.67734,
+          17.660801
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Leonardo Bravo",
+        "fosas": 0,
+        "cuerpos_osamentas": 17
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.571836,
+          22.776096
+        ]
+      },
+      "properties": {
+        "estado": "Zacatecas",
+        "municipio": "Villa de Cos",
+        "fosas": 1,
+        "cuerpos_osamentas": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.097383,
+          16.965286
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Ayutla de los Libres",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.555161,
+          19.68935
+        ]
+      },
+      "properties": {
+        "estado": "Michoacán de Ocampo",
+        "municipio": "Hidalgo",
+        "fosas": 1,
+        "cuerpos_osamentas": 11
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.189722,
+          20.293333
+        ]
+      },
+      "properties": {
+        "estado": "Jalisco",
+        "municipio": "Chapala",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.118178,
+          18.682962
+        ]
+      },
+      "properties": {
+        "estado": "Morelos",
+        "municipio": "Tlaltizapán de Zapata",
+        "fosas": 1,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.101753,
+          31.390106
+        ]
+      },
+      "properties": {
+        "estado": "Chihuahua",
+        "municipio": "Guadalupe",
+        "fosas": 3,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.578512,
+          18.465244
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Cutzamala de Pinzón",
+        "fosas": 0,
+        "cuerpos_osamentas": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -108.619966,
+          26.421598
+        ]
+      },
+      "properties": {
+        "estado": "Sinaloa",
+        "municipio": "El Fuerte",
+        "fosas": 1,
+        "cuerpos_osamentas": 5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.540495,
+          31.306354
+        ]
+      },
+      "properties": {
+        "estado": "Sonora",
+        "municipio": "Puerto Peñasco",
+        "fosas": 1,
+        "cuerpos_osamentas": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.501062,
+          17.551649
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Chilpancingo de los Bravo",
+        "fosas": 1,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.524849,
+          25.536551
+        ]
+      },
+      "properties": {
+        "estado": "Durango",
+        "municipio": "Lerdo",
+        "fosas": 1,
+        "cuerpos_osamentas": 7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -107.995949,
+          31.092176
+        ]
+      },
+      "properties": {
+        "estado": "Chihuahua",
+        "municipio": "Ascención",
+        "fosas": 11,
+        "cuerpos_osamentas": 20
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.824166,
+          20.3675
+        ]
+      },
+      "properties": {
+        "estado": "Jalisco",
+        "municipio": "Cocula",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.310891,
+          25.664697
+        ]
+      },
+      "properties": {
+        "estado": "Nuevo León",
+        "municipio": "Monterrey",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.177681,
+          17.594232
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Chilapa de Álvarez",
+        "fosas": 2,
+        "cuerpos_osamentas": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -101.192046,
+          19.703383
+        ]
+      },
+      "properties": {
+        "estado": "Michoacán de Ocampo",
+        "municipio": "Morelia",
+        "fosas": 2,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.206044,
+          21.808335
+        ]
+      },
+      "properties": {
+        "estado": "Nayarit",
+        "municipio": "Santiago Ixcuintla",
+        "fosas": 0,
+        "cuerpos_osamentas": 5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -101.725043,
+          20.431794
+        ]
+      },
+      "properties": {
+        "estado": "Guanajuato",
+        "municipio": "Pénjamo",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.018913,
+          32.53246
+        ]
+      },
+      "properties": {
+        "estado": "Baja California",
+        "municipio": "Tijuana",
+        "fosas": 3,
+        "cuerpos_osamentas": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.369514,
+          18.600001
+        ]
+      },
+      "properties": {
+        "estado": "Morelos",
+        "municipio": "Amacuzac",
+        "fosas": 1,
+        "cuerpos_osamentas": 6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.31638,
+          19.053205
+        ]
+      },
+      "properties": {
+        "estado": "Colima",
+        "municipio": "Manzanillo",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.355264,
+          19.087227
+        ]
+      },
+      "properties": {
+        "estado": "Michoacán de Ocampo",
+        "municipio": "Apatzingán",
+        "fosas": 1,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.158171,
+          19.05924
+        ]
+      },
+      "properties": {
+        "estado": "Veracruz de Ignacio de la Llave",
+        "municipio": "Medellín de Bravo",
+        "fosas": 0,
+        "cuerpos_osamentas": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.310833,
+          24.142222
+        ]
+      },
+      "properties": {
+        "estado": "Baja California Sur",
+        "municipio": "La Paz",
+        "fosas": 1,
+        "cuerpos_osamentas": 7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.245555,
+          20.623333
+        ]
+      },
+      "properties": {
+        "estado": "Jalisco",
+        "municipio": "Tonalá",
+        "fosas": 1,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.366037,
+          22.735389
+        ]
+      },
+      "properties": {
+        "estado": "Zacatecas",
+        "municipio": "Trancoso",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.184168,
+          25.43738
+        ]
+      },
+      "properties": {
+        "estado": "Coahuila de Zaragoza",
+        "municipio": "Parras",
+        "fosas": 5,
+        "cuerpos_osamentas": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.886557,
+          16.861866
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Acapulco de Juárez",
+        "fosas": 4,
+        "cuerpos_osamentas": 10
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.636592,
+          17.046701
+        ]
+      },
+      "properties": {
+        "estado": "Oaxaca",
+        "municipio": "Oaxaca de Juárez-Santa María del Tule",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.820094,
+          17.063276
+        ]
+      },
+      "properties": {
+        "estado": "Oaxaca",
+        "municipio": "San Pedro Ixtlahuaca",
+        "fosas": 2,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.177681,
+          17.594232
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Chilapa de Álvarez",
+        "fosas": 3,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.231462,
+          18.781865
+        ]
+      },
+      "properties": {
+        "estado": "Morelos",
+        "municipio": "Xochitepec",
+        "fosas": 1,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.546351,
+          31.327815
+        ]
+      },
+      "properties": {
+        "estado": "Sonora",
+        "municipio": "Agua Prieta",
+        "fosas": 1,
+        "cuerpos_osamentas": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.09088,
+          25.646225
+        ]
+      },
+      "properties": {
+        "estado": "Nuevo León",
+        "municipio": "Juárez",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -108.619966,
+          26.421598
+        ]
+      },
+      "properties": {
+        "estado": "Sinaloa",
+        "municipio": "El Fuerte",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.278303,
+          18.8104
+        ]
+      },
+      "properties": {
+        "estado": "Veracruz de Ignacio de la Llave",
+        "municipio": "Maltrata",
+        "fosas": 1,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.945785,
+          31.325897
+        ]
+      },
+      "properties": {
+        "estado": "Sonora",
+        "municipio": "Nogales",
+        "fosas": 1,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.485018,
+          31.746465
+        ]
+      },
+      "properties": {
+        "estado": "Chihuahua",
+        "municipio": "Juárez",
+        "fosas": 1,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.371389,
+          19.36683
+        ]
+      },
+      "properties": {
+        "estado": "Veracruz de Ignacio de la Llave",
+        "municipio": "La Antigua",
+        "fosas": 1,
+        "cuerpos_osamentas": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.291505,
+          25.959566
+        ]
+      },
+      "properties": {
+        "estado": "Nuevo León",
+        "municipio": "Salinas Victoria",
+        "fosas": 1,
+        "cuerpos_osamentas": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.538368,
+          18.344549
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Iguala de la Independencia",
+        "fosas": 1,
+        "cuerpos_osamentas": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.975856,
+          18.479132
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Zirándaro",
+        "fosas": 4,
+        "cuerpos_osamentas": 8
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.422221,
+          23.200315
+        ]
+      },
+      "properties": {
+        "estado": "Sinaloa",
+        "municipio": "Mazatlán",
+        "fosas": 2,
+        "cuerpos_osamentas": 8
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.31638,
+          19.053205
+        ]
+      },
+      "properties": {
+        "estado": "Colima",
+        "municipio": "Manzanillo",
+        "fosas": 3,
+        "cuerpos_osamentas": 7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.485018,
+          31.746465
+        ]
+      },
+      "properties": {
+        "estado": "Chihuahua",
+        "municipio": "Juárez",
+        "fosas": 0,
+        "cuerpos_osamentas": 5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.118178,
+          18.682962
+        ]
+      },
+      "properties": {
+        "estado": "Morelos",
+        "municipio": "Tlaltizapán de Zapata",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.09088,
+          25.646225
+        ]
+      },
+      "properties": {
+        "estado": "Nuevo León",
+        "municipio": "Juárez",
+        "fosas": 1,
+        "cuerpos_osamentas": 12
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.886557,
+          16.861866
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Acapulco de Juárez",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.485018,
+          31.746465
+        ]
+      },
+      "properties": {
+        "estado": "Chihuahua",
+        "municipio": "Juárez",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.541944,
+          20.290277
+        ]
+      },
+      "properties": {
+        "estado": "Jalisco",
+        "municipio": "La Barca",
+        "fosas": 20,
+        "cuerpos_osamentas": 64
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.227222,
+          20.613611
+        ]
+      },
+      "properties": {
+        "estado": "Jalisco",
+        "municipio": "Puerto Vallarta",
+        "fosas": 1,
+        "cuerpos_osamentas": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.22763,
+          26.566351
+        ]
+      },
+      "properties": {
+        "estado": "Tamaulipas",
+        "municipio": "Guerrero",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -101.683199,
+          21.121971
+        ]
+      },
+      "properties": {
+        "estado": "Guanajuato",
+        "municipio": "León",
+        "fosas": 1,
+        "cuerpos_osamentas": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -101.479291,
+          25.379907
+        ]
+      },
+      "properties": {
+        "estado": "Coahuila de Zaragoza",
+        "municipio": "General Cepeda",
+        "fosas": 1,
+        "cuerpos_osamentas": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.892711,
+          23.915403
+        ]
+      },
+      "properties": {
+        "estado": "Sinaloa",
+        "municipio": "Elota",
+        "fosas": 1,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.900294,
+          24.048798
+        ]
+      },
+      "properties": {
+        "estado": "Tamaulipas",
+        "municipio": "Padilla",
+        "fosas": 1,
+        "cuerpos_osamentas": 6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.802553,
+          19.205903
+        ]
+      },
+      "properties": {
+        "estado": "Estado de México",
+        "municipio": "Tlalmanalco",
+        "fosas": 1,
+        "cuerpos_osamentas": 13
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -101.192046,
+          19.703383
+        ]
+      },
+      "properties": {
+        "estado": "Michoacán de Ocampo",
+        "municipio": "Morelia",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.411127,
+          19.670836
+        ]
+      },
+      "properties": {
+        "estado": "Michoacán de Ocampo",
+        "municipio": "Aporo",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -108.159488,
+          25.36436
+        ]
+      },
+      "properties": {
+        "estado": "Sinaloa",
+        "municipio": "Angostura",
+        "fosas": 1,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.420945,
+          25.039079
+        ]
+      },
+      "properties": {
+        "estado": "Durango",
+        "municipio": "Santiago Papasquiaro",
+        "fosas": 1,
+        "cuerpos_osamentas": 8
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.66119,
+          18.235866
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Cocula",
+        "fosas": 1,
+        "cuerpos_osamentas": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.964369,
+          26.094515
+        ]
+      },
+      "properties": {
+        "estado": "Chihuahua",
+        "municipio": "Guadalupe y Calvo",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.501062,
+          17.551649
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Chilpancingo de los Bravo",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.518801,
+          22.746781
+        ]
+      },
+      "properties": {
+        "estado": "Zacatecas",
+        "municipio": "Guadalupe",
+        "fosas": 1,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.422221,
+          23.200315
+        ]
+      },
+      "properties": {
+        "estado": "Sinaloa",
+        "municipio": "Mazatlán",
+        "fosas": 1,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.087565,
+          20.451932
+        ]
+      },
+      "properties": {
+        "estado": "Veracruz de Ignacio de la Llave",
+        "municipio": "Gutiérrez Zamora",
+        "fosas": 0,
+        "cuerpos_osamentas": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.945785,
+          31.325897
+        ]
+      },
+      "properties": {
+        "estado": "Sonora",
+        "municipio": "Nogales",
+        "fosas": 2,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.097383,
+          16.965286
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Ayutla de los Libres",
+        "fosas": 3,
+        "cuerpos_osamentas": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.299446,
+          18.920482
+        ]
+      },
+      "properties": {
+        "estado": "Estado de México",
+        "municipio": "Luvianos",
+        "fosas": 3,
+        "cuerpos_osamentas": 6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.089367,
+          17.009001
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Coyuca de Benítez",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.868229,
+          23.174894
+        ]
+      },
+      "properties": {
+        "estado": "Zacatecas",
+        "municipio": "Fresnillo",
+        "fosas": 1,
+        "cuerpos_osamentas": 7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.443055,
+          20.473611
+        ]
+      },
+      "properties": {
+        "estado": "Jalisco",
+        "municipio": "Tlajomulco de Zúñiga",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.369514,
+          18.600001
+        ]
+      },
+      "properties": {
+        "estado": "Morelos",
+        "municipio": "Amacuzac",
+        "fosas": 4,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.899735,
+          21.443687
+        ]
+      },
+      "properties": {
+        "estado": "Nayarit",
+        "municipio": "Xalisco",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.886557,
+          16.861866
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Acapulco de Juárez",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.501062,
+          17.551649
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Chilpancingo de los Bravo",
+        "fosas": 1,
+        "cuerpos_osamentas": 25
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.245555,
+          20.623333
+        ]
+      },
+      "properties": {
+        "estado": "Jalisco",
+        "municipio": "Tonalá",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.278129,
+          26.09235
+        ]
+      },
+      "properties": {
+        "estado": "Tamaulipas",
+        "municipio": "Reynosa",
+        "fosas": 4,
+        "cuerpos_osamentas": 5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.22019,
+          20.007766
+        ]
+      },
+      "properties": {
+        "estado": "Hidalgo",
+        "municipio": "Atotonilco de Tula",
+        "fosas": 2,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.886557,
+          16.861866
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Acapulco de Juárez",
+        "fosas": 4,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.167126,
+          19.288275
+        ]
+      },
+      "properties": {
+        "estado": "Ciudad de M�xico",
+        "municipio": "Tlalpan",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.851666,
+          20.760833
+        ]
+      },
+      "properties": {
+        "estado": "Jalisco",
+        "municipio": "San Sebastián del Oeste",
+        "fosas": 1,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.525936,
+          17.653197
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Eduardo Neri",
+        "fosas": 2,
+        "cuerpos_osamentas": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.227222,
+          20.613611
+        ]
+      },
+      "properties": {
+        "estado": "Jalisco",
+        "municipio": "Puerto Vallarta",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.524849,
+          25.536551
+        ]
+      },
+      "properties": {
+        "estado": "Durango",
+        "municipio": "Lerdo",
+        "fosas": 1,
+        "cuerpos_osamentas": 26
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.307222,
+          20.638611
+        ]
+      },
+      "properties": {
+        "estado": "Jalisco",
+        "municipio": "San Pedro Tlaquepaque",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.604594,
+          18.557381
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Taxco de Alarcón",
+        "fosas": 1,
+        "cuerpos_osamentas": 40
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.886557,
+          16.861866
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Acapulco de Juárez",
+        "fosas": 1,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.466694,
+          18.286989
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Tepecoacuilco de Trujano",
+        "fosas": 4,
+        "cuerpos_osamentas": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.523221,
+          18.628199
+        ]
+      },
+      "properties": {
+        "estado": "Veracruz de Ignacio de la Llave",
+        "municipio": "Lerdo de Tejada",
+        "fosas": 1,
+        "cuerpos_osamentas": 9
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.340277,
+          20.705555
+        ]
+      },
+      "properties": {
+        "estado": "Jalisco",
+        "municipio": "Arandas",
+        "fosas": 2,
+        "cuerpos_osamentas": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.833571,
+          30.713338
+        ]
+      },
+      "properties": {
+        "estado": "Sonora",
+        "municipio": "Altar",
+        "fosas": 1,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.231462,
+          18.781865
+        ]
+      },
+      "properties": {
+        "estado": "Morelos",
+        "municipio": "Xochitepec",
+        "fosas": 2,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.621626,
+          20.457171
+        ]
+      },
+      "properties": {
+        "estado": "Guanajuato",
+        "municipio": "Apaseo el Alto",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.585469,
+          25.800491
+        ]
+      },
+      "properties": {
+        "estado": "Nuevo León",
+        "municipio": "García",
+        "fosas": 2,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.504754,
+          18.599138
+        ]
+      },
+      "properties": {
+        "estado": "Michoacán de Ocampo",
+        "municipio": "Aquila",
+        "fosas": 1,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.485018,
+          31.746465
+        ]
+      },
+      "properties": {
+        "estado": "Chihuahua",
+        "municipio": "Juárez",
+        "fosas": 1,
+        "cuerpos_osamentas": 6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.84139,
+          18.305336
+        ]
+      },
+      "properties": {
+        "estado": "Veracruz de Ignacio de la Llave",
+        "municipio": "Chacaltianguis",
+        "fosas": 1,
+        "cuerpos_osamentas": 6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.540883,
+          22.875963
+        ]
+      },
+      "properties": {
+        "estado": "Zacatecas",
+        "municipio": "Pánuco",
+        "fosas": 6,
+        "cuerpos_osamentas": 8
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.538368,
+          18.344549
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Iguala de la Independencia",
+        "fosas": 2,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.092622,
+          19.359003
+        ]
+      },
+      "properties": {
+        "estado": "Ciudad de M�xico",
+        "municipio": "Iztapalapa",
+        "fosas": 1,
+        "cuerpos_osamentas": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.019722,
+          19.370555
+        ]
+      },
+      "properties": {
+        "estado": "Jalisco",
+        "municipio": "Jilotlán de los Dolores",
+        "fosas": 2,
+        "cuerpos_osamentas": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.922644,
+          19.527084
+        ]
+      },
+      "properties": {
+        "estado": "Veracruz de Ignacio de la Llave",
+        "municipio": "Xalapa",
+        "fosas": 8,
+        "cuerpos_osamentas": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.296046,
+          21.879822
+        ]
+      },
+      "properties": {
+        "estado": "Aguascalientes",
+        "municipio": "Aguascalientes",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.379073,
+          31.102665
+        ]
+      },
+      "properties": {
+        "estado": "Sonora",
+        "municipio": "Sáric",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.843707,
+          19.191366
+        ]
+      },
+      "properties": {
+        "estado": "Michoacán de Ocampo",
+        "municipio": "Tepalcatepec",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.886557,
+          16.861866
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Acapulco de Juárez",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.702262,
+          22.949037
+        ]
+      },
+      "properties": {
+        "estado": "Zacatecas",
+        "municipio": "Calera",
+        "fosas": 1,
+        "cuerpos_osamentas": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.420945,
+          25.039079
+        ]
+      },
+      "properties": {
+        "estado": "Durango",
+        "municipio": "Santiago Papasquiaro",
+        "fosas": 6,
+        "cuerpos_osamentas": 6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.244071,
+          19.560653
+        ]
+      },
+      "properties": {
+        "estado": "Veracruz de Ignacio de la Llave",
+        "municipio": "Perote",
+        "fosas": 2,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.886557,
+          16.861866
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Acapulco de Juárez",
+        "fosas": 3,
+        "cuerpos_osamentas": 7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.25,
+          19.676388
+        ]
+      },
+      "properties": {
+        "estado": "Jalisco",
+        "municipio": "Tamazula de Gordiano",
+        "fosas": 2,
+        "cuerpos_osamentas": 5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -108.994342,
+          25.783416
+        ]
+      },
+      "properties": {
+        "estado": "Sinaloa",
+        "municipio": "Ahome",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.19798,
+          17.962334
+        ]
+      },
+      "properties": {
+        "estado": "Michoacán de Ocampo",
+        "municipio": "Lázaro Cárdenas",
+        "fosas": 1,
+        "cuerpos_osamentas": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.798083,
+          19.483098
+        ]
+      },
+      "properties": {
+        "estado": "Veracruz de Ignacio de la Llave",
+        "municipio": "Emiliano Zapata",
+        "fosas": 1,
+        "cuerpos_osamentas": 12
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -101.178051,
+          20.141011
+        ]
+      },
+      "properties": {
+        "estado": "Guanajuato",
+        "municipio": "Uriangato",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.816095,
+          27.957603
+        ]
+      },
+      "properties": {
+        "estado": "Sonora",
+        "municipio": "Empalme",
+        "fosas": 1,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.181043,
+          18.616566
+        ]
+      },
+      "properties": {
+        "estado": "Morelos",
+        "municipio": "Jojutla",
+        "fosas": 1,
+        "cuerpos_osamentas": 35
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.522046,
+          17.169004
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Juan R. Escudero",
+        "fosas": 1,
+        "cuerpos_osamentas": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.986633,
+          26.65963
+        ]
+      },
+      "properties": {
+        "estado": "Nuevo León",
+        "municipio": "Vallecillo",
+        "fosas": 1,
+        "cuerpos_osamentas": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.869572,
+          18.371809
+        ]
+      },
+      "properties": {
+        "estado": "Guerrero",
+        "municipio": "Teloloapan",
+        "fosas": 5,
+        "cuerpos_osamentas": 12
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.011022,
+          21.943511
+        ]
+      },
+      "properties": {
+        "estado": "San Luis Potosí",
+        "municipio": "Ciudad Fernández",
+        "fosas": 1,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.443055,
+          20.473611
+        ]
+      },
+      "properties": {
+        "estado": "Jalisco",
+        "municipio": "Tlajomulco de Zúñiga",
+        "fosas": 1,
+        "cuerpos_osamentas": 8
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.453001,
+          18.137882
+        ]
+      },
+      "properties": {
+        "estado": "Veracruz de Ignacio de la Llave",
+        "municipio": "Coatzacoalcos",
+        "fosas": 1,
+        "cuerpos_osamentas": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.585469,
+          25.800491
+        ]
+      },
+      "properties": {
+        "estado": "Nuevo León",
+        "municipio": "García-Santa Catarina",
+        "fosas": 1,
+        "cuerpos_osamentas": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.161944,
+          19.906388
+        ]
+      },
+      "properties": {
+        "estado": "Jalisco",
+        "municipio": "Ejutla",
+        "fosas": 1,
+        "cuerpos_osamentas": 7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.131606,
+          19.194394
+        ]
+      },
+      "properties": {
+        "estado": "Estado de México",
+        "municipio": "Valle de Bravo",
+        "fosas": 1,
+        "cuerpos_osamentas": 5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.369514,
+          18.600001
+        ]
+      },
+      "properties": {
+        "estado": "Morelos",
+        "municipio": "Amacuzac",
+        "fosas": 1,
+        "cuerpos_osamentas": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.826283,
+          17.591792
+        ]
+      },
+      "properties": {
+        "estado": "Tabasco",
+        "municipio": "Tacotalpa",
+        "fosas": 1,
+        "cuerpos_osamentas": 4
+      }
+    }
+  ]
+}
