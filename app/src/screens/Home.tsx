@@ -1,22 +1,18 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { UserCircle, Home as HomeIcon, User, MessageCircle } from 'lucide-react'
-import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet'
-import L from 'leaflet'
-import 'leaflet/dist/leaflet.css'
+import { GoogleMap, useJsApiLoader, MarkerF, InfoWindowF } from '@react-google-maps/api'
 import { GlassCard } from '../components/GlassCard'
 import { AgentDot } from '../components/AgentDot'
 import { ChatDrawer } from '../components/ChatDrawer'
 import { getMyVinculo } from '../features/profile/api'
 import { fullName, type VinculoOut } from '../features/profile/types'
 
-// Fix Leaflet default icon paths broken by bundlers
-delete (L.Icon.Default.prototype as unknown as Record<string, unknown>)._getIconUrl
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon-2x.png',
-  iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon.png',
-  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
-})
+const GOOGLE_MAPS_API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY
+
+const MAP_CONTAINER_STYLE = { width: '100%', height: '100%' }
+const MAP_CENTER = { lat: 19.5665, lng: -101.7068 }
+const MAP_ZOOM = 8
 
 type FilterKey = 'fosas' | 'desaparicion' | 'trabajos'
 
@@ -50,25 +46,46 @@ const MARKERS: MarkerData[] = [
   { id: 6, lat: 19.56, lng: -101.70, type: 'trabajos', name: 'Oferta Tlalpujahua – Pátzcuaro', date: '18 abr 2024' },
 ]
 
-function createColoredIcon(color: string) {
-  return L.divIcon({
-    html: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="36" viewBox="0 0 24 36">
-      <path d="M12 0C5.373 0 0 5.373 0 12c0 9 12 24 12 24s12-15 12-24C24 5.373 18.627 0 12 0z" fill="${color}" opacity="0.9"/>
-      <circle cx="12" cy="12" r="5" fill="white" opacity="0.9"/>
-    </svg>`,
-    className: '',
-    iconSize: [24, 36],
-    iconAnchor: [12, 36],
-    popupAnchor: [0, -36],
-  })
+function pinIcon(color: string) {
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="36" viewBox="0 0 24 36"><path d="M12 0C5.373 0 0 5.373 0 12c0 9 12 24 12 24s12-15 12-24C24 5.373 18.627 0 12 0z" fill="${color}" opacity="0.9"/><circle cx="12" cy="12" r="5" fill="white" opacity="0.9"/></svg>`
+  return {
+    url: `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`,
+    scaledSize: new google.maps.Size(24, 36),
+    anchor: new google.maps.Point(12, 36),
+  }
 }
 
-function MapInvalidator() {
-  const map = useMap()
-  useEffect(() => {
-    setTimeout(() => map.invalidateSize(), 100)
-  }, [map])
-  return null
+function Map({ markers }: { markers: MarkerData[] }) {
+  const [selected, setSelected] = useState<MarkerData | null>(null)
+
+  return (
+    <GoogleMap
+      mapContainerStyle={MAP_CONTAINER_STYLE}
+      center={MAP_CENTER}
+      zoom={MAP_ZOOM}
+    >
+      {markers.map(m => (
+        <MarkerF
+          key={m.id}
+          position={{ lat: m.lat, lng: m.lng }}
+          icon={pinIcon(MARKER_COLORS[m.type])}
+          onClick={() => setSelected(m)}
+        />
+      ))}
+      {selected && (
+        <InfoWindowF
+          position={{ lat: selected.lat, lng: selected.lng }}
+          onCloseClick={() => setSelected(null)}
+        >
+          <div style={{ fontFamily: 'var(--font-family)', minWidth: 160 }}>
+            <div style={{ fontWeight: 600, fontSize: 13, marginBottom: 2 }}>{selected.name}</div>
+            <div style={{ fontSize: 11, color: '#6B6B6B', marginBottom: 4 }}>{FILTER_LABELS[selected.type]}</div>
+            <div style={{ fontSize: 11, color: '#F2921D', fontWeight: 500 }}>{selected.date}</div>
+          </div>
+        </InfoWindowF>
+      )}
+    </GoogleMap>
+  )
 }
 
 const NOTIFICATIONS = [
@@ -107,6 +124,10 @@ export function Home() {
   })
   const [vinculo, setVinculo] = useState<VinculoOut | null>(null)
   const [chatOpen, setChatOpen] = useState(false)
+
+  const { isLoaded } = useJsApiLoader({
+    googleMapsApiKey: GOOGLE_MAPS_API_KEY,
+  })
 
   // Case chat becomes available once another family joins/updates the case.
   useEffect(() => {
@@ -240,33 +261,13 @@ export function Home() {
 
           {/* Map */}
           <div style={{ flex: 1, position: 'relative', borderRadius: 16, overflow: 'hidden', border: '1px solid rgba(242,195,133,0.35)' }}>
-            <MapContainer
-              center={[19.5665, -101.7068]}
-              zoom={8}
-              style={{ width: '100%', height: '100%' }}
-              zoomControl={true}
-            >
-              <MapInvalidator />
-              <TileLayer
-                url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
-                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>'
-              />
-              {visibleMarkers.map(m => (
-                <Marker
-                  key={m.id}
-                  position={[m.lat, m.lng]}
-                  icon={createColoredIcon(MARKER_COLORS[m.type])}
-                >
-                  <Popup>
-                    <div style={{ fontFamily: 'var(--font-family)', minWidth: 160 }}>
-                      <div style={{ fontWeight: 600, fontSize: 13, marginBottom: 2 }}>{m.name}</div>
-                      <div style={{ fontSize: 11, color: '#6B6B6B', marginBottom: 4 }}>{FILTER_LABELS[m.type]}</div>
-                      <div style={{ fontSize: 11, color: '#F2921D', fontWeight: 500 }}>{m.date}</div>
-                    </div>
-                  </Popup>
-                </Marker>
-              ))}
-            </MapContainer>
+            {isLoaded ? (
+              <Map markers={visibleMarkers} />
+            ) : (
+              <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#f5f5f5' }}>
+                <span style={{ color: '#6B6B6B', fontSize: 13 }}>Cargando mapa…</span>
+              </div>
+            )}
 
             {/* Map legend */}
             <div style={{

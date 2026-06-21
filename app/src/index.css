@@ -205,20 +205,3 @@
   animation: fadeIn 0.35s ease-out forwards;
 }
 
-/* Leaflet overrides */
-.leaflet-container {
-  border-radius: 16px;
-  font-family: var(--font-family) !important;
-}
-
-.leaflet-popup-content-wrapper {
-  border-radius: 12px !important;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.12) !important;
-  font-family: var(--font-family) !important;
-}
-
-.leaflet-popup-content {
-  font-family: var(--font-family) !important;
-  font-size: 13px !important;
-  color: #1A1A1A !important;
-}
