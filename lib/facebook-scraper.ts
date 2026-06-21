@@ -288,6 +288,50 @@ Respond as STRICT JSON only (no markdown fences), exactly this shape:
   }
 }
 
+interface GeocodeResult {
+  lat: number;
+  lng: number;
+  region: string;
+}
+
+async function geocodeLocation(locationText: string): Promise<GeocodeResult | null> {
+  const apiKey = process.env.GOOGLE_MAPS_API_KEY;
+  if (!apiKey) return null;
+
+  const url = new URL("https://maps.googleapis.com/maps/api/geocode/json");
+  url.searchParams.set("address", locationText);
+  url.searchParams.set("key", apiKey);
+  url.searchParams.set("language", "es");
+  url.searchParams.set("region", "mx");
+
+  try {
+    const res = await fetch(url.toString());
+    if (!res.ok) return null;
+
+    const data = await res.json() as {
+      status: string;
+      results: Array<{
+        geometry: { location: { lat: number; lng: number } };
+        address_components: Array<{ long_name: string; types: string[] }>;
+      }>;
+    };
+
+    if (data.status !== "OK" || data.results.length === 0) return null;
+
+    const first = data.results[0];
+    const { lat, lng } = first.geometry.location;
+
+    const regionComponent = first.address_components.find((c) =>
+      c.types.includes("administrative_area_level_1"),
+    );
+    const region = regionComponent?.long_name ?? "";
+
+    return { lat, lng, region };
+  } catch {
+    return null;
+  }
+}
+
 export async function scrapeAndSeedFacebookPatterns(): Promise<ScrapeSummary> {
   const summary: ScrapeSummary = {
     inserted: 0,
