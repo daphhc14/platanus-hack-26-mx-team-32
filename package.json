@@ -10,6 +10,7 @@
     "demo": "tsx demo.ts",
     "dev:ui": "tsx app/server.ts",
     "test:acquisition": "tsx scripts/test-acquisition.ts",
+    "test:extractor:live": "tsx scripts/test-extractor-live.ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

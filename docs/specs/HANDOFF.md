@@ -94,6 +94,14 @@ Esperado:
 - `test:acquisition` imprime `✓ acquisition smoke test passed`.
 - SQLite crea las tablas nuevas sin error.
 
+Test live (opcional, con API key):
+
+```bash
+ANTHROPIC_API_KEY=sk-... npm run test:extractor:live
+```
+
+Usa artefactos sinteticos (sin PII, sin fetch externo mas alla de Anthropic). Si no hay key, aborta con exit 2 sin tocar la red.
+
 ## 8. Pendientes no bloqueantes
 
 Resueltos en commit posterior:
@@ -103,7 +111,7 @@ Resueltos en commit posterior:
 
 Sigue pendiente (no bloqueante):
 
-- Si se usa API real, agregar un test manual documentado con una URL publica inocua y sin PII.
+- Correr `npm run test:extractor:live` con una `ANTHROPIC_API_KEY` real y dejar registro del output. El script ya existe y usa artefactos sinteticos sin PII.
 
 ## 9. No commitear
 
