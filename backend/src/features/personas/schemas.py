@@ -14,6 +14,7 @@ class PersonaListItem(BaseModel):
         return str(v).lower() if isinstance(v, bool) else v
 
     id: int
+    id_victimadirecta: str | None = None
     nombre: str | None = None
     primer_apellido: str | None = None
     segundo_apellido: str | None = None

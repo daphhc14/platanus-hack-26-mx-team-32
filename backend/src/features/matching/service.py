@@ -1,8 +1,11 @@
 """Match service — reads stored candidatos and runs the live preview funnel."""
+from psycopg.rows import dict_row
+
 from src.config import settings
 
-from .embeddings import embed_one, record_text, to_vector_literal
+from .embeddings import embed_one, embed_texts, record_text, to_vector_literal
 from .engine import rank_personas_for_cuerpo
+from .tuning import CONFIG
 from .verify import verify_pair
 
 _PERSONA_COLS = r"""
@@ -37,6 +40,53 @@ order by ca.score desc
 """
 
 
+def backfill_embeddings(conn, force: bool = False) -> int:
+    """Embed records that lack an embedding (or all, if force). Idempotent and
+    safe to run anytime — this is how nothing ever stays un-embedded. Caller commits."""
+    if not settings.gemini_api_key:
+        return 0
+    pjoin = (
+        ""
+        if force
+        else "left join persona_embeddings pe on pe.persona_victima_id = p.id_victimadirecta::text "
+        "where pe.persona_victima_id is null"
+    )
+    psql = (
+        "select p.id_victimadirecta::text as id, p.sana_particular::text as sana_particular, "
+        "p.media_filiacion::text as media_filiacion, p.sexo::text as sexo, p.estado::text as estado "
+        f"from personas_desaparecidas p {pjoin}"
+    )
+    cwhere = "" if force else "where embedding is null"
+    csql = f"select id::text as id, sana_particular, media_filiacion, sexo, estado from cuerpos {cwhere}"
+
+    with conn.cursor(row_factory=dict_row) as cur:
+        cur.execute(psql)
+        personas = cur.fetchall()
+        cur.execute(csql)
+        cuerpos = cur.fetchall()
+
+    if not personas and not cuerpos:
+        return 0
+
+    pvecs = embed_texts([record_text(p) for p in personas]) if personas else []
+    cvecs = embed_texts([record_text(c) for c in cuerpos]) if cuerpos else []
+    with conn.cursor() as cur:
+        for p, v in zip(personas, pvecs):
+            cur.execute(
+                """insert into persona_embeddings (persona_victima_id, embedding, updated_at)
+                   values (%s, %s::vector, now())
+                   on conflict (persona_victima_id)
+                   do update set embedding = excluded.embedding, updated_at = now()""",
+                (p["id"], to_vector_literal(v)),
+            )
+        for c, v in zip(cuerpos, cvecs):
+            cur.execute(
+                "update cuerpos set embedding = %s::vector where id = %s",
+                (to_vector_literal(v), c["id"]),
+            )
+    return len(personas) + len(cuerpos)
+
+
 def persona_uuid(conn, persona_id: int) -> str | None:
     with conn.cursor() as cur:
         cur.execute(
@@ -59,7 +109,9 @@ def _senas_text(senas) -> str | None:
     return senas
 
 
-def preview_match(conn, query: dict, k_retrieve: int = 30, top_n: int = 5) -> tuple[int, str, list[dict]]:
+def preview_match(conn, query: dict, k_retrieve: int | None = None, top_n: int | None = None) -> tuple[int, str, list[dict]]:
+    k_retrieve = CONFIG.retrieve_k if k_retrieve is None else k_retrieve
+    top_n = CONFIG.top_k if top_n is None else top_n
     cuerpo = {
         "sexo": query.get("sexo"),
         "edad_min": query.get("edad_min"),
@@ -85,9 +137,9 @@ def preview_match(conn, query: dict, k_retrieve: int = 30, top_n: int = 5) -> tu
 
     by_uuid = {p["id_victimadirecta"]: p for p in personas}
     out = []
-    for r in rank_personas_for_cuerpo(cuerpo, personas, top_k=top_n):
+    for i, r in enumerate(rank_personas_for_cuerpo(cuerpo, personas, top_k=top_n)):
         persona = by_uuid[r["persona_victima_id"]]
-        v = verify_pair(persona, cuerpo, r)
+        v = verify_pair(persona, cuerpo, r, use_llm=i < CONFIG.llm_verify_top_n)
         out.append({
             "persona_victima_id": r["persona_victima_id"],
             "nombre": persona.get("nombre"),

@@ -1,15 +1,15 @@
 """Deterministic matcher: block → score → laterality disqualifier → tier.
 
-Pure functions over plain dicts (no DB). The vector-retrieval and LLM-verify
-layers wrap around this later; this layer is what makes the result *correct*.
+Pure functions over plain dicts (no DB). Every tunable lives in tuning.CONFIG —
+this module only reads it, so retuning never means hunting through the logic.
 """
 import re
 from datetime import date
 
-from .normalize import estatura_cm, normalize_senas
+from .normalize import estatura_cm, normalize_senas, plausible_estatura
+from .tuning import CONFIG
 
-WEIGHTS = {"senas": 0.5, "estatura": 0.2, "edad": 0.1, "geo": 0.1, "temporal": 0.1}
-DISQUALIFIED_CAP = 0.2  # a laterality contradiction caps the total here
+_NEUTRAL = 0.5  # score for a field we simply can't compare (missing data ≠ mismatch)
 
 
 def _jaccard(a: set, b: set) -> float:
@@ -41,6 +41,7 @@ def score_senas(cuerpo_senas: list[dict], persona_senas: list[dict]):
     """Best-pair matching. Returns (score, contradictions, evidence)."""
     if not cuerpo_senas or not persona_senas:
         return 0.0, [], []
+    thr = CONFIG.senas_match_threshold
     contradictions: list[str] = []
     evidence: list[str] = []
     best_scores: list[float] = []
@@ -51,10 +52,9 @@ def score_senas(cuerpo_senas: list[dict], persona_senas: list[dict]):
         )
         best = overlaps[0][0] if overlaps else 0.0
         best_scores.append(best)
-        if best < 0.5:
+        if best < thr:
             continue
-        # among content-matching señas, prefer one with COMPATIBLE laterality.
-        matching = [p for j, p in overlaps if j >= 0.5]
+        matching = [p for j, p in overlaps if j >= thr]
         compatible = next(
             (p for p in matching if not c["lado"] or not p["lado"] or p["lado"] == c["lado"]),
             None,
@@ -62,69 +62,89 @@ def score_senas(cuerpo_senas: list[dict], persona_senas: list[dict]):
         if compatible is not None:
             evidence.append(f"seña coincide: «{c['raw']}» ~ «{compatible['raw']}»")
         else:
-            # every content-overlapping seña is on the opposite side → contradiction
-            opp = matching[0]
-            contradictions.append(f"lateralidad opuesta: «{c['raw']}» vs «{opp['raw']}»")
+            contradictions.append(f"lateralidad opuesta: «{c['raw']}» vs «{matching[0]['raw']}»")
     return sum(best_scores) / len(best_scores), contradictions, evidence
 
 
 def block(persona: dict, cuerpo: dict) -> tuple[bool, str | None]:
-    """Cheap hard filters. Laterality is NOT here — it's a score cap, so the
+    """Cheap hard filters. Laterality is NOT here — it's a score cap, so a
     near-miss still surfaces *as rejected* rather than vanishing silently."""
-    ps, cs = (persona.get("sexo") or "").upper(), (cuerpo.get("sexo") or "").upper()
-    if ps and cs and ps != cs:
-        return False, "sexo incompatible"
-    dd = _parse_date(persona.get("fecha_percato") or persona.get("fecha_hechos"))
-    dh = _parse_date(cuerpo.get("fecha_hallazgo"))
-    if dd and dh and dd > dh:
-        return False, "desaparición posterior al hallazgo"
+    if CONFIG.block_on_sexo:
+        ps, cs = (persona.get("sexo") or "").upper(), (cuerpo.get("sexo") or "").upper()
+        if ps and cs and ps != cs:
+            return False, "sexo incompatible"
+    if CONFIG.block_on_temporal:
+        dd = _parse_date(persona.get("fecha_percato") or persona.get("fecha_hechos"))
+        dh = _parse_date(cuerpo.get("fecha_hallazgo"))
+        if dd and dh and dd > dh:
+            return False, "desaparición posterior al hallazgo"
     pe = persona.get("edad")
     lo, hi = cuerpo.get("edad_min"), cuerpo.get("edad_max")
-    if pe is not None and lo is not None and hi is not None and (pe < lo - 8 or pe > hi + 8):
+    m = CONFIG.age_block_margin
+    if pe is not None and lo is not None and hi is not None and (pe < lo - m or pe > hi + m):
         return False, "edad fuera de rango"
     return True, None
 
 
 def score_pair(persona: dict, cuerpo: dict) -> dict:
-    senas_s, contradictions, evidence = score_senas(
-        normalize_senas(cuerpo.get("sana_particular")),
-        normalize_senas(persona.get("sana_particular")),
-    )
+    """All evidence/contradictions here are COMPUTED (deterministic) — the LLM
+    never restates them. Uncomparable fields score _NEUTRAL, not 0."""
+    senas_c = normalize_senas(cuerpo.get("sana_particular"))
+    senas_p = normalize_senas(persona.get("sana_particular"))
+    senas_s, contradictions, evidence = score_senas(senas_c, senas_p)
+    if not (senas_c and senas_p):
+        senas_s = _NEUTRAL  # body or ficha has no marks listed → can't compare
 
-    est_c, est_p = cuerpo.get("estatura_cm"), estatura_cm(persona.get("media_filiacion"))
+    # sexo (survivors already passed the block, so state it as a fact)
+    ps, cs = persona.get("sexo"), cuerpo.get("sexo")
+    if ps and cs and ps.upper() == cs.upper():
+        evidence.append(f"sexo coincide: {ps}")
+
+    est_c = plausible_estatura(cuerpo.get("estatura_cm"))
+    est_p = estatura_cm(persona.get("media_filiacion"))
     if est_c and est_p:
-        estatura_s = max(0.0, 1 - abs(est_c - est_p) / 20)
-        if estatura_s > 0.7:
-            evidence.append(f"estatura compatible ({est_p}cm ~ {est_c}cm)")
+        estatura_s = max(0.0, 1 - abs(est_c - est_p) / CONFIG.estatura_tolerance_cm)
+        evidence.append(f"estatura {'compatible' if estatura_s > 0.6 else 'difiere'}: {est_p}cm vs {est_c}cm")
     else:
-        estatura_s = 0.0
+        estatura_s = _NEUTRAL
 
     pe, lo, hi = persona.get("edad"), cuerpo.get("edad_min"), cuerpo.get("edad_max")
     if pe is not None and lo is not None and hi is not None:
-        edad_s = 1.0 if lo <= pe <= hi else max(0.0, 1 - min(abs(pe - lo), abs(pe - hi)) / 10)
+        edad_s = 1.0 if lo <= pe <= hi else max(
+            0.0, 1 - min(abs(pe - lo), abs(pe - hi)) / CONFIG.edad_decay_years
+        )
+        evidence.append(f"edad {'compatible' if edad_s >= 0.8 else 'parcial'}: ficha {pe}, cuerpo {lo}-{hi}")
     else:
-        edad_s = 0.0
+        edad_s = _NEUTRAL
 
     p_est, c_est = (persona.get("estado") or "").upper(), (cuerpo.get("estado") or "").upper()
-    geo_s = 1.0 if p_est and p_est == c_est else 0.3
-    if geo_s == 1.0:
-        evidence.append(f"mismo estado ({persona.get('estado')})")
+    if p_est and c_est:
+        geo_s = 1.0 if p_est == c_est else CONFIG.geo_other_state_score
+        if geo_s == 1.0:
+            evidence.append(f"mismo estado: {persona.get('estado')}")
+    else:
+        geo_s = _NEUTRAL
 
     dd = _parse_date(persona.get("fecha_percato") or persona.get("fecha_hechos"))
     dh = _parse_date(cuerpo.get("fecha_hallazgo"))
-    temporal_s = 1.0 if (dd and dh and dd <= dh) else 0.5
+    if dd and dh:
+        temporal_s = 1.0 if dd <= dh else 0.0
+        if dd <= dh:
+            evidence.append(f"temporal coherente: desaparición {dd}, hallazgo {dh} ({(dh - dd).days} días)")
+    else:
+        temporal_s = _NEUTRAL
 
     total = (
-        WEIGHTS["senas"] * senas_s
-        + WEIGHTS["estatura"] * estatura_s
-        + WEIGHTS["edad"] * edad_s
-        + WEIGHTS["geo"] * geo_s
-        + WEIGHTS["temporal"] * temporal_s
+        CONFIG.w_senas * senas_s
+        + CONFIG.w_estatura * estatura_s
+        + CONFIG.w_edad * edad_s
+        + CONFIG.w_geo * geo_s
+        + CONFIG.w_temporal * temporal_s
     )
     if contradictions:
-        total = min(total, DISQUALIFIED_CAP)
+        total = min(total, CONFIG.disqualified_cap)
 
-    tier = "alta" if total >= 0.7 else "media" if total >= 0.4 else "baja"
+    tier = "alta" if total >= CONFIG.tier_alta else "media" if total >= CONFIG.tier_media else "baja"
     return {
         "score": round(total, 4),
         "tier": tier,
@@ -137,7 +157,8 @@ def score_pair(persona: dict, cuerpo: dict) -> dict:
     }
 
 
-def rank_personas_for_cuerpo(cuerpo: dict, personas: list[dict], top_k: int = 5) -> list[dict]:
+def rank_personas_for_cuerpo(cuerpo: dict, personas: list[dict], top_k: int | None = None) -> list[dict]:
+    k = CONFIG.top_k if top_k is None else top_k
     scored = []
     for p in personas:
         ok, _ = block(p, cuerpo)
@@ -147,7 +168,7 @@ def rank_personas_for_cuerpo(cuerpo: dict, personas: list[dict], top_k: int = 5)
         r["persona_victima_id"] = p["id_victimadirecta"]
         scored.append(r)
     scored.sort(key=lambda r: r["score"], reverse=True)
-    top = scored[:top_k]
+    top = scored[:k]
     # Always surface disqualified (contradicted) pairs — a strong-surface match
     # that we rejected on laterality is precisely what a reviewer needs to see.
     seen = {id(r) for r in top}

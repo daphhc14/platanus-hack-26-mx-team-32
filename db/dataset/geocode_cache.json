@@ -1,0 +1,4161 @@
+{
+  "country=México&state=TAMAULIPAS&city=REYNOSA&street=JUSTICIA 305": {
+    "lat": 26.0150513,
+    "lon": -98.3951532,
+    "display": "Calle Justicia, Reynosa, Tamaulipas, 88500, México",
+    "precision": "street"
+  },
+  "country=México&state=TAMAULIPAS&city=REYNOSA&street=VERACRUZ 420": {
+    "lat": 26.0637547,
+    "lon": -98.2793113,
+    "display": "Calle Veracruz, Reynosa, Tamaulipas, 88500, México",
+    "precision": "street"
+  },
+  "country=México&state=TAMAULIPAS&city=RÍO BRAVO&street=MERIDA 1629": {
+    "lat": 25.9931465,
+    "lon": -98.0837608,
+    "display": "Calle Mérida, Río Bravo, Tamaulipas, 88900, México",
+    "precision": "street"
+  },
+  "country=México&state=CIUDAD DE MEXICO&city=IZTAPALAPA": {
+    "lat": 19.3588629,
+    "lon": -99.0925404,
+    "display": "Iztapalapa, Ciudad de México, México",
+    "precision": "municipality"
+  },
+  "country=México&state=CIUDAD DE MEXICO&city=XOCHIMILCO": {
+    "lat": 19.2633607,
+    "lon": -99.1047377,
+    "display": "Xochimilco, Ciudad de México, México",
+    "precision": "municipality"
+  },
+  "country=México&state=CIUDAD DE MEXICO&city=CUAUHTÉMOC": {
+    "lat": 19.4414715,
+    "lon": -99.1517322,
+    "display": "Cuauhtémoc, Ciudad de México, México",
+    "precision": "municipality"
+  },
+  "country=México&state=CHIAPAS&city=TUXTLA GUTIÉRREZ": {
+    "lat": 16.753801,
+    "lon": -93.115959,
+    "display": "Tuxtla Gutiérrez, Chiapas, 29019, México",
+    "precision": "municipality"
+  },
+  "country=México&state=CIUDAD DE MEXICO&city=GUSTAVO A. MADERO": {
+    "lat": 19.4827949,
+    "lon": -99.1133606,
+    "display": "Gustavo A. Madero, Ciudad de México, México",
+    "precision": "municipality"
+  },
+  "country=México&state=MORELOS&city=JIUTEPEC": {
+    "lat": 18.8817229,
+    "lon": -99.1767029,
+    "display": "Jiutepec, Morelos, 62550, México",
+    "precision": "municipality"
+  },
+  "country=México&state=NUEVO LEON&city=MONTERREY": {
+    "lat": 25.6802019,
+    "lon": -100.315258,
+    "display": "Monterrey, Nuevo León, 64490, México",
+    "precision": "municipality"
+  },
+  "country=México&state=PUEBLA&city=ATLIXCO": {
+    "lat": 18.908889,
+    "lon": -98.437778,
+    "display": "Atlixco, Puebla, 74260, México",
+    "precision": "municipality"
+  },
+  "country=México&state=VERACRUZ&city=VERACRUZ&street=IGNACIO ZARAGOZA": {
+    "lat": 19.5736575,
+    "lon": -96.9324294,
+    "display": "Ignacio Zaragoza, 21 de Marzo, Xalapa, Veracruz, 91303, México",
+    "precision": "street"
+  },
+  "country=México&state=QUERETARO&city=QUERÉTARO&street=CRISTINA ROSAS 7": {
+    "lat": 20.6319134,
+    "lon": -100.4193379,
+    "display": "Calle Cristina Rosas, María Bustamante, Delegación Epigmenio González, Santiago de Querétaro, Municipio de Querétaro, Querétaro, 76121, México",
+    "precision": "street"
+  },
+  "country=México&state=AGUASCALIENTES&city=AGUASCALIENTES&street=GENERAL LUIS MOYA S/N": {
+    "lat": 21.8482512,
+    "lon": -102.3100282,
+    "display": "Calle General Luis Moya, Aguascalientes, Municipio de Aguascalientes, Aguascalientes, 20287, México",
+    "precision": "street"
+  },
+  "country=México&state=SINALOA&city=ANGOSTURA&street=ANTONIO ROSALES 521": {
+    "lat": 25.3074944,
+    "lon": -108.0340437,
+    "display": "Antonio Rosales, Estación Acatita, Angostura, Sinaloa, México",
+    "precision": "street"
+  },
+  "country=México&state=MICHOACAN&city=COPÁNDARO": {
+    "lat": 19.4390517,
+    "lon": -101.7615033,
+    "display": "Copándaro, Salvador Escalante, Michoacán, 61610, México",
+    "precision": "municipality"
+  },
+  "country=México&state=CHIAPAS&city=OCOZOCOAUTLA DE ESPINOSA": {
+    "lat": 16.7595989,
+    "lon": -93.3738765,
+    "display": "Ocozocoautla, Ocozocoautla de Espinosa, Chiapas, 29140, México",
+    "precision": "municipality"
+  },
+  "country=México&state=QUERETARO&city=QUERÉTARO&street=PRIVADA DE GARDENIAS 41": {
+    "lat": 20.9185383,
+    "lon": -99.9330442,
+    "display": "Privada Gardenias, Tolimán, Querétaro, 76600, México",
+    "precision": "street"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=TIJUANA": {
+    "lat": 32.5317397,
+    "lon": -117.019529,
+    "display": "Tijuana, Municipio de Tijuana, Baja California, 22320, México",
+    "precision": "municipality"
+  },
+  "country=México&state=GUERRERO&city=ACAPULCO DE JUÁREZ&street=MIGUEL ALEMAN": {
+    "lat": 16.9143558,
+    "lon": -99.8257967,
+    "display": "Miguel aleman, Paso Limonero, Acapulco, Acapulco de Juárez, Guerrero, 39300, México",
+    "precision": "street"
+  },
+  "country=México&state=CAMPECHE&city=HECELCHAKÁN": {
+    "lat": 20.1774374,
+    "lon": -90.1338849,
+    "display": "Hecelchakán, Campeche, 24800, México",
+    "precision": "municipality"
+  },
+  "country=México&state=QUERETARO&city=TEQUISQUIAPAN&street=ANDRES TREJO VILLEDA 62": {
+    "lat": 20.5267953,
+    "lon": -99.9092198,
+    "display": "Calle Andrés Trejo Villeda, Tequisquiapan, Querétaro, 76776, México",
+    "precision": "street"
+  },
+  "country=México&state=SINALOA&city=ANGOSTURA&street=JUAN DE LA BARRERA POSTE 5": {
+    "lat": 25.3681652,
+    "lon": -108.16715,
+    "display": "Avenida Juan de la Barrera, Angostura, Sinaloa, 81600, México",
+    "precision": "street"
+  },
+  "country=México&state=DURANGO&city=DURANGO&street=5 DE FEBRERO 409": {
+    "lat": 24.0270771,
+    "lon": -104.6457765,
+    "display": "5 de Febrero, Buro Crata, Durango, Municipio de Durango, Durango, 34270, México",
+    "precision": "street"
+  },
+  "country=México&state=QUERETARO&city=QUERÉTARO&street=HIDALGO 45": {
+    "lat": 20.5931612,
+    "lon": -100.3965275,
+    "display": "45, Calle Miguel Hidalgo, Centro, Delegación Centro Histórico, Santiago de Querétaro, Municipio de Querétaro, Querétaro, 76000, México",
+    "precision": "street"
+  },
+  "country=México&state=CAMPECHE&city=CAMPECHE": {
+    "lat": 19.8436755,
+    "lon": -90.5367454,
+    "display": "Campeche, Municipio de Campeche, Campeche, 24000, México",
+    "precision": "municipality"
+  },
+  "country=México&state=CIUDAD DE MEXICO&city=ÁLVARO OBREGÓN": {
+    "lat": 19.3906515,
+    "lon": -99.1952423,
+    "display": "Álvaro Obregón, Ciudad de México, México",
+    "precision": "municipality"
+  },
+  "country=México&state=JALISCO&city=TONALÁ&street=BENJAMIN GUTIERREZ 26": {
+    "lat": 20.579576,
+    "lon": -103.2216819,
+    "display": "Calle Benjamín Gutiérrez, Colonia Guadalupana, Tonalá, Región Centro, Jalisco, 45426, México",
+    "precision": "street"
+  },
+  "country=México&state=NUEVO LEON&city=GUADALUPE&street=PRIMERO DE MAYO": {
+    "lat": 25.6864532,
+    "lon": -100.2244872,
+    "display": "1o. de Mayo, Ignacio Zaragoza, Guadalupe, Nuevo León, 67150, México",
+    "precision": "street"
+  },
+  "country=México&state=NUEVO LEON&city=APODACA&street=ALFA": {
+    "lat": 25.7316592,
+    "lon": -100.1771982,
+    "display": "Alfa, San Miguel 3°, Apodaca, Nuevo León, 66648, México",
+    "precision": "street"
+  },
+  "country=México&state=NUEVO LEON&city=GUADALUPE&street=CIUDAD GUZMAN": {
+    "lat": 25.6768807,
+    "lon": -100.2162539,
+    "display": "Ciudad Guzmán, Santa Elena, Guadalupe, Nuevo León, 67180, México",
+    "precision": "street"
+  },
+  "country=México&state=VERACRUZ&city=BANDERILLA&street=CALLE LINO SERRANO 6": {
+    "lat": 19.5792031,
+    "lon": -96.9319444,
+    "display": "Calle Lino Serrano, Banderilla, Veracruz, 91303, México",
+    "precision": "street"
+  },
+  "country=México&state=GUANAJUATO&city=SILAO": {
+    "lat": 20.9432447,
+    "lon": -101.4291951,
+    "display": "Silao (Ciudad), Silao de la Victoria, Guanajuato, México",
+    "precision": "municipality"
+  },
+  "country=México&state=NUEVO LEON&city=GUADALUPE&street=RIO HONDO": {
+    "lat": 25.7132085,
+    "lon": -100.1929694,
+    "display": "Rio Hondo, Guadalupe, Nuevo León, 67112, México",
+    "precision": "street"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=TIJUANA&street=CALLE CERRO COLORADO 569-3": {
+    "lat": 32.5022831,
+    "lon": -117.0277655,
+    "display": "Calle Cerro Colorado, Delegacion San Antonio de los Buenos, Tijuana, Municipio de Tijuana, Baja California, 22634, México",
+    "precision": "street"
+  },
+  "country=México&state=MICHOACAN&city=MORELIA": {
+    "lat": 19.7027116,
+    "lon": -101.1923818,
+    "display": "Morelia, Michoacán, 58000, México",
+    "precision": "municipality"
+  },
+  "country=México&state=VERACRUZ&city=XALAPA&street=ALVARO OBREGON 7": {
+    "lat": 19.5633869,
+    "lon": -96.8950677,
+    "display": "Calle Álvaro Obregón, Arboledas del Tronconal, Xalapa, Veracruz, 91154, México",
+    "precision": "street"
+  },
+  "country=México&state=MICHOACAN&city=HUANIQUEO": {
+    "lat": 19.3392836,
+    "lon": -101.6488545,
+    "display": "Huaniqueo, Salvador Escalante, Michoacán, México",
+    "precision": "municipality"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=TIJUANA&street=CALLE ESTRELLA POLAR": {
+    "lat": 32.5315878,
+    "lon": -116.9981022,
+    "display": "Calle Estrella Polar, Anexa del Río, Delegación Mesa de Otay, Tijuana, Municipio de Tijuana, Baja California, 22416, México",
+    "precision": "street"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=TIJUANA&street=CALLE AGUSTIN PEREZ RIVERO #14025": {
+    "lat": 32.5371274,
+    "lon": -116.9765362,
+    "display": "Calle Agustín Pérez Rivero, Lomas Taurinas, Delegación Mesa de Otay, Tijuana, Municipio de Tijuana, Baja California, 22410, México",
+    "precision": "street"
+  },
+  "country=México&state=HIDALGO&city=PACHUCA DE SOTO": {
+    "lat": 20.1165413,
+    "lon": -98.7413535,
+    "display": "Pachuca, Pachuca de Soto, Hidalgo, 42060, México",
+    "precision": "municipality"
+  },
+  "country=México&state=TAMAULIPAS&city=VALLE HERMOSO": {
+    "lat": 25.6696972,
+    "lon": -97.813557,
+    "display": "Valle Hermoso, Tamaulipas, 87500, México",
+    "precision": "municipality"
+  },
+  "country=México&state=TAMAULIPAS&city=PADILLA": {
+    "lat": 23.9955153,
+    "lon": -98.7904149,
+    "display": "Padilla, Tamaulipas, México",
+    "precision": "municipality"
+  },
+  "country=México&state=VERACRUZ&city=CÓRDOBA&street=30 15": {
+    "lat": 20.4549079,
+    "lon": -97.331349,
+    "display": "Córdoba, Colonia Benito Juárez, colonia Benito Juárez, Papantla de Olarte, Papantla, Veracruz, 93440, México",
+    "precision": "street"
+  },
+  "country=México&state=CHIAPAS&city=SAN CRISTÓBAL DE LAS CASAS": {
+    "lat": 16.735377,
+    "lon": -92.63873,
+    "display": "San Cristóbal, San Cristóbal de las Casas, Chiapas, 29200, México",
+    "precision": "municipality"
+  },
+  "country=México&state=MORELOS&city=YAUTEPEC&street=PASEO TLAHUICA": {
+    "lat": 18.8736085,
+    "lon": -99.0765484,
+    "display": "Calle Paseo Tlahuica, Yautepec, Morelos, 62732, México",
+    "precision": "street"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=TIJUANA&street=calle durazno #20": {
+    "lat": 32.5423682,
+    "lon": -116.8949376,
+    "display": "Calle Durazno, Tijuana, Municipio de Tijuana, Baja California, 22470, México",
+    "precision": "street"
+  },
+  "country=México&state=SINALOA&city=CULIACÁN": {
+    "lat": 24.7978965,
+    "lon": -107.393395,
+    "display": "Culiacán, Culiacán Rosales, Culiacán, Sinaloa, 80220, México",
+    "precision": "municipality"
+  },
+  "country=México&state=SONORA&city=PITIQUITO": {
+    "lat": 30.6775289,
+    "lon": -112.0546569,
+    "display": "Pitiquito, Sonora, México",
+    "precision": "municipality"
+  },
+  "country=México&state=VERACRUZ&city=PASO DE OVEJAS&street=CALLE OCTAVIO PAZ": {
+    "lat": 19.2006907,
+    "lon": -96.3481135,
+    "display": "Calle Octavio Paz, Puente Jula, Paso de Ovejas, Veracruz, 91690, México",
+    "precision": "street"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=TIJUANA&street=CALLE CENTENARIO": {
+    "lat": 32.4821851,
+    "lon": -117.0173167,
+    "display": "Calle Centenario, San Antonio de los Buenos, Delegacion San Antonio de los Buenos, Tijuana, Municipio de Tijuana, Baja California, 22636, México",
+    "precision": "street"
+  },
+  "country=México&state=ZACATECAS&city=TLALTENANGO DE SÁNCHEZ ROMÁN": {
+    "lat": 21.7826752,
+    "lon": -103.30614,
+    "display": "Tlaltenango de Sánchez Román, Zacatecas, 99700, México",
+    "precision": "municipality"
+  },
+  "country=México&state=MICHOACAN&city=URUAPAN": {
+    "lat": 19.4147269,
+    "lon": -102.0522647,
+    "display": "Uruapan, Michoacán, 60050, México",
+    "precision": "municipality"
+  },
+  "country=México&state=VERACRUZ&city=ACAYUCAN&street=MANUEL ACUÑA": {
+    "lat": 17.9451305,
+    "lon": -94.9066136,
+    "display": "Calle Manuel Acuña, Acayucan, Veracruz, 96070, México",
+    "precision": "street"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=TECATE": {
+    "lat": 32.5653831,
+    "lon": -116.6298787,
+    "display": "Tecate, Municipio de Tecate, Baja California, México",
+    "precision": "municipality"
+  },
+  "country=México&state=HIDALGO&city=ACTOPAN&street=LA PAZ": {
+    "lat": 20.2702589,
+    "lon": -98.9489413,
+    "display": "Calle La Paz, Actopan, Hidalgo, 42505, México",
+    "precision": "street"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=TIJUANA&street=calle Simón Bolívar #8729": {
+    "lat": 32.4958932,
+    "lon": -117.039616,
+    "display": "Calle Cañon Estado 29, Obrera, San Antonio de los Buenos, Delegacion San Antonio de los Buenos, Tijuana, Municipio de Tijuana, Baja California, 22625, México",
+    "precision": "street"
+  },
+  "country=México&state=AGUASCALIENTES&city=RINCÓN DE ROMOS&street=RETORNO DEL ROSAL 110": {
+    "lat": 22.2465566,
+    "lon": -102.3321098,
+    "display": "Retorno del Rosal, Escaleras, Rincón de Romos, Aguascalientes, 20406, México",
+    "precision": "street"
+  },
+  "country=México&state=HIDALGO&city=ATLAPEXCO&street=5 DE MAYO": {
+    "lat": 21.020543,
+    "lon": -98.3466237,
+    "display": "5 de Mayo, Atlapexco, Hidalgo, 43050, México",
+    "precision": "street"
+  },
+  "country=México&state=SONORA&city=HERMOSILLO&street=SAN JAVIER": {
+    "lat": 29.1009612,
+    "lon": -110.9232,
+    "display": "San Javier, San Luis, Hermosillo, Sonora, 83160, México",
+    "precision": "street"
+  },
+  "country=México&state=MICHOACAN&city=QUIROGA": {
+    "lat": 19.6638149,
+    "lon": -101.5240271,
+    "display": "Quiroga, Michoacán, 58420, México",
+    "precision": "municipality"
+  },
+  "country=México&state=GUERRERO&city=SAN LUIS ACATLÁN&street=SAN MARCOS": {
+    "lat": 16.8090916,
+    "lon": -98.7449848,
+    "display": "Calle San Marcos, San Luis Acatlán, Guerrero, México",
+    "precision": "street"
+  },
+  "country=México&state=BAJA CALIFORNIA SUR&city=LA PAZ&street=16 DE SEPTIEMBRE": {
+    "lat": 24.1632564,
+    "lon": -110.3162518,
+    "display": "16 de Septiembre, Centro, La Paz, Municipio de La Paz, Baja California Sur, 23020, México",
+    "precision": "street"
+  },
+  "country=México&state=MORELOS&city=YECAPIXTLA&street=PEDRO MARIA ANAYA 3": {
+    "lat": 18.8072968,
+    "lon": -98.9230354,
+    "display": "Calle Pedro María Anaya, Juan Morales, Yecapixtla, Morelos, 72743, México",
+    "precision": "street"
+  },
+  "country=México&state=GUERRERO&city=ACAPULCO DE JUÁREZ&street=CARRETERA NACIONAL ACAPULCO - MEXICO": {
+    "lat": 16.8804897,
+    "lon": -99.8472775,
+    "display": "Carretera Nacional México - Acapulco, Amadeo Vidales, Ciudad Renacimiento, Acapulco, Acapulco de Juárez, Guerrero, 39300, México",
+    "precision": "street"
+  },
+  "country=México&state=TAMAULIPAS&city=REYNOSA&street=NUEVO LEON 215": {
+    "lat": 26.0416305,
+    "lon": -98.377794,
+    "display": "Calle Nuevo León, Reynosa, Tamaulipas, 88500, México",
+    "precision": "street"
+  },
+  "country=México&state=VERACRUZ&city=VERACRUZ": {
+    "lat": 19.2003429,
+    "lon": -96.1383572,
+    "display": "Veracruz, Municipio de Veracruz, Veracruz, 91701, México",
+    "precision": "municipality"
+  },
+  "country=México&state=MORELOS&city=YECAPIXTLA&street=GIRASOLES": {
+    "lat": 18.8052854,
+    "lon": -98.9085682,
+    "display": "Calle Girasoles, Juan Morales, Yecapixtla, Morelos, 72743, México",
+    "precision": "street"
+  },
+  "country=México&state=MICHOACAN&city=LÁZARO CÁRDENAS": {
+    "lat": 17.9594769,
+    "lon": -102.198659,
+    "display": "Lázaro Cárdenas, Michoacán, 60950, México",
+    "precision": "municipality"
+  },
+  "country=México&state=TAMAULIPAS&city=MATAMOROS&street=LAS BRISAS 164": {
+    "lat": 25.8492323,
+    "lon": -97.4623346,
+    "display": "Las Brisas, Matamoros, Tamaulipas, 87470, México",
+    "precision": "street"
+  },
+  "country=México&state=QUERETARO&city=SAN JUAN DEL RÍO&street=RIO BLANCO 28": {
+    "lat": 20.2927665,
+    "lon": -99.9619653,
+    "display": "Calle Río Blanco, Santa Bárbara de la Cueva, San Juan del Río, Querétaro, México",
+    "precision": "street"
+  },
+  "country=México&state=QUERETARO&city=QUERÉTARO&street=HUITZILOPOCHTLI": {
+    "lat": 20.635448,
+    "lon": -100.4727681,
+    "display": "Calle Huitzilopóchtli, Cerrito Colorado II, Delegación Felipe Carrillo Puerto, Santiago de Querétaro, Municipio de Querétaro, Querétaro, 76116, México",
+    "precision": "street"
+  },
+  "country=México&state=TAMAULIPAS&city=VICTORIA&street=JUAN B TIJERINA": {
+    "lat": 23.7271289,
+    "lon": -99.1445481,
+    "display": "Avenida Juan B. Tijerina, Ciudad Victoria, Victoria, Tamaulipas, 87100, México",
+    "precision": "street"
+  },
+  "country=México&state=TAMAULIPAS&city=VICTORIA&street=CLARIDAD 656": {
+    "lat": 23.7202287,
+    "lon": -99.186382,
+    "display": "Calle Claridad, Ciudad Victoria, Victoria, Tamaulipas, 87078, México",
+    "precision": "street"
+  },
+  "country=México&state=CIUDAD DE MEXICO&city=TLALPAN": {
+    "lat": 19.2880603,
+    "lon": -99.1669733,
+    "display": "Tlalpan, Ciudad de México, México",
+    "precision": "municipality"
+  },
+  "country=México&state=TAMAULIPAS&city=REYNOSA&street=JAZMIN 212": {
+    "lat": 26.0538877,
+    "lon": -98.3473673,
+    "display": "Calle Jazmín, Reynosa, Tamaulipas, 88500, México",
+    "precision": "street"
+  },
+  "country=México&state=DURANGO&city=DURANGO": {
+    "lat": 24.022008,
+    "lon": -104.654741,
+    "display": "Durango, Municipio de Durango, Durango, México",
+    "precision": "municipality"
+  },
+  "country=México&state=SINALOA&city=MAZATLÁN&street=CALLE A 19": {
+    "lat": 23.2496453,
+    "lon": -106.4135959,
+    "display": "Calle A, Federico Velarde, Villa Galaxia, Mazatlán, Sinaloa, 82000, México",
+    "precision": "street"
+  },
+  "country=México&state=CHIHUAHUA&city=NUEVO CASAS GRANDES": {
+    "lat": 30.4154532,
+    "lon": -107.9058804,
+    "display": "Nuevo Casas Grandes, Chihuahua, 31700, México",
+    "precision": "municipality"
+  },
+  "country=México&state=TAMAULIPAS&city=REYNOSA": {
+    "lat": 26.0928368,
+    "lon": -98.2779499,
+    "display": "Reynosa, Tamaulipas, 88500, México",
+    "precision": "municipality"
+  },
+  "country=México&state=VERACRUZ&city=XALAPA&street=ANDADOR PRIMAVERA": {
+    "lat": 19.560723,
+    "lon": -96.948899,
+    "display": "Andador Primavera, Fernando Gutiérrez Barrios, Xalapa, Veracruz, 91018, México",
+    "precision": "street"
+  },
+  "country=México&state=PUEBLA&city=TEHUACÁN": {
+    "lat": 18.4599877,
+    "lon": -97.3903616,
+    "display": "Tehuacán, Puebla, 75700, México",
+    "precision": "municipality"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=TIJUANA&street=calle Guadalupe Victoria #6041": {
+    "lat": 32.5199646,
+    "lon": -117.0515749,
+    "display": "Hemeterio González, Del. Centro, Tijuana, Municipio de Tijuana, Baja California, 22614, México",
+    "precision": "street"
+  },
+  "country=México&state=PUEBLA&city=AJALPAN&street=CALLE LAZARO CARDENAS": {
+    "lat": 18.395306,
+    "lon": -97.2565204,
+    "display": "Calle Lázaro Cárdenas, San Isidro Labrador (Teopuxco), Ciudad de Ajalpan, Ajalpan, Puebla, 75910, México",
+    "precision": "street"
+  },
+  "country=México&state=CIUDAD DE MEXICO&city=TLÁHUAC": {
+    "lat": 19.2703914,
+    "lon": -99.0047499,
+    "display": "Tláhuac, Ciudad de México, México",
+    "precision": "municipality"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=TIJUANA&street=calle Francisco Munguía #894": {
+    "lat": 32.4987441,
+    "lon": -117.0853866,
+    "display": "Francisco Munguía, Vista Encantada, Pequeña Haití, Delegación Plyas de Tijuana, Tijuana, Municipio de Tijuana, Baja California, 22525, México",
+    "precision": "street"
+  },
+  "country=México&state=MICHOACAN&city=LÁZARO CÁRDENAS&street=JOSE MARIA MORELOS 7": {
+    "lat": 18.025736,
+    "lon": -102.2929081,
+    "display": "José María Morelos, Brisamar, Buenos Aires, Lázaro Cárdenas, Michoacán, 60983, México",
+    "precision": "street"
+  },
+  "country=México&state=JALISCO&city=TONALÁ&street=RAYON 99": {
+    "lat": 20.6513173,
+    "lon": -103.2635177,
+    "display": "Calle Rayón, Tonalá, Región Centro, Jalisco, 45409, México",
+    "precision": "street"
+  },
+  "country=México&state=MORELOS&city=CUAUTLA&street=NO REELECCION 45": {
+    "lat": 18.8218399,
+    "lon": -98.948523,
+    "display": "Calle No Reelección, Cuautla, Morelos, 62740, México",
+    "precision": "street"
+  },
+  "country=México&state=VERACRUZ&city=XALAPA&street=AVENIDA LAS PALMAS 30": {
+    "lat": 19.5740132,
+    "lon": -96.9123121,
+    "display": "Avenida Las Palmas, México, Xalapa, Veracruz, 91300, México",
+    "precision": "street"
+  },
+  "country=México&state=VERACRUZ&city=TEPETLÁN&street=MIGUEL HIDALGO 6": {
+    "lat": 19.6220898,
+    "lon": -96.756366,
+    "display": "Calle Miguel Hidalgo, Alto Tío Diego, Tepetlán, Veracruz, 91433, México",
+    "precision": "street"
+  },
+  "country=México&state=TAMAULIPAS&city=MATAMOROS&street=JUAN DE LA BARRERA 157": {
+    "lat": 25.8400744,
+    "lon": -97.4969983,
+    "display": "Calle Juan de la Barrera, Matamoros, Tamaulipas, 87457, México",
+    "precision": "street"
+  },
+  "country=México&state=VERACRUZ&city=VERACRUZ&street=AVENIDA HERMANDAD 185": {
+    "lat": 20.0804643,
+    "lon": -97.0601392,
+    "display": "Avenida Hermandad, Las Lomas, Martínez de la Torre, Veracruz, 93603, México",
+    "precision": "street"
+  },
+  "country=México&state=NAYARIT&city=SANTIAGO IXCUINTLA": {
+    "lat": 21.8127335,
+    "lon": -105.2076472,
+    "display": "Santiago Ixcuintla, Nayarit, 63330, México",
+    "precision": "municipality"
+  },
+  "country=México&state=CIUDAD DE MEXICO&city=MILPA ALTA": {
+    "lat": 19.1916095,
+    "lon": -99.0233759,
+    "display": "Milpa Alta, Ciudad de México, México",
+    "precision": "municipality"
+  },
+  "country=México&state=VERACRUZ&city=CÓRDOBA&street=AV 25 604": {
+    "lat": 18.8915606,
+    "lon": -96.9504104,
+    "display": "Avenida 25, San Dimas, Córdoba, Veracruz, 94500, México",
+    "precision": "street"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=PLAYAS DE ROSARITO&street=RAFAEL GOMEZ 10319": {
+    "lat": 32.4117777,
+    "lon": -117.0341377,
+    "display": "Boulevard Rafael Gómez, Real de Rosarito, Ampliación Ejido Plan Libertador, Municipio de Playas de Rosarito, Baja California, 22664, México",
+    "precision": "street"
+  },
+  "country=México&state=SONORA&city=GUAYMAS": {
+    "lat": 27.9216441,
+    "lon": -110.8994059,
+    "display": "Guaymas, Sonora, 85400, México",
+    "precision": "municipality"
+  },
+  "country=México&state=MICHOACAN&city=QUIROGA&street=AMALIA SOLORZANO 21": {
+    "lat": 19.6685217,
+    "lon": -101.5188551,
+    "display": "Calle Amalia Solórzano, Quiroga, Michoacán, 58420, México",
+    "precision": "street"
+  },
+  "country=México&state=MICHOACAN&city=ZAMORA": {
+    "lat": 19.9828948,
+    "lon": -102.28363,
+    "display": "Zamora, Michoacán, 59670, México",
+    "precision": "municipality"
+  },
+  "country=México&state=MICHOACAN&city=MORELIA&street=SIN NOMBRE S/N": {
+    "lat": 19.64787,
+    "lon": -101.2769202,
+    "display": "sin nombre, cerca del encino., Colonia Ecológica Jardines de la Mintzita, Jardines de la Mintzita, Morelia, Michoacán, 58343, México",
+    "precision": "street"
+  },
+  "country=México&state=PUEBLA&city=PUEBLA": {
+    "lat": 19.0437196,
+    "lon": -98.1981486,
+    "display": "Puebla, Municipio de Puebla, Puebla, 72000, México",
+    "precision": "municipality"
+  },
+  "country=México&state=NAYARIT&city=TEPIC&street=BASILIO BADILLO 64": {
+    "lat": 21.5188214,
+    "lon": -104.8862315,
+    "display": "Calle Basilio Badillo, Tepic, Nayarit, 63040, México",
+    "precision": "street"
+  },
+  "country=México&state=SONORA&city=HERMOSILLO&street=REFORMA": {
+    "lat": 29.0669382,
+    "lon": -110.9639959,
+    "display": "Reforma, Hermosillo, Sonora, 83280, México",
+    "precision": "street"
+  },
+  "country=México&state=SINALOA&city=MAZATLÁN&street=PLAZA LA NORIA 201": {
+    "lat": 23.2329183,
+    "lon": -106.4102994,
+    "display": "La noria, Antonio Toledo Corro, Benito Juárez, Mazatlán, Sinaloa, 82000, México",
+    "precision": "street"
+  },
+  "country=México&state=SONORA&city=HERMOSILLO&street=CERRADA VILLA JUÁREZ 95": {
+    "lat": 29.0174497,
+    "lon": -110.9787081,
+    "display": "Cerrada Villa Juárez, San Ramon (Hezaki Quihuis), Hermosillo, Sonora, 83284, México",
+    "precision": "street"
+  },
+  "country=México&state=SINALOA&city=MAZATLÁN&street=REY LUIS I. 20738": {
+    "lat": 23.2157638,
+    "lon": -106.367004,
+    "display": "Calle Rey Luis I, María Elena, Mazatlán, Sinaloa, 82000, México",
+    "precision": "street"
+  },
+  "country=México&state=JALISCO&city=MAZAMITLA": {
+    "lat": 19.9163497,
+    "lon": -103.0199954,
+    "display": "Mazamitla, Región Sureste, Jalisco, 49540, México",
+    "precision": "municipality"
+  },
+  "country=México&state=MORELOS&city=XOCHITEPEC": {
+    "lat": 18.7831747,
+    "lon": -99.2308448,
+    "display": "Xochitepec, Morelos, 62790, México",
+    "precision": "municipality"
+  },
+  "country=México&state=CIUDAD DE MEXICO&city=COYOACÁN": {
+    "lat": 19.3498606,
+    "lon": -99.1619751,
+    "display": "Coyoacán, Ciudad de México, México",
+    "precision": "municipality"
+  },
+  "country=México&state=ZACATECAS&city=CUAUHTÉMOC&street=CARRETERA 450": {
+    "lat": 22.4942865,
+    "lon": -102.3625878,
+    "display": "Carretera Entronque Cuauhtémoc - Entronque Osiris (Cuota), San Pedro Piedra Gorda, Cuauhtémoc, Zacatecas, México",
+    "precision": "street"
+  },
+  "country=México&state=GUERRERO&city=TÉCPAN DE GALEANA&street=FORTUNATO PADILLA": {
+    "lat": 17.2085624,
+    "lon": -100.7596145,
+    "display": "Calle Fortunato Padilla, Nuxco, Técpan de Galeana, Guerrero, México",
+    "precision": "street"
+  },
+  "country=México&state=MICHOACAN&city=ZAMORA&street=CIRCUITO 16 DE SEPTIEMBRE 88": {
+    "lat": 19.994146,
+    "lon": -102.3044685,
+    "display": "Circuito 16 de Septiembre, Zamora, Michoacán, 59656, México",
+    "precision": "street"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=TIJUANA&street=PRIVADA JAZMIN": {
+    "lat": 32.4674711,
+    "lon": -116.9977691,
+    "display": "Privada Jazmín, Residencial La Rioja, Del. Sanchez Taboada, Tijuana, Municipio de Tijuana, Baja California, 22647, México",
+    "precision": "street"
+  },
+  "country=México&state=SINALOA&city=NAVOLATO&street=DEMOCRACIA 1188": {
+    "lat": 24.8090623,
+    "lon": -107.6528529,
+    "display": "Democracia, General Ángel Flores, Navolato, Sinaloa, 80349, México",
+    "precision": "street"
+  },
+  "country=México&state=JALISCO&city=PUERTO VALLARTA&street=PASEOS BENEMERITO DE LAS AMERICAS 138": {
+    "lat": 20.6407176,
+    "lon": -105.220306,
+    "display": "Puerto Vallarta, Región Costa Norte, Jalisco, 48300, México",
+    "precision": "municipality"
+  },
+  "country=México&state=VERACRUZ&city=HUEYAPAN DE OCAMPO&street=CALLE 302 DE ABRIL S/N": {
+    "lat": 18.151944,
+    "lon": -95.144444,
+    "display": "Hueyapan de Ocampo, Veracruz, México",
+    "precision": "municipality"
+  },
+  "country=México&state=VERACRUZ&city=MISANTLA&street=QUERUBINRES 106": {
+    "lat": 19.927222,
+    "lon": -96.854167,
+    "display": "Misantla, Veracruz, 91350, México",
+    "precision": "municipality"
+  },
+  "country=México&state=VERACRUZ&city=MISANTLA&street=CALLE QUERUBINRES 106": {
+    "lat": 19.927222,
+    "lon": -96.854167,
+    "display": "Misantla, Veracruz, 91350, México",
+    "precision": "municipality"
+  },
+  "country=México&state=AGUASCALIENTES&city=AGUASCALIENTES&street=CARRETERA A EL HOTELITO KM 12": {
+    "lat": 21.880487,
+    "lon": -102.2967195,
+    "display": "Aguascalientes, Municipio de Aguascalientes, Aguascalientes, 20000, México",
+    "precision": "municipality"
+  },
+  "country=México&state=JALISCO&city=PUERTO VALLARTA&street=ESPAÑA 542 542": {
+    "lat": 20.6534139,
+    "lon": -105.2063108,
+    "display": "España, Pitillal, Puerto Vallarta, Región Costa Norte, Jalisco, 48300, México",
+    "precision": "freeform"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=TIJUANA&street=Avenida Alejandro L. Rodríguez Privada Buenos Aires 26038-34": {
+    "lat": 32.5317397,
+    "lon": -117.019529,
+    "display": "Tijuana, Municipio de Tijuana, Baja California, 22320, México",
+    "precision": "municipality"
+  },
+  "country=México&state=GUERRERO&city=TLAPA DE COMONFORT&street=RIO JALE SIN NUM EX": {
+    "lat": 17.543333,
+    "lon": -98.578611,
+    "display": "Tlapa de Comonfort, Guerrero, 41304, México",
+    "precision": "municipality"
+  },
+  "country=México&state=SINALOA&city=CULIACÁN&street=ALVARO OBREGON SD": {
+    "lat": 24.7978965,
+    "lon": -107.393395,
+    "display": "Culiacán, Culiacán Rosales, Culiacán, Sinaloa, 80220, México",
+    "precision": "municipality"
+  },
+  "country=México&state=CHIAPAS&city=OCOTEPEC&street=RIBERA PARAISO HUACANO": {
+    "lat": 17.2257578,
+    "lon": -93.1641238,
+    "display": "Ocotepec, Chiapas, México",
+    "precision": "municipality"
+  },
+  "country=México&state=VERACRUZ&city=BANDERILLA&street=PROLONGACION DE DELFINO VIVEROS 97": {
+    "lat": 19.5925122,
+    "lon": -96.9470316,
+    "display": "Banderilla, Veracruz, 91303, México",
+    "precision": "municipality"
+  },
+  "country=México&state=JALISCO&city=ARANDAS&street=PROLONGACION SIMON BOLIVAR 608": {
+    "lat": 20.7058704,
+    "lon": -102.347912,
+    "display": "Arandas, Región Altos Sur, Jalisco, 47183, México",
+    "precision": "municipality"
+  },
+  "country=México&state=HIDALGO&city=SAN AGUSTÍN TLAXIACA&street=AV. EL DURAZNO 321C": {
+    "lat": 20.1152483,
+    "lon": -98.8865856,
+    "display": "San Agustín Tlaxiaca, Hidalgo, 42176, México",
+    "precision": "municipality"
+  },
+  "country=México&state=NUEVO LEON&city=GUADALUPE&street=PRIV ALAMO": {
+    "lat": 25.6751114,
+    "lon": -100.2151753,
+    "display": "Guadalupe, Nuevo León, 67180, México",
+    "precision": "municipality"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=TIJUANA&street=HACIENDA FUENTE DEL CAMPO 10210-11": {
+    "lat": 32.5317397,
+    "lon": -117.019529,
+    "display": "Tijuana, Municipio de Tijuana, Baja California, 22320, México",
+    "precision": "municipality"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=TIJUANA&street=DOMICILIO PRIVADA TENAYUCA #6527": {
+    "lat": 32.5317397,
+    "lon": -117.019529,
+    "display": "Tijuana, Municipio de Tijuana, Baja California, 22320, México",
+    "precision": "municipality"
+  },
+  "country=México&state=SINALOA&city=CULIACÁN&street=SD SD": {
+    "lat": 24.7978965,
+    "lon": -107.393395,
+    "display": "Culiacán, Culiacán Rosales, Culiacán, Sinaloa, 80220, México",
+    "precision": "municipality"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=TIJUANA&street=calle Cañón González Ortega #2728": {
+    "lat": 32.5317397,
+    "lon": -117.019529,
+    "display": "Tijuana, Municipio de Tijuana, Baja California, 22320, México",
+    "precision": "municipality"
+  },
+  "country=México&state=SINALOA&city=SALVADOR ALVARADO&street=AQUILES SERDAN Y TEOFILO NORIS 1074": {
+    "lat": 24.7838466,
+    "lon": -107.4222485,
+    "display": "Salvador Alvarado, Culiacán Rosales, Culiacán, Sinaloa, 80160, México",
+    "precision": "municipality"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=TIJUANA&street=PRIVADA BAHÍA TORTUGAS #11091-102": {
+    "lat": 32.5317397,
+    "lon": -117.019529,
+    "display": "Tijuana, Municipio de Tijuana, Baja California, 22320, México",
+    "precision": "municipality"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=TIJUANA&street=calle de la pantera MNZ 13": {
+    "lat": 32.5317397,
+    "lon": -117.019529,
+    "display": "Tijuana, Municipio de Tijuana, Baja California, 22320, México",
+    "precision": "municipality"
+  },
+  "country=México&state=BAJA CALIFORNIA SUR&city=LOS CABOS&street=LAGUNA PAJONAL M. A": {
+    "lat": 23.0481962,
+    "lon": -109.6891956,
+    "display": "Holiday Inn Los Cabos, San José del Cabo, Municipio de Los Cabos, Baja California Sur, México",
+    "precision": "municipality"
+  },
+  "country=México&state=TAMAULIPAS&city=REYNOSA&street=PUERA DE NARANJO ORIENTE 605": {
+    "lat": 26.0928368,
+    "lon": -98.2779499,
+    "display": "Reynosa, Tamaulipas, 88500, México",
+    "precision": "municipality"
+  },
+  "country=México&state=MICHOACAN&city=LA PIEDAD&street=AVENIDA SOSTENES ROCHA 15": {
+    "lat": 20.3429949,
+    "lon": -102.031124,
+    "display": "La Piedad de Cabadas, La Piedad, Michoacán, 59300, México",
+    "precision": "municipality"
+  },
+  "country=México&state=SONORA&city=HERMOSILLO&street=CERRADA QUINTANAR 109": {
+    "lat": 29.0948207,
+    "lon": -110.9692202,
+    "display": "Hermosillo, Sonora, 83140, México",
+    "precision": "municipality"
+  },
+  "country=México&state=MICHOACAN&city=APATZINGÁN&street=COLONIA EL CAFETAL": {
+    "lat": 19.0913792,
+    "lon": -102.3537356,
+    "display": "Apatzingán, Michoacán, 60600, México",
+    "precision": "municipality"
+  },
+  "country=México&state=CHIAPAS&city=PANTELHÓ&street=DOMICILIO CONOCIDO": {
+    "lat": 17.0053097,
+    "lon": -92.471433,
+    "display": "Pantelhó, Chiapas, México",
+    "precision": "municipality"
+  },
+  "country=México&state=QUINTANA ROO&city=BENITO JUÁREZ&street=YALIT DEPARTAMENTO F, MANZANA 47, LOTE 5, PASEOS NIKTE": {
+    "lat": 21.0742627,
+    "lon": -86.9265622,
+    "display": "Benito Juárez, Quintana Roo, México",
+    "precision": "municipality"
+  },
+  "country=México&state=CHIAPAS&city=MAPASTEPEC&street=CALLE CENTRAL, BARRIO 22 DE MAYO, EJIDO SESECAPA,": {
+    "lat": 15.43981,
+    "lon": -92.898367,
+    "display": "Mapastepec, Chiapas, 30560, México",
+    "precision": "municipality"
+  },
+  "country=México&state=PUEBLA&city=CHILA&street=CALLE EL BAMBU SIN NUMERO": {
+    "lat": 17.971667,
+    "lon": -97.862222,
+    "display": "Chila, Puebla, México",
+    "precision": "municipality"
+  },
+  "country=México&state=PUEBLA&city=SAN ANDRÉS CHOLULA&street=CALLE ARCANGELES NUMERO 3": {
+    "lat": 19.0519385,
+    "lon": -98.2976151,
+    "display": "San Andrés Cholula, Puebla, 72810, México",
+    "precision": "municipality"
+  },
+  "country=México&state=PUEBLA&city=HUEJOTZINGO&street=PASEO ARCADIA NUMERO 6 D ENTRE CALLE OBED Y FLORIDANA": {
+    "lat": 19.159237,
+    "lon": -98.4069843,
+    "display": "Huejotzingo, Puebla, 74160, México",
+    "precision": "municipality"
+  },
+  "country=México&state=PUEBLA&city=PUEBLA&street=CALLE MARIANO MATAMOROS NUMERO 18 A": {
+    "lat": 19.0437196,
+    "lon": -98.1981486,
+    "display": "Puebla, Municipio de Puebla, Puebla, 72000, México",
+    "precision": "municipality"
+  },
+  "country=México&state=GUERRERO&city=IGUALA DE LA INDEPENDENCIA&street=AVENIDA DEL ESTUDIANTES": {
+    "lat": 18.3466358,
+    "lon": -99.5376944,
+    "display": "Iguala, Iguala de la Independencia, Guerrero, 40000, México",
+    "precision": "municipality"
+  },
+  "country=México&state=TAMAULIPAS&city=MATAMOROS&street=FRANCISCO CABRAL 35": {
+    "lat": 25.8810158,
+    "lon": -97.5064866,
+    "display": "Matamoros, Tamaulipas, 87300, México",
+    "precision": "municipality"
+  },
+  "country=México&state=CAMPECHE&city=CAMPECHE&street=AVENIDA SOLIDARIDAD NACIONAL MZ. 58": {
+    "lat": 19.8706111,
+    "lon": -90.4934189,
+    "display": "Avenida Solidaridad Nacional, Fidel Velázquez, Campeche, Municipio de Campeche, Campeche, 24022, México",
+    "precision": "freeform"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=TIJUANA&street=BOULEVARD 2000 CERCANO A PUENTE DULFI": {
+    "lat": 32.5317397,
+    "lon": -117.019529,
+    "display": "Tijuana, Municipio de Tijuana, Baja California, 22320, México",
+    "precision": "municipality"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=TIJUANA&street=PRIVADA SAN MARTÍN 7614-19": {
+    "lat": 32.4627943,
+    "lon": -117.0047413,
+    "display": "Privada San Martín, Colinas de California, Del. Sanchez Taboada, Tijuana, Municipio de Tijuana, Baja California, 22654, México",
+    "precision": "freeform"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=TIJUANA&street=calle Manuel Mesa #19": {
+    "lat": 32.4630826,
+    "lon": -116.9295363,
+    "display": "Las Joyitas, Delegación La Mesa, Tijuana, Municipio de Tijuana, Baja California, 26680, México",
+    "precision": "freeform"
+  },
+  "country=México&state=CHIAPAS&city=OCOZOCOAUTLA DE ESPINOSA&street=2A PONIENTE ENTRE 5TA Y 6TA NORTE SIN NUMERO": {
+    "lat": 16.7595989,
+    "lon": -93.3738765,
+    "display": "Ocozocoautla, Ocozocoautla de Espinosa, Chiapas, 29140, México",
+    "precision": "municipality"
+  },
+  "country=México&state=MORELOS&city=CUERNAVACA&street=PRIVADA MORELOS SIN NUMERO": {
+    "lat": 18.9218274,
+    "lon": -99.2342282,
+    "display": "Cuernavaca, Morelos, 62000, México",
+    "precision": "municipality"
+  },
+  "country=México&state=MICHOACAN&city=QUERÉNDARO&street=COLONIA ISACC ARRIAGA": {
+    "lat": 19.8097767,
+    "lon": -100.8836721,
+    "display": "Querendaro, Queréndaro, Michoacán, 58980, México",
+    "precision": "municipality"
+  },
+  "country=México&state=SINALOA&city=CULIACÁN&street=GUADALUPE VISTORIA 1479": {
+    "lat": 24.7978965,
+    "lon": -107.393395,
+    "display": "Culiacán, Culiacán Rosales, Culiacán, Sinaloa, 80220, México",
+    "precision": "municipality"
+  },
+  "country=México&state=BAJA CALIFORNIA SUR&city=LOS CABOS&street=MIRAFLORES": {
+    "lat": 23.36895,
+    "lon": -109.776821,
+    "display": "Miraflores, Municipio de Los Cabos, Baja California Sur, México",
+    "precision": "freeform"
+  },
+  "country=México&state=SINALOA&city=ESCUINAPA&street=SE DESCONOCE SD": {
+    "lat": 22.8337989,
+    "lon": -105.778322,
+    "display": "Escuinapa, Sinaloa, 82400, México",
+    "precision": "municipality"
+  },
+  "country=México&state=NAYARIT&city=ACAPONETA&street=EMILIANO CARRANZA 46": {
+    "lat": 22.4933848,
+    "lon": -105.3618849,
+    "display": "Acaponeta, Nayarit, 63408, México",
+    "precision": "municipality"
+  },
+  "country=México&state=NAYARIT&city=ACAPONETA&street=EMILIANO CARRANZA 49": {
+    "lat": 22.4933848,
+    "lon": -105.3618849,
+    "display": "Acaponeta, Nayarit, 63408, México",
+    "precision": "municipality"
+  },
+  "country=México&state=VERACRUZ&city=XALAPA&street=RANCHO LA JOYITA (RANCHO DE LOS FERNANDEZ": {
+    "lat": 19.5408338,
+    "lon": -96.9146374,
+    "display": "Xalapa, Veracruz, 91170, México",
+    "precision": "municipality"
+  },
+  "country=México&state=GUERRERO&city=JOSÉ AZUETA&street=NARANJO": {
+    "lat": 16.776389,
+    "lon": -99.6075,
+    "display": "Teniente José Azueta (Río Papagayo), Acapulco de Juárez, Guerrero, 39936, México",
+    "precision": "municipality"
+  },
+  "country=México&state=GUERRERO&city=JOSÉ AZUETA&street=TOBOGAN 10": {
+    "lat": 16.776389,
+    "lon": -99.6075,
+    "display": "Teniente José Azueta (Río Papagayo), Acapulco de Juárez, Guerrero, 39936, México",
+    "precision": "municipality"
+  },
+  "country=México&state=NUEVO LEON&city=SALINAS VICTORIA&street=AVENIDA CERRO DE LA SILLA": {
+    "lat": 25.9634174,
+    "lon": -100.2922877,
+    "display": "Salinas Victoria, Nuevo León, 65500, México",
+    "precision": "municipality"
+  },
+  "country=México&state=NUEVO LEON&city=GUADALUPE&street=SAN FERNANDO": {
+    "lat": 25.669022,
+    "lon": -100.2083128,
+    "display": "San Fernando, Santa Isabel, Guadalupe, Nuevo León, 67180, México",
+    "precision": "street"
+  },
+  "country=México&state=MORELOS&city=AYALA&street=MIGUEL HIDALGO 141": {
+    "lat": 18.7610382,
+    "lon": -98.9859254,
+    "display": "Calle Miguel Hidalgo, Ciudad Ayala, Ayala, Morelos, 62725, México",
+    "precision": "street"
+  },
+  "country=México&state=JALISCO&city=ZAPOPAN&street=SAN FERNANDO 3436": {
+    "lat": 20.7489207,
+    "lon": -103.4346555,
+    "display": "Calle Valle de San Fernando, Viveros del Valle, Nuevo México, Zapopan, Región Centro, Jalisco, 45138, México",
+    "precision": "street"
+  },
+  "country=México&state=NUEVO LEON&city=MONTERREY&street=ARCOS COLONIALES": {
+    "lat": 25.778309,
+    "lon": -100.3911047,
+    "display": "Calle Arcos Coloniales, Monterrey, Nuevo León, 64103, México",
+    "precision": "street"
+  },
+  "country=México&state=NUEVO LEON&city=MONTERREY&street=CERRADA DEL FAISÁN": {
+    "lat": 25.6802019,
+    "lon": -100.315258,
+    "display": "Monterrey, Nuevo León, 64490, México",
+    "precision": "municipality"
+  },
+  "country=México&state=NUEVO LEON&city=HIDALGO&street=CARRETERA MONTERREY-MONCLOVA 610": {
+    "lat": 25.9801961,
+    "lon": -100.4497914,
+    "display": "Carretera Monterrey - Castaños, Hidalgo, Nuevo León, 65600, México",
+    "precision": "street"
+  },
+  "country=México&state=CHIAPAS&city=TONALÁ&street=AVENIDA PIJIJIAPAN": {
+    "lat": 16.0894476,
+    "lon": -93.7546502,
+    "display": "Tonalá, Chiapas, 30500, México",
+    "precision": "municipality"
+  },
+  "country=México&state=NAYARIT&city=ACAPONETA&street=YUCATAN 96": {
+    "lat": 22.494372,
+    "lon": -105.3705131,
+    "display": "Calle Yucatán Norte, Acaponeta, Nayarit, 63408, México",
+    "precision": "street"
+  },
+  "country=México&state=VERACRUZ&city=SAN JUAN EVANGELISTA&street=AVENIDA BENITO JUAREZ 717": {
+    "lat": 17.8859417,
+    "lon": -95.1395853,
+    "display": "San Juan Evangelista, Veracruz, México",
+    "precision": "municipality"
+  },
+  "country=México&state=VERACRUZ&city=CÓRDOBA&street=AVENIDA 12, CALLE 21 1917": {
+    "lat": 18.9048389,
+    "lon": -96.9386587,
+    "display": "Avenida 12, Los Filtros, Córdoba, Veracruz, 94500, México",
+    "precision": "freeform"
+  },
+  "country=México&state=VERACRUZ&city=ACAYUCAN": {
+    "lat": 17.9487862,
+    "lon": -94.9145752,
+    "display": "Acayucan, Veracruz, 96070, México",
+    "precision": "municipality"
+  },
+  "country=México&state=VERACRUZ&city=COSAMALOAPAN DE CARPIO&street=CALLE AQUILES SERDAN SN": {
+    "lat": 18.3651104,
+    "lon": -95.7926595,
+    "display": "Calle Aquiles Serdán, Cosamaloapan, Cosamaloapan de Carpio, Veracruz, 95400, México",
+    "precision": "street"
+  },
+  "country=México&state=CHIAPAS&city=SUCHIATE": {
+    "lat": 14.6849932,
+    "lon": -92.1683407,
+    "display": "Suchiate, Ciudad Hidalgo, Suchiate, Chiapas, 30840, México",
+    "precision": "municipality"
+  },
+  "country=México&state=VERACRUZ&city=ATZACAN&street=NORTE 6 8": {
+    "lat": 18.9118539,
+    "lon": -97.0822713,
+    "display": "Calle Norte 2, Atzacan, Veracruz, 94153, México",
+    "precision": "street"
+  },
+  "country=México&state=QUERETARO&city=CORREGIDORA&street=ESMERALDA 3": {
+    "lat": 20.5223887,
+    "lon": -100.4312195,
+    "display": "Punta Esmeralda, Corregidora, Querétaro, 76925, México",
+    "precision": "freeform"
+  },
+  "country=México&state=TLAXCALA&city=APETATITLÁN DE ANTONIO CARVAJAL&street=CALLE 5 DE MAYO S/N": {
+    "lat": 19.3468542,
+    "lon": -98.1990126,
+    "display": "Calle 5 de Mayo, San Matías Tepetomatitlán, Apetatitlán de Antonio Carvajal, Tlaxcala, 90610, México",
+    "precision": "street"
+  },
+  "country=México&state=SINALOA&city=MAZATLÁN&street=MANUEL SALAZAR 1110": {
+    "lat": 23.2278995,
+    "lon": -106.4006083,
+    "display": "Calle General Manuel Salazar, Lomas de Juarez, Benito Juárez, Mazatlán, Sinaloa, 82000, México",
+    "precision": "street"
+  },
+  "country=México&state=NUEVO LEON&city=JUÁREZ&street=REAL DE SAN RODOLFO": {
+    "lat": 25.659571,
+    "lon": -100.0807272,
+    "display": "Calle Real De San Rodolfo, Real de San Jose, Benito Juárez, Juárez, Nuevo León, 67250, México",
+    "precision": "street"
+  },
+  "country=México&state=MORELOS&city=CUAUTLA&street=CLAUDIO HUERTA 1": {
+    "lat": 18.8128837,
+    "lon": -98.9632042,
+    "display": "Calle Claudio Huerta, Cuautla, Morelos, 62744, México",
+    "precision": "street"
+  },
+  "country=México&state=NUEVO LEON&city=CIÉNEGA DE FLORES&street=VIVEROS DEL MAR": {
+    "lat": 25.956169,
+    "lon": -100.1662028,
+    "display": "Ciénega de Flores, Nuevo León, México",
+    "precision": "municipality"
+  },
+  "country=México&state=QUERETARO&city=EL MARQUÉS&street=JAGUAR 14": {
+    "lat": 20.6582368,
+    "lon": -100.3398863,
+    "display": "Privada Jaguar 6, La Pradera, El Marqués, Querétaro, 76269, México",
+    "precision": "street"
+  },
+  "country=México&state=JALISCO&city=ZAPOPAN&street=VILLAS DEL AMANECER 1709": {
+    "lat": 20.634083,
+    "lon": -103.4724958,
+    "display": "Villas del Amanecer, Villa de La Primavera, ZENITH RESIDENCIAL, Santa Ana Tepetitlán, Zapopan, Región Centro, Jalisco, 45065, México",
+    "precision": "street"
+  },
+  "country=México&state=HIDALGO&city=ATOTONILCO DE TULA&street=MELCHOR OCAMPO 02": {
+    "lat": 19.9864142,
+    "lon": -99.1934967,
+    "display": "Calle Melchor Ocampo, Vito, Atotonilco de Tula, Hidalgo, 55660, México",
+    "precision": "street"
+  },
+  "country=México&state=NUEVO LEON&city=GUADALUPE&street=FLOR DE LIZ": {
+    "lat": 25.6751114,
+    "lon": -100.2151753,
+    "display": "Guadalupe, Nuevo León, 67180, México",
+    "precision": "municipality"
+  },
+  "country=México&state=QUERETARO&city=QUERÉTARO&street=MONTE HOREB 227": {
+    "lat": 20.6435823,
+    "lon": -100.474085,
+    "display": "Monte Horeb, Condominio Atlas, Delegación Félix Osores, Santiago de Querétaro, Municipio de Querétaro, Querétaro, 76116, México",
+    "precision": "street"
+  },
+  "country=México&state=NUEVO LEON&city=JUÁREZ&street=HUELVA": {
+    "lat": 25.6796804,
+    "lon": -100.0896134,
+    "display": "Calle Huelva, Praderas de San Juan, Benito Juárez, Juárez, Nuevo León, 67258, México",
+    "precision": "street"
+  },
+  "country=México&state=BAJA CALIFORNIA SUR&city=LOS CABOS": {
+    "lat": 23.0481962,
+    "lon": -109.6891956,
+    "display": "Holiday Inn Los Cabos, San José del Cabo, Municipio de Los Cabos, Baja California Sur, México",
+    "precision": "municipality"
+  },
+  "country=México&state=NUEVO LEON&city=MONTERREY&street=SANTA CATARINA": {
+    "lat": 25.6824863,
+    "lon": -100.27335,
+    "display": "Santa Catarina, Fierro, Monterrey, Nuevo León, 64590, México",
+    "precision": "street"
+  },
+  "country=México&state=SINALOA&city=ESCUINAPA": {
+    "lat": 22.8337989,
+    "lon": -105.778322,
+    "display": "Escuinapa, Sinaloa, 82400, México",
+    "precision": "municipality"
+  },
+  "country=México&state=CHIAPAS&city=PANTEPEC": {
+    "lat": 17.1883543,
+    "lon": -93.0487595,
+    "display": "Pantepec, Chiapas, México",
+    "precision": "municipality"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=TIJUANA&street=calle tres pirules": {
+    "lat": 32.5317397,
+    "lon": -117.019529,
+    "display": "Tijuana, Municipio de Tijuana, Baja California, 22320, México",
+    "precision": "municipality"
+  },
+  "country=México&state=PUEBLA&city=TLACHICHUCA&street=CALLEGO LERDO DE TEJEDA SIN NUMERO": {
+    "lat": 19.1149679,
+    "lon": -97.4191564,
+    "display": "Tlachichuca, Puebla, 75050, México",
+    "precision": "municipality"
+  },
+  "country=México&state=NUEVO LEON&city=SALINAS VICTORIA&street=ZARAGOZA": {
+    "lat": 25.9590837,
+    "lon": -100.2915187,
+    "display": "Calle Ignacio Zaragoza, Salinas Victoria, Nuevo León, 65500, México",
+    "precision": "street"
+  },
+  "country=México&state=PUEBLA&city=PUEBLA&street=CALLE NAYARIT 1709": {
+    "lat": 18.9982882,
+    "lon": -98.2326062,
+    "display": "Calle Nayarit, Loma Encantada, Puebla, Municipio de Puebla, Puebla, 72470, México",
+    "precision": "street"
+  },
+  "country=México&state=GUANAJUATO&city=GUANAJUATO&street=PASEO DEL JAZMIN 133": {
+    "lat": 21.1877959,
+    "lon": -101.7531238,
+    "display": "Calle Paseo del Jazmín, Cataluña Residencial, Paseo De Los Laureles, León, Guanajuato, 37690, México",
+    "precision": "street"
+  },
+  "country=México&state=QUERETARO&city=QUERÉTARO": {
+    "lat": 20.5922997,
+    "lon": -100.3917424,
+    "display": "Santiago de Querétaro, Municipio de Querétaro, Querétaro, México",
+    "precision": "municipality"
+  },
+  "country=México&state=NUEVO LEON&city=CARMEN&street=FLORES": {
+    "lat": 25.9402791,
+    "lon": -100.3561661,
+    "display": "Escuela Primaria Presentacion Gomez Flores, Calle Alfredo V. Bonfil, Popular., Carmen, El Carmen, Nuevo León, México",
+    "precision": "freeform"
+  },
+  "country=México&state=JALISCO&city=ZAPOPAN&street=AVENIDA DE LA PRESA  DEL VALLE 120": {
+    "lat": 20.7211203,
+    "lon": -103.3913671,
+    "display": "Zapopan, Región Centro, Jalisco, 45101, México",
+    "precision": "municipality"
+  },
+  "country=México&state=NUEVO LEON&city=ANÁHUAC&street=CARRETERA MONTERREY COLOMBIA": {
+    "lat": 27.6954418,
+    "lon": -99.7715271,
+    "display": "Carretera Monterrey-Colombia, Colombia, Anáhuac, Nuevo León, México",
+    "precision": "street"
+  },
+  "country=México&state=GUERRERO&city=CHILAPA DE ALVAREZ": {
+    "lat": 17.5939304,
+    "lon": -99.17766,
+    "display": "Chilapa de Álvarez, Guerrero, 41100, México",
+    "precision": "municipality"
+  },
+  "country=México&state=NAYARIT&city=RUÍZ": {
+    "lat": 21.9505231,
+    "lon": -105.1461465,
+    "display": "Ruiz, Nayarit, 63628, México",
+    "precision": "municipality"
+  },
+  "country=México&state=PUEBLA&city=PUEBLA&street=CALLE SAN CRISTOBAL NUMERO 4": {
+    "lat": 19.0437196,
+    "lon": -98.1981486,
+    "display": "Puebla, Municipio de Puebla, Puebla, 72000, México",
+    "precision": "municipality"
+  },
+  "country=México&state=CAMPECHE&city=CAMPECHE&street=AGUSTIN MELGAR": {
+    "lat": 19.8256324,
+    "lon": -90.5518867,
+    "display": "Avenida Agustín Melgar, Samulá, Municipio de Campeche, Campeche, 24036, México",
+    "precision": "street"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=TIJUANA&street=CALLE LUCHA LOTE 133": {
+    "lat": 32.4760711,
+    "lon": -117.0877664,
+    "display": "Calle Lucha, Delegación Plyas de Tijuana, Tijuana, Municipio de Tijuana, Baja California, 22290, México",
+    "precision": "street"
+  },
+  "country=México&state=PUEBLA&city=ATLIXCO&street=CALLE LAZARO CARDENAS NUMERO 802": {
+    "lat": 18.908889,
+    "lon": -98.437778,
+    "display": "Atlixco, Puebla, 74260, México",
+    "precision": "municipality"
+  },
+  "country=México&state=PUEBLA&city=PUEBLA&street=AMPLIACION RIVERA DE APARICIO SEFUNDA SECCION NUMERO 37": {
+    "lat": 19.0437196,
+    "lon": -98.1981486,
+    "display": "Puebla, Municipio de Puebla, Puebla, 72000, México",
+    "precision": "municipality"
+  },
+  "country=México&state=PUEBLA&city=PUEBLA&street=PRIVADA 20 DE NOVIEMBRE 5517 SAN BALTAZAR CAMPECHE PUEBLA PU": {
+    "lat": 19.0437196,
+    "lon": -98.1981486,
+    "display": "Puebla, Municipio de Puebla, Puebla, 72000, México",
+    "precision": "municipality"
+  },
+  "country=México&state=COLIMA&city=COLIMA&street=MARIA ELENA OCHOA 1422": {
+    "lat": 19.2433991,
+    "lon": -103.7280738,
+    "display": "Colima, Municipio de Colima, Colima, 28000, México",
+    "precision": "municipality"
+  },
+  "country=México&state=MICHOACAN&city=MORELIA&street=MIGUEL CARRILLO 226": {
+    "lat": 19.7135388,
+    "lon": -101.2256919,
+    "display": "Calle Miguel Carrillo, Morelia, Michoacán, 58147, México",
+    "precision": "street"
+  },
+  "country=México&state=TAMAULIPAS&city=MATAMOROS&street=CONCEPCION DE ORO 34": {
+    "lat": 25.8810158,
+    "lon": -97.5064866,
+    "display": "Matamoros, Tamaulipas, 87300, México",
+    "precision": "municipality"
+  },
+  "country=México&state=VERACRUZ&city=POZA RICA DE HIDALGO&street=CHOPO": {
+    "lat": 20.5360935,
+    "lon": -97.4547165,
+    "display": "Chopo, Colonia Obras Sociales, Poza Rica, Terrenos del Lote 3 \"Poza Rica\", Poza Rica de Hidalgo, Veracruz, 93260, México",
+    "precision": "street"
+  },
+  "country=México&state=CHIAPAS&city=LA CONCORDIA&street=AVENIDA 3 SUR ORIENTE NUMERO 479": {
+    "lat": 16.1178232,
+    "lon": -92.6907913,
+    "display": "La Concordia, Chiapas, México",
+    "precision": "municipality"
+  },
+  "country=México&state=CHIAPAS&city=LA CONCORDIA&street=AVENIDA 5 NORTE PONIENTE SIN NUMERO": {
+    "lat": 16.1178232,
+    "lon": -92.6907913,
+    "display": "La Concordia, Chiapas, México",
+    "precision": "municipality"
+  },
+  "country=México&state=MORELOS&city=TEMIXCO&street=PRIVADA CHINAMECA": {
+    "lat": 18.8753894,
+    "lon": -99.2462058,
+    "display": "Privada Chinameca, Campo Verde, Pueblo Viejo, Temixco, Morelos, 62588, México",
+    "precision": "street"
+  },
+  "country=México&state=TAMAULIPAS&city=JAUMAVE": {
+    "lat": 23.40496,
+    "lon": -99.3806698,
+    "display": "Jaumave, Tamaulipas, 87930, México",
+    "precision": "municipality"
+  },
+  "country=México&state=TAMAULIPAS&city=MATAMOROS&street=SAN CARLOS 104": {
+    "lat": 25.8282906,
+    "lon": -97.4797489,
+    "display": "San Carlos, Matamoros, Tamaulipas, 87476, México",
+    "precision": "street"
+  },
+  "country=México&state=SINALOA&city=CULIACÁN&street=PUERTO ZIHUATANEJO SN": {
+    "lat": 24.7876485,
+    "lon": -107.4209314,
+    "display": "Avenida Puerto Zihuatanejo, Francisco Villa, Culiacán, Culiacán Rosales, Culiacán, Sinaloa, 80110, México",
+    "precision": "street"
+  },
+  "country=México&state=SINALOA&city=CULIACÁN&street=SN SN": {
+    "lat": 24.7978965,
+    "lon": -107.393395,
+    "display": "Culiacán, Culiacán Rosales, Culiacán, Sinaloa, 80220, México",
+    "precision": "municipality"
+  },
+  "country=México&state=TAMAULIPAS&city=MATAMOROS&street=GREGORIO OZUNA 34": {
+    "lat": 25.8810158,
+    "lon": -97.5064866,
+    "display": "Matamoros, Tamaulipas, 87300, México",
+    "precision": "municipality"
+  },
+  "country=México&state=CIUDAD DE MEXICO&city=AZCAPOTZALCO": {
+    "lat": 19.4838908,
+    "lon": -99.1843937,
+    "display": "Azcapotzalco, Ciudad de México, México",
+    "precision": "municipality"
+  },
+  "country=México&state=TAMAULIPAS&city=TAMPICO&street=EMILIO PORTES GIL": {
+    "lat": 22.3128291,
+    "lon": -97.8831698,
+    "display": "Calle Licenciado Emilio Portes Gil, Tampico, Tamaulipas, 89318, México",
+    "precision": "street"
+  },
+  "country=México&state=TAMAULIPAS&city=MATAMOROS&street=ALICIA ARGUELLES 8": {
+    "lat": 25.8190936,
+    "lon": -97.5475673,
+    "display": "Calle Profesora Alicia Argüelles Cisneros, Matamoros, Tamaulipas, 87395, México",
+    "precision": "street"
+  },
+  "country=México&state=NAYARIT&city=TEPIC&street=LA YESCA 12": {
+    "lat": 21.584096,
+    "lon": -104.8363207,
+    "display": "Andador La Yesca, Francisco I. Madero (Puga), Tepic, Nayarit, 63174, México",
+    "precision": "street"
+  },
+  "country=México&state=SINALOA&city=MAZATLÁN&street=SAN PABLO 4405": {
+    "lat": 23.2309178,
+    "lon": -106.3741452,
+    "display": "San Pablo, Santa Teresa, Mazatlán, Sinaloa, 82000, México",
+    "precision": "street"
+  },
+  "country=México&state=DURANGO&city=DURANGO&street=RICARDO FLORES MAGON 103": {
+    "lat": 26.1924091,
+    "lon": -105.6106207,
+    "display": "Ricardo Flores Magon, San Bernardo, Durango, México",
+    "precision": "freeform"
+  },
+  "country=México&state=GUANAJUATO&city=LEÓN": {
+    "lat": 21.121965,
+    "lon": -101.6829766,
+    "display": "León, Guanajuato, 37004, México",
+    "precision": "municipality"
+  },
+  "country=México&state=ZACATECAS&city=ZACATECAS&street=CALLE VALENTÍN GÓMEZ FARÍAS 319": {
+    "lat": 22.7666652,
+    "lon": -102.5921584,
+    "display": "Calle Valentín Gómez Farías, Zacatecas, Municipio de Zacatecas, Zacatecas, 98053, México",
+    "precision": "street"
+  },
+  "country=México&state=MORELOS&city=TEMIXCO&street=PRIVADA BUGAMBILIA 21": {
+    "lat": 18.8771855,
+    "lon": -99.235597,
+    "display": "Privada Bugambilia, Lomas del Carril, Temixco, Morelos, 62050, México",
+    "precision": "street"
+  },
+  "country=México&state=QUERETARO&city=QUERÉTARO&street=LIBERTAD": {
+    "lat": 20.6777677,
+    "lon": -100.4512554,
+    "display": "Libertad, 147, Calle Camelinas, La campana, Delegación Félix Osores, Santiago de Querétaro, Municipio de Querétaro, Querétaro, 76100, México",
+    "precision": "street"
+  },
+  "country=México&state=CHIAPAS&city=JIQUIPILAS&street=CALLE SIN NOMBRE SIN NUMERO": {
+    "lat": 16.6686254,
+    "lon": -93.6461169,
+    "display": "Jiquipilas, Chiapas, México",
+    "precision": "municipality"
+  },
+  "country=México&state=JALISCO&city=JUANACATLÁN&street=RAMON CORONA 13": {
+    "lat": 20.5049698,
+    "lon": -103.1710539,
+    "display": "Ramón Corona, Juanacatlán, Región Centro, Jalisco, 45880, México",
+    "precision": "street"
+  },
+  "country=México&state=CHIAPAS&city=CHIAPA DE CORZO&street=CALLE MIGUEL HIDALGO NUM 5": {
+    "lat": 16.7075202,
+    "lon": -93.0115045,
+    "display": "Chiapa de Corzo, Chiapas, 29160, México",
+    "precision": "municipality"
+  },
+  "country=México&state=CHIAPAS&city=CACAHOATÁN": {
+    "lat": 14.9917056,
+    "lon": -92.1652487,
+    "display": "Cacahoatán, Chiapas, 30890, México",
+    "precision": "municipality"
+  },
+  "country=México&state=VERACRUZ&city=AMATLÁN DE LOS REYES&street=GALEANA": {
+    "lat": 18.845395,
+    "lon": -96.9182048,
+    "display": "Calle Galeana, Altepetzinatl, Amatlán de los Reyes, Veracruz, 94954, México",
+    "precision": "street"
+  },
+  "country=México&state=TAMAULIPAS&city=NUEVO LAREDO&street=PRESA LA BOCA": {
+    "lat": 27.4449619,
+    "lon": -99.5267428,
+    "display": "Calle Presa La Boca, Concordia, Nuevo Laredo, Tamaulipas, 88289, México",
+    "precision": "street"
+  },
+  "country=México&state=TAMAULIPAS&city=REYNOSA&street=FLOR DE MIMOSA 214": {
+    "lat": 26.0111277,
+    "lon": -98.4053765,
+    "display": "Calle Flor de Mimosa, Reynosa, Tamaulipas, 88500, México",
+    "precision": "street"
+  },
+  "country=México&state=TAMAULIPAS&city=REYNOSA&street=JAIME NUNO 150": {
+    "lat": 26.0739523,
+    "lon": -98.3070593,
+    "display": "Jaime Nunó, Reynosa, Tamaulipas, 88500, México",
+    "precision": "street"
+  },
+  "country=México&state=TAMAULIPAS&city=REYNOSA&street=ROBLES 235": {
+    "lat": 25.7355906,
+    "lon": -98.2354224,
+    "display": "Irma Robles, Reynosa, Tamaulipas, México",
+    "precision": "freeform"
+  },
+  "country=México&state=GUANAJUATO&city=DOLORES HIDALGO&street=ADJUNTAS DEL MONTE": {
+    "lat": 21.2855507,
+    "lon": -100.8267604,
+    "display": "Adjuntas del Monte, La California, Dolores Hidalgo, Guanajuato, 37813, México",
+    "precision": "street"
+  },
+  "country=México&state=JALISCO&city=ZAPOPAN&street=HORACIO GAYTAN 1319": {
+    "lat": 20.6395411,
+    "lon": -103.4362211,
+    "display": "Calle Horacio Gaytán, Las Alamedas, Miramar, Santa Ana Tepetitlán, Zapopan, Región Centro, Jalisco, 45079, México",
+    "precision": "street"
+  },
+  "country=México&state=DURANGO&city=DURANGO&street=ALBERTO TERRONES 209": {
+    "lat": 24.0283984,
+    "lon": -104.6546707,
+    "display": "Calle Licenciado Alberto Terrones, Zona Centro, Durango, Municipio de Durango, Durango, 34279, México",
+    "precision": "street"
+  },
+  "country=México&state=QUERETARO&city=EZEQUIEL MONTES&street=PLAZA MONTEVELA": {
+    "lat": 20.6658195,
+    "lon": -99.8979199,
+    "display": "Ezequiel Montes, Querétaro, 76650, México",
+    "precision": "municipality"
+  },
+  "country=México&state=NUEVO LEON&city=DR. ARROYO&street=CARRETERA 57 MATEHUALA  SALTILLO": {
+    "lat": 23.6728962,
+    "lon": -100.1794359,
+    "display": "Doctor Arroyo, Nuevo León, 67901, México",
+    "precision": "municipality"
+  },
+  "country=México&state=MICHOACAN&city=ZAMORA&street=JOSE ANTONIO DE LA PEÑA 58": {
+    "lat": 19.9828948,
+    "lon": -102.28363,
+    "display": "Zamora, Michoacán, 59670, México",
+    "precision": "municipality"
+  },
+  "country=México&state=MICHOACAN&city=URUAPAN&street=GERTRUDIS BOCANEGRA 34": {
+    "lat": 19.4241565,
+    "lon": -102.0085551,
+    "display": "Calle Gertrudis Bocanegra, Caltzontzin, Uruapan, Michoacán, 60120, México",
+    "precision": "street"
+  },
+  "country=México&state=NUEVO LEON&city=GARCÍA&street=RUBI": {
+    "lat": 25.79369,
+    "lon": -100.5994906,
+    "display": "Rubí, Valle de San José, Juan Antonio de Sobrevilla, García, Nuevo León, 66018, México",
+    "precision": "street"
+  },
+  "country=México&state=AGUASCALIENTES&city=AGUASCALIENTES&street=SAN BERNARDO 125": {
+    "lat": 21.9010134,
+    "lon": -102.2423875,
+    "display": "Calle San Bernardo, Aguascalientes, Municipio de Aguascalientes, Aguascalientes, 20199, México",
+    "precision": "street"
+  },
+  "country=México&state=NUEVO LEON&city=SALINAS VICTORIA&street=PLATA": {
+    "lat": 25.9097758,
+    "lon": -100.2498404,
+    "display": "Calle Plata, Los Pilares, Salinas Victoria, Nuevo León, 65580, México",
+    "precision": "street"
+  },
+  "country=México&state=NUEVO LEON&city=PESQUERÍA": {
+    "lat": 25.7851361,
+    "lon": -100.0520621,
+    "display": "Pesquería, Nuevo León, 66650, México",
+    "precision": "municipality"
+  },
+  "country=México&state=SONORA&city=CAJEME&street=INDEPENDENCIA": {
+    "lat": 27.4870824,
+    "lon": -109.9183671,
+    "display": "Callejón Independencia, Ciudad Obregón, Cajeme, Sonora, 85080, México",
+    "precision": "street"
+  },
+  "country=México&state=SONORA&city=CAJEME&street=SULIA": {
+    "lat": 29.4712514,
+    "lon": -109.7298437,
+    "display": "Cajeme, Las Campamochas, San Pedro de la Cueva, Sonora, México",
+    "precision": "municipality"
+  },
+  "country=México&state=GUERRERO&city=JOSÉ AZUETA&street=5 DE MAYO": {
+    "lat": 18.2274762,
+    "lon": -95.6885072,
+    "display": "Avenida 5 de Mayo, Vicente Guerrero (El Aguacate), José Azueta, Veracruz, México",
+    "precision": "street"
+  },
+  "country=México&state=QUINTANA ROO&city=BENITO JUÁREZ": {
+    "lat": 21.0742627,
+    "lon": -86.9265622,
+    "display": "Benito Juárez, Quintana Roo, México",
+    "precision": "municipality"
+  },
+  "country=México&state=MICHOACAN&city=JACONA&street=MORELIA 245": {
+    "lat": 19.9400952,
+    "lon": -102.3156977,
+    "display": "Calle Morelia, Jacona de Plancarte, Jacona, Michoacán, 59857, México",
+    "precision": "street"
+  },
+  "country=México&state=MICHOACAN&city=MORELIA&street=REVOLUCIÓN 6": {
+    "lat": 19.7139361,
+    "lon": -101.1708175,
+    "display": "Periférico Revolución, Morelia, Michoacán, 58210, México",
+    "precision": "street"
+  },
+  "country=México&state=AGUASCALIENTES&city=AGUASCALIENTES&street=COBA 208": {
+    "lat": 21.85812,
+    "lon": -102.255508,
+    "display": "Condominio Coba 107, Aguascalientes, Municipio de Aguascalientes, Aguascalientes, 20299, México",
+    "precision": "street"
+  },
+  "country=México&state=QUERETARO&city=EL MARQUÉS&street=ZACATECAS 10": {
+    "lat": 20.5694595,
+    "lon": -100.3274059,
+    "display": "Privada Segunda de Zacatecas, San Isidro Miranda, El Marqués, Querétaro, 76240, México",
+    "precision": "street"
+  },
+  "country=México&state=HIDALGO&city=TULANCINGO DE BRAVO": {
+    "lat": 20.0839585,
+    "lon": -98.3635381,
+    "display": "Tulancingo de Bravo, Hidalgo, México",
+    "precision": "municipality"
+  },
+  "country=México&state=MICHOACAN&city=PURÉPERO&street=CUAUHTEMOC 596": {
+    "lat": 19.9077403,
+    "lon": -102.0110377,
+    "display": "Privada Cuauhtémoc, Purépero de Echáiz, Purépero, Michoacán, México",
+    "precision": "street"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=TIJUANA&street=PRIVADA MONSERRAT K65": {
+    "lat": 32.4371806,
+    "lon": -116.9854927,
+    "display": "Privada Monserrat, Delegacion San Antonio de los Buenos, Tijuana, Municipio de Tijuana, Baja California, 22250, México",
+    "precision": "street"
+  },
+  "country=México&state=QUERETARO&city=QUERÉTARO&street=SIN INFORMACION": {
+    "lat": 20.5922997,
+    "lon": -100.3917424,
+    "display": "Santiago de Querétaro, Municipio de Querétaro, Querétaro, México",
+    "precision": "municipality"
+  },
+  "country=México&state=QUERETARO&city=QUERÉTARO&street=CALLE EMILIANO ZAPATA SIN EXT": {
+    "lat": 20.5922997,
+    "lon": -100.3917424,
+    "display": "Santiago de Querétaro, Municipio de Querétaro, Querétaro, México",
+    "precision": "municipality"
+  },
+  "country=México&state=ESTADO DE MEXICO&city=ECATEPEC DE MORELOS": {
+    "lat": 19.5994083,
+    "lon": -99.0487281,
+    "display": "Ecatepec de Morelos, Estado de México, México",
+    "precision": "municipality"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=TIJUANA&street=CABO SAN LUCAS #2414": {
+    "lat": 32.5202243,
+    "lon": -117.0719498,
+    "display": "Calle Cabo San Lucas, Delegación Plyas de Tijuana, Tijuana, Municipio de Tijuana, Baja California, 22535, México",
+    "precision": "street"
+  },
+  "country=México&state=PUEBLA&city=PUEBLA&street=CALLE MANZANILLO MANZANA 9 LOTE 1": {
+    "lat": 18.9551766,
+    "lon": -98.2881444,
+    "display": "Calle Manzanillo, Lomas de Angelópolis, Santa Clara Ocoyucan, Ocoyucan, Puebla, 72940, México",
+    "precision": "street"
+  },
+  "country=México&state=PUEBLA&city=PUEBLA&street=CALLE 7 SUR  UNIDAD HABITACIONAL LOMA BELLA": {
+    "lat": 19.0437196,
+    "lon": -98.1981486,
+    "display": "Puebla, Municipio de Puebla, Puebla, 72000, México",
+    "precision": "municipality"
+  },
+  "country=México&state=PUEBLA&city=PUEBLA&street=CALLE 10 SUR NUMERO 2101B": {
+    "lat": 19.0437196,
+    "lon": -98.1981486,
+    "display": "Puebla, Municipio de Puebla, Puebla, 72000, México",
+    "precision": "municipality"
+  },
+  "country=México&state=PUEBLA&city=IZÚCAR DE MATAMOROS&street=CALLE EMILIANO ZAPATA NUMERO 48": {
+    "lat": 18.6022203,
+    "lon": -98.4657686,
+    "display": "Izúcar, Izúcar de Matamoros, Puebla, 74400, México",
+    "precision": "municipality"
+  },
+  "country=México&state=PUEBLA&city=TEHUACÁN&street=CALLE INDIO PIPILA NUMERO 1117": {
+    "lat": 18.4599877,
+    "lon": -97.3903616,
+    "display": "Tehuacán, Puebla, 75700, México",
+    "precision": "municipality"
+  },
+  "country=México&state=PUEBLA&city=TEZIUTLÁN&street=CALLE FUNDACION NUMERO 1552": {
+    "lat": 19.8170336,
+    "lon": -97.3601226,
+    "display": "Teziutlán, Puebla, 73800, México",
+    "precision": "municipality"
+  },
+  "country=México&state=GUANAJUATO&city=GUANAJUATO&street=NUEVA 10": {
+    "lat": 21.0119692,
+    "lon": -101.2708926,
+    "display": "10, Avenida Nueva de Noria Alta, San Antonio, Guanajuato, Municipio de Guanajuato, Guanajuato, 36050, México",
+    "precision": "street"
+  },
+  "country=México&state=PUEBLA&city=PUEBLA&street=CALLE VICENTE GUERRERO NUMERO 24": {
+    "lat": 19.0437196,
+    "lon": -98.1981486,
+    "display": "Puebla, Municipio de Puebla, Puebla, 72000, México",
+    "precision": "municipality"
+  },
+  "country=México&state=VERACRUZ&city=ACAYUCAN&street=SINALOA 103": {
+    "lat": 17.9518606,
+    "lon": -94.9250442,
+    "display": "Calle Zacatecas, Acayucan, Veracruz, 96000, México",
+    "precision": "street"
+  },
+  "country=México&state=PUEBLA&city=PUEBLA&street=CALLE 17 PONIENTE NUMERO 3912": {
+    "lat": 19.0437196,
+    "lon": -98.1981486,
+    "display": "Puebla, Municipio de Puebla, Puebla, 72000, México",
+    "precision": "municipality"
+  },
+  "country=México&state=VERACRUZ&city=TRES VALLES": {
+    "lat": 18.240556,
+    "lon": -96.135,
+    "display": "Tres Valles, Veracruz, México",
+    "precision": "municipality"
+  },
+  "country=México&state=HIDALGO&city=METEPEC": {
+    "lat": 20.2375,
+    "lon": -98.321389,
+    "display": "Metepec, Hidalgo, México",
+    "precision": "municipality"
+  },
+  "country=México&state=BAJA CALIFORNIA SUR&city=LA PAZ&street=ANARANJADA": {
+    "lat": 24.0542577,
+    "lon": -110.2838983,
+    "display": "Calle Anaranjada, La Paz, Municipio de La Paz, Baja California Sur, 23084, México",
+    "precision": "street"
+  },
+  "country=México&state=SINALOA&city=ELOTA&street=PONIENTE 30 SIN NUMERO": {
+    "lat": 23.9701245,
+    "lon": -106.7119855,
+    "display": "Elota, Sinaloa, México",
+    "precision": "municipality"
+  },
+  "country=México&state=TAMAULIPAS&city=TAMPICO&street=MIRADOR 137": {
+    "lat": 22.3184112,
+    "lon": -97.890238,
+    "display": "Calle Mirador, Tampico, Tamaulipas, 89318, México",
+    "precision": "street"
+  },
+  "country=México&state=GUERRERO&city=TAXCO DE ALARCÓN&street=AVENIDA DE LOS PLATEROS": {
+    "lat": 18.5653773,
+    "lon": -99.6038791,
+    "display": "Avenida de los Plateros, Taxco, Taxco de Alarcón, Guerrero, 40220, México",
+    "precision": "street"
+  },
+  "country=México&state=MORELOS&city=CUERNAVACA&street=CARRETERA TEPOZTLAN CUERNAVACA KM 6.5": {
+    "lat": 18.9671519,
+    "lon": -99.2322473,
+    "display": "Carretera Cuernavaca-Tepoztlán, Nogales, Buena Vista, Chamilpa, Cuernavaca, Morelos, 62130, México",
+    "precision": "street"
+  },
+  "country=México&state=SINALOA&city=SINALOA": {
+    "lat": 24.7879773,
+    "lon": -107.373326,
+    "display": "Sinaloa, Culiacán Rosales, Culiacán, Sinaloa, 80260, México",
+    "precision": "municipality"
+  },
+  "country=México&state=GUERRERO&city=ACAPULCO DE JUÁREZ&street=CARRETERA BARRA VIEJA KM 25": {
+    "lat": 16.6926819,
+    "lon": -99.6362059,
+    "display": "Carretera Tres Vidas - Barra Vieja - Las Horquetas, Barra Vieja, San Andrés Playa Encantada (El Podrido), Acapulco de Juárez, Guerrero, 39930, México",
+    "precision": "street"
+  },
+  "country=México&state=QUINTANA ROO&city=OTHÓN P. BLANCO&street=CALLE REPÚBLICA DOMINICANA 364": {
+    "lat": 18.540386,
+    "lon": -88.3031004,
+    "display": "Calle República Dominicana, Sian Ka'an I, Chetumal, Othón P. Blanco, Quintana Roo, 77086, México",
+    "precision": "street"
+  },
+  "country=México&state=GUERRERO&city=TAXCO DE ALARCÓN&street=CNOP": {
+    "lat": 18.5565446,
+    "lon": -99.6052838,
+    "display": "Taxco, Taxco de Alarcón, Guerrero, 40200, México",
+    "precision": "municipality"
+  },
+  "country=México&state=SINALOA&city=MOCORITO": {
+    "lat": 25.4801609,
+    "lon": -107.920046,
+    "display": "Mocorito, Sinaloa, México",
+    "precision": "municipality"
+  },
+  "country=México&state=AGUASCALIENTES&city=AGUASCALIENTES&street=GENARO VAZQUEZ 115": {
+    "lat": 21.8581446,
+    "lon": -102.2063882,
+    "display": "Calle Genaro Vázquez, Calvillito, Municipio de Aguascalientes, Aguascalientes, 20136, México",
+    "precision": "street"
+  },
+  "country=México&state=MORELOS&city=TEMIXCO": {
+    "lat": 18.8449428,
+    "lon": -99.2236369,
+    "display": "Temixco, Morelos, 62590, México",
+    "precision": "municipality"
+  },
+  "country=México&state=TAMAULIPAS&city=VICTORIA": {
+    "lat": 23.7389846,
+    "lon": -99.1441352,
+    "display": "Ciudad Victoria, Victoria, Tamaulipas, 87000, México",
+    "precision": "municipality"
+  },
+  "country=México&state=MICHOACAN&city=TACÁMBARO": {
+    "lat": 19.2356879,
+    "lon": -101.4585063,
+    "display": "Tacámbaro de Codallos, Tacámbaro, Michoacán, 61650, México",
+    "precision": "municipality"
+  },
+  "country=México&state=TLAXCALA&city=APIZACO&street=PRIVADA SIN NUMERO 4TA SECCION S/N": {
+    "lat": 19.415556,
+    "lon": -98.14,
+    "display": "Apizaco, Tlaxcala, México",
+    "precision": "municipality"
+  },
+  "country=México&state=SINALOA&city=NAVOLATO&street=AGUSTINA RAMIREZ P 38": {
+    "lat": 24.7723148,
+    "lon": -107.5552538,
+    "display": "Calle Agustina Ramírez, San Pedro, Navolato, Sinaloa, 80308, México",
+    "precision": "street"
+  },
+  "country=México&state=SONORA&city=HERMOSILLO&street=JAZMIN 158": {
+    "lat": 29.096322,
+    "lon": -110.9350772,
+    "display": "Jazmin, Hermosillo, Sonora, 83010, México",
+    "precision": "street"
+  },
+  "country=México&state=PUEBLA&city=COXCATLÁN&street=BARRIO NOPALERA SIN NUMERO": {
+    "lat": 18.264444,
+    "lon": -97.146389,
+    "display": "Coxcatlán, Puebla, México",
+    "precision": "municipality"
+  },
+  "country=México&state=JALISCO&city=EL SALTO&street=THUAYAS 1912": {
+    "lat": 20.5196964,
+    "lon": -103.1813141,
+    "display": "El Salto, Región Centro, Jalisco, México",
+    "precision": "municipality"
+  },
+  "country=México&state=AGUASCALIENTES&city=AGUASCALIENTES&street=SIXTO VERDUZCO 312": {
+    "lat": 21.8531668,
+    "lon": -102.2608958,
+    "display": "Sixto Verduzco, Aguascalientes, Municipio de Aguascalientes, Aguascalientes, 20299, México",
+    "precision": "street"
+  },
+  "country=México&state=PUEBLA&city=PUEBLA&street=CALLE 109 ORIENTE NUMERO 219": {
+    "lat": 19.0437196,
+    "lon": -98.1981486,
+    "display": "Puebla, Municipio de Puebla, Puebla, 72000, México",
+    "precision": "municipality"
+  },
+  "country=México&state=MORELOS&city=TEMIXCO&street=5 DE FEBRERO 3": {
+    "lat": 18.8208439,
+    "lon": -99.2419692,
+    "display": "Privada 5 de Febrero, Diez de Abril, Temixco, Morelos, 62587, México",
+    "precision": "street"
+  },
+  "country=México&state=GUERRERO&city=ACAPULCO DE JUÁREZ&street=FRACCIONAMIENTO MAGALLANES": {
+    "lat": 16.8628961,
+    "lon": -99.8795339,
+    "display": "Fraccionamiento Magallanes, Acapulco, Acapulco de Juárez, Guerrero, 39300, México",
+    "precision": "freeform"
+  },
+  "country=México&state=MORELOS&city=AYALA&street=MIGUEL HIDALGO": {
+    "lat": 18.679124,
+    "lon": -98.9096749,
+    "display": "Calle Miguel Hidalgo, Huacatlaco, Huitzililla, Ayala, Morelos, México",
+    "precision": "street"
+  },
+  "country=México&state=SINALOA&city=CONCORDIA&street=CARRETERA FEDERAL  15": {
+    "lat": 23.3475914,
+    "lon": -105.9762087,
+    "display": "MEX 40, La Piedra Blanca, Magistral, Concordia, Sinaloa, México",
+    "precision": "street"
+  },
+  "country=México&state=SINALOA&city=CONCORDIA&street=CARRETERA FEDERAL 15": {
+    "lat": 23.3475914,
+    "lon": -105.9762087,
+    "display": "MEX 40, La Piedra Blanca, Magistral, Concordia, Sinaloa, México",
+    "precision": "street"
+  },
+  "country=México&state=MICHOACAN&city=AQUILA": {
+    "lat": 18.5988865,
+    "lon": -103.504008,
+    "display": "Aquila, Michoacán, México",
+    "precision": "municipality"
+  },
+  "country=México&state=CHIAPAS&city=TUXTLA GUTIÉRREZ&street=AVENIDA MARGARITAS": {
+    "lat": 16.7978965,
+    "lon": -93.112359,
+    "display": "Avenida Margaritas, Tuxtla Gutiérrez, Chiapas, 29049, México",
+    "precision": "street"
+  },
+  "country=México&state=CIUDAD DE MEXICO&city=VENUSTIANO CARRANZA": {
+    "lat": 19.4191658,
+    "lon": -99.1135482,
+    "display": "Venustiano Carranza, Ciudad de México, México",
+    "precision": "municipality"
+  },
+  "country=México&state=TAMAULIPAS&city=REYNOSA&street=BARRA ARIDA 116": {
+    "lat": 26.0123858,
+    "lon": -98.3816824,
+    "display": "Calle Barra Árida, Reynosa, Tamaulipas, 88500, México",
+    "precision": "street"
+  },
+  "country=México&state=TAMAULIPAS&city=REYNOSA&street=BARRA DE COCOS 112": {
+    "lat": 26.0136541,
+    "lon": -98.3818766,
+    "display": "Calle Barra de Cocos, Reynosa, Tamaulipas, 88500, México",
+    "precision": "street"
+  },
+  "country=México&state=TAMAULIPAS&city=MATAMOROS&street=ISAAC NEWTON 10": {
+    "lat": 25.864278,
+    "lon": -97.4687322,
+    "display": "Calle Isaac Newton, Matamoros, Tamaulipas, 87450, México",
+    "precision": "street"
+  },
+  "country=México&state=TAMAULIPAS&city=NUEVO LAREDO&street=PLANEACION MUNICIPAL 10317": {
+    "lat": 27.5159793,
+    "lon": -99.5859265,
+    "display": "Calle Planeación Municipal, Bonito Toboganes, Nuevo Laredo, Tamaulipas, 88136, México",
+    "precision": "street"
+  },
+  "country=México&state=CHIAPAS&city=MAPASTEPEC&street=SN SN": {
+    "lat": 15.43981,
+    "lon": -92.898367,
+    "display": "Mapastepec, Chiapas, 30560, México",
+    "precision": "municipality"
+  },
+  "country=México&state=SINALOA&city=NAVOLATO&street=FRANCISCO VILLA SN": {
+    "lat": 24.6617999,
+    "lon": -107.5281556,
+    "display": "Calle Francisco Villa, Licenciado Benito Juárez, Navolato, Sinaloa, México",
+    "precision": "street"
+  },
+  "country=México&state=NAYARIT&city=TEPIC&street=JIQUILPAN 4": {
+    "lat": 21.4783829,
+    "lon": -104.886983,
+    "display": "Calle Jiquilpan, Villas de La Paz, Ciudad del Valle, Tepic, Nayarit, 63184, México",
+    "precision": "street"
+  },
+  "country=México&state=NAYARIT&city=TEPIC&street=VILLA DE BADILLO": {
+    "lat": 21.4866724,
+    "lon": -104.8279285,
+    "display": "Calle Villa de Badillo, Tepic, Nayarit, 63173, México",
+    "precision": "street"
+  },
+  "country=México&state=SONORA&city=HERMOSILLO&street=CERRADA VILLA DE CORSO 71": {
+    "lat": 29.0948207,
+    "lon": -110.9692202,
+    "display": "Hermosillo, Sonora, 83140, México",
+    "precision": "municipality"
+  },
+  "country=México&state=PUEBLA&city=SAN SALVADOR HUIXCOLOTLA&street=BOULEVARD 16 DE SEPTIEMBRE NUMERO 6": {
+    "lat": 18.9219444,
+    "lon": -97.7708333,
+    "display": "San Salvador Huixcolotla, Puebla, 75490, México",
+    "precision": "municipality"
+  },
+  "country=México&state=NAYARIT&city=TEPIC&street=FRANCISCO I. MADERO 100": {
+    "lat": 21.531223,
+    "lon": -104.9051254,
+    "display": "Francisco I. Madero, Tepic, Nayarit, 63022, México",
+    "precision": "street"
+  },
+  "country=México&state=PUEBLA&city=TEHUACÁN&street=CALLE CRISTOBAL COLON SIN NUMERO": {
+    "lat": 18.4599877,
+    "lon": -97.3903616,
+    "display": "Tehuacán, Puebla, 75700, México",
+    "precision": "municipality"
+  },
+  "country=México&state=PUEBLA&city=TEHUACÁN&street=CALLE CRISTOBAL COLON SIN NUMERO JUQUILITA TEHUACAN PUEBLA": {
+    "lat": 18.4599877,
+    "lon": -97.3903616,
+    "display": "Tehuacán, Puebla, 75700, México",
+    "precision": "municipality"
+  },
+  "country=México&state=CHIAPAS&city=CINTALAPA&street=CALLE 2A PONIENTE": {
+    "lat": 16.6905402,
+    "lon": -93.7257625,
+    "display": "Cintalapa, Chiapas, 30400, México",
+    "precision": "municipality"
+  },
+  "country=México&state=AGUASCALIENTES&city=PABELLÓN DE ARTEAGA&street=FRANCISCO VILLA 554": {
+    "lat": 22.1495938,
+    "lon": -102.2721372,
+    "display": "Calle General Francisco Villa, Pabellón de Arteaga, Aguascalientes, 20674, México",
+    "precision": "street"
+  },
+  "country=México&state=SINALOA&city=MAZATLÁN": {
+    "lat": 23.2035785,
+    "lon": -106.4208391,
+    "display": "Mazatlán, Sinaloa, 82000, México",
+    "precision": "municipality"
+  },
+  "country=México&state=SONORA&city=AGUA PRIETA&street=CALLE 37 3159": {
+    "lat": 31.30102,
+    "lon": -109.5332718,
+    "display": "Calle 37, Agua Prieta, Sonora, 84269, México",
+    "precision": "street"
+  },
+  "country=México&state=VERACRUZ&city=ORIZABA&street=AVENIDA NORTE 2": {
+    "lat": 18.8622786,
+    "lon": -97.1099432,
+    "display": "Avenida Oriente 31, Abelardo L. Rodríguez, Orizaba, Veracruz, 94300, México",
+    "precision": "street"
+  },
+  "country=México&state=MICHOACAN&city=URUAPAN&street=LOCALIDAD DE ZIRIMICUARO": {
+    "lat": 19.4147269,
+    "lon": -102.0522647,
+    "display": "Uruapan, Michoacán, 60050, México",
+    "precision": "municipality"
+  },
+  "country=México&state=JALISCO&city=COLOTLÁN&street=10/05/2023": {
+    "lat": 22.1134593,
+    "lon": -103.2660285,
+    "display": "Colotlán, Región Norte, Jalisco, 46200, México",
+    "precision": "municipality"
+  },
+  "country=México&state=DURANGO&city=LERDO": {
+    "lat": 25.536641,
+    "lon": -103.5252472,
+    "display": "Ciudad Lerdo, Lerdo, Durango, 35157, México",
+    "precision": "municipality"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=TIJUANA&street=CALLE DULCAMARA": {
+    "lat": 32.5317397,
+    "lon": -117.019529,
+    "display": "Tijuana, Municipio de Tijuana, Baja California, 22320, México",
+    "precision": "municipality"
+  },
+  "country=México&state=NAYARIT&city=TEPIC&street=ZENZONTLE": {
+    "lat": 21.5119156,
+    "lon": -104.8915889,
+    "display": "Tepic, Nayarit, 63000, México",
+    "precision": "municipality"
+  },
+  "country=México&state=MICHOACAN&city=APATZINGÁN": {
+    "lat": 19.0913792,
+    "lon": -102.3537356,
+    "display": "Apatzingán, Michoacán, 60600, México",
+    "precision": "municipality"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=TIJUANA&street=CALLE GUERRERO NEGRO #21018": {
+    "lat": 32.5235731,
+    "lon": -117.0701367,
+    "display": "Calle Guerrero Negro, Unión, Delegación Plyas de Tijuana, Tijuana, Municipio de Tijuana, Baja California, 22530, México",
+    "precision": "street"
+  },
+  "country=México&state=MICHOACAN&city=NAHUATZEN": {
+    "lat": 19.6546315,
+    "lon": -101.9173339,
+    "display": "Nahuatzen, Michoacán, 60280, México",
+    "precision": "municipality"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=TIJUANA&street=CALLE LA MISION #17251": {
+    "lat": 32.4495879,
+    "lon": -116.9884574,
+    "display": "La Mesa, Delegacion San Antonio de los Buenos, Tijuana, Municipio de Tijuana, Baja California, 22666, México",
+    "precision": "street"
+  },
+  "country=México&state=PUEBLA&city=HUEYTAMALCO&street=CALLE EMILIANO ZAPATA SIN NUMERO": {
+    "lat": 19.9408658,
+    "lon": -97.2882734,
+    "display": "Hueytamalco, Puebla, México",
+    "precision": "municipality"
+  },
+  "country=México&state=ESTADO DE MEXICO&city=CHIMALHUACÁN&street=AYUCUAC 1": {
+    "lat": 19.4339293,
+    "lon": -98.9580149,
+    "display": "Chimalhuacán, Estado de México, 56351, México",
+    "precision": "municipality"
+  },
+  "country=México&state=QUINTANA ROO&city=BENITO JUÁREZ&street=REGION 85, MANZANA 13, LOTE 21, NUMERO 01, PUERTO JUAREZ": {
+    "lat": 21.0742627,
+    "lon": -86.9265622,
+    "display": "Benito Juárez, Quintana Roo, México",
+    "precision": "municipality"
+  },
+  "country=México&state=NUEVO LEON&city=APODACA&street=LAUREL": {
+    "lat": 25.8203874,
+    "lon": -100.2560867,
+    "display": "Laurel, Los Amarantos, Apodaca, Nuevo León, 66614, México",
+    "precision": "street"
+  },
+  "country=México&state=CIUDAD DE MEXICO&city=IZTAPALAPA&street=TENICOS Y MANUALES": {
+    "lat": 19.3588629,
+    "lon": -99.0925404,
+    "display": "Iztapalapa, Ciudad de México, México",
+    "precision": "municipality"
+  },
+  "country=México&state=TAMAULIPAS&city=MATAMOROS": {
+    "lat": 25.8810158,
+    "lon": -97.5064866,
+    "display": "Matamoros, Tamaulipas, 87300, México",
+    "precision": "municipality"
+  },
+  "country=México&state=SINALOA&city=CULIACÁN&street=AV TENOCHTITLAN 3913": {
+    "lat": 24.8419773,
+    "lon": -107.3743155,
+    "display": "Avenida Tenochtitlan, Rosario Uzarraga, Culiacán, Culiacán Rosales, Culiacán, Sinaloa, 80014, México",
+    "precision": "street"
+  },
+  "country=México&state=CHIAPAS&city=ARRIAGA&street=CUADRA LA PRIMAVERA 35 BARRIO EL BARBASCO": {
+    "lat": 16.2344709,
+    "lon": -93.9008414,
+    "display": "Arriaga, Chiapas, 30450, México",
+    "precision": "municipality"
+  },
+  "country=México&state=MICHOACAN&city=ANGAMACUTIRO": {
+    "lat": 20.1500199,
+    "lon": -101.7133577,
+    "display": "Angamacutiro, Michoacán, México",
+    "precision": "municipality"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=TIJUANA&street=PRIVADA SANTA URSULA #11339": {
+    "lat": 32.4404843,
+    "lon": -116.9706272,
+    "display": "Privada Santa Úrsula, Tijuana, Municipio de Tijuana, Baja California, 22689, México",
+    "precision": "street"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=TIJUANA&street=CALLE COAHUILA #7937": {
+    "lat": 32.5376786,
+    "lon": -117.0419459,
+    "display": "Calle Coahuila, Del. Centro, Tijuana, Municipio de Tijuana, Baja California, 22050, México",
+    "precision": "street"
+  },
+  "country=México&state=DURANGO&city=VICENTE GUERRERO&street=FRANCISCO I MADERO 813": {
+    "lat": 23.7405389,
+    "lon": -103.9831223,
+    "display": "Avenida Francisco I. Madero, Vicente Guerrero, Durango, México",
+    "precision": "street"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=TIJUANA&street=SE FUGO DE UN CENTRO DE REHABILITACIÓN DE LA CIUDAD DE TIJUA": {
+    "lat": 32.5317397,
+    "lon": -117.019529,
+    "display": "Tijuana, Municipio de Tijuana, Baja California, 22320, México",
+    "precision": "municipality"
+  },
+  "country=México&state=MORELOS&city=PUENTE DE IXTLA": {
+    "lat": 18.6171111,
+    "lon": -99.3192092,
+    "display": "Puente de Ixtla, Morelos, 62660, México",
+    "precision": "municipality"
+  },
+  "country=México&state=MORELOS&city=YECAPIXTLA&street=PRFIRIO DIAZ 356": {
+    "lat": 18.8815313,
+    "lon": -98.8619742,
+    "display": "Yecapixtla, Morelos, 62820, México",
+    "precision": "municipality"
+  },
+  "country=México&state=MICHOACAN&city=LA PIEDAD&street=RIO COLORADO 23": {
+    "lat": 20.3541793,
+    "lon": -102.0277269,
+    "display": "Calle Río Colorado, La Piedad de Cabadas, La Piedad, Michoacán, 59300, México",
+    "precision": "street"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=TIJUANA&street=CALLE 18": {
+    "lat": 32.5330833,
+    "lon": -117.005905,
+    "display": "Calle Manuel Ávila Camacho, Libertad, Delegación Mesa de Otay, Tijuana, Municipio de Tijuana, Baja California, 22400, México",
+    "precision": "street"
+  },
+  "country=México&state=MICHOACAN&city=LA PIEDAD": {
+    "lat": 20.3429949,
+    "lon": -102.031124,
+    "display": "La Piedad de Cabadas, La Piedad, Michoacán, 59300, México",
+    "precision": "municipality"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=TIJUANA&street=CALLE REAL DE COALACOAYA #7642": {
+    "lat": 32.5317397,
+    "lon": -117.019529,
+    "display": "Tijuana, Municipio de Tijuana, Baja California, 22320, México",
+    "precision": "municipality"
+  },
+  "country=México&state=ZACATECAS&city=MEZQUITAL DEL ORO&street=PALO VERDE 72": {
+    "lat": 21.2572947,
+    "lon": -103.3156414,
+    "display": "Palo Verde, Mezquital del Oro, Zacatecas, México",
+    "precision": "freeform"
+  },
+  "country=México&state=TAMAULIPAS&city=VICTORIA&street=ALLENDE 1356": {
+    "lat": 23.7408568,
+    "lon": -99.1620529,
+    "display": "Allende, Ciudad Victoria, Victoria, Tamaulipas, 87030, México",
+    "precision": "street"
+  },
+  "country=México&state=MICHOACAN&city=CHILCHOTA&street=20 DE NOVIEMBRE 02": {
+    "lat": 19.8553248,
+    "lon": -102.1536217,
+    "display": "Calle 20 de Noviembre, Los Nogales, Chilchota, Michoacán, México",
+    "precision": "street"
+  },
+  "country=México&state=GUANAJUATO&city=IRAPUATO&street=VICENTE GUERRERO 9": {
+    "lat": 20.6603447,
+    "lon": -101.4637052,
+    "display": "9, Avenida Vicente Guerrero, Cuchicuato, Irapuato, Guanajuato, 36803, México",
+    "precision": "street"
+  },
+  "country=México&state=DURANGO&city=DURANGO&street=FERNANDO MONTES DE OCA 410": {
+    "lat": 24.039829,
+    "lon": -104.6951541,
+    "display": "Fernando Montes de Oca, Niños Heroes, Durango, Municipio de Durango, Durango, 34045, México",
+    "precision": "street"
+  },
+  "country=México&state=SINALOA&city=ELOTA&street=SE DESCONOCE SE DESCONO": {
+    "lat": 23.9701245,
+    "lon": -106.7119855,
+    "display": "Elota, Sinaloa, México",
+    "precision": "municipality"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=TIJUANA&street=CALLE CONDOR #567": {
+    "lat": 32.5510961,
+    "lon": -116.881777,
+    "display": "Calle Cóndor, Tijuana, Municipio de Tijuana, Baja California, 22473, México",
+    "precision": "street"
+  },
+  "country=México&state=SINALOA&city=NAVOLATO&street=PRINCIPAL POSTE 44": {
+    "lat": 24.7633,
+    "lon": -107.6979734,
+    "display": "Navolato, Sinaloa, México",
+    "precision": "municipality"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=TIJUANA&street=CALLE JUAN RUIZ DE APODACA": {
+    "lat": 32.4794595,
+    "lon": -116.9535788,
+    "display": "Calle Juan Ruíz de Apodaca, Delegación La Mesa, Tijuana, Municipio de Tijuana, Baja California, 22701, México",
+    "precision": "street"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=TIJUANA&street=CALLE IGNACIO RAMIREZ #59": {
+    "lat": 32.5191104,
+    "lon": -117.0369346,
+    "display": "Calle Ignacio Ramírez, Morelos, Tijuana, Municipio de Tijuana, Baja California, 22500, México",
+    "precision": "street"
+  },
+  "country=México&state=HIDALGO&city=ATOTONILCO DE TULA": {
+    "lat": 20.0080648,
+    "lon": -99.2195813,
+    "display": "Atotonilco de Tula, Hidalgo, 42900, México",
+    "precision": "municipality"
+  },
+  "country=México&state=MORELOS&city=CUAUTLA&street=EX HACIENDA DE COCOYOC 4": {
+    "lat": 18.851674,
+    "lon": -98.9660947,
+    "display": "Calle Ex Hacienda de Cocoyoc, Cuautla, Morelos, 62748, México",
+    "precision": "street"
+  },
+  "country=México&state=HIDALGO&city=TEPEHUACÁN DE GUERRERO": {
+    "lat": 21.0147928,
+    "lon": -98.8411955,
+    "display": "Tepehuacán de Guerrero, Hidalgo, México",
+    "precision": "municipality"
+  },
+  "country=México&state=CIUDAD DE MEXICO&city=MAGDALENA CONTRERAS": {
+    "lat": 19.3047731,
+    "lon": -99.2413803,
+    "display": "La Magdalena Contreras, Ciudad de México, México",
+    "precision": "municipality"
+  },
+  "country=México&state=DURANGO&city=DURANGO&street=SANTIAGO DE LA HOZ 405": {
+    "lat": 24.0013174,
+    "lon": -104.6917321,
+    "display": "Primero de Mayo, Manuel Buendia, Durango, Municipio de Durango, Durango, 34105, México",
+    "precision": "street"
+  },
+  "country=México&state=TAMAULIPAS&city=CAMARGO": {
+    "lat": 26.3159794,
+    "lon": -98.8326371,
+    "display": "Ciudad Camargo, Camargo, Tamaulipas, 88400, México",
+    "precision": "municipality"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=SAN QUINTÍN&street=RAMON INTURBIDE": {
+    "lat": 30.5613719,
+    "lon": -115.938162,
+    "display": "San Quintín, Municipio de San Quintín, Baja California, 22932, México",
+    "precision": "municipality"
+  },
+  "country=México&state=TAMAULIPAS&city=REYNOSA&street=TRES PISOS 169": {
+    "lat": 26.0928368,
+    "lon": -98.2779499,
+    "display": "Reynosa, Tamaulipas, 88500, México",
+    "precision": "municipality"
+  },
+  "country=México&state=CAMPECHE&city=CALAKMUL&street=CONHUAS S/N": {
+    "lat": 18.5386506,
+    "lon": -89.9178499,
+    "display": "Nuevo Conhuás, Calakmul, Campeche, 24653, México",
+    "precision": "freeform"
+  },
+  "country=México&state=TAMAULIPAS&city=REYNOSA&street=TORRE CALGARY SN": {
+    "lat": 26.0928368,
+    "lon": -98.2779499,
+    "display": "Reynosa, Tamaulipas, 88500, México",
+    "precision": "municipality"
+  },
+  "country=México&state=DURANGO&city=DURANGO&street=JUAN DE LA BARRERA 414": {
+    "lat": 24.0508462,
+    "lon": -104.6500328,
+    "display": "Juan de la Barrera, Juan Escutia, Durango, Municipio de Durango, Durango, 34210, México",
+    "precision": "street"
+  },
+  "country=México&state=HIDALGO&city=TLAHUELILPAN&street=AV. SAN FRANCISCO 33": {
+    "lat": 20.1315088,
+    "lon": -99.2314271,
+    "display": "Avenida San Francisco, Tlahuelilpan, Hidalgo, 42764, México",
+    "precision": "street"
+  },
+  "country=México&state=DURANGO&city=DURANGO&street=CLAVELES 114": {
+    "lat": 23.9723779,
+    "lon": -104.6695599,
+    "display": "Calle Quinta Claveles, Fracc. Real de Privanzas, La Ferrería, Durango, Municipio de Durango, Durango, 34302, México",
+    "precision": "street"
+  },
+  "country=México&state=MORELOS&city=HUITZILAC": {
+    "lat": 19.0281361,
+    "lon": -99.2669765,
+    "display": "Huitzilac, Morelos, 62510, México",
+    "precision": "municipality"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=MEXICALI&street=CALZADA INDEPENDENCIA": {
+    "lat": 32.6360159,
+    "lon": -115.4541538,
+    "display": "Calzada Independencia, Maestros Estatales, Mexicali, Municipio de Mexicali, Baja California, 21280, México",
+    "precision": "street"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=TIJUANA&street=PRIVADA LIRA #20 A": {
+    "lat": 32.5317397,
+    "lon": -117.019529,
+    "display": "Tijuana, Municipio de Tijuana, Baja California, 22320, México",
+    "precision": "municipality"
+  },
+  "country=México&state=BAJA CALIFORNIA SUR&city=LA PAZ&street=JOSEFA ORTIZ DE DOMINGUEZ": {
+    "lat": 24.164834,
+    "lon": -110.3003888,
+    "display": "Calle Josefa Ortiz de Domínguez, Esterito, La Paz, Municipio de La Paz, Baja California Sur, 23020, México",
+    "precision": "street"
+  },
+  "country=México&state=ZACATECAS&city=VILLA DE COS&street=PRIMERA 45": {
+    "lat": 23.2938171,
+    "lon": -102.346883,
+    "display": "Villa de Cos, Zacatecas, México",
+    "precision": "municipality"
+  },
+  "country=México&state=ZACATECAS&city=ZACATECAS&street=TACUBA 140": {
+    "lat": 23.7480116,
+    "lon": -103.8433433,
+    "display": "Tacuba, Villa Insurgentes (El Calabazal), Sombrerete, Zacatecas, 99109, México",
+    "precision": "street"
+  },
+  "country=México&state=GUANAJUATO&city=IRAPUATO&street=NIÑOS HEROES 414": {
+    "lat": 20.6839487,
+    "lon": -101.3512972,
+    "display": "414, Calle Niños Héroes, De Santa Julia, Irapuato, Guanajuato, 36667, México",
+    "precision": "street"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=TIJUANA&street=CALLE DONATO GUERA #22": {
+    "lat": 32.5317397,
+    "lon": -117.019529,
+    "display": "Tijuana, Municipio de Tijuana, Baja California, 22320, México",
+    "precision": "municipality"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=MEXICALI&street=AV MEZQUITAL 1984": {
+    "lat": 32.6090679,
+    "lon": -115.400314,
+    "display": "Avenida Río San Pedro Mezquital, Mexicali, Municipio de Mexicali, Baja California, 21000, México",
+    "precision": "street"
+  },
+  "country=México&state=CHIAPAS&city=TUXTLA GUTIÉRREZ&street=CALLE CRISANTEMOS, MANZANA 20, LOTE 1": {
+    "lat": 16.753801,
+    "lon": -93.115959,
+    "display": "Tuxtla Gutiérrez, Chiapas, 29019, México",
+    "precision": "municipality"
+  },
+  "country=México&state=MICHOACAN&city=PURUÁNDIRO&street=TABASCO 128": {
+    "lat": 20.0814631,
+    "lon": -101.5285641,
+    "display": "Calle Tabasco, Puruándiro, Michoacán, 58500, México",
+    "precision": "street"
+  },
+  "country=México&state=BAJA CALIFORNIA SUR&city=LOS CABOS&street=PADRE JUAN CASTILLEJOS 55": {
+    "lat": 23.0698187,
+    "lon": -109.6583809,
+    "display": "Puerto Los Cabos, San José del Cabo, Municipio de Los Cabos, Baja California Sur, México",
+    "precision": "municipality"
+  },
+  "country=México&state=VERACRUZ&city=ORIZABA&street=3ª PRIVADA DE MADERO NORTE 47": {
+    "lat": 18.8497366,
+    "lon": -97.1060062,
+    "display": "Orizaba, Veracruz, 94300, México",
+    "precision": "municipality"
+  },
+  "country=México&state=OAXACA&city=SANTA CRUZ XOXOCOTLÁN&street=PRIMERA AMPLIACION DE SIMON BOLIVAR 11": {
+    "lat": 17.026389,
+    "lon": -96.733333,
+    "display": "Santa Cruz Xoxocotlán, Oaxaca, 68166, México",
+    "precision": "municipality"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=TIJUANA&street=CALLE VÍA DE LA JUVENTUD ORIENTE": {
+    "lat": 32.5374247,
+    "lon": -117.0291945,
+    "display": "Calle Frontera, Federal, Zona Río, Del. Centro, Tijuana, Municipio de Tijuana, Baja California, 22000, México",
+    "precision": "street"
+  },
+  "country=México&state=MICHOACAN&city=PANINDÍCUARO&street=EMILIANO ZAPATA S/N": {
+    "lat": 20.0366957,
+    "lon": -101.7118074,
+    "display": "Privada Poniente Emiliano Zapata, Curimeo, Panindícuaro, Michoacán, México",
+    "precision": "street"
+  },
+  "country=México&state=JALISCO&city=TONALÁ&street=JARDIN DE LA AMAPOLA 1641": {
+    "lat": 20.644841,
+    "lon": -103.2179025,
+    "display": "Jardin de la Amapola, Tonalá, Región Centro, Jalisco, 45400, México",
+    "precision": "street"
+  },
+  "country=México&state=MICHOACAN&city=ZAMORA&street=GARDENIAS 39": {
+    "lat": 20.0332054,
+    "lon": -102.2822039,
+    "display": "Gardenias, La Rinconada, Zamora, Michoacán, 59725, México",
+    "precision": "street"
+  },
+  "country=México&state=JALISCO&city=ZAPOPAN&street=PASEO DE LAS BUGAMBILIAS 885": {
+    "lat": 20.7628481,
+    "lon": -103.3480723,
+    "display": "Calle Paseo de las Bugambilias, Villas de Guadalupe, Zapopan, Región Centro, Jalisco, 45189, México",
+    "precision": "street"
+  },
+  "country=México&state=MICHOACAN&city=ZAMORA&street=GARDENIA 39": {
+    "lat": 19.9975333,
+    "lon": -102.2608333,
+    "display": "Calle Gardenia, Fraccionamiento Villa Las Flores, Zamora, Michoacán, 59640, México",
+    "precision": "street"
+  },
+  "country=México&state=NUEVO LEON&city=GARCÍA&street=VANAIDITA 330": {
+    "lat": 25.7900856,
+    "lon": -100.4696229,
+    "display": "Calle Vanaidita, Los Parques, García, Nuevo León, 66023, México",
+    "precision": "street"
+  },
+  "country=México&state=SINALOA&city=NAVOLATO&street=AV. GUILLERMO PRIETO": {
+    "lat": 24.7730255,
+    "lon": -107.5532025,
+    "display": "Avenida Guillermo Prieto, San Pedro, Navolato, Sinaloa, 80308, México",
+    "precision": "street"
+  },
+  "country=México&state=SINALOA&city=CULIACÁN&street=CATEDRAL SANTA MARIA DEL TODELO 5361": {
+    "lat": 24.7978965,
+    "lon": -107.393395,
+    "display": "Culiacán, Culiacán Rosales, Culiacán, Sinaloa, 80220, México",
+    "precision": "municipality"
+  },
+  "country=México&state=ZACATECAS&city=GUADALUPE&street=MEXICANA DE AVIACION 20": {
+    "lat": 22.7533539,
+    "lon": -102.5392697,
+    "display": "Mexicana de Aviación, Guadalupe, Zacatecas, 98608, México",
+    "precision": "street"
+  },
+  "country=México&state=CIUDAD DE MEXICO&city=IZTACALCO": {
+    "lat": 19.3957447,
+    "lon": -99.097453,
+    "display": "Iztacalco, Ciudad de México, México",
+    "precision": "municipality"
+  },
+  "country=México&state=JALISCO&city=GUADALAJARA&street=ANTONIO DIAZ SOTO Y GAMA 547 547": {
+    "lat": 20.7173034,
+    "lon": -103.3202116,
+    "display": "Calle Soto Antonio Díaz Soto y Gama, San Patricio, Guadalajara, Región Centro, Jalisco, 44250, México",
+    "precision": "freeform"
+  },
+  "country=México&state=CIUDAD DE MEXICO&city=MIGUEL HIDALGO": {
+    "lat": 19.4071156,
+    "lon": -99.1906167,
+    "display": "Miguel Hidalgo, Ciudad de México, México",
+    "precision": "municipality"
+  },
+  "country=México&state=OAXACA&city=SAN MIGUEL DEL PUERTO": {
+    "lat": 15.9225,
+    "lon": -96.174444,
+    "display": "San Miguel del Puerto, Oaxaca, México",
+    "precision": "municipality"
+  },
+  "country=México&state=QUINTANA ROO&city=BENITO JUÁREZ&street=PRIVADA CIPRESES, MANZANA 54, SUPERMANZANA 260 LOTE 4": {
+    "lat": 21.0742627,
+    "lon": -86.9265622,
+    "display": "Benito Juárez, Quintana Roo, México",
+    "precision": "municipality"
+  },
+  "country=México&state=CHIAPAS&city=CHIAPA DE CORZO": {
+    "lat": 16.7075202,
+    "lon": -93.0115045,
+    "display": "Chiapa de Corzo, Chiapas, 29160, México",
+    "precision": "municipality"
+  },
+  "country=México&state=VERACRUZ&city=TIHUATLÁN": {
+    "lat": 20.716735,
+    "lon": -97.536786,
+    "display": "Tihuatlán, Veracruz, México",
+    "precision": "municipality"
+  },
+  "country=México&state=NAYARIT&city=TEPIC&street=SEBASTIAN LERDO DE TEJEDA PTE 23": {
+    "lat": 21.5119156,
+    "lon": -104.8915889,
+    "display": "Tepic, Nayarit, 63000, México",
+    "precision": "municipality"
+  },
+  "country=México&state=OAXACA&city=SAN JOSÉ TENANGO": {
+    "lat": 18.15,
+    "lon": -96.716667,
+    "display": "San José Tenango, Oaxaca, México",
+    "precision": "municipality"
+  },
+  "country=México&state=SINALOA&city=MAZATLÁN&street=SE DESCONOCE": {
+    "lat": 23.2035785,
+    "lon": -106.4208391,
+    "display": "Mazatlán, Sinaloa, 82000, México",
+    "precision": "municipality"
+  },
+  "country=México&state=ZACATECAS&city=GUADALUPE": {
+    "lat": 22.7470359,
+    "lon": -102.5161988,
+    "display": "Guadalupe, Zacatecas, 98600, México",
+    "precision": "municipality"
+  },
+  "country=México&state=MICHOACAN&city=LA PIEDAD&street=CONSTITUYENTES 434": {
+    "lat": 20.3427773,
+    "lon": -102.0321193,
+    "display": "Constituyentes, La Piedad de Cabadas, La Piedad, Michoacán, 59300, México",
+    "precision": "street"
+  },
+  "country=México&state=JALISCO&city=ARANDAS": {
+    "lat": 20.7058704,
+    "lon": -102.347912,
+    "display": "Arandas, Región Altos Sur, Jalisco, 47183, México",
+    "precision": "municipality"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=TIJUANA&street=CALLE POPOCATEPETL #213": {
+    "lat": 32.492164,
+    "lon": -117.0943059,
+    "display": "Calle Popocatepetl, Parque industrial La Joya, Delegación Plyas de Tijuana, Tijuana, Municipio de Tijuana, Baja California, 22545, México",
+    "precision": "street"
+  },
+  "country=México&state=TAMAULIPAS&city=TAMPICO&street=PROLONGACION TULA 725": {
+    "lat": 22.2157619,
+    "lon": -97.8577713,
+    "display": "Tampico, Tamaulipas, 89080, México",
+    "precision": "municipality"
+  },
+  "country=México&state=NAYARIT&city=TEPIC&street=ALBERTO GROSS": {
+    "lat": 21.5409481,
+    "lon": -104.8757337,
+    "display": "Calle Profesor Alberto Gross de Sucar, Tepic, Nayarit, 63033, México",
+    "precision": "street"
+  },
+  "country=México&state=VERACRUZ&city=VERACRUZ&street=SAGRADO CORAZON MANZANA 7": {
+    "lat": 19.1208333,
+    "lon": -96.182579,
+    "display": "Privada Sagrado Corazón, Veracruz, Municipio de Veracruz, Veracruz, 91775, México",
+    "precision": "street"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=TIJUANA&street=CALLE CONSTITUCION Y RUTA MARIANO MATAMOROS": {
+    "lat": 32.5317397,
+    "lon": -117.019529,
+    "display": "Tijuana, Municipio de Tijuana, Baja California, 22320, México",
+    "precision": "municipality"
+  },
+  "country=México&state=OAXACA&city=SANTIAGO JUXTLAHUACA&street=BENITO JUAREZ SN": {
+    "lat": 17.2404966,
+    "lon": -97.9246297,
+    "display": "Calle Benito Juárez, Lázaro Cárdenas Yucunicoco, Santa María Yucunicoco, Santiago Juxtlahuaca, Oaxaca, México",
+    "precision": "street"
+  },
+  "country=México&state=MICHOACAN&city=NOCUPÉTARO": {
+    "lat": 19.0436343,
+    "lon": -101.1614368,
+    "display": "Nocupétaro, Michoacán, México",
+    "precision": "municipality"
+  },
+  "country=México&state=VERACRUZ&city=ALVARADO&street=15 S/N": {
+    "lat": 18.7661306,
+    "lon": -95.7580392,
+    "display": "Calle 15 de Octubre, Alvarado, Veracruz, 95270, México",
+    "precision": "street"
+  },
+  "country=México&state=VERACRUZ&city=EMILIANO ZAPATA&street=CEDRO 3": {
+    "lat": 19.4697092,
+    "lon": -96.8506607,
+    "display": "Calle del Cedro, Fraccionamiento San Francisco, La Estanzuela, Emiliano Zapata, Veracruz, 91637, México",
+    "precision": "street"
+  },
+  "country=México&state=QUINTANA ROO&city=BENITO JUÁREZ&street=CALLE MÁLAGA 101": {
+    "lat": 21.1354233,
+    "lon": -86.9272732,
+    "display": "Calle Malaga, Cancún, Benito Juárez, Distrito 16, Quintana Roo, 77539, México",
+    "precision": "street"
+  },
+  "country=México&state=QUINTANA ROO&city=OTHÓN P. BLANCO&street=VENADO 12": {
+    "lat": 18.5331845,
+    "lon": -88.3151744,
+    "display": "Calle Venado, Chetumal, Othón P. Blanco, Quintana Roo, 77083, México",
+    "precision": "street"
+  },
+  "country=México&state=CHIAPAS&city=REFORMA&street=CALLE JAZMIN MZ 09 LT 18": {
+    "lat": 17.8581003,
+    "lon": -93.155565,
+    "display": "Reforma, Chiapas, 29500, México",
+    "precision": "municipality"
+  },
+  "country=México&state=CHIAPAS&city=SAN CRISTÓBAL DE LAS CASAS&street=2DA CERRADA DEL BOSQUE NUM 26": {
+    "lat": 16.735377,
+    "lon": -92.63873,
+    "display": "San Cristóbal, San Cristóbal de las Casas, Chiapas, 29200, México",
+    "precision": "municipality"
+  },
+  "country=México&state=QUINTANA ROO&city=OTHÓN P. BLANCO&street=BELICE": {
+    "lat": 18.5156477,
+    "lon": -88.2932414,
+    "display": "Avenida Belice, Chetumal, Othón P. Blanco, Quintana Roo, 77013, México",
+    "precision": "street"
+  },
+  "country=México&state=MORELOS&city=YAUTEPEC": {
+    "lat": 18.8858536,
+    "lon": -99.0646636,
+    "display": "Yautepec, Morelos, 62732, México",
+    "precision": "municipality"
+  },
+  "country=México&state=QUINTANA ROO&city=OTHÓN P. BLANCO&street=CELUL": {
+    "lat": 18.5279911,
+    "lon": -88.3196708,
+    "display": "Calle Celul, Chetumal, Othón P. Blanco, Quintana Roo, 77083, México",
+    "precision": "street"
+  },
+  "country=México&state=QUINTANA ROO&city=OTHÓN P. BLANCO&street=BRASILIA 229": {
+    "lat": 18.5529913,
+    "lon": -88.2717083,
+    "display": "Calle Brasilia, Calderitas, Othón P. Blanco, Quintana Roo, 77014, México",
+    "precision": "street"
+  },
+  "country=México&state=QUINTANA ROO&city=OTHÓN P. BLANCO": {
+    "lat": 19.6204989,
+    "lon": -89.0048256,
+    "display": "Othón P. Blanco, José María Morelos, Quintana Roo, México",
+    "precision": "municipality"
+  },
+  "country=México&state=QUINTANA ROO&city=OTHÓN P. BLANCO&street=CALLE 8": {
+    "lat": 18.5155712,
+    "lon": -88.3395364,
+    "display": "Calle 8, Chetumal, Othón P. Blanco, Quintana Roo, 77029, México",
+    "precision": "street"
+  },
+  "country=México&state=QUINTANA ROO&city=OTHÓN P. BLANCO&street=MANUEL ALTAMIRANO": {
+    "lat": 18.5194965,
+    "lon": -88.2819846,
+    "display": "Calzada Ignacio Manuel Altamirano, Chetumal, Othón P. Blanco, Quintana Roo, 77013, México",
+    "precision": "street"
+  },
+  "country=México&state=TAMAULIPAS&city=VICTORIA&street=GRACIANO SANCHEZ 341A": {
+    "lat": 23.7894101,
+    "lon": -99.0939618,
+    "display": "Calle Graciano Sánchez, Ciudad Victoria, Victoria, Tamaulipas, 87039, México",
+    "precision": "street"
+  },
+  "country=México&state=MICHOACAN&city=URUAPAN&street=VALENTIN DE LA SIERRA, ESQUINA CON CALLE CALTZONTZIN 3": {
+    "lat": 19.4147269,
+    "lon": -102.0522647,
+    "display": "Uruapan, Michoacán, 60050, México",
+    "precision": "municipality"
+  },
+  "country=México&state=TAMAULIPAS&city=VICTORIA&street=EXPROPIACION PETROLERA 11": {
+    "lat": 23.742838,
+    "lon": -99.1664733,
+    "display": "Calle Expropiación Petrolera, Fraccionamiento Lomas de Santander, Ciudad Victoria, Victoria, Tamaulipas, 87030, México",
+    "precision": "street"
+  },
+  "country=México&state=TAMAULIPAS&city=VICTORIA&street=BRISAS 509": {
+    "lat": 23.7386532,
+    "lon": -99.1315235,
+    "display": "Calle Brisas, Ciudad Victoria, Victoria, Tamaulipas, 87093, México",
+    "precision": "street"
+  },
+  "country=México&state=MICHOACAN&city=PURUÁNDIRO&street=PROLONGACIÓN ANA MARIA GALLAGA 43": {
+    "lat": 20.0987469,
+    "lon": -101.5192164,
+    "display": "Prolongación Ana María Gallaga, Puruándiro, Michoacán, 58500, México",
+    "precision": "street"
+  },
+  "country=México&state=ZACATECAS&city=VILLANUEVA": {
+    "lat": 22.3543443,
+    "lon": -102.883384,
+    "display": "Villanueva, Zacatecas, México",
+    "precision": "municipality"
+  },
+  "country=México&state=TAMAULIPAS&city=EL MANTE&street=FERRARA": {
+    "lat": 22.7473865,
+    "lon": -98.9814359,
+    "display": "Calle Gerardo Ferrara, Ciudad Mante, El Mante, Tamaulipas, 89800, México",
+    "precision": "street"
+  },
+  "country=México&state=BAJA CALIFORNIA SUR&city=LOS CABOS&street=MARLIN 07": {
+    "lat": 22.8833906,
+    "lon": -109.9117001,
+    "display": "Calle Pez Marlín 5, Centro, Cabo San Lucas, Municipio de Los Cabos, Baja California Sur, 23450, México",
+    "precision": "street"
+  },
+  "country=México&state=TABASCO&city=CENTRO&street=SEGUNDA CERRADA DE JUAN DE LA BARRERA 504": {
+    "lat": 17.9884276,
+    "lon": -92.9194451,
+    "display": "Centro, Tabasco, 86077, México",
+    "precision": "municipality"
+  },
+  "country=México&state=SINALOA&city=GUASAVE&street=NUMERO 8 SN": {
+    "lat": 25.5835008,
+    "lon": -108.4563733,
+    "display": "Callejón Número 8, Guasave, Sinaloa, 81018, México",
+    "precision": "street"
+  },
+  "country=México&state=JALISCO&city=TONALÁ&street=CRUZ DE LA CAPILLA 267": {
+    "lat": 20.6475784,
+    "lon": -103.2098054,
+    "display": "Calle Cruz de la Capilla, Jardines de La Cruz Oriente, Tonalá, Región Centro, Jalisco, 45406, México",
+    "precision": "street"
+  },
+  "country=México&state=PUEBLA&city=XICOTEPEC&street=CALLE ILUSION NUMERO 5": {
+    "lat": 20.2678836,
+    "lon": -97.9729318,
+    "display": "Calle Ilusión, Duraznotla, Xicotepec, Puebla, 73080, México",
+    "precision": "street"
+  },
+  "country=México&state=AGUASCALIENTES&city=AGUASCALIENTES&street=CIRCUITO MERLOT 241": {
+    "lat": 21.9356628,
+    "lon": -102.2742883,
+    "display": "Circuito Merlot, Aguascalientes, Municipio de Aguascalientes, Aguascalientes, 20126, México",
+    "precision": "street"
+  },
+  "country=México&state=BAJA CALIFORNIA SUR&city=LOS CABOS&street=MAGALLANES": {
+    "lat": 23.0698187,
+    "lon": -109.6583809,
+    "display": "Puerto Los Cabos, San José del Cabo, Municipio de Los Cabos, Baja California Sur, México",
+    "precision": "municipality"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=TIJUANA&street=CALLE GUAYABO, PRIVADA GAZANIA 5031-2": {
+    "lat": 32.5317397,
+    "lon": -117.019529,
+    "display": "Tijuana, Municipio de Tijuana, Baja California, 22320, México",
+    "precision": "municipality"
+  },
+  "country=México&state=NUEVO LEON&city=PESQUERÍA&street=ANTONIO AGUILAR": {
+    "lat": 25.7463099,
+    "lon": -100.0955294,
+    "display": "Antonio Aguilar, Cantoral, Dulces Nombres, Pesquería, Nuevo León, 66673, México",
+    "precision": "street"
+  },
+  "country=México&state=NUEVO LEON&city=LINARES&street=FRANCISCO I MADERO": {
+    "lat": 24.8814816,
+    "lon": -99.5789368,
+    "display": "Francisco I. Madero, Camacho, Linares, Nuevo León, 67735, México",
+    "precision": "street"
+  },
+  "country=México&state=NUEVO LEON&city=DR. ARROYO&street=CARRETERA MATEHUALA SAN ROBERTO": {
+    "lat": 23.6728962,
+    "lon": -100.1794359,
+    "display": "Doctor Arroyo, Nuevo León, 67901, México",
+    "precision": "municipality"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=MEXICALI&street=TASAJO 4990": {
+    "lat": 32.6245314,
+    "lon": -115.452604,
+    "display": "Mexicali, Municipio de Mexicali, Baja California, 21000, México",
+    "precision": "municipality"
+  },
+  "country=México&state=JALISCO&city=TLAQUEPAQUE&street=REYNOSA": {
+    "lat": 20.6170388,
+    "lon": -103.2897228,
+    "display": "Calle Reynosa, Tlaquepaque, San Pedro Tlaquepaque, Región Centro, Jalisco, 45625, México",
+    "precision": "street"
+  },
+  "country=México&state=NUEVO LEON&city=GARCÍA&street=TIERRA NUEVA": {
+    "lat": 25.8065159,
+    "lon": -100.6362755,
+    "display": "Tierra Nueva, Renacimiento, García, Nuevo León, 66018, México",
+    "precision": "street"
+  },
+  "country=México&state=NUEVO LEON&city=MONTERREY&street=ANALISTAS": {
+    "lat": 25.7906069,
+    "lon": -100.4045049,
+    "display": "Calle Analistas, Valles de San Bernabé, Monterrey, Nuevo León, 64103, México",
+    "precision": "street"
+  },
+  "country=México&state=CHIHUAHUA&city=NUEVO CASAS GRANDES&street=PRIVADA DE OCHOA 2105": {
+    "lat": 30.4039004,
+    "lon": -107.9215195,
+    "display": "Privada De M. Ochoa, Nuevo Casas Grandes, Chihuahua, 31700, México",
+    "precision": "street"
+  },
+  "country=México&state=NUEVO LEON&city=GARCÍA&street=SODIO": {
+    "lat": 25.7980873,
+    "lon": -100.5792215,
+    "display": "Sodio, Paseo de las Minas, García, Nuevo León, 66003, México",
+    "precision": "street"
+  },
+  "country=México&state=NUEVO LEON&city=SANTA CATARINA&street=UNIDAD HABITACIONAL": {
+    "lat": 25.6640361,
+    "lon": -100.4581025,
+    "display": "Unidad Habitacional Villas de la Huasteca, Santa Catarina, Nuevo León, México",
+    "precision": "freeform"
+  },
+  "country=México&state=NAYARIT&city=ACAPONETA&street=ALLENDE 61": {
+    "lat": 22.492929,
+    "lon": -105.3670167,
+    "display": "Calle Ignacio Allende Poniente, Acaponeta, Nayarit, 63408, México",
+    "precision": "street"
+  },
+  "country=México&state=VERACRUZ&city=TIHUATLÁN&street=LOS PINOS SN": {
+    "lat": 20.6083224,
+    "lon": -97.4986044,
+    "display": "Calle Los Pinos, Kilómetro Nueve (Ejido Lázaro Cárdenas), La Isla (Kilometro 10), Terrenos del Lote \"San Miguel Mecatepec\", Tihuatlán, Veracruz, 92933, México",
+    "precision": "street"
+  },
+  "country=México&state=VERACRUZ&city=TIHUATLÁN&street=LOS PINOS": {
+    "lat": 20.747343,
+    "lon": -97.497276,
+    "display": "Los Pinos, Terrenos del Lote \"Chichimantla\", Tihuatlán, Veracruz, México",
+    "precision": "freeform"
+  },
+  "country=México&state=PUEBLA&city=PUEBLA&street=CALLE SAN MIGUEL DEL MILAGRO NUMERI 3": {
+    "lat": 19.0437196,
+    "lon": -98.1981486,
+    "display": "Puebla, Municipio de Puebla, Puebla, 72000, México",
+    "precision": "municipality"
+  },
+  "country=México&state=NAYARIT&city=TEPIC&street=AVENIDA VILLA DE CERVANTES 97": {
+    "lat": 21.4875511,
+    "lon": -104.828051,
+    "display": "Avenida Villa de Cervantes, La Cantera, Tepic, Nayarit, 63173, México",
+    "precision": "street"
+  },
+  "country=México&state=QUINTANA ROO&city=OTHÓN P. BLANCO&street=ASUNCION 230": {
+    "lat": 18.5588297,
+    "lon": -88.27994,
+    "display": "Calle Asunción, Chetumal, Othón P. Blanco, Quintana Roo, 77014, México",
+    "precision": "street"
+  },
+  "country=México&state=VERACRUZ&city=CÓRDOBA&street=SAN PABLO 70": {
+    "lat": 18.8836355,
+    "lon": -96.9686566,
+    "display": "San Pablo, El Pueblito, Córdoba, Veracruz, 94500, México",
+    "precision": "street"
+  },
+  "country=México&state=TAMAULIPAS&city=NUEVO LAREDO&street=MARCELINO JUAREZ 75": {
+    "lat": 27.439794,
+    "lon": -99.5038179,
+    "display": "Calle Marcelino Juárez, Infonavit Benito Juárez, Nuevo Laredo, Tamaulipas, 88275, México",
+    "precision": "street"
+  },
+  "country=México&state=QUINTANA ROO&city=OTHÓN P. BLANCO&street=COAHUILA S/N": {
+    "lat": 18.5584173,
+    "lon": -88.2553016,
+    "display": "Avenida Coahuila, Calderitas, Othón P. Blanco, Quintana Roo, 77960, México",
+    "precision": "street"
+  },
+  "country=México&state=QUINTANA ROO&city=OTHÓN P. BLANCO&street=HEROES": {
+    "lat": 18.4938372,
+    "lon": -88.2972279,
+    "display": "Héroes, Chetumal, Othón P. Blanco, Quintana Roo, 77090, México",
+    "precision": "street"
+  },
+  "country=México&state=CHIAPAS&city=TUXTLA CHICO": {
+    "lat": 14.9395637,
+    "lon": -92.1664557,
+    "display": "Tuxtla Chico, Chiapas, 30870, México",
+    "precision": "municipality"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=TIJUANA&street=CALLE PINO #59": {
+    "lat": 32.5217239,
+    "lon": -116.898777,
+    "display": "Calle Pino, Jardín Dorado, Tijuana, Municipio de Tijuana, Baja California, 22470, México",
+    "precision": "street"
+  },
+  "country=México&state=CIUDAD DE MEXICO&city=VENUSTIANO CARRANZA&street=AVENIDA EJÉRCITO NACIONAL MEXICANO": {
+    "lat": 19.4191658,
+    "lon": -99.1135482,
+    "display": "Venustiano Carranza, Ciudad de México, México",
+    "precision": "municipality"
+  },
+  "country=México&state=VERACRUZ&city=NAUTLA&street=RANCHO SAN AGUSTIN": {
+    "lat": 20.2083003,
+    "lon": -96.7741507,
+    "display": "Nautla, Veracruz, México",
+    "precision": "municipality"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=TIJUANA&street=CALLE MURUA MARTINEZ #16122": {
+    "lat": 32.5196628,
+    "lon": -116.9436119,
+    "display": "Avenida Murúa Martínez, Del Otay Centenario, Tijuana, Municipio de Tijuana, Baja California, 22456, México",
+    "precision": "street"
+  },
+  "country=México&state=CHIAPAS&city=PALENQUE&street=CALLE YAXCHILAN": {
+    "lat": 17.5065131,
+    "lon": -91.9914302,
+    "display": "Calle Yaxchilán, Palenque, Chiapas, 29960, México",
+    "precision": "street"
+  },
+  "country=México&state=NUEVO LEON&city=GUADALUPE&street=13 DE SEPTIEMBRE 111": {
+    "lat": 25.6641449,
+    "lon": -100.178456,
+    "display": "13 de Septiembre, Niños Heroes, Guadalupe, Nuevo León, 67193, México",
+    "precision": "street"
+  },
+  "country=México&state=NUEVO LEON&city=MONTERREY&street=SAN LUIS POTOSI": {
+    "lat": 25.6549911,
+    "lon": -100.3135544,
+    "display": "Calle San Luis Potosí, Independencia, Monterrey, Nuevo León, 66269, México",
+    "precision": "street"
+  },
+  "country=México&state=VERACRUZ&city=MEDELLÍN": {
+    "lat": 19.0578546,
+    "lon": -96.1560068,
+    "display": "Medellín, Veracruz, 94277, México",
+    "precision": "municipality"
+  },
+  "country=México&state=MICHOACAN&city=SALVADOR ESCALANTE": {
+    "lat": 19.4052733,
+    "lon": -101.6389966,
+    "display": "Santa Clara del Cobre, Salvador Escalante, Michoacán, 61800, México",
+    "precision": "municipality"
+  },
+  "country=México&state=CHIAPAS&city=COMITÁN DE DOMÍNGUEZ&street=17A CALLE SUR PONIENTE": {
+    "lat": 16.244692,
+    "lon": -92.1379328,
+    "display": "Calle Sur Poniente, Comitán, Comitán de Domínguez, Chiapas, 30020, México",
+    "precision": "street"
+  },
+  "country=México&state=CHIAPAS&city=ESCUINTLA": {
+    "lat": 15.3198033,
+    "lon": -92.6594468,
+    "display": "Escuintla, Chiapas, 30600, México",
+    "precision": "municipality"
+  },
+  "country=México&state=OAXACA&city=SAN PEDRO IXTLAHUACA": {
+    "lat": 17.063056,
+    "lon": -96.818056,
+    "display": "San Pedro Ixtlahuaca, Oaxaca, 71246, México",
+    "precision": "municipality"
+  },
+  "country=México&state=DURANGO&city=GÓMEZ PALACIO": {
+    "lat": 25.5732473,
+    "lon": -103.494779,
+    "display": "Gómez Palacio, Durango, 35000, México",
+    "precision": "municipality"
+  },
+  "country=México&state=ZACATECAS&city=LORETO&street=JUAN ALDAMA 903": {
+    "lat": 22.2716122,
+    "lon": -101.9933881,
+    "display": "Juan Aldama, Loreto, Zacatecas, 98830, México",
+    "precision": "street"
+  },
+  "country=México&state=MICHOACAN&city=TINGAMBATO&street=PRIVADA DE ARTEGA 168": {
+    "lat": 19.5011731,
+    "lon": -101.8536311,
+    "display": "Tingambato, Michoacán, México",
+    "precision": "municipality"
+  },
+  "country=México&state=MICHOACAN&city=QUIROGA&street=MARIANO JIMÉNEZ 556": {
+    "lat": 19.6661723,
+    "lon": -101.5280843,
+    "display": "Calle Mariano Jiménez, Quiroga, Michoacán, 58420, México",
+    "precision": "street"
+  },
+  "country=México&state=VERACRUZ&city=CÓRDOBA&street=SAN PABLO 1": {
+    "lat": 18.8836355,
+    "lon": -96.9686566,
+    "display": "San Pablo, El Pueblito, Córdoba, Veracruz, 94500, México",
+    "precision": "street"
+  },
+  "country=México&state=MICHOACAN&city=PURUÁNDIRO": {
+    "lat": 20.088676,
+    "lon": -101.5152172,
+    "display": "Puruándiro, Michoacán, 58500, México",
+    "precision": "municipality"
+  },
+  "country=México&state=MORELOS&city=YAUTEPEC&street=RIO JORDAN 1": {
+    "lat": 18.8840614,
+    "lon": -99.0661222,
+    "display": "Calle Río Jordan, Yautepec, Morelos, 62732, México",
+    "precision": "street"
+  },
+  "country=México&state=TAMAULIPAS&city=VICTORIA&street=CONSTELACION 145": {
+    "lat": 23.7720989,
+    "lon": -99.1744998,
+    "display": "Calle Constelación, Ciudad Victoria, Victoria, Tamaulipas, 87019, México",
+    "precision": "street"
+  },
+  "country=México&state=MORELOS&city=CUAUTLA&street=FRANCISCO I. MDERO 05": {
+    "lat": 18.8290118,
+    "lon": -98.9432244,
+    "display": "Cuautla, Morelos, 62740, México",
+    "precision": "municipality"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=TIJUANA&street=calle paseo villa del real #24025": {
+    "lat": 32.5088827,
+    "lon": -116.8588646,
+    "display": "Calle Paseo Villa del Real, Ejido Matamoros, Del. La Presa, Tijuana, Municipio de Tijuana, Baja California, 22330, México",
+    "precision": "street"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=TIJUANA&street=CALLE EMILIANO ZAPATA #3035": {
+    "lat": 32.5435973,
+    "lon": -117.0100717,
+    "display": "Calle Emiliano Zapata, Libertad, Delegación Mesa de Otay, Tijuana, Municipio de Tijuana, Baja California, 22400, México",
+    "precision": "street"
+  },
+  "country=México&state=MICHOACAN&city=SALVADOR ESCALANTE&street=SAN FRANCISCO DE VILLAFUERTE 290": {
+    "lat": 19.4052733,
+    "lon": -101.6389966,
+    "display": "Santa Clara del Cobre, Salvador Escalante, Michoacán, 61800, México",
+    "precision": "municipality"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=TIJUANA&street=CALLE EMILIANO ZAPATA": {
+    "lat": 32.5435973,
+    "lon": -117.0100717,
+    "display": "Calle Emiliano Zapata, Libertad, Delegación Mesa de Otay, Tijuana, Municipio de Tijuana, Baja California, 22400, México",
+    "precision": "street"
+  },
+  "country=México&state=TAMAULIPAS&city=TAMPICO&street=2DA AVENIDA 312": {
+    "lat": 22.2157619,
+    "lon": -97.8577713,
+    "display": "Tampico, Tamaulipas, 89080, México",
+    "precision": "municipality"
+  },
+  "country=México&state=MICHOACAN&city=PURUÁNDIRO&street=PROFESOR LUCIO CABAÑAS 352-U": {
+    "lat": 20.088676,
+    "lon": -101.5152172,
+    "display": "Puruándiro, Michoacán, 58500, México",
+    "precision": "municipality"
+  },
+  "country=México&state=QUERETARO&city=SAN JUAN DEL RÍO&street=PRIVADA IGNACIO ALDAMA 1": {
+    "lat": 20.3867547,
+    "lon": -99.9931982,
+    "display": "San Juan del Río, Querétaro, 76803, México",
+    "precision": "municipality"
+  },
+  "country=México&state=VERACRUZ&city=SAN ANDRÉS TUXTLA&street=PRINCIPAL ENRIQUE LOPEZ HUITRON SN": {
+    "lat": 18.4458715,
+    "lon": -95.2134609,
+    "display": "San Andrés Tuxtla, Veracruz, 95700, México",
+    "precision": "municipality"
+  },
+  "country=México&state=CHIAPAS&city=ARRIAGA&street=CALLE SIN NOMBRE S/N": {
+    "lat": 16.2344709,
+    "lon": -93.9008414,
+    "display": "Arriaga, Chiapas, 30450, México",
+    "precision": "municipality"
+  },
+  "country=México&state=NAYARIT&city=BAHÍA DE BANDERAS&street=BAHIA DE BANDERAS 40": {
+    "lat": 20.7377275,
+    "lon": -105.2698721,
+    "display": "Calle Bahía de Banderas, San Clemente, Bahía de Banderas, Nayarit, 63407, México",
+    "precision": "street"
+  },
+  "country=México&state=VERACRUZ&city=BOCA DEL RÍO&street=AVENIDA PORTO CARRERO 305": {
+    "lat": 19.1033511,
+    "lon": -96.106086,
+    "display": "Boca del Río, Veracruz, 94290, México",
+    "precision": "municipality"
+  },
+  "country=México&state=TAMAULIPAS&city=VICTORIA&street=JUAN C DORIA": {
+    "lat": 23.7473952,
+    "lon": -99.1400716,
+    "display": "Juan C. Doria, Ciudad Victoria, Victoria, Tamaulipas, 87025, México",
+    "precision": "street"
+  },
+  "country=México&state=QUERETARO&city=QUERÉTARO&street=SIN INFORMACION SIN EXT": {
+    "lat": 20.5922997,
+    "lon": -100.3917424,
+    "display": "Santiago de Querétaro, Municipio de Querétaro, Querétaro, México",
+    "precision": "municipality"
+  },
+  "country=México&state=TAMAULIPAS&city=REYNOSA&street=PEDRO J MENDEZ 125": {
+    "lat": 26.0928368,
+    "lon": -98.2779499,
+    "display": "Reynosa, Tamaulipas, 88500, México",
+    "precision": "municipality"
+  },
+  "country=México&state=MORELOS&city=CUAUTLA&street=21 DE MARZO 61": {
+    "lat": 18.8648823,
+    "lon": -98.9602627,
+    "display": "Calle 21 de Marzo, Cuautla, Morelos, 62748, México",
+    "precision": "street"
+  },
+  "country=México&state=NAYARIT&city=TEPIC&street=ROGELIO RICO 5": {
+    "lat": 21.5152482,
+    "lon": -104.949061,
+    "display": "Calle Rogelio Rico, El Aguacate, Tepic, Nayarit, 63507, México",
+    "precision": "street"
+  },
+  "country=México&state=QUERETARO&city=EL MARQUÉS&street=VILLAS DE REFUGIO": {
+    "lat": 20.5838184,
+    "lon": -100.3726636,
+    "display": "El Marqués, Delegación Centro Histórico, Santiago de Querétaro, Municipio de Querétaro, Querétaro, 76047, México",
+    "precision": "municipality"
+  },
+  "country=México&state=MICHOACAN&city=JOSÉ SIXTO VERDUZCO&street=HIDALGO 78": {
+    "lat": 20.3022497,
+    "lon": -101.5976153,
+    "display": "Avenida Miguel Hidalgo, Pastor Ortiz, José Sixto Verduzco, Michoacán, México",
+    "precision": "street"
+  },
+  "country=México&state=VERACRUZ&city=IXMATLAHUACAN&street=REFORMA AGRARIA": {
+    "lat": 18.4497579,
+    "lon": -95.8296737,
+    "display": "Ixmatlahuacan, Veracruz, México",
+    "precision": "municipality"
+  },
+  "country=México&state=NUEVO LEON&city=JUÁREZ&street=AMALEC": {
+    "lat": 25.6467011,
+    "lon": -100.0907766,
+    "display": "Benito Juárez, Juárez, Nuevo León, 67250, México",
+    "precision": "municipality"
+  },
+  "country=México&state=MORELOS&city=PUENTE DE IXTLA&street=GALEANA 08": {
+    "lat": 18.6155541,
+    "lon": -99.3215051,
+    "display": "Calle Galeana, Colonia Buenos Aires, Puente de Ixtla, Morelos, 62660, México",
+    "precision": "street"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=TIJUANA&street=CALLE SEPTIMA": {
+    "lat": 32.5420053,
+    "lon": -117.0155205,
+    "display": "Calle Abraham Gónzalez, Libertad, Delegación Mesa de Otay, Tijuana, Municipio de Tijuana, Baja California, 22400, México",
+    "precision": "street"
+  },
+  "country=México&state=TAMAULIPAS&city=VICTORIA&street=CARLOS J CASTILLO 464": {
+    "lat": 23.7389846,
+    "lon": -99.1441352,
+    "display": "Ciudad Victoria, Victoria, Tamaulipas, 87000, México",
+    "precision": "municipality"
+  },
+  "country=México&state=PUEBLA&city=PUEBLA&street=CALLE ROSAS DEL TEPEYAC SIN NUMERO": {
+    "lat": 19.0437196,
+    "lon": -98.1981486,
+    "display": "Puebla, Municipio de Puebla, Puebla, 72000, México",
+    "precision": "municipality"
+  },
+  "country=México&state=MORELOS&city=CUERNAVACA&street=PRIVADA LAZARO CARDENAS 9": {
+    "lat": 18.9452557,
+    "lon": -99.2403108,
+    "display": "Privada Lázaro Cárdenas, Jiquilpan, Tlaltenango, Cuernavaca, Morelos, 62250, México",
+    "precision": "street"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=TIJUANA&street=TITANIO 15100-4-40": {
+    "lat": 32.5317397,
+    "lon": -117.019529,
+    "display": "Tijuana, Municipio de Tijuana, Baja California, 22320, México",
+    "precision": "municipality"
+  },
+  "country=México&state=CHIAPAS&city=TUXTLA GUTIÉRREZ&street=BOULEVARD LAS PALMAS, NUMERO 21": {
+    "lat": 16.753801,
+    "lon": -93.115959,
+    "display": "Tuxtla Gutiérrez, Chiapas, 29019, México",
+    "precision": "municipality"
+  },
+  "country=México&state=PUEBLA&city=AMOZOC&street=CALLE PINO LOTE 83": {
+    "lat": 19.0522353,
+    "lon": -98.0814573,
+    "display": "Calle Pino, Casa Blanca, Amozoc, Puebla, 72990, México",
+    "precision": "street"
+  },
+  "country=México&state=MORELOS&city=ZACATEPEC DE HIDALGO&street=J M MORELOS 40,": {
+    "lat": 18.6534793,
+    "lon": -99.1910805,
+    "display": "Zacatepec de Hidalgo, Zacatepec, Morelos, 62780, México",
+    "precision": "municipality"
+  },
+  "country=México&state=NUEVO LEON&city=MONTERREY&street=AVENIDA INSURGENTES 2500": {
+    "lat": 25.6746194,
+    "lon": -100.3693489,
+    "display": "Avenida Insurgentes, Monterrey, Nuevo León, 64650, México",
+    "precision": "street"
+  },
+  "country=México&state=CHIHUAHUA&city=CARICHÍ&street=OJINAGA": {
+    "lat": 27.9087046,
+    "lon": -107.0553827,
+    "display": "Calle Ojinaga, Carichí, Chihuahua, México",
+    "precision": "street"
+  },
+  "country=México&state=PUEBLA&city=PUEBLA&street=PRIVADA 111 B ORIENTE NUMERO 44": {
+    "lat": 19.0437196,
+    "lon": -98.1981486,
+    "display": "Puebla, Municipio de Puebla, Puebla, 72000, México",
+    "precision": "municipality"
+  },
+  "country=México&state=MICHOACAN&city=LA PIEDAD&street=DOCTOR ROBERTO ÁLVAREZ 18": {
+    "lat": 20.3429949,
+    "lon": -102.031124,
+    "display": "La Piedad de Cabadas, La Piedad, Michoacán, 59300, México",
+    "precision": "municipality"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=TIJUANA&street=CALLE LUISA MARTÍNEZ #11449": {
+    "lat": 32.4956708,
+    "lon": -116.889534,
+    "display": "Calle Luisa Martínez, Tijuana, Municipio de Tijuana, Baja California, 21831, México",
+    "precision": "street"
+  },
+  "country=México&state=CHIHUAHUA&city=CARICHÍ": {
+    "lat": 27.9171731,
+    "lon": -107.055745,
+    "display": "Carichí, Chihuahua, México",
+    "precision": "municipality"
+  },
+  "country=México&state=GUERRERO&city=ACAPULCO DE JUÁREZ&street=LIBERTAD 1": {
+    "lat": 16.8743795,
+    "lon": -99.8819289,
+    "display": "Calle Libertad de Expresión, CTM, Acapulco, Acapulco de Juárez, Guerrero, 39300, México",
+    "precision": "street"
+  },
+  "country=México&state=MICHOACAN&city=URUAPAN&street=AVENIDA JUPITER 9": {
+    "lat": 19.4380318,
+    "lon": -102.0268262,
+    "display": "Avenida Júpiter, Uruapan, Michoacán, 60120, México",
+    "precision": "street"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=MEXICALI&street=DE LOS JAZMINES 398": {
+    "lat": 32.6639967,
+    "lon": -115.419968,
+    "display": "Avenida de los Jazmines, Mexicali, Municipio de Mexicali, Baja California, 21000, México",
+    "precision": "street"
+  },
+  "country=México&state=PUEBLA&city=PUEBLA&street=CALLE JARDIN NUMERO 39": {
+    "lat": 19.0437196,
+    "lon": -98.1981486,
+    "display": "Puebla, Municipio de Puebla, Puebla, 72000, México",
+    "precision": "municipality"
+  },
+  "country=México&state=SONORA&city=HERMOSILLO&street=CIRCUITO DE PIÑERO": {
+    "lat": 29.0948207,
+    "lon": -110.9692202,
+    "display": "Hermosillo, Sonora, 83140, México",
+    "precision": "municipality"
+  },
+  "country=México&state=VERACRUZ&city=COLIPA&street=CONOCIDO EN LA LOC. COYOTITLAN SN": {
+    "lat": 19.9237033,
+    "lon": -96.7273345,
+    "display": "Colipa, Veracruz, México",
+    "precision": "municipality"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=MEXICALI&street=AVENIDA B SN": {
+    "lat": 32.6018561,
+    "lon": -115.5348557,
+    "display": "Avenida B, Zaragoza Segunda Seccón, Mexicali, Municipio de Mexicali, Baja California, 21000, México",
+    "precision": "street"
+  },
+  "country=México&state=HIDALGO&city=SAN SALVADOR": {
+    "lat": 20.283889,
+    "lon": -99.013611,
+    "display": "San Salvador, Poxindeje de Morelos, San Salvador, Hidalgo, 42646, México",
+    "precision": "municipality"
+  },
+  "country=México&state=JALISCO&city=TLAQUEPAQUE&street=SAN ODILON": {
+    "lat": 20.6024197,
+    "lon": -103.3794211,
+    "display": "Calle San Odilón, Tlaquepaque, San Pedro Tlaquepaque, Región Centro, Jalisco, 45530, México",
+    "precision": "street"
+  },
+  "country=México&state=MORELOS&city=TOTOLAPAN": {
+    "lat": 18.9871889,
+    "lon": -98.9204919,
+    "display": "Totolapan, Morelos, México",
+    "precision": "municipality"
+  },
+  "country=México&state=NAYARIT&city=TEPIC&street=AZUCENA 28": {
+    "lat": 21.5299191,
+    "lon": -104.8731685,
+    "display": "Calle Azucena, Tepic, Nayarit, 63035, México",
+    "precision": "street"
+  },
+  "country=México&state=NAYARIT&city=TEPIC&street=NAPOLES 126": {
+    "lat": 21.5285357,
+    "lon": -104.9219872,
+    "display": "Privada Nápoles, Tepic, Nayarit, 63069, México",
+    "precision": "street"
+  },
+  "country=México&state=NAYARIT&city=BAHÍA DE BANDERAS&street=MAR BALTICO 13": {
+    "lat": 20.7440619,
+    "lon": -105.2480902,
+    "display": "Privada Mar de Báltico, San Vicente, Bahía de Banderas, Nayarit, 63737, México",
+    "precision": "street"
+  },
+  "country=México&state=PUEBLA&city=CUETZALAN DEL PROGRESO": null,
+  "country=México&state=MICHOACAN&city=COTIJA&street=CLARA MAGAÑA VALENCIA 347": null,
+  "country=México&state=GUERRERO&city=LA UNIÓN DE ISIDORO MONTES DE OCA": null,
+  "country=México&state=SINALOA&city=AHOME": null,
+  "country=México&state=PUEBLA&city=CUAUTLANCINGO&street=CALLE DIAZ ORDAZ NUMERO 8": null,
+  "country=México&state=PUEBLA&city=SAN MARTÍN TEXMELUCAN&street=CALLE CUAUHTEMOC NUMERO 8": null,
+  "country=México&state=MICHOACAN&city=HIDALGO&street=COLONIA LOMA DE ENMEDIO": null,
+  "country=México&state=SINALOA&city=ROSARIO&street=SE DESCONOCE SD": null,
+  "country=México&state=MICHOACAN&city=LOS REYES&street=SIERRA NUMERO 15": null,
+  "country=México&state=MICHOACAN&city=CUITZEO&street=MANZANA-B LOTE1": null,
+  "country=México&state=NUEVO LEON&city=GRAL. ESCOBEDO": null,
+  "country=México&state=NUEVO LEON&city=GRAL. ESCOBEDO&street=MANUEL L BARRAGÁN CERESO FEMENIL": null,
+  "country=México&state=PUEBLA&city=CUAUTLANCINGO": null,
+  "country=México&state=SINALOA&city=ROSARIO&street=LOMAS DEL POTRERILLO": null,
+  "country=México&state=HIDALGO&city=SAN FELIPE ORIZATLÁN": null,
+  "country=México&state=HIDALGO&city=ZACUALTIPÁN DE ÁNGELES": null,
+  "country=México&state=NAYARIT&city=BAHÍA DE BANDERAS": null,
+  "country=México&state=MICHOACAN&city=MADERO": null,
+  "country=México&state=VERACRUZ&city=ALTO LUCERO DE GUTIÉRREZ BARRIOS": null,
+  "country=México&state=MORELOS&city=AYALA": null,
+  "country=México&state=PUEBLA&city=CUAUTLANCINGO&street=PRIVADA REVOLUCION NUMERO 3": null,
+  "country=México&state=DURANGO&city=TLAHUALILO": null,
+  "country=México&state=HIDALGO&city=MIXQUIAHUALA DE JUÁREZ": null,
+  "country=México&state=MICHOACAN&city=LOS REYES&street=MANUEL RODRIGUEZ SIN NUMERO": null,
+  "country=México&state=MICHOACAN&city=LOS REYES": null,
+  "country=México&state=QUINTANA ROO&city=SOLIDARIDAD": null,
+  "country=México&state=NUEVO LEON&city=GRAL. ESCOBEDO&street=INDEPENDENCIA": null,
+  "country=México&state=NUEVO LEON&city=GRAL. TERÁN": null,
+  "country=México&state=VERACRUZ&city=NAOLINCO&street=ALCANDE Y GARCÍA": null,
+  "country=México&state=TAMAULIPAS&city=JIMÉNEZ": null,
+  "country=México&state=SINALOA&city=ROSARIO&street=SE DESCONOCE SN": null,
+  "country=México&state=MICHOACAN&city=SAHUAYO": null,
+  "country=México&state=PUEBLA&city=TLAHUAPAN&street=CALLE GENERAL PASCUAL ROZCO NUMERO 40": null,
+  "country=México&state=NUEVO LEON&city=GRAL. ESCOBEDO&street=SAN HIGINIO": null,
+  "country=México&state=PUEBLA&city=CORONANGO&street=PRIVADA SAN JOSE SIN NUMERO": null,
+  "country=México&state=PUEBLA&city=CORONANGO&street=CALLE ATOYAC NUMERO 44 B SECCION 5 B": null,
+  "country=México&state=NUEVO LEON&city=GRAL. ZUAZUA&street=SANTA MARTHA": null,
+  "country=México&state=PUEBLA&city=CALPAN&street=CALLE FRESNO SIN NUMERO": null,
+  "country=México&state=GUERRERO&city=HUITZUCO DE LOS FIGUEROA&street=SIN NOMBRE": null,
+  "country=México&state=QUINTANA ROO&city=OTHÓN P. BLANCO&street=JOSE MARIA MORELOS 15": {
+    "lat": 18.2739161,
+    "lon": -88.6787243,
+    "display": "José María Morelos, Javier Rojo Gómez, Othón P. Blanco, Quintana Roo, 77980, México",
+    "precision": "street"
+  },
+  "country=México&state=QUINTANA ROO&city=OTHÓN P. BLANCO&street=CHABLE 15 A": {
+    "lat": 18.5278389,
+    "lon": -88.3059467,
+    "display": "Calle Chable, Chetumal, Othón P. Blanco, Quintana Roo, 77083, México",
+    "precision": "street"
+  },
+  "country=México&state=QUINTANA ROO&city=OTHÓN P. BLANCO&street=SIN NOMBRE": {
+    "lat": 19.6204989,
+    "lon": -89.0048256,
+    "display": "Othón P. Blanco, José María Morelos, Quintana Roo, México",
+    "precision": "municipality"
+  },
+  "country=México&state=VERACRUZ&city=ATZALAN&street=PORFIRIO DIAZ S/N": {
+    "lat": 19.7899176,
+    "lon": -97.2437731,
+    "display": "Calle Porfirio Díaz, Atzalan, Veracruz, 93680, México",
+    "precision": "street"
+  },
+  "country=México&state=VERACRUZ&city=CÓRDOBA&street=AV. 31 4407": {
+    "lat": 18.8950872,
+    "lon": -96.9641201,
+    "display": "Avenida 31, Lomas de Los Ángeles, Córdoba, Veracruz, 94500, México",
+    "precision": "street"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=TIJUANA&street=CALLE CASTELLO BLANCO": {
+    "lat": 32.5050854,
+    "lon": -116.8533743,
+    "display": "Calle Castelló Blanco, Villa del Sol Cuarta Sección, Municipio de Tijuana, Baja California, 22330, México",
+    "precision": "street"
+  },
+  "country=México&state=MICHOACAN&city=URUAPAN&street=DIEGO RIVERA": {
+    "lat": 19.4192641,
+    "lon": -102.0189251,
+    "display": "Andador Diego Rivera, Uruapan, Michoacán, 60120, México",
+    "precision": "street"
+  },
+  "country=México&state=MICHOACAN&city=ZAMORA&street=AVENIDA LAZARO CARDENAS": {
+    "lat": 20.0267321,
+    "lon": -102.3802969,
+    "display": "Avenida Lázaro Cárdenas, El Llano, Zamora, Michoacán, México",
+    "precision": "street"
+  },
+  "country=México&state=NUEVO LEON&city=APODACA&street=MALAWI": {
+    "lat": 25.7841612,
+    "lon": -100.249525,
+    "display": "Calle Malawi, Prados de la Cieneguita, Apodaca, Nuevo León, 66636, México",
+    "precision": "street"
+  },
+  "country=México&state=SINALOA&city=AHOME&street=MARCIAL ORDOÑEZ 169": {
+    "lat": 25.7814394,
+    "lon": -108.991628,
+    "display": "Avenida Profesor Marcial Ordóñez, Los Mochis, Ahome, Sinaloa, 81280, México",
+    "precision": "street"
+  },
+  "country=México&state=ZACATECAS&city=JEREZ": {
+    "lat": 22.6494432,
+    "lon": -102.9900276,
+    "display": "Jerez, Zacatecas, 99300, México",
+    "precision": "municipality"
+  },
+  "country=México&state=MICHOACAN&city=GABRIEL ZAMORA": null,
+  "country=México&state=YUCATAN&city=TICUL": {
+    "lat": 20.3966705,
+    "lon": -89.5350323,
+    "display": "Ticul, Yucatán, 97860, México",
+    "precision": "municipality"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=TIJUANA&street=calle mesa redonda #3138": {
+    "lat": 32.4814779,
+    "lon": -116.9869414,
+    "display": "Calle Mesa Redonda, Residencial Aguacaliente, Tijuana, Municipio de Tijuana, Baja California, 22190, México",
+    "precision": "street"
+  },
+  "country=México&state=JALISCO&city=GUADALAJARA&street=HERMANDAD 78": {
+    "lat": 20.6720375,
+    "lon": -103.338396,
+    "display": "Guadalajara, Región Centro, Jalisco, 44450, México",
+    "precision": "municipality"
+  },
+  "country=México&state=JALISCO&city=EL SALTO&street=TABACHINES": {
+    "lat": 20.5224724,
+    "lon": -103.2312225,
+    "display": "Tabachines, San José del Castillo, El Salto, Región Centro, Jalisco, 45685, México",
+    "precision": "street"
+  },
+  "country=México&state=COAHUILA&city=MONCLOVA&street=CALLE TECNOTRIM 802": {
+    "lat": 26.9266344,
+    "lon": -101.3947223,
+    "display": "Calle Tecnotrim, El Mirador, Monclova, Coahuila, 25700, México",
+    "precision": "street"
+  },
+  "country=México&state=MORELOS&city=CUERNAVACA&street=RAMON LOPEZ VELARDE 6": {
+    "lat": 18.9271823,
+    "lon": -99.2528581,
+    "display": "Calle Ramón López Velarde, Cuernavaca, Morelos, 62019, México",
+    "precision": "street"
+  },
+  "country=México&state=MICHOACAN&city=TINGAMBATO&street=DOMICILIO CONOCIDA LAS CHARANDAS": {
+    "lat": 19.5011731,
+    "lon": -101.8536311,
+    "display": "Tingambato, Michoacán, México",
+    "precision": "municipality"
+  },
+  "country=México&state=CHIAPAS&city=TAPACHULA": {
+    "lat": 14.9042905,
+    "lon": -92.2609265,
+    "display": "Tapachula, Chiapas, 30830, México",
+    "precision": "municipality"
+  },
+  "country=México&state=PUEBLA&city=PUEBLA&street=4 TO RETORNO DE LA 5 B SUR NUMERO 10": {
+    "lat": 19.0437196,
+    "lon": -98.1981486,
+    "display": "Puebla, Municipio de Puebla, Puebla, 72000, México",
+    "precision": "municipality"
+  },
+  "country=México&state=CHIAPAS&city=NUEVO LAREDO": {
+    "lat": 15.5630377,
+    "lon": -92.3858437,
+    "display": "Nuevo Laredo, Siltepec, Chiapas, México",
+    "precision": "municipality"
+  },
+  "country=México&state=SINALOA&city=CULIACÁN&street=AV CENTRAL SN": {
+    "lat": 24.7632786,
+    "lon": -107.3969138,
+    "display": "Avenida Parque Central, Lomas de San Isidro, Culiacán, Culiacán Rosales, Culiacán, Sinaloa, 80197, México",
+    "precision": "street"
+  },
+  "country=México&state=MICHOACAN&city=MORELIA&street=PUERTO DE BUANVISTA": {
+    "lat": 19.7027116,
+    "lon": -101.1923818,
+    "display": "Morelia, Michoacán, 58000, México",
+    "precision": "municipality"
+  },
+  "country=México&state=SINALOA&city=MAZATLÁN&street=GREGORIO VAZQUEZ": {
+    "lat": 23.2035785,
+    "lon": -106.4208391,
+    "display": "Mazatlán, Sinaloa, 82000, México",
+    "precision": "municipality"
+  },
+  "country=México&state=NUEVO LEON&city=MONTERREY&street=JUAN ALVAREZ 1409": {
+    "lat": 25.6924758,
+    "lon": -100.3226145,
+    "display": "Calle Juan Álvarez, Industrial, Monterrey, Nuevo León, 64490, México",
+    "precision": "street"
+  },
+  "country=México&state=SINALOA&city=CONCORDIA&street=SIN NOMBRE SIN NUMERO": {
+    "lat": 23.287735,
+    "lon": -106.065272,
+    "display": "Concordia, Sinaloa, 82600, México",
+    "precision": "municipality"
+  },
+  "country=México&state=MICHOACAN&city=MORELIA&street=EN LA CIUDAD DE MORELIA MICHOACAN": {
+    "lat": 19.7027116,
+    "lon": -101.1923818,
+    "display": "Morelia, Michoacán, 58000, México",
+    "precision": "municipality"
+  },
+  "country=México&state=SONORA&city=HERMOSILLO&street=MARIN 11": {
+    "lat": 29.1566102,
+    "lon": -110.979494,
+    "display": "Calle Arquitecto Daniel Marín, Paseo de Palmas, Hermosillo, Sonora, 83115, México",
+    "precision": "street"
+  },
+  "country=México&state=CIUDAD DE MEXICO&city=CUAUHTÉMOC&street=REPÚBLICA DE ARGENTINA 28": {
+    "lat": 19.436962,
+    "lon": -99.1316145,
+    "display": "Museo Vivo del Muralismo, 28, Calle República de Argentina, Centro, Tlatelolco, Ciudad de México, Cuauhtémoc, Ciudad de México, 06020, México",
+    "precision": "street"
+  },
+  "country=México&state=HIDALGO&city=EMILIANO ZAPATA": {
+    "lat": 19.6546865,
+    "lon": -98.544552,
+    "display": "Emiliano Zapata, Hidalgo, 43960, México",
+    "precision": "municipality"
+  },
+  "country=México&state=NUEVO LEON&city=MONTERREY&street=DENTISTAS 1314": {
+    "lat": 25.7831398,
+    "lon": -100.4142804,
+    "display": "Calle Dentistas, Francisco I Madero (La Alianza sector I), La Alianza, Monterrey, Nuevo León, 64103, México",
+    "precision": "street"
+  },
+  "country=México&state=NUEVO LEON&city=GARCÍA&street=ITURBIDE 411-B": {
+    "lat": 25.7779736,
+    "lon": -100.5919771,
+    "display": "Praderas de Iturbide, Urbivilla del Prado, García, Nuevo León, 66018, México",
+    "precision": "street"
+  },
+  "country=México&state=GUERRERO&city=CHILPANCINGO DE LOS BRAVO&street=REVOLUCION": {
+    "lat": 17.5555825,
+    "lon": -99.4858034,
+    "display": "Calle Revolución, Chilpancingo, Chilpancingo de los Bravo, Guerrero, 39000, México",
+    "precision": "street"
+  },
+  "country=México&state=NUEVO LEON&city=CADEREYTA JIMÉNEZ&street=ZARAGOZA 807 PTE": {
+    "lat": 25.5876993,
+    "lon": -100.0012458,
+    "display": "Cadereyta Jiménez, Nuevo León, México",
+    "precision": "municipality"
+  },
+  "country=México&state=GUERRERO&city=BENITO JUÁREZ&street=SIN NOMBRE": {
+    "lat": 17.3299605,
+    "lon": -98.5358793,
+    "display": "Benito Juárez, Atlamajalcingo del Monte, Guerrero, México",
+    "precision": "municipality"
+  },
+  "country=México&state=GUERRERO&city=JOSÉ AZUETA&street=AVENIDA MORELOS": {
+    "lat": 18.2268323,
+    "lon": -95.6863016,
+    "display": "Avenida José María Morelos, Vicente Guerrero (El Aguacate), José Azueta, Veracruz, México",
+    "precision": "street"
+  },
+  "country=México&state=CHIHUAHUA&city=NUEVO CASAS GRANDES&street=PASEO DE LA REFORMA": {
+    "lat": 30.3952804,
+    "lon": -107.8578301,
+    "display": "Paseo de la Reforma, Nuevo Casas Grandes, Chihuahua, 31700, México",
+    "precision": "street"
+  },
+  "country=México&state=SINALOA&city=AHOME&street=LOS GRANEROS 1740": {
+    "lat": 25.7826292,
+    "lon": -109.0261132,
+    "display": "Calle Los Graneros, Villas de Cortez, Benito Juarez, Los Mochis, Ahome, Sinaloa, 81270, México",
+    "precision": "street"
+  },
+  "country=México&state=TAMAULIPAS&city=VICTORIA&street=CARLOS J. CASTILLO 464": {
+    "lat": 23.7389846,
+    "lon": -99.1441352,
+    "display": "Ciudad Victoria, Victoria, Tamaulipas, 87000, México",
+    "precision": "municipality"
+  },
+  "country=México&state=CHIAPAS&city=TAPACHULA&street=CALLE SAN ANDRES, SIN NUMERO,": {
+    "lat": 14.9042905,
+    "lon": -92.2609265,
+    "display": "Tapachula, Chiapas, 30830, México",
+    "precision": "municipality"
+  },
+  "country=México&state=DURANGO&city=DURANGO&street=FERNANDO DE LA TORRE 301": {
+    "lat": 24.0423605,
+    "lon": -104.6727601,
+    "display": "Calle Fernando de la Torre, Ricuerdos del Pasado, Durango, Municipio de Durango, Durango, 34050, México",
+    "precision": "street"
+  },
+  "country=México&state=QUINTANA ROO&city=BENITO JUÁREZ&street=REGION 238, MANZANA 12 LOTE 11": {
+    "lat": 21.0742627,
+    "lon": -86.9265622,
+    "display": "Benito Juárez, Quintana Roo, México",
+    "precision": "municipality"
+  },
+  "country=México&state=TAMAULIPAS&city=NUEVO LAREDO": {
+    "lat": 27.479303,
+    "lon": -99.5221081,
+    "display": "Nuevo Laredo, Tamaulipas, 88000, México",
+    "precision": "municipality"
+  },
+  "country=México&state=NAYARIT&city=DURANGO&street=ADAN SORIA sin numero": null,
+  "country=México&state=CHIAPAS&city=PALENQUE": {
+    "lat": 17.509188,
+    "lon": -91.980922,
+    "display": "Palenque, Chiapas, 29960, México",
+    "precision": "municipality"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=ENSENADA": {
+    "lat": 31.8658887,
+    "lon": -116.602983,
+    "display": "Ensenada, Municipio de Ensenada, Baja California, México",
+    "precision": "municipality"
+  },
+  "country=México&state=JALISCO&city=ZAPOPAN&street=BRONCE 2803": {
+    "lat": 20.6259942,
+    "lon": -103.4687662,
+    "display": "Calle Bronce, Valle de San Nicolas, 3a sección, ZENITH RESIDENCIAL, Santa Ana Tepetitlán, Zapopan, Región Centro, Jalisco, 45230, México",
+    "precision": "street"
+  },
+  "country=México&state=SINALOA&city=MAZATLÁN&street=BAHAMAS 14013": {
+    "lat": 23.2942828,
+    "lon": -106.3839365,
+    "display": "Calle Bahamas, Mazatlán, Sinaloa, 82000, México",
+    "precision": "street"
+  },
+  "country=México&state=QUERETARO&city=QUERÉTARO&street=VALLE DE MOMPANI 365": {
+    "lat": 20.6396462,
+    "lon": -100.4775067,
+    "display": "Calle Valle de Mompani, Valle de Santiago, Delegación Felipe Carrillo Puerto, Patria Nueva, Municipio de Querétaro, Querétaro, 76116, México",
+    "precision": "street"
+  },
+  "country=México&state=TAMAULIPAS&city=SOTO LA MARINA&street=FRANCISCO I MADERO 130": {
+    "lat": 23.7409344,
+    "lon": -98.2158294,
+    "display": "Francisco I. Madero, Soto la Marina, Tamaulipas, México",
+    "precision": "street"
+  },
+  "country=México&state=CHIAPAS&city=TAPACHULA&street=CALLE 9 DE DICIEMBRE MZ 11 LT 21": {
+    "lat": 14.9042905,
+    "lon": -92.2609265,
+    "display": "Tapachula, Chiapas, 30830, México",
+    "precision": "municipality"
+  },
+  "country=México&state=SINALOA&city=NAVOLATO": {
+    "lat": 24.7633,
+    "lon": -107.6979734,
+    "display": "Navolato, Sinaloa, México",
+    "precision": "municipality"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=SAN FELIPE&street=MAR CARIBE 266": {
+    "lat": 31.0293112,
+    "lon": -114.8371786,
+    "display": "Calle Mar Caribe Norte, San Felipe, Municipio de San Felipe, Baja California, 21079, México",
+    "precision": "street"
+  },
+  "country=México&state=NAYARIT&city=BAHÍA DE BANDERAS&street=CIRCUITO DE LA SERENIDAD 03": null,
+  "country=México&state=ESTADO DE MEXICO&city=TLALNEPANTLA DE BAZ&street=BERIOZABAL 85": null,
+  "country=México&state=QUERETARO&city=CORREGIDORA&street=RIO SANTIAGO 6": {
+    "lat": 20.5498213,
+    "lon": -100.3925525,
+    "display": "Calle Río Santiago, Tierra y Libertad, Condominio Diego Rivera, Colinas del Sur 1, Corregidora, Querétaro, 76091, México",
+    "precision": "street"
+  },
+  "country=México&state=SONORA&city=CAJEME&street=CRISANTEMOS": {
+    "lat": 27.5647956,
+    "lon": -109.9310322,
+    "display": "Paseo Magnolias (Paseo de los Crisantemos), Esperanza, Cajeme, Sonora, 85065, México",
+    "precision": "street"
+  },
+  "country=México&state=SONORA&city=HUATABAMPO&street=OSIBAMPO": {
+    "lat": 26.8248431,
+    "lon": -109.6420085,
+    "display": "Huatabampo, Sonora, 85910, México",
+    "precision": "municipality"
+  },
+  "country=México&state=ZACATECAS&city=OJOCALIENTE": {
+    "lat": 22.5707975,
+    "lon": -102.2519347,
+    "display": "Ojocaliente, Zacatecas, 98710, México",
+    "precision": "municipality"
+  },
+  "country=México&state=NUEVO LEON&city=GRAL. ESCOBEDO&street=ESTEBAN BACA CALDERON": null,
+  "country=México&state=NUEVO LEON&city=JUÁREZ&street=ELOY CAVAZOS": {
+    "lat": 25.6443022,
+    "lon": -100.1695399,
+    "display": "Avenida Profesor Eloy Cavazos, Ex-Hacienda El Rosario, Juárez, Nuevo León, 67199, México",
+    "precision": "street"
+  },
+  "country=México&state=MICHOACAN&city=APATZINGÁN&street=SALVADOR DIAZ MIRON 770": {
+    "lat": 19.0988859,
+    "lon": -102.3429589,
+    "display": "Cuarta Privada de Licenciado Salvador Díaz Limón, Apatzingán, Michoacán, 60600, México",
+    "precision": "street"
+  },
+  "country=México&state=SINALOA&city=CULIACÁN&street=PDTE IGNACIO COMONFORT 203": {
+    "lat": 24.7978965,
+    "lon": -107.393395,
+    "display": "Culiacán, Culiacán Rosales, Culiacán, Sinaloa, 80220, México",
+    "precision": "municipality"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=SAN FELIPE": {
+    "lat": 31.0269529,
+    "lon": -114.839607,
+    "display": "San Felipe, Municipio de San Felipe, Baja California, 21079, México",
+    "precision": "municipality"
+  },
+  "country=México&state=MICHOACAN&city=JOSÉ SIXTO VERDUZCO&street=CONOCIDO S/N": null,
+  "country=México&state=JALISCO&city=GUADALAJARA&street=RIO ATOTONILCO 1381-A": {
+    "lat": 20.6430235,
+    "lon": -103.326296,
+    "display": "1381, Calle Río Atotonilco, Guadalajara, Región Centro, Jalisco, 44890, México",
+    "precision": "street"
+  },
+  "country=México&state=SONORA&city=CABORCA&street=RAMÓN BOJÓRQUEZ 333": {
+    "lat": 30.7001176,
+    "lon": -112.1676095,
+    "display": "Calle Ramón Bojórquez, CABORCA, Heroica Caborca, Caborca, Sonora, 83600, México",
+    "precision": "street"
+  },
+  "country=México&state=ZACATECAS&city=FRESNILLO": {
+    "lat": 23.1811278,
+    "lon": -102.8729073,
+    "display": "Fresnillo, Zacatecas, 99000, México",
+    "precision": "municipality"
+  },
+  "country=México&state=SONORA&city=HERMOSILLO&street=HUATABAMPO": {
+    "lat": 29.1201239,
+    "lon": -111.0121272,
+    "display": "Huatabampo, Hermosillo, Sonora, 83170, México",
+    "precision": "street"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=TECATE&street=CANCHE 750": {
+    "lat": 32.5732466,
+    "lon": -116.6607255,
+    "display": "Avenida Domingo Canche, Tecate, Municipio de Tecate, Baja California, 21449, México",
+    "precision": "street"
+  },
+  "country=México&state=TLAXCALA&city=IXTACUIXTLA DE MARIANO MATAMOROS": null,
+  "country=México&state=MICHOACAN&city=URUAPAN&street=GUADALUPE VICTORIA SUR S/N": {
+    "lat": 19.4147269,
+    "lon": -102.0522647,
+    "display": "Uruapan, Michoacán, 60050, México",
+    "precision": "municipality"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=TIJUANA&street=calle Puerto San Carlos #12": {
+    "lat": 32.5317397,
+    "lon": -117.019529,
+    "display": "Tijuana, Municipio de Tijuana, Baja California, 22320, México",
+    "precision": "municipality"
+  },
+  "country=México&state=NUEVO LEON&city=APODACA&street=AZALEA": {
+    "lat": 25.7136822,
+    "lon": -100.157989,
+    "display": "Azalea, Hacienda Las Margaritas, Apodaca, Nuevo León, 66647, México",
+    "precision": "street"
+  },
+  "country=México&state=NUEVO LEON&city=SALINAS VICTORIA": {
+    "lat": 25.9634174,
+    "lon": -100.2922877,
+    "display": "Salinas Victoria, Nuevo León, 65500, México",
+    "precision": "municipality"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=TIJUANA&street=CALLE DE LA PURISIMA #52015": {
+    "lat": 32.4788676,
+    "lon": -116.8569143,
+    "display": "Calle de la Purísima, Municipio de Tijuana, Baja California, 22245, México",
+    "precision": "street"
+  },
+  "country=México&state=NUEVO LEON&city=SANTA CATARINA&street=FRANCISCO VILLA": {
+    "lat": 25.6557372,
+    "lon": -100.4488867,
+    "display": "Francisco Villa, Colonia La Banda, Santa Catarina, Nuevo León, 66190, México",
+    "precision": "street"
+  },
+  "country=México&state=MICHOACAN&city=TANGANCÍCUARO&street=EN EL MUNICIPIO DE TANGANCICUARO MICHOACAN": null,
+  "country=México&state=NUEVO LEON&city=CARMEN&street=DEL ROSARIO": {
+    "lat": 25.7471724,
+    "lon": -100.1755268,
+    "display": "Hacienda del Rosario, Hacienda del Carmen, Apodaca, Nuevo León, 66645, México",
+    "precision": "street"
+  },
+  "country=México&state=MICHOACAN&city=MORELIA&street=JESÚS GALLEGOS FLORES MANZANA 1 LOTE 4": {
+    "lat": 19.7027116,
+    "lon": -101.1923818,
+    "display": "Morelia, Michoacán, 58000, México",
+    "precision": "municipality"
+  },
+  "country=México&state=TAMAULIPAS&city=REYNOSA&street=FRESNOS 266": {
+    "lat": 26.0183984,
+    "lon": -98.2485526,
+    "display": "Fresnos, Reynosa, Tamaulipas, 88500, México",
+    "precision": "street"
+  },
+  "country=México&state=TAMAULIPAS&city=MIGUEL ALEMÁN&street=CALLE ROSALES": {
+    "lat": 26.4069637,
+    "lon": -99.0245198,
+    "display": "Calle Rosales, Miguel Alemán, Tamaulipas, 88310, México",
+    "precision": "street"
+  },
+  "country=México&state=TLAXCALA&city=CHIAUTEMPAN": null,
+  "country=México&state=BAJA CALIFORNIA&city=TIJUANA&street=calle 22 de julio #2631-6": {
+    "lat": 32.5093391,
+    "lon": -117.0442441,
+    "display": "Calle 22 de Julio, Hidalgo, Tijuana, Municipio de Tijuana, Baja California, 22056, México",
+    "precision": "street"
+  },
+  "country=México&state=NAYARIT&city=TEPIC&street=TALPA 29": {
+    "lat": 21.5341436,
+    "lon": -104.895992,
+    "display": "Privada Talpa, Tepic, Nayarit, 63088, México",
+    "precision": "street"
+  },
+  "country=México&state=QUERETARO&city=QUERÉTARO&street=SAUCES 19": {
+    "lat": 20.6144266,
+    "lon": -100.4021605,
+    "display": "Sauces, Delegación Centro Histórico, Santiago de Querétaro, Municipio de Querétaro, Querétaro, México",
+    "precision": "freeform"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=TIJUANA&street=CALLE MISION 17201- 6": {
+    "lat": 32.5317397,
+    "lon": -117.019529,
+    "display": "Tijuana, Municipio de Tijuana, Baja California, 22320, México",
+    "precision": "municipality"
+  },
+  "country=México&state=CHIAPAS&city=TAPACHULA&street=LAS ESCOLLERAS": {
+    "lat": 14.9042905,
+    "lon": -92.2609265,
+    "display": "Tapachula, Chiapas, 30830, México",
+    "precision": "municipality"
+  },
+  "country=México&state=TLAXCALA&city=TERRENATE&street=LA CANDELARIA 3": {
+    "lat": 19.476944,
+    "lon": -97.918611,
+    "display": "Terrenate, Tlaxcala, México",
+    "precision": "municipality"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=TIJUANA&street=CALLE VISTA HERMOSA #2328": {
+    "lat": 32.5231994,
+    "lon": -117.0589111,
+    "display": "Calle Vista Hermosa, Delegacion San Antonio de los Buenos, Tijuana, Municipio de Tijuana, Baja California, 22614, México",
+    "precision": "street"
+  },
+  "country=México&state=MICHOACAN&city=PÁTZCUARO": {
+    "lat": 19.5136796,
+    "lon": -101.6099596,
+    "display": "Pátzcuaro, Michoacán, 61600, México",
+    "precision": "municipality"
+  },
+  "country=México&state=MICHOACAN&city=BUENAVISTA": {
+    "lat": 19.5565498,
+    "lon": -101.5375449,
+    "display": "Buenavista, Pátzcuaro, Michoacán, 61617, México",
+    "precision": "municipality"
+  },
+  "country=México&state=MICHOACAN&city=PANINDÍCUARO": {
+    "lat": 19.9839755,
+    "lon": -101.7612192,
+    "display": "Panindicuaro, Panindícuaro, Michoacán, México",
+    "precision": "municipality"
+  },
+  "country=México&state=VERACRUZ&city=TÚXPAM&street=CIUDAD PEMEX 9": {
+    "lat": 20.9572882,
+    "lon": -97.4359274,
+    "display": "Calle Procesadora Ciudad Pemex, Fraccionamiento Petrópolis, Alto Lucero, Terrenos del Lote \"La Asunción\", Tuxpan, Veracruz, 92860, México",
+    "precision": "street"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=TIJUANA&street=CALLE DINAMICA #15032": {
+    "lat": 32.5317397,
+    "lon": -117.019529,
+    "display": "Tijuana, Municipio de Tijuana, Baja California, 22320, México",
+    "precision": "municipality"
+  },
+  "country=México&state=VERACRUZ&city=POZA RICA DE HIDALGO": {
+    "lat": 20.5320852,
+    "lon": -97.4536355,
+    "display": "Poza Rica, Terrenos del Lote 3 \"Poza Rica\", Poza Rica de Hidalgo, Veracruz, 93260, México",
+    "precision": "municipality"
+  },
+  "country=México&state=OAXACA&city=SAN JUAN BAUTISTA TUXTEPEC": {
+    "lat": 18.0874632,
+    "lon": -96.1227767,
+    "display": "Tuxtepec, San Juan Bautista Tuxtepec, Oaxaca, 68320, México",
+    "precision": "municipality"
+  },
+  "country=México&state=ZACATECAS&city=LORETO&street=DESCONOCIDO S/N": {
+    "lat": 22.2705712,
+    "lon": -101.9872783,
+    "display": "Loreto, Zacatecas, 98830, México",
+    "precision": "municipality"
+  },
+  "country=México&state=MICHOACAN&city=TANCÍTARO": {
+    "lat": 19.3374692,
+    "lon": -102.3625784,
+    "display": "Tancítaro, Michoacán, México",
+    "precision": "municipality"
+  },
+  "country=México&state=PUEBLA&city=SAN GABRIEL CHILAC&street=AVENIDA RAFAEL AVILA CAMACHO NUMERO 227": {
+    "lat": 18.3261009,
+    "lon": -97.3475652,
+    "display": "San Gabriel Chilac, Puebla, 75880, México",
+    "precision": "municipality"
+  },
+  "country=México&state=TAMAULIPAS&city=MATAMOROS&street=JOSEFA ORTIZ DE DOMINGUEZ 17": {
+    "lat": 25.8367057,
+    "lon": -97.4795142,
+    "display": "Josefa Ortiz de Domínguez, Matamoros, Tamaulipas, 87476, México",
+    "precision": "street"
+  },
+  "country=México&state=MICHOACAN&city=TEPALCATEPEC&street=AVENIDA DEL TRABAJO 1015": {
+    "lat": 19.1892138,
+    "lon": -102.8473602,
+    "display": "Calle Agricultura, Tepalcatepec, Michoacán, 60540, México",
+    "precision": "street"
+  },
+  "country=México&state=PUEBLA&city=ZIHUATEUTLA&street=CALLE PRINCIPAL NUMERO 17": {
+    "lat": 20.2506049,
+    "lon": -97.8870483,
+    "display": "Zihuateutla, Puebla, México",
+    "precision": "municipality"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=TIJUANA&street=CALLE AGUSTIN PEREZ RIVERA #14075": {
+    "lat": 32.5317397,
+    "lon": -117.019529,
+    "display": "Tijuana, Municipio de Tijuana, Baja California, 22320, México",
+    "precision": "municipality"
+  },
+  "country=México&state=VERACRUZ&city=MARTÍNEZ DE LA TORRE": {
+    "lat": 20.0615181,
+    "lon": -97.0545374,
+    "display": "Martínez de la Torre, Veracruz, 93603, México",
+    "precision": "municipality"
+  },
+  "country=México&state=PUEBLA&city=PUEBLA&street=CALLE 104 ORIENTE NUMERO 16": {
+    "lat": 19.0437196,
+    "lon": -98.1981486,
+    "display": "Puebla, Municipio de Puebla, Puebla, 72000, México",
+    "precision": "municipality"
+  },
+  "country=México&state=NUEVO LEON&city=CADEREYTA JIMÉNEZ&street=LAUREL": {
+    "lat": 25.6040053,
+    "lon": -100.0776982,
+    "display": "Laurel, Valle del Roble, Cadereyta Jiménez, Nuevo León, 67294, México",
+    "precision": "street"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=MEXICALI&street=TELARES 3975": {
+    "lat": 32.5722361,
+    "lon": -115.3673302,
+    "display": "Telares, Ejido Puebla, Municipio de Mexicali, Baja California, 21600, México",
+    "precision": "street"
+  },
+  "country=México&state=TAMAULIPAS&city=ALTAMIRA": {
+    "lat": 22.3921625,
+    "lon": -97.9362975,
+    "display": "Altamira, Tamaulipas, 89600, México",
+    "precision": "municipality"
+  },
+  "country=México&state=VERACRUZ&city=TÚXPAM&street=ROSAL": {
+    "lat": 20.9667377,
+    "lon": -97.3979731,
+    "display": "Rosal, Colonia Los Pinos, Tuxpan, Veracruz, 92800, México",
+    "precision": "street"
+  },
+  "country=México&state=VERACRUZ&city=GUTIÉRREZ ZAMORA&street=PROLONGACION 2 DE ABRIL 0": {
+    "lat": 20.456991,
+    "lon": -97.0855361,
+    "display": "Gutiérrez Zamora, Veracruz, 93556, México",
+    "precision": "municipality"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=TIJUANA&street=CALLE CAMPO MILITAR #7": {
+    "lat": 32.5317397,
+    "lon": -117.019529,
+    "display": "Tijuana, Municipio de Tijuana, Baja California, 22320, México",
+    "precision": "municipality"
+  },
+  "country=México&state=TLAXCALA&city=APIZACO": {
+    "lat": 19.415556,
+    "lon": -98.14,
+    "display": "Apizaco, Tlaxcala, México",
+    "precision": "municipality"
+  },
+  "country=México&state=MICHOACAN&city=TEPALCATEPEC": {
+    "lat": 19.1920558,
+    "lon": -102.8453959,
+    "display": "Tepalcatepec, Michoacán, 60540, México",
+    "precision": "municipality"
+  },
+  "country=México&state=CHIAPAS&city=MAPASTEPEC&street=CALLEJON LOS GATOS S/N": {
+    "lat": 15.43981,
+    "lon": -92.898367,
+    "display": "Mapastepec, Chiapas, 30560, México",
+    "precision": "municipality"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=TIJUANA&street=calle Emiliano Zapata #15644": {
+    "lat": 32.5254126,
+    "lon": -116.9159625,
+    "display": "Calle Emiliano Zapata, Chilpancingo, Tijuana, Municipio de Tijuana, Baja California, 22454, México",
+    "precision": "street"
+  },
+  "country=México&state=NUEVO LEON&city=GUADALUPE": {
+    "lat": 25.6751114,
+    "lon": -100.2151753,
+    "display": "Guadalupe, Nuevo León, 67180, México",
+    "precision": "municipality"
+  },
+  "country=México&state=PUEBLA&city=QUECHOLAC&street=AVENIDA JUAREZ SIN NUMERO": {
+    "lat": 18.9572222,
+    "lon": -97.6611111,
+    "display": "Quecholac, Puebla, 75460, México",
+    "precision": "municipality"
+  },
+  "country=México&state=PUEBLA&city=TLACHICHUCA&street=CALLE RAYON CORONA SIN NUMERO": {
+    "lat": 19.1149679,
+    "lon": -97.4191564,
+    "display": "Tlachichuca, Puebla, 75050, México",
+    "precision": "municipality"
+  },
+  "country=México&state=CHIAPAS&city=CINTALAPA&street=AVENIDA 1A NORTE PONIENTE NUM 154": {
+    "lat": 16.6905402,
+    "lon": -93.7257625,
+    "display": "Cintalapa, Chiapas, 30400, México",
+    "precision": "municipality"
+  },
+  "country=México&state=PUEBLA&city=PUEBLA&street=CIRCUITO JUAN PABLO SEGUNDO 630": {
+    "lat": 19.0437196,
+    "lon": -98.1981486,
+    "display": "Puebla, Municipio de Puebla, Puebla, 72000, México",
+    "precision": "municipality"
+  },
+  "country=México&state=AGUASCALIENTES&city=AGUASCALIENTES&street=PRESIDENTES 621": {
+    "lat": 21.8943857,
+    "lon": -102.2615411,
+    "display": "Calle Presidentes, Aguascalientes, Municipio de Aguascalientes, Aguascalientes, 20175, México",
+    "precision": "street"
+  },
+  "country=México&state=MICHOACAN&city=MORELIA&street=AVENIDA POLIDUCTO 11": {
+    "lat": 19.7257854,
+    "lon": -101.2141709,
+    "display": "Avenida Poliducto, Morelia, Michoacán, 58114, México",
+    "precision": "street"
+  },
+  "country=México&state=TABASCO&city=CENTRO&street=CALLE AUSENCIO G. CRUZ": {
+    "lat": 17.8548425,
+    "lon": -92.9307227,
+    "display": "Calle Ausencio G. Cruz, Playas del Rosario, Centro, Tabasco, 86288, México",
+    "precision": "street"
+  },
+  "country=México&state=CHIAPAS&city=HUIXTLA&street=CALLE NEGRETE Y AYUNTAMIENTO NORTE": {
+    "lat": 15.1385034,
+    "lon": -92.4636455,
+    "display": "Huixtla, Chiapas, 30640, México",
+    "precision": "municipality"
+  },
+  "country=México&state=COLIMA&city=COLIMA": {
+    "lat": 19.2433991,
+    "lon": -103.7280738,
+    "display": "Colima, Municipio de Colima, Colima, 28000, México",
+    "precision": "municipality"
+  },
+  "country=México&state=VERACRUZ&city=VERACRUZ&street=IGNACIO ZARAGOZA 1393": {
+    "lat": 19.705278,
+    "lon": -97.214167,
+    "display": "Ignacio Zaragoza, Altotonga, Veracruz, México",
+    "precision": "freeform"
+  },
+  "country=México&state=MICHOACAN&city=URUAPAN&street=EN URUAPAN DESCONOCIENDO DOMICILIO": {
+    "lat": 19.4147269,
+    "lon": -102.0522647,
+    "display": "Uruapan, Michoacán, 60050, México",
+    "precision": "municipality"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=TIJUANA&street=PRIVADA DEL TRUENO #10000": {
+    "lat": 32.4716198,
+    "lon": -116.8458852,
+    "display": "Privada Hacienda Fuentes de la Lluvia, Hacienda Santa María, Municipio de Tijuana, Baja California, 22253, México",
+    "precision": "street"
+  },
+  "country=México&state=SONORA&city=HERMOSILLO&street=SAN FAUSTINO": {
+    "lat": 29.0581684,
+    "lon": -111.0003085,
+    "display": "Calle San Faustino, Hermosillo, Sonora, 83287, México",
+    "precision": "street"
+  },
+  "country=México&state=MICHOACAN&city=HIDALGO": null,
+  "country=México&state=TAMAULIPAS&city=VICTORIA&street=MANUEL PARREÑO PORRAS LOTE 7": {
+    "lat": 23.7176437,
+    "lon": -99.1857693,
+    "display": "Calle Profesor Manuel Parreño Porras, Ciudad Victoria, Victoria, Tamaulipas, 87078, México",
+    "precision": "street"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=TIJUANA&street=CALLE CEDUE #18": {
+    "lat": 32.4491445,
+    "lon": -116.9987509,
+    "display": "Cedue, La Joya, Delegacion San Antonio de los Buenos, Tijuana, Municipio de Tijuana, Baja California, 22217, México",
+    "precision": "street"
+  },
+  "country=México&state=GUERRERO&city=ACAPULCO DE JUÁREZ": {
+    "lat": 16.8680495,
+    "lon": -99.8940182,
+    "display": "Acapulco, Acapulco de Juárez, Guerrero, 39300, México",
+    "precision": "municipality"
+  },
+  "country=México&state=VERACRUZ&city=VERACRUZ&street=PLACIDO DOMINGO": {
+    "lat": 19.1806057,
+    "lon": -96.1657191,
+    "display": "Calle Plácido Domingo, Chivería, Veracruz, Municipio de Veracruz, Veracruz, 91727, México",
+    "precision": "street"
+  },
+  "country=México&state=SINALOA&city=MAZATLÁN&street=NIÑOS HEROES SN": {
+    "lat": 23.1892223,
+    "lon": -106.2318367,
+    "display": "Niños heroes, El Pozole, Mazatlán, Sinaloa, 82204, México",
+    "precision": "street"
+  },
+  "country=México&state=TAMAULIPAS&city=NUEVO LAREDO&street=AVENIDA GUERRERO": {
+    "lat": 27.4282128,
+    "lon": -99.5207102,
+    "display": "Avenida Guerrero, Gran Boulevard Residencial, Nuevo Laredo, Tamaulipas, 88289, México",
+    "precision": "street"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=TIJUANA&street=CALLE LOMAS DE VALENTINA 11444": {
+    "lat": 32.5317397,
+    "lon": -117.019529,
+    "display": "Tijuana, Municipio de Tijuana, Baja California, 22320, México",
+    "precision": "municipality"
+  },
+  "country=México&state=COLIMA&city=VILLA DE ALVAREZ": {
+    "lat": 19.2651417,
+    "lon": -103.736013,
+    "display": "Villa de Álvarez, Colima, 28987, México",
+    "precision": "municipality"
+  },
+  "country=México&state=JALISCO&city=GUADALAJARA": {
+    "lat": 20.6720375,
+    "lon": -103.338396,
+    "display": "Guadalajara, Región Centro, Jalisco, 44450, México",
+    "precision": "municipality"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=TIJUANA&street=privada casiterita #8": {
+    "lat": 32.4038473,
+    "lon": -116.9419141,
+    "display": "Privada Casiterita, Las Delicias 2da Sección, Las Delicias, Valle Dorado, Municipio de Tijuana, Baja California, 22160, México",
+    "precision": "street"
+  },
+  "country=México&state=MICHOACAN&city=MORELIA&street=CENTRO DE MORELIA": {
+    "lat": 19.6900794,
+    "lon": -101.3314551,
+    "display": "Avenida Lomas De La Maestanza Centro, Lomas de la Maestranza, Villas del Pedregal, Morelia, Michoacán, 58330, México",
+    "precision": "street"
+  },
+  "country=México&state=BAJA CALIFORNIA&city=TIJUANA&street=CALLE MIGUEL ALEMAN VALDEZ #3309": {
+    "lat": 32.496144,
+    "lon": -117.0542968,
+    "display": "Miguel Alemán Valdez, Chihuahua, San Antonio de los Buenos, Delegacion San Antonio de los Buenos, Tijuana, Municipio de Tijuana, Baja California, 22604, México",
+    "precision": "street"
+  },
+  "country=México&state=TAMAULIPAS&city=MATAMOROS&street=BENITO JUAREZ 50": {
+    "lat": 25.8718202,
+    "lon": -97.4935525,
+    "display": "Calle Licenciado Benito Juárez, Matamoros, Tamaulipas, 87400, México",
+    "precision": "street"
+  },
+  "country=México&state=NUEVO LEON&city=SANTA CATARINA&street=MIGUEL HIDALGO": {
+    "lat": 25.6678032,
+    "lon": -100.4326345,
+    "display": "Calle Miguel Hidalgo Y Costilla, La Fama, Santa Catarina, Nuevo León, 66100, México",
+    "precision": "street"
+  },
+  "country=México&state=BAJA CALIFORNIA SUR&city=LA PAZ&street=PAPAYA 218": {
+    "lat": 24.1236863,
+    "lon": -110.3225084,
+    "display": "Calle Papaya, La Paz, Municipio de La Paz, Baja California Sur, 23080, México",
+    "precision": "street"
+  },
+  "country=México&state=VERACRUZ&city=POZA RICA DE HIDALGO&street=JUSTO CIERRA 211": {
+    "lat": 20.5320852,
+    "lon": -97.4536355,
+    "display": "Poza Rica, Terrenos del Lote 3 \"Poza Rica\", Poza Rica de Hidalgo, Veracruz, 93260, México",
+    "precision": "municipality"
+  },
+  "country=México&state=MICHOACAN&city=PANINDÍCUARO&street=ISAAC ARRIAGA 06": {
+    "lat": 19.9841006,
+    "lon": -101.7609511,
+    "display": "Calle Isaac Arriaga, Panindicuaro, Panindícuaro, Michoacán, México",
+    "precision": "street"
+  },
+  "country=México&state=MICHOACAN&city=LÁZARO CÁRDENAS&street=POCHOTA, MANZANA 20, LOTE 03 20": {
+    "lat": 17.9594769,
+    "lon": -102.198659,
+    "display": "Lázaro Cárdenas, Michoacán, 60950, México",
+    "precision": "municipality"
+  },
+  "country=México&state=NUEVO LEON&city=JUÁREZ": {
+    "lat": 25.6467011,
+    "lon": -100.0907766,
+    "display": "Benito Juárez, Juárez, Nuevo León, 67250, México",
+    "precision": "municipality"
+  },
+  "country=México&state=NUEVO LEON&city=MIER Y NORIEGA": {
+    "lat": 23.4232742,
+    "lon": -100.1190755,
+    "display": "Mier Y Noriega, Mier y Noriega, Nuevo León, México",
+    "precision": "municipality"
+  },
+  "country=México&state=SONORA&city=CAJEME&street=AGUASCALIENTES 406": {
+    "lat": 27.577574,
+    "lon": -109.9276383,
+    "display": "Privada Aguascalientes, Esperanza, Cajeme, Sonora, 85065, México",
+    "precision": "street"
+  }
+}

@@ -1,11 +1,34 @@
-from fastapi import APIRouter, Depends, HTTPException, Query
+from fastapi import APIRouter, Depends, HTTPException, Query, Response
+from starlette.concurrency import run_in_threadpool
 from supabase import AsyncClient
 
 from ...deps import get_supabase
 from . import service
-from .schemas import Filiacion, PersonaDetail, PersonaList
+from .photos import to_thumbnail
+from .schemas import PersonaDetail, PersonaList
 
 router = APIRouter(prefix="/personas", tags=["personas"])
+
+
+@router.get("/{victima_id}/foto", responses={200: {"content": {"image/jpeg": {}}}})
+async def persona_foto(
+    victima_id: str,
+    size: int = Query(320, ge=32, le=1024),
+    sb: AsyncClient = Depends(get_supabase),
+):
+    """Thumbnailed JPEG for a persona, keyed by stable victima id (uuid)."""
+    data_uri = await service.get_imagen_by_victima(sb, victima_id)
+    if not data_uri:
+        raise HTTPException(status_code=404, detail="Sin imagen")
+    try:
+        jpeg = await run_in_threadpool(to_thumbnail, data_uri, size)
+    except Exception:
+        raise HTTPException(status_code=422, detail="Imagen inválida")
+    return Response(
+        content=jpeg,
+        media_type="image/jpeg",
+        headers={"Cache-Control": "public, max-age=86400"},
+    )
 
 
 @router.get("", response_model=PersonaList)
@@ -31,18 +54,4 @@ async def get_persona(
     row = await service.get_persona(sb, persona_id)
     if not row:
         raise HTTPException(status_code=404, detail="Persona no encontrada")
-    return PersonaDetail(
-        **{
-            k: row.get(k)
-            for k in (
-                "id", "nombre", "primer_apellido", "segundo_apellido", "sexo",
-                "edad_actual", "estado", "municipio", "estatus_victima",
-                "fecha_hechos", "fecha_percato", "fotografia",
-            )
-        },
-        senas=service.parse_senas(row.get("sana_particular")),
-        filiacion=Filiacion(
-            raw=row.get("media_filiacion"),
-            parsed=service.parse_filiacion(row.get("media_filiacion")),
-        ),
-    )
+    return PersonaDetail(**service.build_detail(row))

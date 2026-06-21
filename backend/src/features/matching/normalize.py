@@ -41,9 +41,19 @@ def parse_filiacion(raw: str | None) -> dict[str, str]:
     return out
 
 
+def plausible_estatura(v) -> int | None:
+    """Source data is noisy (1cm, 35cm, 211cm exist). Treat out-of-range as
+    UNKNOWN, not as a value — so junk doesn't become a false contradiction."""
+    try:
+        v = int(v)
+    except (TypeError, ValueError):
+        return None
+    return v if 50 <= v <= 230 else None
+
+
 def estatura_cm(raw: str | None) -> int | None:
     m = re.search(r"ESTATURA:\s*([\d.,]+)", raw or "")
     if not m:
         return None
     digits = re.search(r"(\d{2,3})", m.group(1))
-    return int(digits.group(1)) if digits else None
+    return plausible_estatura(digits.group(1)) if digits else None

@@ -8,4 +8,7 @@ dist/
 GUIA_EQUIPO.md
 HANDOFF.md
 .DS_Store
-docs/
+docs/*
+!docs/specs/
+!docs/specs/**
+graphify-out/
