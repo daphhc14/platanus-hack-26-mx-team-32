@@ -47,8 +47,8 @@ services:
       DOCKER_API_VERSION: "1.44"
       # Optional — only needed if the GHCR package is PRIVATE.
       # Create a PAT with `read:packages` and export GHCR_TOKEN on the host.
-      # REPO_USER: platanus-hack
-      # REPO_PASS: ${GHCR_TOKEN}
+      REPO_USER: platanus-hack
+      REPO_PASS: ${GHCR_TOKEN}
     networks:
       - hilo
 
