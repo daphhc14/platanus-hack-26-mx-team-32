@@ -58,3 +58,15 @@ async def get_persona(sb: AsyncClient, persona_id: int) -> dict | None:
         .execute()
     )
     return res.data[0] if res.data else None
+
+
+async def get_imagen_by_victima(sb: AsyncClient, victima_id: str) -> str | None:
+    """The raw `data:image/...;base64,...` URI for a persona, by stable victima id."""
+    res = (
+        await sb.table(TABLE)
+        .select("imagen")
+        .eq("id_victimadirecta", victima_id)
+        .limit(1)
+        .execute()
+    )
+    return res.data[0]["imagen"] if res.data else None
