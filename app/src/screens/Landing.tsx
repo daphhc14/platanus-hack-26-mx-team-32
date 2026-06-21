@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { GoogleMap, useJsApiLoader, MarkerF, InfoWindowF } from '@react-google-maps/api'
+import { GoogleMap, useJsApiLoader, MarkerF, InfoWindowF, MarkerClustererF } from '@react-google-maps/api'
 import { AgentDot } from '../components/AgentDot'
+import { useSession, signInWithGoogle } from '../features/auth'
 import {
   fetchPersonsOnMap,
   fetchPersonDetail,
@@ -16,6 +17,92 @@ const GOOGLE_MAPS_API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY
 const MAP_CENTER = { lat: 23.6345, lng: -102.5528 }
 const MAP_ZOOM = 5
 const MAP_CONTAINER_STYLE = { width: '100%', height: '100%' }
+const MAP_STYLE: google.maps.MapTypeStyle[] = [
+    {
+        "featureType": "all",
+        "elementType": "labels.text",
+        "stylers": [
+            {
+                "color": "#878787"
+            }
+        ]
+    },
+    {
+        "featureType": "all",
+        "elementType": "labels.text.stroke",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape",
+        "elementType": "all",
+        "stylers": [
+            {
+                "color": "#f9f5ed"
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "all",
+        "stylers": [
+            {
+                "color": "#f5f5f5"
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "geometry.stroke",
+        "stylers": [
+            {
+                "color": "#c9c9c9"
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "all",
+        "stylers": [
+            {
+                "color": "#aee0f4"
+            }
+        ]
+    }
+];
+
+const CLUSTER_ICON_URL = 'data:image/svg+xml;utf8,' + encodeURIComponent(
+  `<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44"><circle cx="22" cy="22" r="20" fill="rgba(220,38,38,0.5)"/></svg>`
+)
+
+function lerp(a: number, b: number, t: number) {
+  return Math.round(a + (b - a) * t)
+}
+
+function hexToRgb(hex: string): [number, number, number] {
+  return [parseInt(hex.slice(1, 3), 16), parseInt(hex.slice(3, 5), 16), parseInt(hex.slice(5, 7), 16)]
+}
+
+function rgbToHex(r: number, g: number, b: number) {
+  return '#' + [r, g, b].map(v => v.toString(16).padStart(2, '0')).join('')
+}
+
+const COLOR_OLD = hexToRgb('#fef08a')
+const COLOR_MID = hexToRgb('#f97316')
+const COLOR_RECENT = hexToRgb('#dc2626')
+
+function dateColor(ratio: number): string {
+  const t = Math.max(0, Math.min(1, ratio))
+  if (t < 0.5) {
+    const k = t * 2
+    return rgbToHex(lerp(COLOR_OLD[0], COLOR_MID[0], k), lerp(COLOR_OLD[1], COLOR_MID[1], k), lerp(COLOR_OLD[2], COLOR_MID[2], k))
+  }
+  const k = (t - 0.5) * 2
+  return rgbToHex(lerp(COLOR_MID[0], COLOR_RECENT[0], k), lerp(COLOR_MID[1], COLOR_RECENT[1], k), lerp(COLOR_MID[2], COLOR_RECENT[2], k))
+}
 
 function fullName(p: PersonOnMap) {
   return [p.nombre, p.primer_apellido, p.segundo_apellido].filter(Boolean).join(' ') || 'Sin nombre'
@@ -41,101 +128,153 @@ function statusText(p: PersonOnMap) {
   return p.estatus_victima ?? 'Estatus no registrado'
 }
 
-function getMarkerIcon(): google.maps.Icon {
+function getMarkerIcon(color: string): google.maps.Icon {
   return {
     url: 'data:image/svg+xml;utf8,' + encodeURIComponent(
-      `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="6" fill="#F2921D" stroke="#fff" stroke-width="1.5"/></svg>`
+      `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" fill="${color}"/></svg>`
     ),
-    scaledSize: new google.maps.Size(16, 16),
-    anchor: new google.maps.Point(8, 8),
+    scaledSize: new google.maps.Size(20, 20),
+    anchor: new google.maps.Point(10, 10),
   }
 }
 
-function DetailCard({ person, detail }: { person: PersonOnMap; detail?: PersonDetail }) {
+function HoverCard({ person }: { person: PersonOnMap }) {
+  return (
+    <div style={{ fontFamily: 'var(--font-family)', minWidth: 160, maxWidth: 220 }}>
+      <div style={{ fontWeight: 600, fontSize: 13, color: '#1A1A1A', marginBottom: 3, lineHeight: 1.3 }}>
+        {fullName(person)}
+      </div>
+      <div style={{ fontSize: 11, color: '#6B6B6B', marginBottom: 2 }}>
+        {ageText(person)} · {locationText(person)}
+      </div>
+      <div style={{ fontSize: 10, color: '#F2921D', fontWeight: 500, marginBottom: 4 }}>
+        {formatDate(person.fecha_hechos)}
+      </div>
+      <span style={{
+        display: 'inline-block',
+        padding: '2px 7px',
+        borderRadius: 40,
+        background: 'rgba(242,146,29,0.12)',
+        border: '1px solid rgba(242,146,29,0.35)',
+        fontSize: 9,
+        fontWeight: 700,
+        letterSpacing: '0.04em',
+        textTransform: 'uppercase',
+        color: '#9A5B12',
+      }}>
+        {statusText(person)}
+      </span>
+    </div>
+  )
+}
+
+function DetailPanel({ person, detail, onClose }: {
+  person: PersonOnMap
+  detail?: PersonDetail
+  onClose: () => void
+}) {
   const senas = detail ? parseSenas(detail.sana_particular) : []
   const filiacion = detail ? parseFiliacion(detail.media_filiacion) : {}
   const hasPhoto = !!detail?.imagen
 
   return (
-    <div style={{ fontFamily: 'var(--font-family)', width: 240 }}>
+    <div className="glass-strong anim-fade-in" style={{
+      position: 'absolute',
+      top: 90,
+      right: 16,
+      bottom: 24,
+      zIndex: 25,
+      width: 320,
+      maxWidth: 'calc(100vw - 32px)',
+      borderRadius: 16,
+      overflowY: 'auto',
+      padding: 0,
+      display: 'flex',
+      flexDirection: 'column',
+    }}>
       {detail && hasPhoto && (
         <img
           src={detail.imagen!}
           alt={fullName(person)}
-          style={{ width: '100%', height: 120, objectFit: 'cover', borderRadius: 8, marginBottom: 8 }}
+          style={{ width: '100%', height: 280, objectFit: 'contain', background: '#1a1a1a', borderRadius: '16px 16px 0 0' }}
         />
       )}
 
-      <div style={{ fontWeight: 600, fontSize: 14, color: '#1A1A1A', marginBottom: 4, lineHeight: 1.3 }}>
-        {fullName(person)}
+      <div style={{ padding: '16px 18px', flex: 1 }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 8 }}>
+          <div style={{ fontWeight: 600, fontSize: 16, color: '#1A1A1A', lineHeight: 1.3, flex: 1, paddingRight: 8 }}>
+            {fullName(person)}
+          </div>
+          <button onClick={onClose} aria-label="Cerrar" style={{
+            background: 'none', border: 'none', cursor: 'pointer', fontSize: 20, color: '#6B6B6B',
+            lineHeight: 1, padding: 0, flexShrink: 0,
+          }}>×</button>
+        </div>
+
+        <div style={{ fontSize: 13, color: '#6B6B6B', marginBottom: 2 }}>
+          {ageText(person)}{detail?.sexo ? ` · ${detail.sexo}` : ''}
+        </div>
+        <div style={{ fontSize: 13, color: '#6B6B6B', marginBottom: 2 }}>{locationText(person)}</div>
+        <div style={{ fontSize: 12, color: '#F2921D', fontWeight: 500, marginBottom: 8 }}>
+          Desaparecida {formatDate(person.fecha_hechos)}
+        </div>
+
+        <span style={{
+          display: 'inline-block',
+          padding: '3px 10px',
+          borderRadius: 40,
+          background: 'rgba(242,146,29,0.12)',
+          border: '1px solid rgba(242,146,29,0.35)',
+          fontSize: 10,
+          fontWeight: 700,
+          letterSpacing: '0.04em',
+          textTransform: 'uppercase',
+          color: '#9A5B12',
+          marginBottom: 12,
+        }}>
+          {statusText(person)}
+        </span>
+
+        {!detail && (
+          <div style={{ fontSize: 12, color: '#9aa0a6' }}>Cargando detalles…</div>
+        )}
+
+        {detail && (
+          <>
+            {senas.length > 0 && (
+              <Section title="Señas particulares">
+                {senas.map((s, i) => <div key={i} style={itemStyle}>· {s}</div>)}
+              </Section>
+            )}
+
+            {detail.prendas_de_vestir && (
+              <Section title="Vestimenta">
+                <div style={itemStyle}>{detail.prendas_de_vestir}</div>
+              </Section>
+            )}
+
+            {Object.keys(filiacion).length > 0 && (
+              <Section title="Media filiación">
+                {Object.entries(filiacion).map(([k, v], i) => (
+                  <div key={i} style={itemStyle}><b style={{ fontWeight: 500 }}>{k}:</b> {v}</div>
+                ))}
+              </Section>
+            )}
+
+            {detail.nacionalidad && (
+              <Section title="Nacionalidad">
+                <div style={itemStyle}>{detail.nacionalidad}</div>
+              </Section>
+            )}
+
+            {detail.tiene_discapacidad && detail.tipo_discapacidad && (
+              <Section title="Discapacidad">
+                <div style={itemStyle}>{detail.tipo_discapacidad}</div>
+              </Section>
+            )}
+          </>
+        )}
       </div>
-
-      <div style={{ fontSize: 12, color: '#6B6B6B', marginBottom: 2 }}>
-        {ageText(person)}
-        {detail?.sexo ? ` · ${detail.sexo}` : ''}
-      </div>
-      <div style={{ fontSize: 12, color: '#6B6B6B', marginBottom: 2 }}>
-        {locationText(person)}
-      </div>
-      <div style={{ fontSize: 11, color: '#F2921D', fontWeight: 500, marginBottom: 6 }}>
-        Desaparecida {formatDate(person.fecha_hechos)}
-      </div>
-
-      <span style={{
-        display: 'inline-block',
-        padding: '2px 8px',
-        borderRadius: 40,
-        background: 'rgba(242,146,29,0.12)',
-        border: '1px solid rgba(242,146,29,0.35)',
-        fontSize: 10,
-        fontWeight: 700,
-        letterSpacing: '0.04em',
-        textTransform: 'uppercase',
-        color: '#9A5B12',
-        marginBottom: 10,
-      }}>
-        {statusText(person)}
-      </span>
-
-      {!detail && (
-        <div style={{ fontSize: 11, color: '#9aa0a6' }}>Cargando detalles…</div>
-      )}
-
-      {detail && (
-        <>
-          {senas.length > 0 && (
-            <Section title="Señas particulares">
-              {senas.map((s, i) => <div key={i} style={itemStyle}>· {s}</div>)}
-            </Section>
-          )}
-
-          {detail.prendas_de_vestir && (
-            <Section title="Vestimenta">
-              <div style={itemStyle}>{detail.prendas_de_vestir}</div>
-            </Section>
-          )}
-
-          {Object.keys(filiacion).length > 0 && (
-            <Section title="Media filiación">
-              {Object.entries(filiacion).map(([k, v], i) => (
-                <div key={i} style={itemStyle}><b style={{ fontWeight: 500 }}>{k}:</b> {v}</div>
-              ))}
-            </Section>
-          )}
-
-          {detail.nacionalidad && (
-            <Section title="Nacionalidad">
-              <div style={itemStyle}>{detail.nacionalidad}</div>
-            </Section>
-          )}
-
-          {detail.tiene_discapacidad && detail.tipo_discapacidad && (
-            <Section title="Discapacidad">
-              <div style={itemStyle}>{detail.tipo_discapacidad}</div>
-            </Section>
-          )}
-        </>
-      )}
     </div>
   )
 }
@@ -159,9 +298,11 @@ function Section({ title, children }: { title: string; children: React.ReactNode
 
 export function Landing() {
   const navigate = useNavigate()
+  const { session } = useSession()
   const [persons, setPersons] = useState<PersonOnMap[]>([])
   const [visible, setVisible] = useState<PersonOnMap[]>([])
   const [hovered, setHovered] = useState<PersonOnMap | null>(null)
+  const [selected, setSelected] = useState<PersonOnMap | null>(null)
   const [details, setDetails] = useState<Record<number, PersonDetail>>({})
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
@@ -194,10 +335,40 @@ export function Landing() {
     setVisible(persons.filter(p => bounds.contains(new google.maps.LatLng(p.lat, p.lng))))
   }, [persons])
 
-  const markerIcon = useMemo(() => isLoaded ? getMarkerIcon() : null, [isLoaded])
+  const { minTs, maxTs } = useMemo(() => {
+    const ts = persons
+      .map(p => p.fecha_hechos)
+      .filter((d): d is string => !!d)
+      .map(d => new Date(d).getTime())
+      .filter(t => !Number.isNaN(t))
+    if (ts.length === 0) return { minTs: 0, maxTs: 0 }
+    return { minTs: Math.min(...ts), maxTs: Math.max(...ts) }
+  }, [persons])
 
-  const handleHover = useCallback((p: PersonOnMap) => {
-    setHovered(p)
+  const earliestDate = useMemo(() => minTs ? new Date(minTs) : null, [minTs])
+
+  const NUM_BUCKETS = 20
+  const iconBuckets = useMemo(() => {
+    if (!isLoaded) return null
+    return Array.from({ length: NUM_BUCKETS }, (_, i) => {
+      const ratio = i / (NUM_BUCKETS - 1)
+      return getMarkerIcon(dateColor(ratio))
+    })
+  }, [isLoaded])
+  const noDateIcon = useMemo(() => isLoaded ? getMarkerIcon('#fef08a') : null, [isLoaded])
+
+  const markerColor = useCallback((p: PersonOnMap) => {
+    if (!iconBuckets) return noDateIcon!
+    const ts = new Date(p.fecha_hechos ?? '').getTime()
+    if (Number.isNaN(ts) || !maxTs || !minTs || maxTs === minTs) return noDateIcon ?? iconBuckets[0]
+    const span = maxTs - minTs
+    const ratio = Math.log(ts - minTs + 1) / Math.log(span + 1)
+    const idx = Math.min(NUM_BUCKETS - 1, Math.floor(ratio * NUM_BUCKETS))
+    return iconBuckets[idx]
+  }, [iconBuckets, noDateIcon, minTs, maxTs])
+
+  const handleSelect = useCallback((p: PersonOnMap) => {
+    setSelected(p)
     if (!detailCache.current[p.id] && !fetchingRef.current.has(p.id)) {
       fetchingRef.current.add(p.id)
       fetchPersonDetail(p.id)
@@ -233,12 +404,15 @@ export function Landing() {
           </span>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-          <button className="btn-ghost" style={{ padding: '8px 20px', fontSize: 13 }} onClick={() => navigate('/login')}>
-            Entrar
-          </button>
-          <button className="btn-primary" style={{ padding: '8px 20px', fontSize: 13 }} onClick={() => navigate('/home')}>
-            App
-          </button>
+          {session ? (
+            <button className="btn-primary" style={{ padding: '8px 20px', fontSize: 13 }} onClick={() => navigate('/home')}>
+              Ir al dashboard
+            </button>
+          ) : (
+            <button className="btn-primary" style={{ padding: '8px 20px', fontSize: 13 }} onClick={() => signInWithGoogle()}>
+              Continuar con Google
+            </button>
+          )}
         </div>
       </header>
 
@@ -278,11 +452,23 @@ export function Landing() {
         borderRadius: 16,
         padding: '12px 16px',
         display: 'flex',
-        alignItems: 'center',
-        gap: 10,
+        flexDirection: 'column',
+        gap: 8,
       }}>
-        <div style={{ width: 10, height: 10, borderRadius: '50%', background: '#F2921D', border: '2px solid #fff' }} />
-        <span style={{ fontSize: 12, color: '#1A1A1A', fontWeight: 500 }}>Personas desaparecidas</span>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+          <span style={{ fontSize: 12, color: '#1A1A1A', fontWeight: 500 }}>
+            {loading ? 'Personas desaparecidas' : `${persons.length.toLocaleString('es-MX')} personas desaparecidas`}
+            {earliestDate && ` desde ${earliestDate.toLocaleDateString('es-MX', { day: 'numeric', month: 'short', year: 'numeric' })}`}
+          </span>
+        </div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+          <span style={{ fontSize: 10, color: '#6B6B6B' }}>Más antiguo</span>
+          <div style={{
+            width: 100, height: 8, borderRadius: 4,
+            background: 'linear-gradient(90deg, #fef08a, #f97316, #dc2626)',
+          }} />
+          <span style={{ fontSize: 10, color: '#6B6B6B' }}>Más reciente</span>
+        </div>
       </div>
 
       {/* Map */}
@@ -297,29 +483,52 @@ export function Landing() {
           }}
           onIdle={updateVisible}
           options={{
+            styles: MAP_STYLE,
             fullscreenControl: false,
             mapTypeControl: false,
             streetViewControl: false,
             zoomControl: true,
           }}
         >
-          {visible.map(p => (
-            markerIcon && (
-              <MarkerF
-                key={p.id}
-                position={{ lat: p.lat, lng: p.lng }}
-                icon={markerIcon}
-                onMouseOver={() => handleHover(p)}
-              />
-            )
-          ))}
-          {hovered && (
+          {isLoaded && (
+            <MarkerClustererF
+              options={{
+                maxZoom: 14,
+                gridSize: 10,
+                minimumClusterSize: 5,
+                styles: [{
+                  textColor: '#fff',
+                  textSize: 13,
+                  url: CLUSTER_ICON_URL,
+                  height: 44,
+                  width: 44,
+                }],
+              }}
+            >
+              {(clusterer) => (
+                <>
+                  {visible.map(p => (
+                    <MarkerF
+                      key={p.id}
+                      clusterer={clusterer}
+                      position={{ lat: p.lat, lng: p.lng }}
+                      icon={markerColor(p)}
+                      onMouseOver={() => setHovered(p)}
+                      onMouseOut={() => setHovered(null)}
+                      onClick={() => handleSelect(p)}
+                    />
+                  ))}
+                </>
+              )}
+            </MarkerClustererF>
+          )}
+          {hovered && !selected && (
             <InfoWindowF
               position={{ lat: hovered.lat, lng: hovered.lng }}
               onCloseClick={() => setHovered(null)}
-              options={{ maxWidth: 280 }}
+              options={{ maxWidth: 220 }}
             >
-              <DetailCard person={hovered} detail={details[hovered.id]} />
+              <HoverCard person={hovered} />
             </InfoWindowF>
           )}
         </GoogleMap>
@@ -327,6 +536,14 @@ export function Landing() {
         <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#FDFAF7' }}>
           <span style={{ color: '#6B6B6B', fontSize: 14 }}>Cargando mapa…</span>
         </div>
+      )}
+
+      {selected && (
+        <DetailPanel
+          person={selected}
+          detail={details[selected.id]}
+          onClose={() => setSelected(null)}
+        />
       )}
     </div>
   )
