@@ -3,7 +3,10 @@ import type {
   AcquisitionRun,
   Consent,
   ExtractionJob,
+  LineageRole,
   RawArtifact,
+  RevocationPropagationResult,
+  SocialEventLineage,
   SocialRiskEvent,
   SourcePermission,
 } from "./types.js";
@@ -150,6 +153,105 @@ export class AcquisitionRepository {
   listSocialRiskEvents(): SocialRiskEvent[] {
     const rows = this.db.prepare("SELECT * FROM social_risk_events ORDER BY created_at DESC").all() as any[];
     return rows.map(normalizeRiskEvent);
+  }
+
+  attachEventLineage(input: { id: string; event_id: string; raw_artifact_id: string; role?: LineageRole }): void {
+    this.db.prepare(`INSERT INTO social_event_artifact_lineage
+      (id, event_id, raw_artifact_id, role)
+      VALUES (?,?,?,?)
+      ON CONFLICT(event_id, raw_artifact_id) DO UPDATE SET role = excluded.role`).run(
+      input.id,
+      input.event_id,
+      input.raw_artifact_id,
+      input.role ?? "supporting",
+    );
+  }
+
+  listEventLineage(eventId: string): SocialEventLineage[] {
+    const rows = this.db.prepare(
+      "SELECT * FROM social_event_artifact_lineage WHERE event_id = ? ORDER BY created_at ASC",
+    ).all(eventId) as any[];
+    return rows.map(row => ({ ...row }));
+  }
+
+  /**
+   * Marks the consent as revoked and cascades the revocation to every derived
+   * row: purges linked raw_artifacts, marks their extraction_jobs as failed
+   * (so stale output is not republished), and hides any social_risk_event that
+   * referenced those artifacts either directly or via lineage.
+   *
+   * Spec: docs/specs/02-data-model.md and docs/specs/05-source-policy-and-safety.md
+   * ("propagacion de revocacion a artifacts, extracciones, eventos y vistas").
+   *
+   * Runs in a single transaction; idempotent on re-invocation.
+   */
+  propagateConsentRevocation(
+    consentId: string,
+    options: { revoked_at?: string; reason?: string } = {},
+  ): RevocationPropagationResult {
+    const revokedAt = options.revoked_at ?? new Date().toISOString();
+
+    const acc = {
+      artifacts_purged: 0,
+      extraction_jobs_affected: 0,
+      events_hidden: 0,
+      event_ids_hidden: [] as string[],
+    };
+
+    const tx = this.db.transaction(() => {
+      this.db.prepare(
+        `UPDATE consents SET revoked_at = ?, revocation_reason = COALESCE(?, revocation_reason), updated_at = ?
+         WHERE id = ? AND revoked_at IS NULL`,
+      ).run(revokedAt, options.reason ?? null, revokedAt, consentId);
+
+      const artifactRows = this.db.prepare(
+        "SELECT id FROM raw_artifacts WHERE consent_id = ? AND purged_at IS NULL",
+      ).all(consentId) as { id: string }[];
+      const artifactIds = artifactRows.map(r => r.id);
+      acc.artifacts_purged = artifactIds.length;
+
+      if (artifactIds.length === 0) return;
+
+      const placeholders = artifactIds.map(() => "?").join(",");
+
+      this.db.prepare(
+        `UPDATE raw_artifacts SET purged_at = ?, updated_at = ? WHERE id IN (${placeholders})`,
+      ).run(revokedAt, revokedAt, ...artifactIds);
+
+      const jobsRes = this.db.prepare(
+        `UPDATE extraction_jobs
+           SET status = 'failed', error = 'consent revoked', updated_at = ?
+         WHERE raw_artifact_id IN (${placeholders}) AND status NOT IN ('failed')`,
+      ).run(revokedAt, ...artifactIds);
+      acc.extraction_jobs_affected = (jobsRes as any).changes ?? 0;
+
+      const eventRows = this.db.prepare(
+        `SELECT DISTINCT e.id FROM social_risk_events e
+           LEFT JOIN social_event_artifact_lineage l ON l.event_id = e.id
+          WHERE (e.raw_artifact_id IN (${placeholders})
+                 OR l.raw_artifact_id IN (${placeholders}))
+            AND e.review_status != 'hidden'`,
+      ).all(...artifactIds, ...artifactIds) as { id: string }[];
+
+      for (const row of eventRows) {
+        this.db.prepare(
+          `UPDATE social_risk_events SET review_status = 'hidden', updated_at = ? WHERE id = ?`,
+        ).run(revokedAt, row.id);
+        acc.event_ids_hidden.push(row.id);
+      }
+      acc.events_hidden = eventRows.length;
+    });
+
+    tx();
+
+    return {
+      consent_id: consentId,
+      revoked_at: revokedAt,
+      artifacts_purged: acc.artifacts_purged,
+      extraction_jobs_affected: acc.extraction_jobs_affected,
+      events_hidden: acc.events_hidden,
+      event_ids_hidden: acc.event_ids_hidden,
+    };
   }
 }
 

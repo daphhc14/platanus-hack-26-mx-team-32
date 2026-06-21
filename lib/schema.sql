@@ -329,6 +329,24 @@ CREATE TABLE IF NOT EXISTS risk_event_links (
   created_at TEXT NOT NULL DEFAULT (datetime('now'))
 );
 
+-- Multi-artifact lineage: a single social_risk_event can be derived from
+-- multiple raw_artifacts (e.g. cross-source corroboration). The direct
+-- social_risk_events.raw_artifact_id column keeps the "primary" link cheap;
+-- this table captures the rest so consent revocation can propagate fully.
+CREATE TABLE IF NOT EXISTS social_event_artifact_lineage (
+  id TEXT PRIMARY KEY,
+  event_id TEXT NOT NULL REFERENCES social_risk_events(id) ON DELETE CASCADE,
+  raw_artifact_id TEXT NOT NULL REFERENCES raw_artifacts(id) ON DELETE CASCADE,
+  role TEXT NOT NULL DEFAULT 'supporting' CHECK (role IN (
+    'primary',
+    'supporting',
+    'duplicate',
+    'contradicting'
+  )),
+  created_at TEXT NOT NULL DEFAULT (datetime('now')),
+  UNIQUE (event_id, raw_artifact_id)
+);
+
 CREATE INDEX IF NOT EXISTS idx_permissions_source
   ON source_permissions (source_id, access_type, effective_from);
 CREATE INDEX IF NOT EXISTS idx_consents_source
@@ -347,3 +365,7 @@ CREATE INDEX IF NOT EXISTS idx_social_geo_time
   ON social_risk_events (estado, municipio, occurred_at);
 CREATE INDEX IF NOT EXISTS idx_social_type_review
   ON social_risk_events (event_type, review_status, confidence);
+CREATE INDEX IF NOT EXISTS idx_event_lineage_event
+  ON social_event_artifact_lineage (event_id);
+CREATE INDEX IF NOT EXISTS idx_event_lineage_artifact
+  ON social_event_artifact_lineage (raw_artifact_id);
