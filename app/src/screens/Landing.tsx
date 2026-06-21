@@ -140,45 +140,28 @@ function getMarkerIcon(color: string): google.maps.Icon {
 
 function HoverCard({ person }: { person: PersonOnMap }) {
   return (
-    <div style={{ fontFamily: 'var(--font-family)', minWidth: 160, maxWidth: 220 }}>
-      <div style={{ fontWeight: 600, fontSize: 13, color: '#1A1A1A', marginBottom: 3, lineHeight: 1.3 }}>
-        {fullName(person)}
-      </div>
-      <div style={{ fontSize: 11, color: '#6B6B6B', marginBottom: 2 }}>
+    <div style={{ fontFamily: 'var(--font-family)', background: '#000', color: '#fff', padding: '8px 12px', borderRadius: 8 }}>
+      <div style={{ fontWeight: 600, fontSize: 13, marginBottom: 2 }}>{fullName(person)}</div>
+      <div style={{ fontSize: 11, color: '#aaa', marginBottom: 1 }}>
         {ageText(person)} · {locationText(person)}
       </div>
-      <div style={{ fontSize: 10, color: '#F2921D', fontWeight: 500, marginBottom: 4 }}>
+      <div style={{ fontSize: 10, color: '#fef08a' }}>
         {formatDate(person.fecha_hechos)}
       </div>
-      <span style={{
-        display: 'inline-block',
-        padding: '2px 7px',
-        borderRadius: 40,
-        background: 'rgba(242,146,29,0.12)',
-        border: '1px solid rgba(242,146,29,0.35)',
-        fontSize: 9,
-        fontWeight: 700,
-        letterSpacing: '0.04em',
-        textTransform: 'uppercase',
-        color: '#9A5B12',
-      }}>
-        {statusText(person)}
-      </span>
     </div>
   )
 }
 
-function DetailPanel({ person, detail, onClose }: {
+function DetailPanel({ person, detail }: {
   person: PersonOnMap
   detail?: PersonDetail
-  onClose: () => void
 }) {
   const senas = detail ? parseSenas(detail.sana_particular) : []
   const filiacion = detail ? parseFiliacion(detail.media_filiacion) : {}
   const hasPhoto = !!detail?.imagen
 
   return (
-    <div className="glass-strong anim-fade-in" style={{
+    <div className="anim-fade-in" style={{
       position: 'absolute',
       top: 90,
       right: 16,
@@ -191,31 +174,27 @@ function DetailPanel({ person, detail, onClose }: {
       padding: 0,
       display: 'flex',
       flexDirection: 'column',
+      background: '#1a1a1a',
+      color: '#fff',
     }}>
       {detail && hasPhoto && (
         <img
           src={detail.imagen!}
           alt={fullName(person)}
-          style={{ width: '100%', height: 280, objectFit: 'contain', background: '#1a1a1a', borderRadius: '16px 16px 0 0' }}
+          style={{ width: 'calc(100% - 24px)', height: 280, objectFit: 'contain', background: '#111', borderRadius: 12, margin: '12px 12px 0' }}
         />
       )}
 
       <div style={{ padding: '16px 18px', flex: 1 }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 8 }}>
-          <div style={{ fontWeight: 600, fontSize: 16, color: '#1A1A1A', lineHeight: 1.3, flex: 1, paddingRight: 8 }}>
-            {fullName(person)}
-          </div>
-          <button onClick={onClose} aria-label="Cerrar" style={{
-            background: 'none', border: 'none', cursor: 'pointer', fontSize: 20, color: '#6B6B6B',
-            lineHeight: 1, padding: 0, flexShrink: 0,
-          }}>×</button>
+        <div style={{ fontWeight: 600, fontSize: 16, lineHeight: 1.3, marginBottom: 8 }}>
+          {fullName(person)}
         </div>
 
-        <div style={{ fontSize: 13, color: '#6B6B6B', marginBottom: 2 }}>
+        <div style={{ fontSize: 13, color: '#aaa', marginBottom: 2 }}>
           {ageText(person)}{detail?.sexo ? ` · ${detail.sexo}` : ''}
         </div>
-        <div style={{ fontSize: 13, color: '#6B6B6B', marginBottom: 2 }}>{locationText(person)}</div>
-        <div style={{ fontSize: 12, color: '#F2921D', fontWeight: 500, marginBottom: 8 }}>
+        <div style={{ fontSize: 13, color: '#aaa', marginBottom: 2 }}>{locationText(person)}</div>
+        <div style={{ fontSize: 12, color: '#fef08a', fontWeight: 500, marginBottom: 8 }}>
           Desaparecida {formatDate(person.fecha_hechos)}
         </div>
 
@@ -223,13 +202,13 @@ function DetailPanel({ person, detail, onClose }: {
           display: 'inline-block',
           padding: '3px 10px',
           borderRadius: 40,
-          background: 'rgba(242,146,29,0.12)',
-          border: '1px solid rgba(242,146,29,0.35)',
+          background: 'rgba(220,38,38,0.15)',
+          border: '1px solid rgba(220,38,38,0.4)',
           fontSize: 10,
           fontWeight: 700,
           letterSpacing: '0.04em',
           textTransform: 'uppercase',
-          color: '#9A5B12',
+          color: '#f87171',
           marginBottom: 12,
         }}>
           {statusText(person)}
@@ -281,14 +260,14 @@ function DetailPanel({ person, detail, onClose }: {
 
 const itemStyle: React.CSSProperties = {
   fontSize: 11,
-  color: '#4A4A4A',
+  color: '#bbb',
   lineHeight: 1.5,
 }
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <div style={{ marginTop: 8, paddingTop: 8, borderTop: '1px solid #eee' }}>
-      <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.05em', textTransform: 'uppercase', color: '#9A5B12', marginBottom: 4 }}>
+    <div style={{ marginTop: 8, paddingTop: 8, borderTop: '1px solid #222' }}>
+      <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.05em', textTransform: 'uppercase', color: '#fef08a', marginBottom: 4 }}>
         {title}
       </div>
       {children}
@@ -482,6 +461,7 @@ export function Landing() {
             updateVisible()
           }}
           onIdle={updateVisible}
+          onClick={() => setSelected(null)}
           options={{
             styles: MAP_STYLE,
             fullscreenControl: false,
@@ -542,7 +522,6 @@ export function Landing() {
         <DetailPanel
           person={selected}
           detail={details[selected.id]}
-          onClose={() => setSelected(null)}
         />
       )}
     </div>

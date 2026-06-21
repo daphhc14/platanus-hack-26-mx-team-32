@@ -205,3 +205,31 @@
   animation: fadeIn 0.35s ease-out forwards;
 }
 
+.gm-style .gm-style-iw-tc,
+.gm-style .gm-style-iw-tc::after,
+.gm-style-iw-c button[aria-label="Close"] {
+  display: none !important;
+}
+
+.gm-style .gm-style-iw-c,
+.gm-style .gm-style-iw-d {
+  background: #000 !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 8px !important;
+  padding: 0 !important;
+}
+
+.gm-style .gm-style-iw-d {
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+.gm-style .gm-style-iw-ch {
+  padding: 0 !important;
+}
+
+.gm-style .gm-style-iw-d::-webkit-scrollbar {
+  display: none !important;
+}
+
