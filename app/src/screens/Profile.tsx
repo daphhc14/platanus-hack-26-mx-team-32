@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { User, Eye, X, Info, Home, ArrowLeft } from 'lucide-react'
+import { User, Eye, X, Info, ArrowLeft, LogOut } from 'lucide-react'
 import { GlassCard } from '../components/GlassCard'
 
 interface FamiliarData {
@@ -162,10 +162,21 @@ export function Profile() {
           <ArrowLeft size={20} />
         </button>
         <span style={{ fontSize: 16, fontWeight: 500, color: '#1A1A1A' }}>Mi perfil</span>
+
+        <button
+          onClick={() => {
+            localStorage.removeItem('onboarding_complete')
+            navigate('/login')
+          }}
+          style={{ marginLeft: 'auto', background: 'none', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 6, color: '#6B6B6B', fontSize: 13, fontFamily: 'var(--font-family)' }}
+        >
+          <LogOut size={16} />
+          Cerrar sesión
+        </button>
       </header>
 
       {/* Content */}
-      <main style={{ maxWidth: 560, margin: '0 auto', padding: '32px 16px 80px' }}>
+      <main style={{ maxWidth: 560, margin: '0 auto', padding: '32px 16px 40px' }}>
 
         {/* Section 1: Identity */}
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: 32 }}>
@@ -264,54 +275,7 @@ export function Profile() {
           </GlassCard>
         </div>
 
-        {/* Sign out */}
-        <div style={{ marginTop: 40, textAlign: 'center' }}>
-          <button
-            className="btn-ghost"
-            onClick={() => {
-              localStorage.removeItem('onboarding_complete')
-              navigate('/login')
-            }}
-          >
-            Cerrar sesión
-          </button>
-        </div>
       </main>
-
-      {/* Mobile bottom nav */}
-      <nav
-        className="md:hidden"
-        style={{
-          position: 'fixed',
-          bottom: 0,
-          left: 0,
-          right: 0,
-          zIndex: 200,
-          height: 60,
-          background: 'rgba(255,255,255,0.90)',
-          backdropFilter: 'blur(16px)',
-          WebkitBackdropFilter: 'blur(16px)',
-          borderTop: '1px solid rgba(242,195,133,0.35)',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-around',
-        }}
-      >
-        <button
-          onClick={() => navigate('/home')}
-          style={{ background: 'none', border: 'none', cursor: 'pointer', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 3 }}
-        >
-          <Home size={22} color="#6B6B6B" />
-          <span style={{ fontSize: 10, fontFamily: 'var(--font-family)', color: '#6B6B6B' }}>Inicio</span>
-        </button>
-        <button
-          onClick={() => navigate('/profile')}
-          style={{ background: 'none', border: 'none', cursor: 'pointer', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 3, color: '#F2921D' }}
-        >
-          <User size={22} color="#F2921D" />
-          <span style={{ fontSize: 10, fontFamily: 'var(--font-family)', color: '#F2921D', fontWeight: 500 }}>Perfil</span>
-        </button>
-      </nav>
 
       {modalOpen && <Modal onClose={() => setModalOpen(false)} />}
     </div>
