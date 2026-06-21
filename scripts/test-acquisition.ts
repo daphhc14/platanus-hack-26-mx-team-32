@@ -1,9 +1,10 @@
 import { strict as assert } from "node:assert";
-import { createHash, randomUUID } from "node:crypto";
+import { randomUUID } from "node:crypto";
 import type Database from "better-sqlite3";
 import { HiloDB } from "../lib/db.js";
 import {
   AcquisitionRepository,
+  MockAcquisitionProvider,
   acquisitionIdempotencyKey,
   evaluateSourcePolicy,
 } from "../lib/acquisition/index.js";
@@ -14,6 +15,12 @@ const expires = "2026-07-21T00:00:00.000Z";
 const db = new HiloDB(":memory:", "admin").init();
 const raw = (db as any).db as Database.Database;
 const acquisition = new AcquisitionRepository(raw);
+const provider = new MockAcquisitionProvider({
+  "https://example.test/ficha": {
+    title: "Oferta sospechosa demo",
+    markdown: "Trabajo de seguridad privada, sueldo alto, traslado inmediato, contacto por chat.",
+  },
+});
 
 db.insertSource({
   id: "src-cnb-demo",
@@ -53,6 +60,18 @@ const denied = evaluateSourcePolicy({
 assert.equal(denied.allowed, false);
 
 const runId = randomUUID();
+const searchResults = await provider.search({ run_id: runId, query: "seguridad privada", limit: 5 });
+assert.equal(searchResults.length, 1);
+assert.equal(searchResults[0].url, "https://example.test/ficha");
+
+const scraped = await provider.scrape({
+  run_id: runId,
+  url: "https://example.test/ficha",
+  formats: ["markdown"],
+});
+assert.equal(scraped.url, "https://example.test/ficha");
+assert.ok(scraped.content_hash.length > 20);
+
 acquisition.createRun({
   id: runId,
   idempotency_key: acquisitionIdempotencyKey({
@@ -77,12 +96,12 @@ acquisition.insertRawArtifact({
   source_id: "src-cnb-demo",
   source_permission_id: "perm-cnb-demo",
   url: "https://example.test/ficha",
-  content_hash: createHash("sha256").update("demo artifact").digest("hex"),
+  content_hash: scraped.content_hash,
   content_type: "text/markdown",
-  title: "Demo artifact",
-  fetched_at: now,
+  title: scraped.title,
+  fetched_at: scraped.fetched_at,
   expires_at: expires,
-  provider_metadata: { provider: "mock" },
+  provider_metadata: scraped.metadata,
   redaction_status: "not_required",
   privacy_level: policy.privacy_level,
 });
@@ -123,4 +142,3 @@ assert.deepEqual(events[0].evidence, { signals: ["salary_above_market", "remote_
 
 db.close();
 console.log("✓ acquisition smoke test passed");
-
