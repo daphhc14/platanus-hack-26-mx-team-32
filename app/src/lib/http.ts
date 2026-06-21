@@ -1,6 +1,8 @@
 import { supabase } from './supabase'
 
-export const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000'
+export const API_URL = import.meta.env.VITE_DEV
+  ? 'http://localhost:8000'
+  : import.meta.env.VITE_API_URL || 'https://sendero-backend.paoloose.site'
 
 async function headers(extra?: Record<string, string>): Promise<Record<string, string>> {
   const { data } = await supabase.auth.getSession()

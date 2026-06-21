@@ -2,7 +2,14 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { GoogleMap, useJsApiLoader, MarkerF, InfoWindowF } from '@react-google-maps/api'
 import { AgentDot } from '../components/AgentDot'
-import { fetchPersonsOnMap, type PersonOnMap } from '../features/landing/api'
+import {
+  fetchPersonsOnMap,
+  fetchPersonDetail,
+  parseSenas,
+  parseFiliacion,
+  type PersonOnMap,
+  type PersonDetail,
+} from '../features/landing/api'
 
 const GOOGLE_MAPS_API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY
 
@@ -44,18 +51,36 @@ function getMarkerIcon(): google.maps.Icon {
   }
 }
 
-function HoverCard({ person }: { person: PersonOnMap }) {
+function DetailCard({ person, detail }: { person: PersonOnMap; detail?: PersonDetail }) {
+  const senas = detail ? parseSenas(detail.sana_particular) : []
+  const filiacion = detail ? parseFiliacion(detail.media_filiacion) : {}
+  const hasPhoto = !!detail?.imagen
+
   return (
-    <div style={{ fontFamily: 'var(--font-family)', minWidth: 180, maxWidth: 260 }}>
+    <div style={{ fontFamily: 'var(--font-family)', width: 240 }}>
+      {detail && hasPhoto && (
+        <img
+          src={detail.imagen!}
+          alt={fullName(person)}
+          style={{ width: '100%', height: 120, objectFit: 'cover', borderRadius: 8, marginBottom: 8 }}
+        />
+      )}
+
       <div style={{ fontWeight: 600, fontSize: 14, color: '#1A1A1A', marginBottom: 4, lineHeight: 1.3 }}>
         {fullName(person)}
       </div>
+
       <div style={{ fontSize: 12, color: '#6B6B6B', marginBottom: 2 }}>
-        {ageText(person)} · {locationText(person)}
+        {ageText(person)}
+        {detail?.sexo ? ` · ${detail.sexo}` : ''}
+      </div>
+      <div style={{ fontSize: 12, color: '#6B6B6B', marginBottom: 2 }}>
+        {locationText(person)}
       </div>
       <div style={{ fontSize: 11, color: '#F2921D', fontWeight: 500, marginBottom: 6 }}>
-        {formatDate(person.fecha_hechos)}
+        Desaparecida {formatDate(person.fecha_hechos)}
       </div>
+
       <span style={{
         display: 'inline-block',
         padding: '2px 8px',
@@ -67,9 +92,67 @@ function HoverCard({ person }: { person: PersonOnMap }) {
         letterSpacing: '0.04em',
         textTransform: 'uppercase',
         color: '#9A5B12',
+        marginBottom: 10,
       }}>
         {statusText(person)}
       </span>
+
+      {!detail && (
+        <div style={{ fontSize: 11, color: '#9aa0a6' }}>Cargando detalles…</div>
+      )}
+
+      {detail && (
+        <>
+          {senas.length > 0 && (
+            <Section title="Señas particulares">
+              {senas.map((s, i) => <div key={i} style={itemStyle}>· {s}</div>)}
+            </Section>
+          )}
+
+          {detail.prendas_de_vestir && (
+            <Section title="Vestimenta">
+              <div style={itemStyle}>{detail.prendas_de_vestir}</div>
+            </Section>
+          )}
+
+          {Object.keys(filiacion).length > 0 && (
+            <Section title="Media filiación">
+              {Object.entries(filiacion).map(([k, v], i) => (
+                <div key={i} style={itemStyle}><b style={{ fontWeight: 500 }}>{k}:</b> {v}</div>
+              ))}
+            </Section>
+          )}
+
+          {detail.nacionalidad && (
+            <Section title="Nacionalidad">
+              <div style={itemStyle}>{detail.nacionalidad}</div>
+            </Section>
+          )}
+
+          {detail.tiene_discapacidad && detail.tipo_discapacidad && (
+            <Section title="Discapacidad">
+              <div style={itemStyle}>{detail.tipo_discapacidad}</div>
+            </Section>
+          )}
+        </>
+      )}
+    </div>
+  )
+}
+
+const itemStyle: React.CSSProperties = {
+  fontSize: 11,
+  color: '#4A4A4A',
+  lineHeight: 1.5,
+}
+
+function Section({ title, children }: { title: string; children: React.ReactNode }) {
+  return (
+    <div style={{ marginTop: 8, paddingTop: 8, borderTop: '1px solid #eee' }}>
+      <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.05em', textTransform: 'uppercase', color: '#9A5B12', marginBottom: 4 }}>
+        {title}
+      </div>
+      {children}
     </div>
   )
 }
@@ -79,9 +162,12 @@ export function Landing() {
   const [persons, setPersons] = useState<PersonOnMap[]>([])
   const [visible, setVisible] = useState<PersonOnMap[]>([])
   const [hovered, setHovered] = useState<PersonOnMap | null>(null)
+  const [details, setDetails] = useState<Record<number, PersonDetail>>({})
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const mapRef = useRef<google.maps.Map | null>(null)
+  const detailCache = useRef<Record<number, PersonDetail>>({})
+  const fetchingRef = useRef<Set<number>>(new Set())
 
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: GOOGLE_MAPS_API_KEY,
@@ -109,6 +195,20 @@ export function Landing() {
   }, [persons])
 
   const markerIcon = useMemo(() => isLoaded ? getMarkerIcon() : null, [isLoaded])
+
+  const handleHover = useCallback((p: PersonOnMap) => {
+    setHovered(p)
+    if (!detailCache.current[p.id] && !fetchingRef.current.has(p.id)) {
+      fetchingRef.current.add(p.id)
+      fetchPersonDetail(p.id)
+        .then(d => {
+          detailCache.current[p.id] = d
+          setDetails(prev => ({ ...prev, [p.id]: d }))
+        })
+        .catch(() => {})
+        .finally(() => { fetchingRef.current.delete(p.id) })
+    }
+  }, [])
 
   return (
     <div style={{ height: '100vh', width: '100vw', position: 'relative', overflow: 'hidden' }}>
@@ -209,8 +309,7 @@ export function Landing() {
                 key={p.id}
                 position={{ lat: p.lat, lng: p.lng }}
                 icon={markerIcon}
-                onMouseOver={() => setHovered(p)}
-                onMouseOut={() => setHovered(null)}
+                onMouseOver={() => handleHover(p)}
               />
             )
           ))}
@@ -218,8 +317,9 @@ export function Landing() {
             <InfoWindowF
               position={{ lat: hovered.lat, lng: hovered.lng }}
               onCloseClick={() => setHovered(null)}
+              options={{ maxWidth: 280 }}
             >
-              <HoverCard person={hovered} />
+              <DetailCard person={hovered} detail={details[hovered.id]} />
             </InfoWindowF>
           )}
         </GoogleMap>
