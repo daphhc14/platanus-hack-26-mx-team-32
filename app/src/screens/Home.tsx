@@ -1,18 +1,32 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback, useMemo, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { UserCircle, Home as HomeIcon, User, MessageCircle } from 'lucide-react'
-import { GoogleMap, useJsApiLoader, MarkerF, InfoWindowF } from '@react-google-maps/api'
+import { UserCircle, MessageCircle } from 'lucide-react'
+import { GoogleMap, useJsApiLoader, MarkerF, InfoWindowF, Circle, MarkerClustererF } from '@react-google-maps/api'
 import { GlassCard } from '../components/GlassCard'
 import { AgentDot } from '../components/AgentDot'
 import { ChatDrawer } from '../components/ChatDrawer'
 import { getMyVinculo } from '../features/profile/api'
 import { fullName, type VinculoOut } from '../features/profile/types'
+import { fetchPersonsOnMap, type PersonOnMap } from '../features/landing/api'
 
 const GOOGLE_MAPS_API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY
 
 const MAP_CONTAINER_STYLE = { width: '100%', height: '100%' }
 const MAP_CENTER = { lat: 19.5665, lng: -101.7068 }
 const MAP_ZOOM = 8
+
+const MAP_STYLE: google.maps.MapTypeStyle[] = [
+  { featureType: 'all', elementType: 'labels.text', stylers: [{ color: '#878787' }] },
+  { featureType: 'all', elementType: 'labels.text.stroke', stylers: [{ visibility: 'off' }] },
+  { featureType: 'landscape', elementType: 'all', stylers: [{ color: '#f9f5ed' }] },
+  { featureType: 'road.highway', elementType: 'all', stylers: [{ color: '#f5f5f5' }] },
+  { featureType: 'road.highway', elementType: 'geometry.stroke', stylers: [{ color: '#c9c9c9' }] },
+  { featureType: 'water', elementType: 'all', stylers: [{ color: '#aee0f4' }] },
+]
+
+const CLUSTER_ICON_URL = 'data:image/svg+xml;utf8,' + encodeURIComponent(
+  `<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44"><circle cx="22" cy="22" r="20" fill="rgba(220,38,38,0.5)"/></svg>`
+)
 
 type FilterKey = 'fosas' | 'desaparicion' | 'trabajos'
 
@@ -23,66 +37,150 @@ const FILTER_LABELS: Record<FilterKey, string> = {
 }
 
 const MARKER_COLORS: Record<FilterKey, string> = {
-  fosas: '#C53030',
-  desaparicion: '#F2921D',
-  trabajos: '#DD6B20',
+  fosas: '#3B82F6',
+  desaparicion: '#EF4444',
+  trabajos: '#F97316',
 }
 
-interface MarkerData {
+const CHIP_COLORS: Record<FilterKey, { activeBg: string; activeText: string; activeBorder: string }> = {
+  fosas: { activeBg: '#DBEAFE', activeText: '#1D4ED8', activeBorder: '#93C5FD' },
+  desaparicion: { activeBg: '#FEE2E2', activeText: '#DC2626', activeBorder: '#FCA5A5' },
+  trabajos: { activeBg: '#FFEDD5', activeText: '#C2410C', activeBorder: '#FDBA74' },
+}
+
+interface StaticMarker {
   id: number
   lat: number
   lng: number
-  type: FilterKey
+  type: 'fosas' | 'trabajos'
   name: string
   date: string
 }
 
-const MARKERS: MarkerData[] = [
+const STATIC_MARKERS: StaticMarker[] = [
   { id: 1, lat: 19.74, lng: -101.19, type: 'fosas', name: 'Cerro de la Garza, Zamora', date: '14 feb 2024' },
   { id: 2, lat: 19.50, lng: -102.08, type: 'fosas', name: 'Rancho El Nance, Apatzingán', date: '3 ene 2024' },
   { id: 3, lat: 19.31, lng: -101.96, type: 'fosas', name: 'Camino Aguililla-Buenavista', date: '27 nov 2023' },
-  { id: 4, lat: 19.72, lng: -101.20, type: 'desaparicion', name: 'Centro Histórico, Zamora', date: '20 mar 2024' },
-  { id: 5, lat: 19.68, lng: -101.15, type: 'desaparicion', name: 'Blvd. Luis Donaldo Colosio, Jacona', date: '12 mar 2023' },
   { id: 6, lat: 19.56, lng: -101.70, type: 'trabajos', name: 'Oferta Tlalpujahua – Pátzcuaro', date: '18 abr 2024' },
 ]
 
-function pinIcon(color: string) {
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="36" viewBox="0 0 24 36"><path d="M12 0C5.373 0 0 5.373 0 12c0 9 12 24 12 24s12-15 12-24C24 5.373 18.627 0 12 0z" fill="${color}" opacity="0.9"/><circle cx="12" cy="12" r="5" fill="white" opacity="0.9"/></svg>`
+function dotIcon(color: string) {
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"><circle cx="7" cy="7" r="6" fill="${color}" opacity="0.9" stroke="white" stroke-width="1.5"/></svg>`
   return {
     url: `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`,
-    scaledSize: new google.maps.Size(24, 36),
-    anchor: new google.maps.Point(12, 36),
+    scaledSize: new google.maps.Size(14, 14),
+    anchor: new google.maps.Point(7, 7),
   }
 }
 
-function Map({ markers }: { markers: MarkerData[] }) {
-  const [selected, setSelected] = useState<MarkerData | null>(null)
+function personDotIcon() {
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><circle cx="6" cy="6" r="5" fill="#EF4444" opacity="0.9" stroke="white" stroke-width="1"/></svg>`
+  return {
+    url: `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`,
+    scaledSize: new google.maps.Size(12, 12),
+    anchor: new google.maps.Point(6, 6),
+  }
+}
+
+interface MapProps {
+  staticMarkers: StaticMarker[]
+  persons: PersonOnMap[]
+  showPersons: boolean
+  filters: Record<FilterKey, boolean>
+}
+
+function Map({ staticMarkers, persons, showPersons, filters }: MapProps) {
+  const [selectedStatic, setSelectedStatic] = useState<StaticMarker | null>(null)
+  const personIcon = useMemo(() => personDotIcon(), [])
+
+  const fosaMarkers = staticMarkers.filter(m => m.type === 'fosas' && filters.fosas)
+  const trabajosMarkers = staticMarkers.filter(m => m.type === 'trabajos' && filters.trabajos)
 
   return (
     <GoogleMap
       mapContainerStyle={MAP_CONTAINER_STYLE}
       center={MAP_CENTER}
       zoom={MAP_ZOOM}
+      options={{
+        styles: MAP_STYLE,
+        fullscreenControl: false,
+        mapTypeControl: false,
+        streetViewControl: false,
+        zoomControl: true,
+      }}
+      onClick={() => setSelectedStatic(null)}
     >
-      {markers.map(m => (
+      {/* Fosas: áreas azules translúcidas */}
+      {fosaMarkers.map(m => (
+        <Circle
+          key={`area-${m.id}`}
+          center={{ lat: m.lat, lng: m.lng }}
+          radius={6000}
+          options={{
+            fillColor: '#3B82F6',
+            fillOpacity: 0.18,
+            strokeColor: '#3B82F6',
+            strokeOpacity: 0.5,
+            strokeWeight: 1.5,
+            clickable: true,
+          }}
+          onClick={() => setSelectedStatic(m)}
+        />
+      ))}
+
+      {/* Trabajos: puntos naranjas */}
+      {trabajosMarkers.map(m => (
         <MarkerF
           key={m.id}
           position={{ lat: m.lat, lng: m.lng }}
-          icon={pinIcon(MARKER_COLORS[m.type])}
-          onClick={() => setSelected(m)}
+          icon={dotIcon(MARKER_COLORS.trabajos)}
+          onClick={() => setSelectedStatic(m)}
         />
       ))}
-      {selected && (
+
+      {/* InfoWindow para estáticos */}
+      {selectedStatic && (
         <InfoWindowF
-          position={{ lat: selected.lat, lng: selected.lng }}
-          onCloseClick={() => setSelected(null)}
+          position={{ lat: selectedStatic.lat, lng: selectedStatic.lng }}
+          onCloseClick={() => setSelectedStatic(null)}
         >
           <div style={{ fontFamily: 'var(--font-family)', minWidth: 160 }}>
-            <div style={{ fontWeight: 600, fontSize: 13, marginBottom: 2 }}>{selected.name}</div>
-            <div style={{ fontSize: 11, color: '#6B6B6B', marginBottom: 4 }}>{FILTER_LABELS[selected.type]}</div>
-            <div style={{ fontSize: 11, color: '#F2921D', fontWeight: 500 }}>{selected.date}</div>
+            <div style={{ fontWeight: 600, fontSize: 13, marginBottom: 2 }}>{selectedStatic.name}</div>
+            <div style={{ fontSize: 11, color: '#6B6B6B', marginBottom: 4 }}>{FILTER_LABELS[selectedStatic.type]}</div>
+            <div style={{ fontSize: 11, color: MARKER_COLORS[selectedStatic.type], fontWeight: 500 }}>{selectedStatic.date}</div>
           </div>
         </InfoWindowF>
+      )}
+
+      {/* Personas desaparecidas: puntos rojos agrupados */}
+      {showPersons && persons.length > 0 && (
+        <MarkerClustererF
+          options={{
+            maxZoom: 14,
+            gridSize: 10,
+            minimumClusterSize: 5,
+            styles: [{
+              textColor: '#fff',
+              textSize: 13,
+              url: CLUSTER_ICON_URL,
+              height: 44,
+              width: 44,
+            }],
+          }}
+        >
+          {(clusterer) => (
+            <>
+              {persons.map(p => (
+                <MarkerF
+                  key={p.id}
+                  clusterer={clusterer}
+                  position={{ lat: p.lat, lng: p.lng }}
+                  icon={personIcon}
+                />
+              ))}
+            </>
+          )}
+        </MarkerClustererF>
       )}
     </GoogleMap>
   )
@@ -124,14 +222,15 @@ export function Home() {
   })
   const [vinculo, setVinculo] = useState<VinculoOut | null>(null)
   const [chatOpen, setChatOpen] = useState(false)
+  const [persons, setPersons] = useState<PersonOnMap[]>([])
 
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: GOOGLE_MAPS_API_KEY,
   })
 
-  // Case chat becomes available once another family joins/updates the case.
   useEffect(() => {
     getMyVinculo().then(setVinculo).catch(() => setVinculo(null))
+    fetchPersonsOnMap().then(setPersons).catch(() => setPersons([]))
   }, [])
 
   const chatReady = !!vinculo?.chat_unlocked && !!vinculo?.persona
@@ -140,12 +239,15 @@ export function Home() {
     setFilters(prev => ({ ...prev, [key]: !prev[key] }))
   }
 
-  const visibleMarkers = MARKERS.filter(m => filters[m.type])
-
   return (
     <div
       className="min-h-screen w-full flex flex-col"
-      style={{ background: 'linear-gradient(160deg, #FDFAF7 0%, #F2E3D5 45%, rgba(242,195,133,0.35) 100%)' }}
+      style={{
+        backgroundImage: 'url(/bg.jpg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+      }}
     >
       {/* Navbar */}
       <header
@@ -171,49 +273,21 @@ export function Home() {
           </span>
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-          {/* Agent status pill */}
-          <div style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: 7,
-            background: 'rgba(242,146,29,0.08)',
-            border: '1px solid rgba(242,146,29,0.2)',
-            borderRadius: 40,
-            padding: '5px 11px',
-          }}>
-            <div
-              className="anim-breath"
-              style={{
-                width: 7,
-                height: 7,
-                borderRadius: '50%',
-                background: 'radial-gradient(circle, #F5E850 0%, #F2921D 100%)',
-                flexShrink: 0,
-              }}
-            />
-            <span style={{ fontSize: 12, color: '#1A1A1A', fontWeight: 500 }}>Agente activo</span>
-          </div>
-
-          <button
-            onClick={() => navigate('/profile')}
-            aria-label="Ir al perfil"
-            style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, display: 'flex', alignItems: 'center' }}
-          >
-            <UserCircle size={28} color="#F2921D" />
-          </button>
-        </div>
+        <button
+          onClick={() => navigate('/profile')}
+          aria-label="Ir al perfil"
+          style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, display: 'flex', alignItems: 'center' }}
+        >
+          <UserCircle size={28} color="#F2921D" />
+        </button>
       </header>
 
       {/* Main content */}
-      <main style={{ flex: 1, padding: '16px 16px 80px', display: 'flex', flexDirection: 'column', gap: 16 }}>
+      <main style={{ flex: 1, padding: '16px 16px 24px', display: 'flex', flexDirection: 'column', gap: 16 }}>
 
-        {/* Row 1: Map + sidebar */}
-        <div
-          className="map-row"
-          style={{ display: 'flex', gap: 12, height: 'clamp(280px, 50vh, 420px)' }}
-        >
-          {/* Left sidebar */}
+        {/* Mapa — 70% de la altura de la pantalla */}
+        <div style={{ display: 'flex', gap: 12, height: '70vh' }}>
+          {/* Sidebar filtros */}
           <GlassCard
             className="hidden md:flex"
             style={{
@@ -230,46 +304,49 @@ export function Home() {
             </span>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-              {(Object.keys(FILTER_LABELS) as FilterKey[]).map(key => (
-                <button
-                  key={key}
-                  onClick={() => toggleFilter(key)}
-                  style={{
-                    padding: '7px 12px',
-                    borderRadius: 40,
-                    fontSize: 12,
-                    fontWeight: filters[key] ? 500 : 400,
-                    cursor: 'pointer',
-                    transition: 'all 0.2s',
-                    fontFamily: 'var(--font-family)',
-                    textAlign: 'left',
-                    background: filters[key] ? '#F2921D' : 'rgba(255,255,255,0.65)',
-                    color: filters[key] ? '#2D2D2D' : '#6B6B6B',
-                    border: filters[key] ? 'none' : '1px solid rgba(242,195,133,0.3)',
-                  }}
-                >
-                  {FILTER_LABELS[key]}
-                </button>
-              ))}
-            </div>
-
-            <div style={{ marginTop: 'auto', paddingTop: 12, borderTop: '1px solid rgba(242,195,133,0.25)', display: 'flex', alignItems: 'center', gap: 8 }}>
-              <AgentDot size={8} breath />
-              <span style={{ fontSize: 11, color: '#6B6B6B' }}>Agente activo</span>
+              {(Object.keys(FILTER_LABELS) as FilterKey[]).map(key => {
+                const c = CHIP_COLORS[key]
+                return (
+                  <button
+                    key={key}
+                    onClick={() => toggleFilter(key)}
+                    style={{
+                      padding: '7px 12px',
+                      borderRadius: 40,
+                      fontSize: 12,
+                      fontWeight: filters[key] ? 600 : 400,
+                      cursor: 'pointer',
+                      transition: 'all 0.2s',
+                      fontFamily: 'var(--font-family)',
+                      textAlign: 'left',
+                      background: filters[key] ? c.activeBg : 'rgba(255,255,255,0.65)',
+                      color: filters[key] ? c.activeText : '#6B6B6B',
+                      border: `1px solid ${filters[key] ? c.activeBorder : 'rgba(200,200,200,0.3)'}`,
+                    }}
+                  >
+                    {FILTER_LABELS[key]}
+                  </button>
+                )
+              })}
             </div>
           </GlassCard>
 
-          {/* Map */}
+          {/* Mapa */}
           <div style={{ flex: 1, position: 'relative', borderRadius: 16, overflow: 'hidden', border: '1px solid rgba(242,195,133,0.35)' }}>
             {isLoaded ? (
-              <Map markers={visibleMarkers} />
+              <Map
+                staticMarkers={STATIC_MARKERS}
+                persons={persons}
+                showPersons={filters.desaparicion}
+                filters={filters}
+              />
             ) : (
-              <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#f5f5f5' }}>
+              <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#f9f5ed' }}>
                 <span style={{ color: '#6B6B6B', fontSize: 13 }}>Cargando mapa…</span>
               </div>
             )}
 
-            {/* Map legend */}
+            {/* Leyenda */}
             <div style={{
               position: 'absolute',
               bottom: 12,
@@ -287,7 +364,14 @@ export function Home() {
             }}>
               {(Object.keys(FILTER_LABELS) as FilterKey[]).map(key => (
                 <div key={key} style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-                  <div style={{ width: 8, height: 8, borderRadius: '50%', background: MARKER_COLORS[key], flexShrink: 0 }} />
+                  <div style={{
+                    width: key === 'fosas' ? 12 : 8,
+                    height: key === 'fosas' ? 12 : 8,
+                    borderRadius: '50%',
+                    background: key === 'fosas' ? 'rgba(59,130,246,0.25)' : MARKER_COLORS[key],
+                    border: key === 'fosas' ? '1.5px solid #3B82F6' : 'none',
+                    flexShrink: 0,
+                  }} />
                   <span style={{ fontSize: 10, color: '#6B6B6B', fontFamily: 'var(--font-family)' }}>{FILTER_LABELS[key]}</span>
                 </div>
               ))}
@@ -295,42 +379,9 @@ export function Home() {
           </div>
         </div>
 
-        {/* Mobile filter chips (below map on small screens) */}
-        <div
-          className="md:hidden"
-          style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}
-        >
-          {(Object.keys(FILTER_LABELS) as FilterKey[]).map(key => (
-            <button
-              key={key}
-              onClick={() => toggleFilter(key)}
-              style={{
-                padding: '6px 14px',
-                borderRadius: 40,
-                fontSize: 12,
-                fontWeight: filters[key] ? 500 : 400,
-                cursor: 'pointer',
-                transition: 'all 0.2s',
-                fontFamily: 'var(--font-family)',
-                background: filters[key] ? '#F2921D' : 'rgba(255,255,255,0.65)',
-                color: filters[key] ? '#2D2D2D' : '#6B6B6B',
-                border: filters[key] ? 'none' : '1px solid rgba(242,195,133,0.3)',
-              }}
-            >
-              {FILTER_LABELS[key]}
-            </button>
-          ))}
-        </div>
-
         {/* Row 2: Notifications + AI Summary */}
-        <div
-          style={{
-            display: 'flex',
-            gap: 12,
-            flexWrap: 'wrap',
-          }}
-        >
-          {/* Left: Notifications */}
+        <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+          {/* Notificaciones */}
           <div style={{ flex: '0 0 auto', width: 'min(100%, 55%)', minWidth: 280 }}>
             <p style={{ fontSize: 13, fontWeight: 500, color: '#6B6B6B', marginBottom: 10 }}>
               Notificaciones recientes
@@ -346,15 +397,12 @@ export function Home() {
                     borderRadius: '0 16px 16px 0',
                   }}
                 >
-                  <div style={{ display: 'flex', alignItems: 'flex-start', gap: 10, marginBottom: 6 }}>
-                    <AgentDot size={20} pulse style={{ marginTop: 2 }} />
-                    <div style={{ flex: 1 }}>
-                      <div style={{ fontSize: 13, fontWeight: 600, color: '#1A1A1A', marginBottom: 2 }}>
-                        {n.title}
-                      </div>
-                      <div style={{ fontSize: 13, color: '#6B6B6B', lineHeight: 1.55 }}>
-                        {n.desc}
-                      </div>
+                  <div style={{ flex: 1 }}>
+                    <div style={{ fontSize: 13, fontWeight: 600, color: '#1A1A1A', marginBottom: 2 }}>
+                      {n.title}
+                    </div>
+                    <div style={{ fontSize: 13, color: '#6B6B6B', lineHeight: 1.55 }}>
+                      {n.desc}
                     </div>
                   </div>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 8 }}>
@@ -368,9 +416,8 @@ export function Home() {
             </div>
           </div>
 
-          {/* Right: AI Summary */}
+          {/* AI Summary */}
           <div style={{ flex: 1, minWidth: 260, position: 'relative' }}>
-            {/* Aura glow */}
             <div
               className="absolute pointer-events-none"
               style={{
@@ -384,11 +431,7 @@ export function Home() {
               }}
             />
 
-            <GlassCard
-              strong
-              style={{ padding: 0, overflow: 'hidden', position: 'relative', zIndex: 1 }}
-            >
-              {/* Header */}
+            <GlassCard strong style={{ padding: 0, overflow: 'hidden', position: 'relative', zIndex: 1 }}>
               <div style={{
                 padding: '18px 22px 14px',
                 borderBottom: '1px solid rgba(242,195,133,0.18)',
@@ -396,35 +439,16 @@ export function Home() {
                 alignItems: 'center',
                 gap: 12,
               }}>
-                <AgentDot size={28} pulse />
                 <span style={{ fontSize: 14, fontWeight: 500, color: '#1A1A1A' }}>
                   Análisis del agente IA
                 </span>
-
-                {/* AI match badge */}
-                <div style={{
-                  marginLeft: 'auto',
-                  padding: '4px 10px',
-                  borderRadius: 40,
-                  background: 'linear-gradient(rgba(245,232,80,0.14), rgba(242,146,29,0.14))',
-                  border: '1px solid rgba(242,146,29,0.38)',
-                  fontSize: 10,
-                  fontWeight: 700,
-                  color: '#F2921D',
-                  letterSpacing: '0.05em',
-                  textTransform: 'uppercase',
-                }}>
-                  Coincidencia IA
-                </div>
               </div>
 
-              {/* Body */}
               <div style={{ padding: '18px 22px', background: 'rgba(242,227,213,0.22)' }}>
                 <p style={{ fontSize: 14, color: '#1A1A1A', lineHeight: 1.70, marginBottom: 18, textWrap: 'pretty' as 'pretty' }}>
                   Con base en los 12 reportes cruzados esta semana, la zona noreste del estado de Michoacán — particularmente los municipios de Zamora y Jacona — muestra la mayor concentración de coincidencias. Se han identificado 3 posibles fosas en un radio de 8 km y 2 puntos de desaparición reportados en los últimos 30 días con características similares al perfil registrado.
                 </p>
 
-                {/* Confidence bar */}
                 <div>
                   <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
                     <span style={{ fontSize: 12, color: '#6B6B6B' }}>Nivel de confianza del análisis</span>
@@ -445,7 +469,6 @@ export function Home() {
                 </div>
               </div>
 
-              {/* Footer */}
               <div style={{
                 padding: '11px 22px',
                 background: 'rgba(242,195,133,0.07)',
@@ -458,42 +481,6 @@ export function Home() {
         </div>
       </main>
 
-      {/* Mobile bottom nav */}
-      <nav
-        className="md:hidden"
-        style={{
-          position: 'fixed',
-          bottom: 0,
-          left: 0,
-          right: 0,
-          zIndex: 200,
-          height: 60,
-          background: 'rgba(255,255,255,0.90)',
-          backdropFilter: 'blur(16px)',
-          WebkitBackdropFilter: 'blur(16px)',
-          borderTop: '1px solid rgba(242,195,133,0.35)',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-around',
-        }}
-      >
-        <button
-          onClick={() => navigate('/home')}
-          style={{ background: 'none', border: 'none', cursor: 'pointer', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 3, color: '#F2921D' }}
-        >
-          <HomeIcon size={22} color="#F2921D" />
-          <span style={{ fontSize: 10, fontFamily: 'var(--font-family)', color: '#F2921D', fontWeight: 500 }}>Inicio</span>
-        </button>
-        <button
-          onClick={() => navigate('/profile')}
-          style={{ background: 'none', border: 'none', cursor: 'pointer', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 3 }}
-        >
-          <User size={22} color="#6B6B6B" />
-          <span style={{ fontSize: 10, fontFamily: 'var(--font-family)', color: '#6B6B6B' }}>Perfil</span>
-        </button>
-      </nav>
-
-      {/* Case-chat bubble — only once the chat has been unlocked */}
       {chatReady && !chatOpen && (
         <button
           onClick={() => setChatOpen(true)}
@@ -501,7 +488,7 @@ export function Home() {
           style={{
             position: 'fixed',
             right: 18,
-            bottom: 76,
+            bottom: 24,
             zIndex: 250,
             width: 56,
             height: 56,
@@ -516,7 +503,6 @@ export function Home() {
           }}
         >
           <MessageCircle size={24} color="#fff" />
-          {/* presence dot */}
           <span
             className="anim-breath"
             style={{
