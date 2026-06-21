@@ -20,7 +20,25 @@ async function main() {
   // wipe for re-seed
   (db as any).exec?.("");
   const raw = (db as any).db as import("better-sqlite3").Database;
-  for (const t of ["reviews","candidate_matches","features","records","audit_log","secure_locations","tips","app_users","sources"]) {
+  for (const t of [
+    "risk_event_links",
+    "event_review_decisions",
+    "social_risk_events",
+    "extraction_jobs",
+    "raw_artifacts",
+    "acquisition_runs",
+    "consents",
+    "source_permissions",
+    "reviews",
+    "candidate_matches",
+    "features",
+    "records",
+    "audit_log",
+    "secure_locations",
+    "tips",
+    "app_users",
+    "sources",
+  ]) {
     raw.prepare(`DELETE FROM ${t}`).run();
   }
 

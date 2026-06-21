@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "hilo.social_risk_event.v1",
+  "title": "SocialRiskEventExtraction",
+  "type": "object",
+  "required": ["event_type", "estado", "municipio", "confidence", "privacy_level"],
+  "additionalProperties": false,
+  "properties": {
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "oferta_laboral_sospechosa",
+        "secuestro_levanton",
+        "balacera_enfrentamiento",
+        "trata_enganche",
+        "narcomenudeo_contexto",
+        "control_territorial_contexto",
+        "otro"
+      ]
+    },
+    "estado": { "type": "string" },
+    "municipio": { "type": "string" },
+    "locality_approx": { "type": "string" },
+    "occurred_at": { "type": "string" },
+    "reported_at": { "type": "string" },
+    "summary": { "type": "string" },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "privacy_level": {
+      "type": "string",
+      "enum": ["public_aggregate", "internal", "restricted"]
+    },
+    "needs_human_review": { "type": "boolean" }
+  }
+}

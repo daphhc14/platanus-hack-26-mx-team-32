@@ -9,6 +9,7 @@
     "seed": "tsx scripts/seed.ts",
     "demo": "tsx demo.ts",
     "dev:ui": "tsx app/server.ts",
+    "test:acquisition": "tsx scripts/test-acquisition.ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
