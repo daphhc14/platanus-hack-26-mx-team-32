@@ -1,11 +1,14 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { UserCircle, Home as HomeIcon, User } from 'lucide-react'
+import { UserCircle, Home as HomeIcon, User, MessageCircle } from 'lucide-react'
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import { GlassCard } from '../components/GlassCard'
 import { AgentDot } from '../components/AgentDot'
+import { ChatDrawer } from '../components/ChatDrawer'
+import { getMyVinculo } from '../features/profile/api'
+import { fullName, type VinculoOut } from '../features/profile/types'
 
 // Fix Leaflet default icon paths broken by bundlers
 delete (L.Icon.Default.prototype as unknown as Record<string, unknown>)._getIconUrl
@@ -102,6 +105,15 @@ export function Home() {
     desaparicion: true,
     trabajos: true,
   })
+  const [vinculo, setVinculo] = useState<VinculoOut | null>(null)
+  const [chatOpen, setChatOpen] = useState(false)
+
+  // Case chat becomes available once another family joins/updates the case.
+  useEffect(() => {
+    getMyVinculo().then(setVinculo).catch(() => setVinculo(null))
+  }, [])
+
+  const chatReady = !!vinculo?.chat_unlocked && !!vinculo?.persona
 
   function toggleFilter(key: FilterKey) {
     setFilters(prev => ({ ...prev, [key]: !prev[key] }))
@@ -479,6 +491,55 @@ export function Home() {
           <span style={{ fontSize: 10, fontFamily: 'var(--font-family)', color: '#6B6B6B' }}>Perfil</span>
         </button>
       </nav>
+
+      {/* Case-chat bubble — only once the chat has been unlocked */}
+      {chatReady && !chatOpen && (
+        <button
+          onClick={() => setChatOpen(true)}
+          aria-label="Abrir chat del caso"
+          style={{
+            position: 'fixed',
+            right: 18,
+            bottom: 76,
+            zIndex: 250,
+            width: 56,
+            height: 56,
+            borderRadius: '50%',
+            background: 'linear-gradient(145deg, #F2921D, #DD6B20)',
+            border: 'none',
+            cursor: 'pointer',
+            boxShadow: '0 6px 20px rgba(242,146,29,0.45)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <MessageCircle size={24} color="#fff" />
+          {/* presence dot */}
+          <span
+            className="anim-breath"
+            style={{
+              position: 'absolute',
+              top: 4,
+              right: 4,
+              width: 12,
+              height: 12,
+              borderRadius: '50%',
+              background: '#F5E850',
+              border: '2px solid #fff',
+            }}
+          />
+        </button>
+      )}
+
+      {chatReady && vinculo?.persona && (
+        <ChatDrawer
+          personaVictimaId={vinculo.vinculo.persona_victima_id}
+          personaNombre={fullName(vinculo.persona)}
+          open={chatOpen}
+          onClose={() => setChatOpen(false)}
+        />
+      )}
     </div>
   )
 }
