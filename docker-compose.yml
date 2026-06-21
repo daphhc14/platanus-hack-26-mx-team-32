@@ -1,0 +1,53 @@
+# Hilo — backend + Watchtower auto-deploy.
+#
+# Watchtower watches the GHCR registry for a new `:latest` backend image and
+# redeploys ONLY the backend (label-scoped). The GitHub Actions workflow in
+# .github/workflows/docker-backend.yml builds & pushes `:latest` on every push
+# to main — so a commit on main → new image → Watchtower pulls & restarts.
+#
+# Prereqs on the host:
+#   1. cp backend/.env.example backend/.env  and fill in SUPABASE_URL / SUPABASE_KEY
+#   2. Make the GHCR package public (ghcr.io/platanus-hack/platanus-hack-26-mx-team-32/backend)
+#      OR set REPO_USER / REPO_PASS below (a PAT with read:packages) for a private package.
+#   3. docker compose up -d
+
+services:
+  backend:
+    image: ghcr.io/platanus-hack/platanus-hack-26-mx-team-32/backend:latest
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    env_file:
+      - path: ./backend/.env
+        required: false
+    labels:
+      # Watchtower only touches containers with this label set to "true".
+      - "com.centurylinklabs.watchtower.enable=true"
+    networks:
+      - hilo
+
+  watchtower:
+    image: containrrr/watchtower:latest
+    restart: unless-stopped
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      # Poll GHCR every 60s for a new backend image.
+      WATCHTOWER_POLL_INTERVAL: "60"
+      # Remove the old image after a successful upgrade.
+      WATCHTOWER_CLEANUP: "true"
+      # Only update containers carrying the watchtower.enable=true label
+      # → backend only, the rest of the stack is left alone.
+      WATCHTOWER_LABEL_ENABLE: "true"
+      # Optional — only needed if the GHCR package is PRIVATE.
+      # Create a PAT with `read:packages` and export GHCR_TOKEN on the host.
+      # REPO_USER: platanus-hack
+      # REPO_PASS: ${GHCR_TOKEN}
+    networks:
+      - hilo
+
+networks:
+  hilo:
