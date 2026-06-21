@@ -218,18 +218,30 @@ async function extractPatternWithClaude(post: ScrapedPost): Promise<ClaudePatter
     throw new Error("Missing ANTHROPIC_API_KEY environment variable");
   }
 
-  const prompt = `Analyze this Facebook-scam-report post from a community group.
+  const prompt = `Analyze this Facebook scam-report post. The images attached (if any) are screenshots from the post — OCR them and use their text in your analysis.
+
 Extract:
 - tone_description: A short description of the scam tactic (e.g. "WhatsApp recruitment with upfront uniform fee")
 - tone_keywords: Array of tags from this exact set only: urgency, job_offer, payment_request, data_harvest, off_platform_contact, high_salary, vague_company, immediate_start, uniform_fee, investment_return, crypto, delivery_job
-- image_descriptions: Array describing what the images in the post show
-- location_text: Any location mention (city name, URL, neighborhood) — return null if none.
+- image_descriptions: Array describing what each image shows
+- location_text: The most specific location signal found in the post text OR images (address, neighborhood, landmark, city name, directions) — return null if none found.
 
 Post text:
 ${post.content}
 
 Respond as STRICT JSON only (no markdown fences), exactly this shape:
 {"tone_description": string|null, "tone_keywords": string[], "image_descriptions": string[], "location_text": string|null}`;
+
+  type ContentBlock =
+    | { type: "text"; text: string }
+    | { type: "image"; source: { type: "base64"; media_type: "image/png"; data: string } };
+
+  const imageBlocks: ContentBlock[] = post.imageBase64.map((data) => ({
+    type: "image",
+    source: { type: "base64", media_type: "image/png", data },
+  }));
+
+  const content: ContentBlock[] = [...imageBlocks, { type: "text", text: prompt }];
 
   try {
     const response = await fetch("https://api.anthropic.com/v1/messages", {
@@ -241,9 +253,9 @@ Respond as STRICT JSON only (no markdown fences), exactly this shape:
       },
       body: JSON.stringify({
         model: "claude-sonnet-4-6",
-        max_tokens: 800,
+        max_tokens: 1024,
         system: "You are a scam-pattern analyst. You output only valid JSON. You never assert specific crimes, persons, or groups — only describe the tactic and pattern.",
-        messages: [{ role: "user", content: prompt }],
+        messages: [{ role: "user", content }],
       }),
     });
 
