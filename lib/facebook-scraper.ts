@@ -11,7 +11,7 @@ const FACEBOOK_GROUP_URL =
 export interface ScrapedPost {
   url: string;
   content: string;
-  imageUrls: string[];
+  imageBase64: string[];
 }
 
 export interface ScrapeSummary {
@@ -100,26 +100,42 @@ async function fetchFacebookGroupPosts(groupUrl: string): Promise<ScrapedPost[]>
       throw new Error("Facebook session cookies expired or invalid.");
     }
 
-    const seenPostTexts = new Map<string, string>();
+    const seenPosts = new Map<string, { text: string; imageBase64: string[] }>();
     let noNewCount = 0;
 
     for (let i = 0; i < 300; i++) {
       await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
       await page.waitForTimeout(800);
 
-      const articleTexts = await page.$$eval('[role="article"]', (els) =>
-        els
-          .map((el) => (el.textContent ?? "").replace(/\s+/g, " ").trim())
-          .filter((t) => t.length > 20),
-      );
+      const articleHandles = await page.$$('[role="article"]');
 
       let newThisScroll = 0;
-      for (const text of articleTexts) {
+      for (const article of articleHandles) {
+        const text = await article
+          .evaluate((el) => (el.textContent ?? "").replace(/\s+/g, " ").trim())
+          .catch(() => "");
+        if (text.length <= 20) continue;
+
         const key = text.slice(0, 100);
-        if (!seenPostTexts.has(key)) {
-          seenPostTexts.set(key, text);
-          newThisScroll++;
+        if (seenPosts.has(key)) continue;
+
+        const imageBase64: string[] = [];
+        try {
+          const imgHandles = await article.$$('img[src*="scontent"]');
+          for (const img of imgHandles.slice(0, 5)) {
+            try {
+              const bytes = await img.screenshot({ type: "png" });
+              imageBase64.push(Buffer.from(bytes).toString("base64"));
+            } catch {
+              // element detached or not visible — skip
+            }
+          }
+        } catch {
+          // $$() failed — continue without images
         }
+
+        seenPosts.set(key, { text, imageBase64 });
+        newThisScroll++;
       }
 
       if (newThisScroll === 0) {
@@ -133,18 +149,18 @@ async function fetchFacebookGroupPosts(groupUrl: string): Promise<ScrapedPost[]>
       }
 
       if ((i + 1) % 25 === 0) {
-        console.log(`Scroll ${i + 1}: ${seenPostTexts.size} unique posts captured`);
+        console.log(`Scroll ${i + 1}: ${seenPosts.size} unique posts captured`);
       }
     }
-    console.log(`Scroll complete: ${seenPostTexts.size} unique posts`);
+    console.log(`Scroll complete: ${seenPosts.size} unique posts`);
 
     const posts: ScrapedPost[] = [];
     let idx = 0;
-    for (const text of Array.from(seenPostTexts.values())) {
+    for (const { text, imageBase64 } of Array.from(seenPosts.values())) {
       posts.push({
         url: `${groupUrl}#post-${idx}`,
         content: text.slice(0, 5000),
-        imageUrls: [],
+        imageBase64,
       });
       idx += 1;
     }
@@ -305,7 +321,7 @@ export async function scrapeAndSeedFacebookPatterns(): Promise<ScrapeSummary> {
         post_content: post.content,
         tone_description: extraction.tone_description,
         tone_keywords: extraction.tone_keywords,
-        image_urls: post.imageUrls,
+        image_urls: [],
         image_descriptions: extraction.image_descriptions,
         location_text: extraction.location_text,
         location_latitude: null,
