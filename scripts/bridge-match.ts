@@ -154,9 +154,9 @@ async function writeResults(personaId: string, scored: ScoredPair[]) {
       cuerpo_id: s.unidentified.id,
       score: s.overall_score,
       tier:
-        s.overall_score >= 0.75
+        s.overall_score >= 0.8
           ? "alta"
-          : s.overall_score >= 0.5
+          : s.overall_score >= 0.6
             ? "media"
             : "baja",
       evidencia: s.evidences ?? [],

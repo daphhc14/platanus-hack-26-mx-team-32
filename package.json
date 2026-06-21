@@ -12,9 +12,20 @@
     "scrape:facebook": "tsx scripts/scrape-facebook.ts",
     "test:acquisition": "tsx scripts/test-acquisition.ts",
     "test:extractor:live": "tsx scripts/test-extractor-live.ts",
+    "test:discovery": "tsx scripts/test-discovery.ts",
+    "test:geo": "tsx scripts/test-geo.ts",
+    "agents": "cd backend && uv run python -m src.agents.graph",
+    "agents:install": "cd backend && uv sync",
     "typecheck": "tsc --noEmit",
     "bridge:match": "tsx scripts/bridge-match.ts",
-    "test": "vitest run scripts/bridge-match.test.ts"
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "check": "npm run typecheck && npm run lint && npm run test"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.105.0",
@@ -27,10 +38,18 @@
     "openai": "^4.67.0"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
     "@types/better-sqlite3": "^7.6.11",
     "@types/node": "^22.7.0",
+    "@types/pg": "^8.20.0",
+    "@vitest/coverage-v8": "^4.1.9",
+    "eslint": "^10.5.0",
+    "eslint-config-prettier": "^10.1.8",
+    "pg": "^8.22.0",
+    "prettier": "^3.8.4",
     "tsx": "^4.19.0",
     "typescript": "^5.6.0",
+    "typescript-eslint": "^8.61.1",
     "vitest": "^4.1.9"
   }
 }

@@ -399,17 +399,28 @@ export async function scrapeAndSeedFacebookPatterns(): Promise<ScrapeSummary> {
         post_date: postDate,
       };
 
+      console.log(`\n[${summary.inserted + summary.skipped + summary.failed + 1}/${posts.length}] ${post.url}`);
+      console.log(`  tone:     ${extraction.tone_description ?? "(none)"}`);
+      console.log(`  keywords: ${extraction.tone_keywords.length ? extraction.tone_keywords.join(", ") : "(none)"}`);
+      console.log(`  location: ${extraction.location_text ?? "(none)"}`);
+      console.log(`  date:     ${postDate ?? "(unknown)"}`);
+      if (extraction.image_descriptions.length) {
+        extraction.image_descriptions.forEach((d, i) => console.log(`  image[${i}]: ${d}`));
+      }
+
       const { error } = await supabase
         .from("facebook_patterns")
         .upsert(row, { onConflict: "post_url" });
 
       if (error) {
         if (error.code === "23505") {
+          console.log(`  → skipped (duplicate)`);
           summary.skipped += 1;
         } else {
           throw new Error(`facebook_patterns upsert failed for ${post.url}: ${error.message}`);
         }
       } else {
+        console.log(`  → inserted`);
         summary.inserted += 1;
       }
     } catch (e) {

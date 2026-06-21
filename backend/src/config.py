@@ -8,6 +8,7 @@ class Settings(BaseSettings):
     supabase_key: str
     database_url: str | None = None  # direct Postgres for batch jobs (bypasses RLS)
     gemini_api_key: str | None = None  # embeddings (semantic retrieval)
+    firecrawl_api_key: str | None = None  # web/news search for victim cases
     # LLM verifier — only the key is secret; base_url + model are code defaults
     # (still env-overridable). OpenAI-compatible, so any provider works.
     llm_api_key: str | None = None

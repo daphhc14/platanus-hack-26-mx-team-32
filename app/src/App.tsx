@@ -1,19 +1,25 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { Landing } from './screens/Landing'
 import { Login } from './screens/Login'
 import { Onboarding } from './screens/Onboarding'
 import { Home } from './screens/Home'
 import { Profile } from './screens/Profile'
+import { ThemeProvider, ThemeToggle } from './features/theme'
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/onboarding" element={<Onboarding />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="*" element={<Navigate to="/login" replace />} />
-      </Routes>
-    </BrowserRouter>
+    <ThemeProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/onboarding" element={<Onboarding />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+        <ThemeToggle />
+      </BrowserRouter>
+    </ThemeProvider>
   )
 }
