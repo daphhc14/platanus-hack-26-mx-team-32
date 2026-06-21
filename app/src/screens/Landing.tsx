@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { GoogleMap, useJsApiLoader, InfoWindowF } from '@react-google-maps/api'
-import { MarkerClusterer } from '@googlemaps/markerclusterer'
+import { MarkerClusterer, GridAlgorithm } from '@googlemaps/markerclusterer'
 import { AgentDot } from '../components/AgentDot'
 import { useSession, signInWithGoogle } from '../features/auth'
 import { useTheme } from '../features/theme'
@@ -75,18 +75,16 @@ function rgbToHex(r: number, g: number, b: number) {
   return '#' + [r, g, b].map(v => v.toString(16).padStart(2, '0')).join('')
 }
 
-const COLOR_OLD = hexToRgb('#fef08a')
-const COLOR_MID = hexToRgb('#f97316')
+const COLOR_OLD = hexToRgb('#f97316')
 const COLOR_RECENT = hexToRgb('#dc2626')
 
 function dateColor(ratio: number): string {
   const t = Math.max(0, Math.min(1, ratio))
-  if (t < 0.5) {
-    const k = t * 2
-    return rgbToHex(lerp(COLOR_OLD[0], COLOR_MID[0], k), lerp(COLOR_OLD[1], COLOR_MID[1], k), lerp(COLOR_OLD[2], COLOR_MID[2], k))
-  }
-  const k = (t - 0.5) * 2
-  return rgbToHex(lerp(COLOR_MID[0], COLOR_RECENT[0], k), lerp(COLOR_MID[1], COLOR_RECENT[1], k), lerp(COLOR_MID[2], COLOR_RECENT[2], k))
+  return rgbToHex(
+    lerp(COLOR_OLD[0], COLOR_RECENT[0], t),
+    lerp(COLOR_OLD[1], COLOR_RECENT[1], t),
+    lerp(COLOR_OLD[2], COLOR_RECENT[2], t),
+  )
 }
 
 function fullName(p: PersonOnMap) {
@@ -327,7 +325,7 @@ export function Landing() {
       return getMarkerIcon(dateColor(ratio))
     })
   }, [isLoaded])
-  const noDateIcon = useMemo(() => isLoaded ? getMarkerIcon('#fef08a') : null, [isLoaded])
+  const noDateIcon = useMemo(() => isLoaded ? getMarkerIcon('#f97316') : null, [isLoaded])
 
   const markerColor = useCallback((p: PersonOnMap) => {
     if (!iconBuckets) return noDateIcon!
@@ -362,24 +360,42 @@ export function Landing() {
         map,
         icon: markerColor(p),
       })
+      marker.set('person', p)
       marker.addListener('mouseover', () => setHovered(p))
       marker.addListener('mouseout', () => setHovered(null))
       marker.addListener('click', () => handleSelect(p))
       return marker
     })
     markersRef.current = markers
-    const clusterIcon = 'data:image/svg+xml;utf8,' + encodeURIComponent(
-      `<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44"><circle cx="22" cy="22" r="20" fill="rgba(220,38,38,0.5)"/></svg>`
-    )
     const clusterer = new MarkerClusterer({
       markers,
       map,
+      algorithm: new GridAlgorithm({ gridSize: 10, maxZoom: 18 }),
       renderer: {
-        render({ count, position }) {
+        render({ count, position, markers: clusterMarkers }) {
+          let avgRatio = 0
+          let n = 0
+          if (clusterMarkers && minTs && maxTs && maxTs !== minTs) {
+            const span = maxTs - minTs
+            for (const m of clusterMarkers) {
+              const p = (m as google.maps.Marker).get('person') as PersonOnMap | undefined
+              if (p?.fecha_hechos) {
+                const ts = new Date(p.fecha_hechos).getTime()
+                if (!Number.isNaN(ts)) {
+                  avgRatio += Math.log(ts - minTs + 1) / Math.log(span + 1)
+                  n++
+                }
+              }
+            }
+          }
+          const color = n > 0 ? dateColor(avgRatio / n) : '#f97316'
+          const svg = encodeURIComponent(
+            `<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44"><circle cx="22" cy="22" r="20" fill="${color}" opacity="0.7"/></svg>`
+          )
           return new google.maps.Marker({
             position,
             icon: {
-              url: clusterIcon,
+              url: `data:image/svg+xml;utf8,${svg}`,
               scaledSize: new google.maps.Size(44, 44),
             },
             label: {
@@ -486,7 +502,7 @@ export function Landing() {
           <span style={{ fontSize: 10, color: 'var(--color-text-secondary)' }}>Más antiguo</span>
           <div style={{
             width: 100, height: 8, borderRadius: 4,
-            background: 'linear-gradient(90deg, #fef08a, #f97316, #dc2626)',
+            background: 'linear-gradient(90deg, #f97316, #dc2626)',
           }} />
           <span style={{ fontSize: 10, color: 'var(--color-text-secondary)' }}>Más reciente</span>
         </div>
