@@ -20,60 +20,23 @@ const MAP_CENTER = { lat: 23.6345, lng: -102.5528 }
 const MAP_ZOOM = 5
 const MAP_CONTAINER_STYLE = { width: '100%', height: '100%' }
 const MAP_STYLE_LIGHT: google.maps.MapTypeStyle[] = [
-    {
-        "featureType": "all",
-        "elementType": "labels.text",
-        "stylers": [
-            {
-                "color": "#878787"
-            }
-        ]
-    },
-    {
-        "featureType": "all",
-        "elementType": "labels.text.stroke",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "landscape",
-        "elementType": "all",
-        "stylers": [
-            {
-                "color": "#f9f5ed"
-            }
-        ]
-    },
-    {
-        "featureType": "road.highway",
-        "elementType": "all",
-        "stylers": [
-            {
-                "color": "#f5f5f5"
-            }
-        ]
-    },
-    {
-        "featureType": "road.highway",
-        "elementType": "geometry.stroke",
-        "stylers": [
-            {
-                "color": "#c9c9c9"
-            }
-        ]
-    },
-    {
-        "featureType": "water",
-        "elementType": "all",
-        "stylers": [
-            {
-                "color": "#aee0f4"
-            }
-        ]
-    }
+  { elementType: 'geometry', stylers: [{ color: '#f5f0e8' }] },
+  { elementType: 'labels.text.fill', stylers: [{ color: '#9c9085' }] },
+  { elementType: 'labels.text.stroke', stylers: [{ visibility: 'off' }] },
+  { featureType: 'administrative', elementType: 'geometry', stylers: [{ visibility: 'simplified' }] },
+  { featureType: 'administrative.country', elementType: 'geometry.stroke', stylers: [{ color: '#d4c5b3', weight: 1.2 }] },
+  { featureType: 'administrative.province', elementType: 'geometry.stroke', stylers: [{ color: '#e0d5c7', weight: 0.8 }] },
+  { featureType: 'administrative.locality', elementType: 'labels', stylers: [{ visibility: 'simplified' }] },
+  { featureType: 'landscape', elementType: 'geometry', stylers: [{ color: '#f5f0e8' }] },
+  { featureType: 'landscape.natural', elementType: 'geometry', stylers: [{ color: '#ede6da' }] },
+  { featureType: 'poi', stylers: [{ visibility: 'off' }] },
+  { featureType: 'road', stylers: [{ visibility: 'simplified' }, { color: '#e8dfd2' }] },
+  { featureType: 'road.highway', stylers: [{ visibility: 'simplified' }, { color: '#dcd1c0' }] },
+  { featureType: 'road.arterial', stylers: [{ visibility: 'simplified' }] },
+  { featureType: 'road.local', stylers: [{ visibility: 'off' }] },
+  { featureType: 'transit', stylers: [{ visibility: 'off' }] },
+  { featureType: 'water', elementType: 'geometry', stylers: [{ color: '#dfe7e8' }] },
+  { featureType: 'water', elementType: 'labels.text', stylers: [{ color: '#a8b4b5' }] },
 ];
 
 const MAP_STYLE_DARK: google.maps.MapTypeStyle[] = [
@@ -405,7 +368,31 @@ export function Landing() {
       return marker
     })
     markersRef.current = markers
-    const clusterer = new MarkerClusterer({ markers, map })
+    const clusterIcon = 'data:image/svg+xml;utf8,' + encodeURIComponent(
+      `<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44"><circle cx="22" cy="22" r="20" fill="rgba(220,38,38,0.5)"/></svg>`
+    )
+    const clusterer = new MarkerClusterer({
+      markers,
+      map,
+      renderer: {
+        render({ count, position }) {
+          return new google.maps.Marker({
+            position,
+            icon: {
+              url: clusterIcon,
+              scaledSize: new google.maps.Size(44, 44),
+            },
+            label: {
+              text: String(count),
+              color: '#fff',
+              fontSize: '13px',
+              fontWeight: 'bold',
+            },
+            zIndex: 100,
+          })
+        },
+      },
+    })
     clustererRef.current = clusterer
     return () => {
       markers.forEach(m => { google.maps.event.clearInstanceListeners(m); m.setMap(null) })
