@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { GoogleMap, useJsApiLoader, MarkerF, InfoWindowF, MarkerClustererF } from '@react-google-maps/api'
+import { GoogleMap, useJsApiLoader, InfoWindowF } from '@react-google-maps/api'
+import { MarkerClusterer } from '@googlemaps/markerclusterer'
 import { AgentDot } from '../components/AgentDot'
 import { useSession, signInWithGoogle } from '../features/auth'
 import { useTheme } from '../features/theme'
@@ -98,10 +99,6 @@ const MAP_STYLE_DARK: google.maps.MapTypeStyle[] = [
   { featureType: 'water', elementType: 'geometry', stylers: [{ color: '#000000' }] },
   { featureType: 'water', elementType: 'labels.text.fill', stylers: [{ color: '#3d3d3d' }] },
 ];
-
-const CLUSTER_ICON_URL = 'data:image/svg+xml;utf8,' + encodeURIComponent(
-  `<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44"><circle cx="22" cy="22" r="20" fill="rgba(220,38,38,0.5)"/></svg>`
-)
 
 function lerp(a: number, b: number, t: number) {
   return Math.round(a + (b - a) * t)
@@ -305,13 +302,16 @@ export function Landing() {
   const { session } = useSession()
   const { theme } = useTheme()
   const [persons, setPersons] = useState<PersonOnMap[]>([])
-  const [visible, setVisible] = useState<PersonOnMap[]>([])
+  const [visibleCount, setVisibleCount] = useState(0)
   const [hovered, setHovered] = useState<PersonOnMap | null>(null)
   const [selected, setSelected] = useState<PersonOnMap | null>(null)
   const [details, setDetails] = useState<Record<number, PersonDetail>>({})
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+  const [mapReady, setMapReady] = useState(false)
   const mapRef = useRef<google.maps.Map | null>(null)
+  const markersRef = useRef<google.maps.Marker[]>([])
+  const clustererRef = useRef<MarkerClusterer | null>(null)
   const detailCache = useRef<Record<number, PersonDetail>>({})
   const fetchingRef = useRef<Set<number>>(new Set())
 
@@ -323,7 +323,7 @@ export function Landing() {
     fetchPersonsOnMap()
       .then((data: PersonOnMap[]) => {
         setPersons(data)
-        setVisible(data)
+        setVisibleCount(data.length)
         setLoading(false)
       })
       .catch((e: unknown) => {
@@ -337,7 +337,11 @@ export function Landing() {
     if (!map || persons.length === 0) return
     const bounds = map.getBounds()
     if (!bounds) return
-    setVisible(persons.filter(p => bounds.contains(new google.maps.LatLng(p.lat, p.lng))))
+    let count = 0
+    for (let i = 0; i < persons.length; i++) {
+      if (bounds.contains(new google.maps.LatLng(persons[i].lat, persons[i].lng))) count++
+    }
+    setVisibleCount(count)
   }, [persons])
 
   const { minTs, maxTs } = useMemo(() => {
@@ -385,6 +389,31 @@ export function Landing() {
         .finally(() => { fetchingRef.current.delete(p.id) })
     }
   }, [])
+
+  useEffect(() => {
+    if (!isLoaded || !mapReady || persons.length === 0 || !iconBuckets) return
+    const map = mapRef.current!
+    const markers = persons.map(p => {
+      const marker = new google.maps.Marker({
+        position: { lat: p.lat, lng: p.lng },
+        map,
+        icon: markerColor(p),
+      })
+      marker.addListener('mouseover', () => setHovered(p))
+      marker.addListener('mouseout', () => setHovered(null))
+      marker.addListener('click', () => handleSelect(p))
+      return marker
+    })
+    markersRef.current = markers
+    const clusterer = new MarkerClusterer({ markers, map })
+    clustererRef.current = clusterer
+    return () => {
+      markers.forEach(m => { google.maps.event.clearInstanceListeners(m); m.setMap(null) })
+      clusterer.setMap(null)
+      markersRef.current = []
+      clustererRef.current = null
+    }
+  }, [isLoaded, mapReady, persons, iconBuckets, markerColor, handleSelect])
 
   return (
     <div style={{ height: '100vh', width: '100vw', position: 'relative', overflow: 'hidden' }}>
@@ -442,7 +471,7 @@ export function Landing() {
           <>
             <div style={{ fontSize: 28, fontWeight: 700, color: 'var(--color-text-primary)', lineHeight: 1 }}>{persons.length.toLocaleString('es-MX')}</div>
             <div style={{ fontSize: 12, color: 'var(--color-text-secondary)', marginTop: 4 }}>
-              {visible.length.toLocaleString('es-MX')} visibles en esta vista
+              {visibleCount.toLocaleString('es-MX')} visibles en esta vista
             </div>
           </>
         )}
@@ -484,6 +513,7 @@ export function Landing() {
           zoom={MAP_ZOOM}
           onLoad={map => {
             mapRef.current = map
+            setMapReady(true)
             updateVisible()
           }}
           onIdle={updateVisible}
@@ -496,38 +526,6 @@ export function Landing() {
             zoomControl: true,
           }}
         >
-          {isLoaded && (
-            <MarkerClustererF
-              options={{
-                maxZoom: 14,
-                gridSize: 10,
-                minimumClusterSize: 5,
-                styles: [{
-                  textColor: '#fff',
-                  textSize: 13,
-                  url: CLUSTER_ICON_URL,
-                  height: 44,
-                  width: 44,
-                }],
-              }}
-            >
-              {(clusterer) => (
-                <>
-                  {visible.map(p => (
-                    <MarkerF
-                      key={p.id}
-                      clusterer={clusterer}
-                      position={{ lat: p.lat, lng: p.lng }}
-                      icon={markerColor(p)}
-                      onMouseOver={() => setHovered(p)}
-                      onMouseOut={() => setHovered(null)}
-                      onClick={() => handleSelect(p)}
-                    />
-                  ))}
-                </>
-              )}
-            </MarkerClustererF>
-          )}
           {hovered && !selected && (
             <InfoWindowF
               position={{ lat: hovered.lat, lng: hovered.lng }}
