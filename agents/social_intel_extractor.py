@@ -61,7 +61,7 @@ def extract_node(state: ExtractorState) -> dict:
             messages=[{"role": "user", "content": state["text"][:4000]}],
         )
         raw = msg.content[0].text.strip()
-        match = re.search(r"\{.*\}", raw, re.DOTALL)
+        match = re.search(r"\{.*?\}", raw, re.DOTALL)
         if not match:
             return {"extracted_event": _fallback_extract(state["text"]), "error": None}
         event = json.loads(match.group())
@@ -72,6 +72,7 @@ def extract_node(state: ExtractorState) -> dict:
 
 def save_event_node(state: ExtractorState) -> dict:
     event = state.get("extracted_event")
+    supabase_error: str | None = None
     if event:
         try:
             sb = get_supabase()
@@ -91,12 +92,12 @@ def save_event_node(state: ExtractorState) -> dict:
                 "evidence_json": json.dumps({"source_url": state.get("source_url")}),
             }).execute()
         except Exception as exc:
-            state = {**state, "error": str(exc)}
+            supabase_error = str(exc)
 
     finish_task(
         state["task_id"],
         output=event,
-        error=state.get("error"),
+        error=supabase_error or state.get("error"),
     )
     return {}
 
