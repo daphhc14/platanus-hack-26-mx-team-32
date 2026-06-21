@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { GoogleMap, useJsApiLoader, MarkerF, InfoWindowF, MarkerClustererF } from '@react-google-maps/api'
 import { AgentDot } from '../components/AgentDot'
 import { useSession, signInWithGoogle } from '../features/auth'
+import { useTheme } from '../features/theme'
 import {
   fetchPersonsOnMap,
   fetchPersonDetail,
@@ -17,7 +18,7 @@ const GOOGLE_MAPS_API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY
 const MAP_CENTER = { lat: 23.6345, lng: -102.5528 }
 const MAP_ZOOM = 5
 const MAP_CONTAINER_STYLE = { width: '100%', height: '100%' }
-const MAP_STYLE: google.maps.MapTypeStyle[] = [
+const MAP_STYLE_LIGHT: google.maps.MapTypeStyle[] = [
     {
         "featureType": "all",
         "elementType": "labels.text",
@@ -72,6 +73,30 @@ const MAP_STYLE: google.maps.MapTypeStyle[] = [
             }
         ]
     }
+];
+
+const MAP_STYLE_DARK: google.maps.MapTypeStyle[] = [
+  { elementType: 'geometry', stylers: [{ color: '#212121' }] },
+  { elementType: 'labels.icon', stylers: [{ visibility: 'off' }] },
+  { elementType: 'labels.text.fill', stylers: [{ color: '#757575' }] },
+  { elementType: 'labels.text.stroke', stylers: [{ color: '#212121' }] },
+  { featureType: 'administrative', elementType: 'geometry', stylers: [{ color: '#757575' }] },
+  { featureType: 'administrative.country', elementType: 'labels.text.fill', stylers: [{ color: '#9e9e9e' }] },
+  { featureType: 'administrative.land_parcel', stylers: [{ visibility: 'off' }] },
+  { featureType: 'administrative.locality', elementType: 'labels.text.fill', stylers: [{ color: '#bdbdbd' }] },
+  { featureType: 'poi', elementType: 'labels.text.fill', stylers: [{ color: '#757575' }] },
+  { featureType: 'poi.park', elementType: 'geometry', stylers: [{ color: '#181818' }] },
+  { featureType: 'poi.park', elementType: 'labels.text.fill', stylers: [{ color: '#616161' }] },
+  { featureType: 'poi.park', elementType: 'labels.text.stroke', stylers: [{ color: '#1b1b1b' }] },
+  { featureType: 'road', elementType: 'geometry.fill', stylers: [{ color: '#2c2c2c' }] },
+  { featureType: 'road', elementType: 'labels.text.fill', stylers: [{ color: '#8a8a8a' }] },
+  { featureType: 'road.arterial', elementType: 'geometry', stylers: [{ color: '#373737' }] },
+  { featureType: 'road.highway', elementType: 'geometry', stylers: [{ color: '#3c3c3c' }] },
+  { featureType: 'road.highway.controlled_access', elementType: 'geometry', stylers: [{ color: '#4e4e4e' }] },
+  { featureType: 'road.local', elementType: 'labels.text.fill', stylers: [{ color: '#616161' }] },
+  { featureType: 'transit', elementType: 'labels.text.fill', stylers: [{ color: '#757575' }] },
+  { featureType: 'water', elementType: 'geometry', stylers: [{ color: '#000000' }] },
+  { featureType: 'water', elementType: 'labels.text.fill', stylers: [{ color: '#3d3d3d' }] },
 ];
 
 const CLUSTER_ICON_URL = 'data:image/svg+xml;utf8,' + encodeURIComponent(
@@ -278,6 +303,7 @@ function Section({ title, children }: { title: string; children: React.ReactNode
 export function Landing() {
   const navigate = useNavigate()
   const { session } = useSession()
+  const { theme } = useTheme()
   const [persons, setPersons] = useState<PersonOnMap[]>([])
   const [visible, setVisible] = useState<PersonOnMap[]>([])
   const [hovered, setHovered] = useState<PersonOnMap | null>(null)
@@ -378,7 +404,7 @@ export function Landing() {
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
           <AgentDot size={22} pulse />
-          <span style={{ fontSize: 16, fontWeight: 600, color: '#1A1A1A', letterSpacing: '-0.01em' }}>
+          <span style={{ fontSize: 16, fontWeight: 600, color: 'var(--color-text-primary)', letterSpacing: '-0.01em' }}>
             Rastro de Luz
           </span>
         </div>
@@ -405,17 +431,17 @@ export function Landing() {
         padding: '16px 18px',
         minWidth: 180,
       }}>
-        <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.10em', textTransform: 'uppercase', color: '#6B6B6B', marginBottom: 8 }}>
+        <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.10em', textTransform: 'uppercase', color: 'var(--color-text-secondary)', marginBottom: 8 }}>
           Personas en el mapa
         </div>
         {loading ? (
-          <div style={{ fontSize: 13, color: '#6B6B6B' }}>Cargando…</div>
+          <div style={{ fontSize: 13, color: 'var(--color-text-secondary)' }}>Cargando…</div>
         ) : error ? (
-          <div style={{ fontSize: 12, color: '#c0392b' }}>{error}</div>
+          <div style={{ fontSize: 12, color: 'var(--color-error)' }}>{error}</div>
         ) : (
           <>
-            <div style={{ fontSize: 28, fontWeight: 700, color: '#1A1A1A', lineHeight: 1 }}>{persons.length.toLocaleString('es-MX')}</div>
-            <div style={{ fontSize: 12, color: '#6B6B6B', marginTop: 4 }}>
+            <div style={{ fontSize: 28, fontWeight: 700, color: 'var(--color-text-primary)', lineHeight: 1 }}>{persons.length.toLocaleString('es-MX')}</div>
+            <div style={{ fontSize: 12, color: 'var(--color-text-secondary)', marginTop: 4 }}>
               {visible.length.toLocaleString('es-MX')} visibles en esta vista
             </div>
           </>
@@ -435,18 +461,18 @@ export function Landing() {
         gap: 8,
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-          <span style={{ fontSize: 12, color: '#1A1A1A', fontWeight: 500 }}>
+          <span style={{ fontSize: 12, color: 'var(--color-text-primary)', fontWeight: 500 }}>
             {loading ? 'Personas desaparecidas' : `${persons.length.toLocaleString('es-MX')} personas desaparecidas`}
             {earliestDate && ` desde ${earliestDate.toLocaleDateString('es-MX', { day: 'numeric', month: 'short', year: 'numeric' })}`}
           </span>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-          <span style={{ fontSize: 10, color: '#6B6B6B' }}>Más antiguo</span>
+          <span style={{ fontSize: 10, color: 'var(--color-text-secondary)' }}>Más antiguo</span>
           <div style={{
             width: 100, height: 8, borderRadius: 4,
             background: 'linear-gradient(90deg, #fef08a, #f97316, #dc2626)',
           }} />
-          <span style={{ fontSize: 10, color: '#6B6B6B' }}>Más reciente</span>
+          <span style={{ fontSize: 10, color: 'var(--color-text-secondary)' }}>Más reciente</span>
         </div>
       </div>
 
@@ -463,7 +489,7 @@ export function Landing() {
           onIdle={updateVisible}
           onClick={() => setSelected(null)}
           options={{
-            styles: MAP_STYLE,
+            styles: theme === 'dark' ? MAP_STYLE_DARK : MAP_STYLE_LIGHT,
             fullscreenControl: false,
             mapTypeControl: false,
             streetViewControl: false,
@@ -513,8 +539,8 @@ export function Landing() {
           )}
         </GoogleMap>
       ) : (
-        <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#FDFAF7' }}>
-          <span style={{ color: '#6B6B6B', fontSize: 14 }}>Cargando mapa…</span>
+        <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--color-bg)' }}>
+          <span style={{ color: 'var(--color-text-secondary)', fontSize: 14 }}>Cargando mapa…</span>
         </div>
       )}
 

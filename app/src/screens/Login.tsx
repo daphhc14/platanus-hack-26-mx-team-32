@@ -40,7 +40,7 @@ export function Login() {
   return (
     <div
       className="min-h-screen w-full flex flex-col items-center justify-center relative overflow-hidden"
-      style={{ background: 'linear-gradient(160deg, #FDFAF7 0%, #F2E3D5 40%, rgba(242,195,133,0.5) 70%, rgba(242,146,29,0.22) 100%)' }}
+      style={{ background: 'var(--page-gradient)' }}
     >
       {/* Ambient aura blobs */}
       <div
@@ -76,7 +76,7 @@ export function Login() {
               fontFamily: 'var(--font-family)',
               fontSize: 22,
               fontWeight: 600,
-              color: '#1A1A1A',
+              color: 'var(--color-text-primary)',
               letterSpacing: '-0.02em',
             }}
           >
@@ -89,7 +89,7 @@ export function Login() {
             fontWeight: 700,
             letterSpacing: '0.10em',
             textTransform: 'uppercase',
-            color: '#F2921D',
+            color: 'var(--color-primary)',
           }}
         >
           Plataforma de búsqueda
@@ -106,14 +106,14 @@ export function Login() {
           style={{
             fontSize: 22,
             fontWeight: 500,
-            color: '#1A1A1A',
+            color: 'var(--color-text-primary)',
             marginBottom: 6,
             letterSpacing: '-0.015em',
           }}
         >
           Bienvenida
         </h1>
-        <p style={{ fontSize: 14, color: '#6B6B6B', marginBottom: 28 }}>
+        <p style={{ fontSize: 14, color: 'var(--color-text-secondary)', marginBottom: 28 }}>
           Inicia sesión para continuar tu búsqueda
         </p>
 
@@ -121,7 +121,7 @@ export function Login() {
           <div>
             <label
               htmlFor="email"
-              style={{ display: 'block', fontSize: 12, fontWeight: 600, color: '#6B6B6B', marginBottom: 6, letterSpacing: '0.06em', textTransform: 'uppercase' }}
+              style={{ display: 'block', fontSize: 12, fontWeight: 600, color: 'var(--color-text-secondary)', marginBottom: 6, letterSpacing: '0.06em', textTransform: 'uppercase' }}
             >
               Correo electrónico
             </label>
@@ -139,7 +139,7 @@ export function Login() {
           <div>
             <label
               htmlFor="password"
-              style={{ display: 'block', fontSize: 12, fontWeight: 600, color: '#6B6B6B', marginBottom: 6, letterSpacing: '0.06em', textTransform: 'uppercase' }}
+              style={{ display: 'block', fontSize: 12, fontWeight: 600, color: 'var(--color-text-secondary)', marginBottom: 6, letterSpacing: '0.06em', textTransform: 'uppercase' }}
             >
               Contraseña
             </label>
@@ -166,7 +166,7 @@ export function Login() {
                   background: 'none',
                   border: 'none',
                   cursor: 'pointer',
-                  color: '#6B6B6B',
+                  color: 'var(--color-text-secondary)',
                   display: 'flex',
                   alignItems: 'center',
                   padding: 0,
@@ -178,7 +178,7 @@ export function Login() {
           </div>
 
           {error && (
-            <p style={{ fontSize: 13, color: '#c0392b', margin: 0 }}>⚠ {error}</p>
+            <p style={{ fontSize: 13, color: 'var(--color-error)', margin: 0 }}>⚠ {error}</p>
           )}
 
           <button
@@ -193,9 +193,9 @@ export function Login() {
 
         {/* divider */}
         <div style={{ display: 'flex', alignItems: 'center', gap: 12, margin: '20px 0' }}>
-          <div style={{ flex: 1, height: 1, background: 'rgba(0,0,0,0.10)' }} />
-          <span style={{ fontSize: 12, color: '#6B6B6B' }}>o</span>
-          <div style={{ flex: 1, height: 1, background: 'rgba(0,0,0,0.10)' }} />
+          <div style={{ flex: 1, height: 1, background: 'var(--divider)' }} />
+          <span style={{ fontSize: 12, color: 'var(--color-text-secondary)' }}>o</span>
+          <div style={{ flex: 1, height: 1, background: 'var(--divider)' }} />
         </div>
 
         <button
@@ -211,7 +211,7 @@ export function Login() {
             gap: 10,
             cursor: 'pointer',
             fontWeight: 600,
-            color: '#1A1A1A',
+            color: 'var(--color-text-primary)',
           }}
         >
           <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden>
@@ -223,7 +223,7 @@ export function Login() {
           Continuar con Google
         </button>
 
-        <p style={{ textAlign: 'center', marginTop: 20, fontSize: 14, color: '#6B6B6B' }}>
+        <p style={{ textAlign: 'center', marginTop: 20, fontSize: 14, color: 'var(--color-text-secondary)' }}>
           ¿Primera vez aquí?{' '}
           <button
             className="btn-text"

@@ -68,7 +68,7 @@ export function ChatDrawer({
           width: 'min(380px, 100vw)',
           display: 'flex',
           flexDirection: 'column',
-          background: 'rgba(255,255,255,0.94)',
+          background: 'var(--glass-bg-strong)',
           backdropFilter: 'blur(18px)',
           WebkitBackdropFilter: 'blur(18px)',
           borderLeft: '1px solid rgba(242,195,133,0.45)',
@@ -90,15 +90,15 @@ export function ChatDrawer({
         >
           <AgentDot size={22} pulse />
           <div style={{ flex: 1, minWidth: 0 }}>
-            <div style={{ fontSize: 14, fontWeight: 600, color: '#1A1A1A' }}>Chat del caso</div>
-            <div style={{ fontSize: 11, color: '#6B6B6B', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+            <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)' }}>Chat del caso</div>
+            <div style={{ fontSize: 11, color: 'var(--color-text-secondary)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
               {personaNombre} · anónimo entre familias
             </div>
           </div>
           <button
             onClick={onClose}
             aria-label="Cerrar chat"
-            style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#6B6B6B', display: 'flex', padding: 4 }}
+            style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--color-text-secondary)', display: 'flex', padding: 4 }}
           >
             <X size={20} />
           </button>
@@ -106,14 +106,14 @@ export function ChatDrawer({
 
         {/* messages */}
         <div style={{ flex: 1, overflowY: 'auto', padding: '16px 18px', display: 'flex', flexDirection: 'column', gap: 8 }}>
-          {loading && <p style={{ fontSize: 13, color: '#6B6B6B' }}>Cargando mensajes…</p>}
+          {loading && <p style={{ fontSize: 13, color: 'var(--color-text-secondary)' }}>Cargando mensajes…</p>}
           {!loading && messages.length === 0 && (
-            <p style={{ fontSize: 13, color: '#6B6B6B' }}>Aún no hay mensajes. Escribe el primero.</p>
+            <p style={{ fontSize: 13, color: 'var(--color-text-secondary)' }}>Aún no hay mensajes. Escribe el primero.</p>
           )}
           {messages.map((m) => (
             <div key={m.id} style={{ alignSelf: m.is_me ? 'flex-end' : 'flex-start', maxWidth: '82%' }}>
               {!m.is_me && (
-                <div style={{ fontSize: 11, color: '#6B6B6B', fontWeight: 600, marginBottom: 2 }}>{m.alias}</div>
+                <div style={{ fontSize: 11, color: 'var(--color-text-secondary)', fontWeight: 600, marginBottom: 2 }}>{m.alias}</div>
               )}
               <div
                 style={{
@@ -134,7 +134,7 @@ export function ChatDrawer({
           <div ref={endRef} />
         </div>
 
-        {error && <p style={{ fontSize: 12, color: '#c0392b', padding: '0 18px' }}>⚠ {error}</p>}
+        {error && <p style={{ fontSize: 12, color: 'var(--color-error)', padding: '0 18px' }}>⚠ {error}</p>}
 
         {/* composer */}
         <form

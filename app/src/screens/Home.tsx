@@ -79,8 +79,8 @@ function Map({ markers }: { markers: MarkerData[] }) {
         >
           <div style={{ fontFamily: 'var(--font-family)', minWidth: 160 }}>
             <div style={{ fontWeight: 600, fontSize: 13, marginBottom: 2 }}>{selected.name}</div>
-            <div style={{ fontSize: 11, color: '#6B6B6B', marginBottom: 4 }}>{FILTER_LABELS[selected.type]}</div>
-            <div style={{ fontSize: 11, color: '#F2921D', fontWeight: 500 }}>{selected.date}</div>
+            <div style={{ fontSize: 11, color: 'var(--color-text-secondary)', marginBottom: 4 }}>{FILTER_LABELS[selected.type]}</div>
+            <div style={{ fontSize: 11, color: 'var(--color-primary)', fontWeight: 500 }}>{selected.date}</div>
           </div>
         </InfoWindowF>
       )}
@@ -145,7 +145,7 @@ export function Home() {
   return (
     <div
       className="min-h-screen w-full flex flex-col"
-      style={{ background: 'linear-gradient(160deg, #FDFAF7 0%, #F2E3D5 45%, rgba(242,195,133,0.35) 100%)' }}
+      style={{ background: 'var(--page-gradient)' }}
     >
       {/* Navbar */}
       <header
@@ -154,10 +154,10 @@ export function Home() {
           top: 0,
           zIndex: 100,
           height: 58,
-          background: 'rgba(255,255,255,0.78)',
+          background: 'var(--glass-bg-strong)',
           backdropFilter: 'blur(16px)',
           WebkitBackdropFilter: 'blur(16px)',
-          borderBottom: '1px solid rgba(242,195,133,0.35)',
+          borderBottom: '1px solid var(--glass-border)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
@@ -166,7 +166,7 @@ export function Home() {
       >
         <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
           <AgentDot size={22} pulse />
-          <span style={{ fontSize: 16, fontWeight: 600, color: '#1A1A1A', letterSpacing: '-0.01em' }}>
+          <span style={{ fontSize: 16, fontWeight: 600, color: 'var(--color-text-primary)', letterSpacing: '-0.01em' }}>
             Rastro de Luz
           </span>
         </div>
@@ -192,7 +192,7 @@ export function Home() {
                 flexShrink: 0,
               }}
             />
-            <span style={{ fontSize: 12, color: '#1A1A1A', fontWeight: 500 }}>Agente activo</span>
+            <span style={{ fontSize: 12, color: 'var(--color-text-primary)', fontWeight: 500 }}>Agente activo</span>
           </div>
 
           <button
@@ -200,7 +200,7 @@ export function Home() {
             aria-label="Ir al perfil"
             style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, display: 'flex', alignItems: 'center' }}
           >
-            <UserCircle size={28} color="#F2921D" />
+            <UserCircle size={28} color="var(--color-primary)" />
           </button>
         </div>
       </header>
@@ -225,7 +225,7 @@ export function Home() {
               gap: 10,
             }}
           >
-            <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.10em', textTransform: 'uppercase', color: '#6B6B6B' }}>
+            <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.10em', textTransform: 'uppercase', color: 'var(--color-text-secondary)' }}>
               Filtros del agente
             </span>
 
@@ -255,17 +255,17 @@ export function Home() {
 
             <div style={{ marginTop: 'auto', paddingTop: 12, borderTop: '1px solid rgba(242,195,133,0.25)', display: 'flex', alignItems: 'center', gap: 8 }}>
               <AgentDot size={8} breath />
-              <span style={{ fontSize: 11, color: '#6B6B6B' }}>Agente activo</span>
+              <span style={{ fontSize: 11, color: 'var(--color-text-secondary)' }}>Agente activo</span>
             </div>
           </GlassCard>
 
           {/* Map */}
-          <div style={{ flex: 1, position: 'relative', borderRadius: 16, overflow: 'hidden', border: '1px solid rgba(242,195,133,0.35)' }}>
+          <div style={{ flex: 1, position: 'relative', borderRadius: 16, overflow: 'hidden', border: '1px solid var(--glass-border-strong)' }}>
             {isLoaded ? (
               <Map markers={visibleMarkers} />
             ) : (
-              <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#f5f5f5' }}>
-                <span style={{ color: '#6B6B6B', fontSize: 13 }}>Cargando mapa…</span>
+              <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--color-bg)' }}>
+                <span style={{ color: 'var(--color-text-secondary)', fontSize: 13 }}>Cargando mapa…</span>
               </div>
             )}
 
@@ -275,7 +275,7 @@ export function Home() {
               bottom: 12,
               left: 12,
               zIndex: 1000,
-              background: 'rgba(255,255,255,0.90)',
+              background: 'var(--glass-bg-strong)',
               backdropFilter: 'blur(10px)',
               WebkitBackdropFilter: 'blur(10px)',
               border: '1px solid rgba(242,195,133,0.4)',
@@ -288,7 +288,7 @@ export function Home() {
               {(Object.keys(FILTER_LABELS) as FilterKey[]).map(key => (
                 <div key={key} style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
                   <div style={{ width: 8, height: 8, borderRadius: '50%', background: MARKER_COLORS[key], flexShrink: 0 }} />
-                  <span style={{ fontSize: 10, color: '#6B6B6B', fontFamily: 'var(--font-family)' }}>{FILTER_LABELS[key]}</span>
+                  <span style={{ fontSize: 10, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-family)' }}>{FILTER_LABELS[key]}</span>
                 </div>
               ))}
             </div>
@@ -332,7 +332,7 @@ export function Home() {
         >
           {/* Left: Notifications */}
           <div style={{ flex: '0 0 auto', width: 'min(100%, 55%)', minWidth: 280 }}>
-            <p style={{ fontSize: 13, fontWeight: 500, color: '#6B6B6B', marginBottom: 10 }}>
+            <p style={{ fontSize: 13, fontWeight: 500, color: 'var(--color-text-secondary)', marginBottom: 10 }}>
               Notificaciones recientes
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
@@ -342,23 +342,23 @@ export function Home() {
                   className="glass"
                   style={{
                     padding: '14px 18px',
-                    borderLeft: '3px solid #F2921D',
+                    borderLeft: '3px solid var(--color-primary)',
                     borderRadius: '0 16px 16px 0',
                   }}
                 >
                   <div style={{ display: 'flex', alignItems: 'flex-start', gap: 10, marginBottom: 6 }}>
                     <AgentDot size={20} pulse style={{ marginTop: 2 }} />
                     <div style={{ flex: 1 }}>
-                      <div style={{ fontSize: 13, fontWeight: 600, color: '#1A1A1A', marginBottom: 2 }}>
+                      <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: 2 }}>
                         {n.title}
                       </div>
-                      <div style={{ fontSize: 13, color: '#6B6B6B', lineHeight: 1.55 }}>
+                      <div style={{ fontSize: 13, color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
                         {n.desc}
                       </div>
                     </div>
                   </div>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 8 }}>
-                    <span style={{ fontSize: 12, color: '#6B6B6B' }}>{n.time}</span>
+                    <span style={{ fontSize: 12, color: 'var(--color-text-secondary)' }}>{n.time}</span>
                     <button className="btn-ghost" style={{ padding: '5px 14px', fontSize: 12 }}>
                       Ver detalle →
                     </button>
@@ -391,13 +391,13 @@ export function Home() {
               {/* Header */}
               <div style={{
                 padding: '18px 22px 14px',
-                borderBottom: '1px solid rgba(242,195,133,0.18)',
+                borderBottom: '1px solid var(--divider)',
                 display: 'flex',
                 alignItems: 'center',
                 gap: 12,
               }}>
                 <AgentDot size={28} pulse />
-                <span style={{ fontSize: 14, fontWeight: 500, color: '#1A1A1A' }}>
+                <span style={{ fontSize: 14, fontWeight: 500, color: 'var(--color-text-primary)' }}>
                   Análisis del agente IA
                 </span>
 
@@ -410,7 +410,7 @@ export function Home() {
                   border: '1px solid rgba(242,146,29,0.38)',
                   fontSize: 10,
                   fontWeight: 700,
-                  color: '#F2921D',
+                  color: 'var(--color-primary)',
                   letterSpacing: '0.05em',
                   textTransform: 'uppercase',
                 }}>
@@ -419,16 +419,16 @@ export function Home() {
               </div>
 
               {/* Body */}
-              <div style={{ padding: '18px 22px', background: 'rgba(242,227,213,0.22)' }}>
-                <p style={{ fontSize: 14, color: '#1A1A1A', lineHeight: 1.70, marginBottom: 18, textWrap: 'pretty' as 'pretty' }}>
+              <div style={{ padding: '18px 22px', background: 'var(--surface-card)' }}>
+                <p style={{ fontSize: 14, color: 'var(--color-text-primary)', lineHeight: 1.70, marginBottom: 18, textWrap: 'pretty' as 'pretty' }}>
                   Con base en los 12 reportes cruzados esta semana, la zona noreste del estado de Michoacán — particularmente los municipios de Zamora y Jacona — muestra la mayor concentración de coincidencias. Se han identificado 3 posibles fosas en un radio de 8 km y 2 puntos de desaparición reportados en los últimos 30 días con características similares al perfil registrado.
                 </p>
 
                 {/* Confidence bar */}
                 <div>
                   <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
-                    <span style={{ fontSize: 12, color: '#6B6B6B' }}>Nivel de confianza del análisis</span>
-                    <span style={{ fontSize: 12, fontWeight: 600, color: '#F2921D' }}>78%</span>
+                    <span style={{ fontSize: 12, color: 'var(--color-text-secondary)' }}>Nivel de confianza del análisis</span>
+                    <span style={{ fontSize: 12, fontWeight: 600, color: 'var(--color-primary)' }}>78%</span>
                   </div>
                   <div style={{ height: 7, borderRadius: 40, background: 'rgba(242,195,133,0.30)', overflow: 'hidden' }}>
                     <div
@@ -448,10 +448,10 @@ export function Home() {
               {/* Footer */}
               <div style={{
                 padding: '11px 22px',
-                background: 'rgba(242,195,133,0.07)',
-                borderTop: '1px solid rgba(242,195,133,0.18)',
+                background: 'var(--surface-card)',
+                borderTop: '1px solid var(--divider)',
               }}>
-                <span style={{ fontSize: 11, color: '#6B6B6B' }}>Última actualización: hace 14 minutos</span>
+                <span style={{ fontSize: 11, color: 'var(--color-text-secondary)' }}>Última actualización: hace 14 minutos</span>
               </div>
             </GlassCard>
           </div>
@@ -468,10 +468,10 @@ export function Home() {
           right: 0,
           zIndex: 200,
           height: 60,
-          background: 'rgba(255,255,255,0.90)',
+          background: 'var(--glass-bg-strong)',
           backdropFilter: 'blur(16px)',
           WebkitBackdropFilter: 'blur(16px)',
-          borderTop: '1px solid rgba(242,195,133,0.35)',
+          borderTop: '1px solid var(--glass-border)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-around',
@@ -479,17 +479,17 @@ export function Home() {
       >
         <button
           onClick={() => navigate('/home')}
-          style={{ background: 'none', border: 'none', cursor: 'pointer', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 3, color: '#F2921D' }}
+          style={{ background: 'none', border: 'none', cursor: 'pointer', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 3, color: 'var(--color-primary)' }}
         >
-          <HomeIcon size={22} color="#F2921D" />
-          <span style={{ fontSize: 10, fontFamily: 'var(--font-family)', color: '#F2921D', fontWeight: 500 }}>Inicio</span>
+          <HomeIcon size={22} color="var(--color-primary)" />
+          <span style={{ fontSize: 10, fontFamily: 'var(--font-family)', color: 'var(--color-primary)', fontWeight: 500 }}>Inicio</span>
         </button>
         <button
           onClick={() => navigate('/profile')}
           style={{ background: 'none', border: 'none', cursor: 'pointer', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 3 }}
         >
-          <User size={22} color="#6B6B6B" />
-          <span style={{ fontSize: 10, fontFamily: 'var(--font-family)', color: '#6B6B6B' }}>Perfil</span>
+          <User size={22} color="var(--color-text-secondary)" />
+          <span style={{ fontSize: 10, fontFamily: 'var(--font-family)', color: 'var(--color-text-secondary)' }}>Perfil</span>
         </button>
       </nav>
 
@@ -515,7 +515,7 @@ export function Home() {
             justifyContent: 'center',
           }}
         >
-          <MessageCircle size={24} color="#fff" />
+          <MessageCircle size={24} color="#ffffff" />
           {/* presence dot */}
           <span
             className="anim-breath"

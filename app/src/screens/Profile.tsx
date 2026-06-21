@@ -17,8 +17,8 @@ function PersonaPhoto({ persona, size }: { persona: PersonaDetail; size: number 
   const url = fotoUrl(persona)
   if (!url || err) {
     return (
-      <div style={{ width: size, height: size, borderRadius: '50%', background: '#F2E3D5', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-        <User size={size * 0.45} color="#6B6B6B" />
+      <div style={{ width: size, height: size, borderRadius: '50%', background: 'var(--color-cream)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+        <User size={size * 0.45} color="var(--color-text-secondary)" />
       </div>
     )
   }
@@ -27,7 +27,7 @@ function PersonaPhoto({ persona, size }: { persona: PersonaDetail; size: number 
       src={url}
       onError={() => setErr(true)}
       alt=""
-      style={{ width: size, height: size, borderRadius: '50%', objectFit: 'cover', flexShrink: 0, background: '#F2E3D5' }}
+      style={{ width: size, height: size, borderRadius: '50%', objectFit: 'cover', flexShrink: 0, background: 'var(--color-cream)' }}
     />
   )
 }
@@ -37,17 +37,17 @@ function Field({ label, value }: { label: string; value?: string | null }) {
   if (!value) return null
   return (
     <div>
-      <div style={{ fontSize: 11, fontWeight: 600, color: '#6B6B6B', letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: 3 }}>
+      <div style={{ fontSize: 11, fontWeight: 600, color: 'var(--color-text-secondary)', letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: 3 }}>
         {label}
       </div>
-      <div style={{ fontSize: 14, color: '#1A1A1A', lineHeight: 1.4 }}>{value}</div>
+      <div style={{ fontSize: 14, color: 'var(--color-text-primary)', lineHeight: 1.4 }}>{value}</div>
     </div>
   )
 }
 
 const sectionStyle: React.CSSProperties = {
-  background: 'rgba(255,255,255,0.55)',
-  border: '1px solid rgba(242,195,133,0.30)',
+  background: 'var(--surface-card)',
+  border: '1px solid var(--surface-card-border)',
   borderRadius: 14,
   padding: '14px 16px',
   marginBottom: 12,
@@ -234,32 +234,32 @@ function Modal({ personaVictimaId, onClose }: { personaVictimaId: string; onClos
       onClick={e => { if (e.target === e.currentTarget) onClose() }}
     >
       <div className="glass-strong anim-fade-in" style={{ maxWidth: 560, width: '100%', padding: 28, position: 'relative', maxHeight: '90vh', overflowY: 'auto' }}>
-        <button onClick={onClose} aria-label="Cerrar" style={{ position: 'absolute', top: 16, right: 16, background: 'none', border: 'none', cursor: 'pointer', color: '#6B6B6B', display: 'flex', padding: 4 }}>
+        <button onClick={onClose} aria-label="Cerrar" style={{ position: 'absolute', top: 16, right: 16, background: 'none', border: 'none', cursor: 'pointer', color: 'var(--color-text-secondary)', display: 'flex', padding: 4 }}>
           <X size={20} />
         </button>
 
         {loading ? (
-          <p style={{ fontSize: 14, color: '#6B6B6B', padding: '24px 0', textAlign: 'center' }}>Cargando información…</p>
+          <p style={{ fontSize: 14, color: 'var(--color-text-secondary)', padding: '24px 0', textAlign: 'center' }}>Cargando información…</p>
         ) : !row ? (
-          <p style={{ fontSize: 14, color: '#6B6B6B', padding: '24px 0', textAlign: 'center' }}>No se encontró la información.</p>
+          <p style={{ fontSize: 14, color: 'var(--color-text-secondary)', padding: '24px 0', textAlign: 'center' }}>No se encontró la información.</p>
         ) : (
           <>
             {/* Header with the person's real photo */}
             <div style={{ display: 'flex', gap: 18, marginBottom: 20 }}>
               {imagen && !imgError ? (
-                <img src={imagen} alt="" onError={() => setImgError(true)} style={{ width: 110, height: 138, objectFit: 'cover', borderRadius: 12, flexShrink: 0, background: '#F2E3D5' }} />
+                <img src={imagen} alt="" onError={() => setImgError(true)} style={{ width: 110, height: 138, objectFit: 'cover', borderRadius: 12, flexShrink: 0, background: 'var(--color-cream)' }} />
               ) : (
-                <div style={{ width: 110, height: 138, borderRadius: 12, background: '#F2E3D5', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                  <User size={44} color="#6B6B6B" />
+                <div style={{ width: 110, height: 138, borderRadius: 12, background: 'var(--color-cream)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                  <User size={44} color="var(--color-text-secondary)" />
                 </div>
               )}
               <div style={{ minWidth: 0, paddingTop: 4 }}>
-                <div style={{ fontSize: 20, fontWeight: 600, color: '#1A1A1A', lineHeight: 1.25 }}>{name}</div>
+                <div style={{ fontSize: 20, fontWeight: 600, color: 'var(--color-text-primary)', lineHeight: 1.25 }}>{name}</div>
                 {clean(row.fecha_hechos) && (
-                  <div style={{ fontSize: 13, color: '#6B6B6B', marginTop: 6 }}>Desaparecido el {formatDate(clean(row.fecha_hechos)!)}</div>
+                  <div style={{ fontSize: 13, color: 'var(--color-text-secondary)', marginTop: 6 }}>Desaparecido el {formatDate(clean(row.fecha_hechos)!)}</div>
                 )}
                 {clean(row.estatus_victima) && (
-                  <span style={{ display: 'inline-block', marginTop: 10, padding: '3px 10px', borderRadius: 40, background: 'rgba(242,146,29,0.12)', border: '1px solid rgba(242,146,29,0.35)', fontSize: 11, fontWeight: 700, letterSpacing: '0.04em', textTransform: 'uppercase', color: '#9A5B12' }}>
+                  <span style={{ display: 'inline-block', marginTop: 10, padding: '3px 10px', borderRadius: 40, background: 'rgba(242,146,29,0.12)', border: '1px solid rgba(242,146,29,0.35)', fontSize: 11, fontWeight: 700, letterSpacing: '0.04em', textTransform: 'uppercase', color: 'var(--color-primary)' }}>
                     {clean(row.estatus_victima)}
                   </span>
                 )}
@@ -291,7 +291,7 @@ function Modal({ personaVictimaId, onClose }: { personaVictimaId: string; onClos
                 <SectionTitle color="#2F855A">Señas particulares</SectionTitle>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
                   {senas.map((s, i) => (
-                    <span key={i} style={{ padding: '5px 11px', borderRadius: 40, background: 'rgba(242,146,29,0.10)', border: '1px solid rgba(242,146,29,0.28)', fontSize: 12, color: '#9A5B12' }}>{s}</span>
+                    <span key={i} style={{ padding: '5px 11px', borderRadius: 40, background: 'rgba(242,146,29,0.10)', border: '1px solid rgba(242,146,29,0.28)', fontSize: 12, color: 'var(--color-primary)' }}>{s}</span>
                   ))}
                 </div>
               </div>
@@ -324,7 +324,7 @@ export function Profile() {
   return (
     <div
       className="min-h-screen w-full"
-      style={{ background: 'linear-gradient(160deg, #FDFAF7 0%, #F2E3D5 45%, rgba(242,195,133,0.35) 100%)' }}
+      style={{ background: 'var(--page-gradient)' }}
     >
       {/* Navbar */}
       <header
@@ -333,10 +333,10 @@ export function Profile() {
           top: 0,
           zIndex: 100,
           height: 58,
-          background: 'rgba(255,255,255,0.78)',
+          background: 'var(--glass-bg-strong)',
           backdropFilter: 'blur(16px)',
           WebkitBackdropFilter: 'blur(16px)',
-          borderBottom: '1px solid rgba(242,195,133,0.35)',
+          borderBottom: '1px solid var(--glass-border)',
           display: 'flex',
           alignItems: 'center',
           padding: '0 20px',
@@ -346,11 +346,11 @@ export function Profile() {
         <button
           onClick={() => navigate('/home')}
           aria-label="Volver"
-          style={{ background: 'none', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', color: '#6B6B6B' }}
+          style={{ background: 'none', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', color: 'var(--color-text-secondary)' }}
         >
           <ArrowLeft size={20} />
         </button>
-        <span style={{ fontSize: 16, fontWeight: 500, color: '#1A1A1A' }}>Mi perfil</span>
+        <span style={{ fontSize: 16, fontWeight: 500, color: 'var(--color-text-primary)' }}>Mi perfil</span>
       </header>
 
       {/* Content */}
@@ -363,8 +363,8 @@ export function Profile() {
             width: 56,
             height: 56,
             borderRadius: '50%',
-            background: '#F2C185',
-            color: '#2D2D2D',
+            background: 'var(--color-accent)',
+            color: 'var(--color-text-on-primary)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -376,7 +376,7 @@ export function Profile() {
             MG
           </div>
 
-          <div style={{ fontSize: 18, fontWeight: 500, color: '#1A1A1A', marginBottom: 10 }}>
+          <div style={{ fontSize: 18, fontWeight: 500, color: 'var(--color-text-primary)', marginBottom: 10 }}>
             María González
           </div>
 
@@ -392,8 +392,8 @@ export function Profile() {
             WebkitBackdropFilter: 'blur(8px)',
             border: '1px solid rgba(242,195,133,0.4)',
           }}>
-            <Info size={13} color="#6B6B6B" />
-            <span style={{ fontSize: 12, color: '#6B6B6B' }}>
+            <Info size={13} color="var(--color-text-secondary)" />
+            <span style={{ fontSize: 12, color: 'var(--color-text-secondary)' }}>
               Tu nombre no es visible para otros usuarios en la plataforma.
             </span>
           </div>
@@ -401,7 +401,7 @@ export function Profile() {
 
         {/* Section 2: Familiares */}
         <div>
-          <p style={{ fontSize: 14, fontWeight: 500, color: '#6B6B6B', marginBottom: 14, letterSpacing: '-0.005em' }}>
+          <p style={{ fontSize: 14, fontWeight: 500, color: 'var(--color-text-secondary)', marginBottom: 14, letterSpacing: '-0.005em' }}>
             Familiares buscados
           </p>
 
@@ -411,9 +411,9 @@ export function Profile() {
                 <PersonaPhoto persona={persona} size={48} />
 
                 <div style={{ flex: 1, minWidth: 0 }}>
-                  <div style={{ fontSize: 14, fontWeight: 500, color: '#1A1A1A' }}>{fullName(persona)}</div>
+                  <div style={{ fontSize: 14, fontWeight: 500, color: 'var(--color-text-primary)' }}>{fullName(persona)}</div>
                   {persona.fecha_hechos && (
-                    <div style={{ fontSize: 12, color: '#6B6B6B', marginTop: 3 }}>
+                    <div style={{ fontSize: 12, color: 'var(--color-text-secondary)', marginTop: 3 }}>
                       Desaparecido el {formatDate(persona.fecha_hechos)}
                     </div>
                   )}
@@ -422,15 +422,15 @@ export function Profile() {
                 <button
                   onClick={() => setModalOpen(true)}
                   aria-label="Ver información del familiar"
-                  style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 6, display: 'flex', alignItems: 'center', color: '#F2921D', borderRadius: 8, transition: 'background 0.15s' }}
+                  style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 6, display: 'flex', alignItems: 'center', color: 'var(--color-primary)', borderRadius: 8, transition: 'background 0.15s' }}
                   onMouseEnter={e => (e.currentTarget.style.background = 'rgba(242,146,29,0.08)')}
                   onMouseLeave={e => (e.currentTarget.style.background = 'none')}
                 >
-                  <Eye size={20} color="#F2921D" />
+                  <Eye size={20} color="var(--color-primary)" />
                 </button>
               </div>
             ) : (
-              <div style={{ fontSize: 13, color: '#6B6B6B' }}>
+              <div style={{ fontSize: 13, color: 'var(--color-text-secondary)' }}>
                 Aún no has vinculado a un familiar.
               </div>
             )}
@@ -451,7 +451,7 @@ export function Profile() {
                 background: 'rgba(255,255,255,0.72)',
                 backdropFilter: 'blur(8px)',
                 WebkitBackdropFilter: 'blur(8px)',
-                border: '1px solid rgba(242,195,133,0.40)',
+                border: '1px solid var(--glass-border)',
                 borderRadius: 40,
                 padding: '10px 18px',
                 display: 'flex',
@@ -466,8 +466,8 @@ export function Profile() {
                 background: s.dot === 'ai' ? 'radial-gradient(circle, #F5E850, #F2921D)' : '#9C9C9C',
                 flexShrink: 0,
               }} />
-              <span style={{ fontSize: 16, fontWeight: 700, color: '#1A1A1A' }}>{s.value}</span>
-              <span style={{ fontSize: 12, color: '#6B6B6B' }}>{s.label}</span>
+              <span style={{ fontSize: 16, fontWeight: 700, color: 'var(--color-text-primary)' }}>{s.value}</span>
+              <span style={{ fontSize: 12, color: 'var(--color-text-secondary)' }}>{s.label}</span>
             </div>
           ))}
         </div>
@@ -496,10 +496,10 @@ export function Profile() {
           right: 0,
           zIndex: 200,
           height: 60,
-          background: 'rgba(255,255,255,0.90)',
+          background: 'var(--glass-bg-strong)',
           backdropFilter: 'blur(16px)',
           WebkitBackdropFilter: 'blur(16px)',
-          borderTop: '1px solid rgba(242,195,133,0.35)',
+          borderTop: '1px solid var(--glass-border)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-around',
@@ -509,15 +509,15 @@ export function Profile() {
           onClick={() => navigate('/home')}
           style={{ background: 'none', border: 'none', cursor: 'pointer', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 3 }}
         >
-          <Home size={22} color="#6B6B6B" />
-          <span style={{ fontSize: 10, fontFamily: 'var(--font-family)', color: '#6B6B6B' }}>Inicio</span>
+          <Home size={22} color="var(--color-text-secondary)" />
+          <span style={{ fontSize: 10, fontFamily: 'var(--font-family)', color: 'var(--color-text-secondary)' }}>Inicio</span>
         </button>
         <button
           onClick={() => navigate('/profile')}
-          style={{ background: 'none', border: 'none', cursor: 'pointer', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 3, color: '#F2921D' }}
+          style={{ background: 'none', border: 'none', cursor: 'pointer', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 3, color: 'var(--color-primary)' }}
         >
-          <User size={22} color="#F2921D" />
-          <span style={{ fontSize: 10, fontFamily: 'var(--font-family)', color: '#F2921D', fontWeight: 500 }}>Perfil</span>
+          <User size={22} color="var(--color-primary)" />
+          <span style={{ fontSize: 10, fontFamily: 'var(--font-family)', color: 'var(--color-primary)', fontWeight: 500 }}>Perfil</span>
         </button>
       </nav>
 

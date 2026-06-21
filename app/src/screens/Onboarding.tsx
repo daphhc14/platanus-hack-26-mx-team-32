@@ -81,17 +81,17 @@ function Step1({
     <div className="anim-fade-in" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 0 }}>
       <AgentDot size={60} pulse className="mb-6" />
 
-      <h2 style={{ fontSize: 22, fontWeight: 500, textAlign: 'center', color: '#1A1A1A', marginBottom: 12, letterSpacing: '-0.015em' }}>
+      <h2 style={{ fontSize: 22, fontWeight: 500, textAlign: 'center', color: 'var(--color-text-primary)', marginBottom: 12, letterSpacing: '-0.015em' }}>
         Tu búsqueda tiene un aliado
       </h2>
-      <p style={{ fontSize: 15, color: '#6B6B6B', textAlign: 'center', lineHeight: 1.65, marginBottom: 28, textWrap: 'pretty' as 'pretty' }}>
+      <p style={{ fontSize: 15, color: 'var(--color-text-secondary)', textAlign: 'center', lineHeight: 1.65, marginBottom: 28, textWrap: 'pretty' as 'pretty' }}>
         Este sistema analiza información de cientos de reportes para encontrar pistas del paradero de tus seres queridos. No estás sola en esto.
       </p>
 
       <div style={{ width: '100%', position: 'relative', marginBottom: 12 }}>
         <label
           htmlFor="busqueda"
-          style={{ display: 'block', fontSize: 12, fontWeight: 600, color: '#6B6B6B', marginBottom: 6, letterSpacing: '0.06em', textTransform: 'uppercase' }}
+          style={{ display: 'block', fontSize: 12, fontWeight: 600, color: 'var(--color-text-secondary)', marginBottom: 6, letterSpacing: '0.06em', textTransform: 'uppercase' }}
         >
           Agrega a un familiar desaparecido
         </label>
@@ -108,7 +108,7 @@ function Step1({
             placeholder="Escribe el nombre..."
             autoComplete="off"
           />
-          <Search size={16} style={{ position: 'absolute', right: 14, top: '50%', transform: 'translateY(-50%)', color: '#6B6B6B', pointerEvents: 'none' }} />
+          <Search size={16} style={{ position: 'absolute', right: 14, top: '50%', transform: 'translateY(-50%)', color: 'var(--color-text-secondary)', pointerEvents: 'none' }} />
         </div>
 
         {dropdownOpen && !selected && (loading || results.length > 0) && (
@@ -130,7 +130,7 @@ function Step1({
             }}
           >
             {loading && results.length === 0 && (
-              <div style={{ padding: '12px 14px', fontSize: 13, color: '#6B6B6B' }}>Buscando…</div>
+              <div style={{ padding: '12px 14px', fontSize: 13, color: 'var(--color-text-secondary)' }}>Buscando…</div>
             )}
             {results.map(person => (
               <button
@@ -156,17 +156,17 @@ function Step1({
                   width: 36,
                   height: 36,
                   borderRadius: '50%',
-                  background: '#F2E3D5',
+                  background: 'var(--color-cream)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   flexShrink: 0,
                 }}>
-                  <User size={18} color="#6B6B6B" />
+                  <User size={18} color="var(--color-text-secondary)" />
                 </div>
                 <div>
-                  <div style={{ fontSize: 14, fontWeight: 500, color: '#1A1A1A' }}>{fullName(person)}</div>
-                  <div style={{ fontSize: 12, color: '#6B6B6B' }}>{personaMeta(person) || 'Persona desaparecida'}</div>
+                  <div style={{ fontSize: 14, fontWeight: 500, color: 'var(--color-text-primary)' }}>{fullName(person)}</div>
+                  <div style={{ fontSize: 12, color: 'var(--color-text-secondary)' }}>{personaMeta(person) || 'Persona desaparecida'}</div>
                 </div>
               </button>
             ))}
@@ -176,7 +176,7 @@ function Step1({
 
       <button
         className="btn-text"
-        style={{ alignSelf: 'flex-start', marginBottom: 24, textDecoration: 'none', fontSize: 14, color: '#1A1A1A', fontWeight: 500 }}
+        style={{ alignSelf: 'flex-start', marginBottom: 24, textDecoration: 'none', fontSize: 14, color: 'var(--color-text-primary)', fontWeight: 500 }}
       >
         + Agregar
       </button>
@@ -207,13 +207,13 @@ function Step2({ onNext }: { onNext: () => void }) {
         justifyContent: 'center',
         marginBottom: 24,
       }}>
-        <Shield size={28} color="#F2921D" />
+        <Shield size={28} color="var(--color-primary)" />
       </div>
 
-      <h2 style={{ fontSize: 22, fontWeight: 500, textAlign: 'center', color: '#1A1A1A', marginBottom: 12, letterSpacing: '-0.015em' }}>
+      <h2 style={{ fontSize: 22, fontWeight: 500, textAlign: 'center', color: 'var(--color-text-primary)', marginBottom: 12, letterSpacing: '-0.015em' }}>
         Tu información está protegida
       </h2>
-      <p style={{ fontSize: 15, color: '#6B6B6B', textAlign: 'center', lineHeight: 1.65, marginBottom: 20, textWrap: 'pretty' as 'pretty' }}>
+      <p style={{ fontSize: 15, color: 'var(--color-text-secondary)', textAlign: 'center', lineHeight: 1.65, marginBottom: 20, textWrap: 'pretty' as 'pretty' }}>
         Los datos que registras son confidenciales y solo son utilizados para cruzar reportes con bases de datos oficiales. Tu nombre no es visible para otros usuarios.
       </p>
 
@@ -241,7 +241,7 @@ function Step2({ onNext }: { onNext: () => void }) {
             }}>
               <div style={{ width: 6, height: 6, borderRadius: '50%', background: '#F2921D' }} />
             </div>
-            <span style={{ fontSize: 13, color: '#1A1A1A', lineHeight: 1.55 }}>{item}</span>
+            <span style={{ fontSize: 13, color: 'var(--color-text-primary)', lineHeight: 1.55 }}>{item}</span>
           </div>
         ))}
       </GlassCard>
@@ -275,13 +275,13 @@ function Step3({
         justifyContent: 'center',
         marginBottom: 24,
       }}>
-        <Bell size={28} color="#F2921D" />
+        <Bell size={28} color="var(--color-primary)" />
       </div>
 
-      <h2 style={{ fontSize: 22, fontWeight: 500, textAlign: 'center', color: '#1A1A1A', marginBottom: 12, letterSpacing: '-0.015em' }}>
+      <h2 style={{ fontSize: 22, fontWeight: 500, textAlign: 'center', color: 'var(--color-text-primary)', marginBottom: 12, letterSpacing: '-0.015em' }}>
         Recibe alertas del agente
       </h2>
-      <p style={{ fontSize: 15, color: '#6B6B6B', textAlign: 'center', lineHeight: 1.65, marginBottom: 28, textWrap: 'pretty' as 'pretty' }}>
+      <p style={{ fontSize: 15, color: 'var(--color-text-secondary)', textAlign: 'center', lineHeight: 1.65, marginBottom: 28, textWrap: 'pretty' as 'pretty' }}>
         El agente IA monitoreará de forma continua los nuevos reportes y te notificará cuando encuentre coincidencias con el perfil que registraste. Estarás al tanto de cualquier avance.
       </p>
 
@@ -298,13 +298,13 @@ function Step3({
       }}>
         <AgentDot size={36} pulse />
         <div>
-          <div style={{ fontSize: 13, fontWeight: 600, color: '#1A1A1A' }}>Agente IA activado</div>
-          <div style={{ fontSize: 12, color: '#6B6B6B', marginTop: 2 }}>Monitoreando 847 reportes activos en Michoacán</div>
+          <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--color-text-primary)' }}>Agente IA activado</div>
+          <div style={{ fontSize: 12, color: 'var(--color-text-secondary)', marginTop: 2 }}>Monitoreando 847 reportes activos en Michoacán</div>
         </div>
       </div>
 
       {error && (
-        <p style={{ fontSize: 13, color: '#c0392b', marginBottom: 12, textAlign: 'center' }}>⚠ {error}</p>
+        <p style={{ fontSize: 13, color: 'var(--color-error)', marginBottom: 12, textAlign: 'center' }}>⚠ {error}</p>
       )}
 
       <button
