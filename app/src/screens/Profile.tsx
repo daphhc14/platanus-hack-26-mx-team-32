@@ -414,7 +414,7 @@ export function Profile() {
                   <div style={{ fontSize: 14, fontWeight: 500, color: '#1A1A1A' }}>{fullName(persona)}</div>
                   {persona.fecha_hechos && (
                     <div style={{ fontSize: 12, color: '#6B6B6B', marginTop: 3 }}>
-                      Desaparecido el {persona.fecha_hechos}
+                      Desaparecido el {formatDate(persona.fecha_hechos)}
                     </div>
                   )}
                 </div>
