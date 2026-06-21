@@ -34,6 +34,7 @@ function StepDots({ current, total }: { current: number; total: number }) {
 function Step1({ onNext }: { onNext: () => void }) {
   const [query, setQuery] = useState('')
   const [selected, setSelected] = useState<typeof MOCK_PEOPLE[0] | null>(null)
+  const [dropdownOpen, setDropdownOpen] = useState(false)
 
   const filtered = query.trim().length > 0
     ? MOCK_PEOPLE.filter(p => p.name.toLowerCase().includes(query.toLowerCase()))
@@ -42,6 +43,7 @@ function Step1({ onNext }: { onNext: () => void }) {
   function handleSelect(person: typeof MOCK_PEOPLE[0]) {
     setSelected(person)
     setQuery(person.name)
+    setDropdownOpen(false)
   }
 
   return (
@@ -68,14 +70,17 @@ function Step1({ onNext }: { onNext: () => void }) {
             type="text"
             className="glass-input"
             value={query}
-            onChange={e => { setQuery(e.target.value); setSelected(null) }}
+            onChange={e => { setQuery(e.target.value); setSelected(null); setDropdownOpen(true) }}
+            onFocus={() => setDropdownOpen(true)}
+            onBlur={() => setTimeout(() => setDropdownOpen(false), 150)}
+            onKeyDown={e => { if (e.key === 'Escape') setDropdownOpen(false) }}
             placeholder="Escribe el nombre..."
             autoComplete="off"
           />
           <Search size={16} style={{ position: 'absolute', right: 14, top: '50%', transform: 'translateY(-50%)', color: '#6B6B6B', pointerEvents: 'none' }} />
         </div>
 
-        {filtered.length > 0 && !selected && (
+        {filtered.length > 0 && !selected && dropdownOpen && (
           <div
             style={{
               position: 'absolute',
