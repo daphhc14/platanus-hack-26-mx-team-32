@@ -12,14 +12,16 @@
     "scrape:facebook": "tsx scripts/scrape-facebook.ts",
     "test:acquisition": "tsx scripts/test-acquisition.ts",
     "test:extractor:live": "tsx scripts/test-extractor-live.ts",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "bridge:match": "tsx scripts/bridge-match.ts",
+    "test": "vitest run scripts/bridge-match.test.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.105.0",
-    "better-sqlite3": "^11.3.0",
-    "playwright": "^1.45.0",
     "@supabase/supabase-js": "^2.48.0",
-    "dotenv": "^16.4.5"
+    "better-sqlite3": "^11.3.0",
+    "dotenv": "^16.4.5",
+    "playwright": "^1.45.0"
   },
   "optionalDependencies": {
     "openai": "^4.67.0"
@@ -28,6 +30,7 @@
     "@types/better-sqlite3": "^7.6.11",
     "@types/node": "^22.7.0",
     "tsx": "^4.19.0",
-    "typescript": "^5.6.0"
+    "typescript": "^5.6.0",
+    "vitest": "^4.1.9"
   }
 }
