@@ -11,6 +11,7 @@ from psycopg.rows import dict_row
 
 from src.config import settings
 from src.features.matching.engine import rank_personas_for_cuerpo
+from src.features.matching.service import backfill_embeddings
 from src.features.matching.tuning import CONFIG
 
 RETRIEVE_K = CONFIG.retrieve_k  # wide net: vector top-K, then rules narrow it
@@ -53,6 +54,12 @@ on conflict (persona_victima_id, cuerpo_id) do update set
 def main() -> None:
     assert settings.database_url, "DATABASE_URL not set"
     with psycopg.connect(settings.database_url) as conn:
+        # ensure nothing is un-embedded before matching (auto, incremental)
+        new = backfill_embeddings(conn)
+        if new:
+            conn.commit()
+            print(f"auto-embedded {new} new record(s)")
+
         with conn.cursor(row_factory=dict_row) as cur:
             cur.execute(CUERPOS_SQL)
             cuerpos = cur.fetchall()
