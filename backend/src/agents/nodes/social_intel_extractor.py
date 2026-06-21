@@ -1,8 +1,9 @@
 """social_intel_extractor — extracts social risk events + loads FB fichas from Supabase."""
 import json
-from agents.state import AgentState
-from agents.supabase_client import query as db_query
-from agents.config import ANTHROPIC_API_KEY, LLM_MODEL, llm_available
+
+from src.agents.state import AgentState
+from src.agents.supabase_client import query as db_query
+from src.llm import chat
 
 
 def social_intel_extractor(state: AgentState) -> AgentState:
@@ -11,24 +12,24 @@ def social_intel_extractor(state: AgentState) -> AgentState:
 
     # 1. Extract social events from artifacts (if LLM available)
     social_events = []
-    if llm_available() and state.get("artifacts_acquired"):
+    if state.get("artifacts_acquired"):
         try:
-            import anthropic
-
-            client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
             for artifact in state["artifacts_acquired"][:3]:
-                resp = client.messages.create(
-                    model="claude-haiku-4-5",
-                    max_tokens=1024,
-                    system=(
-                        "Extrae eventos de riesgo social del texto. Busca: fosas, balaceras, secuestros, trata. "
-                        'Responde SOLO JSON: {"events": [{"event_type": "...", "estado": "...", "municipio": "...", "summary": "...", "confidence": 0.0}]}'
-                    ),
-                    messages=[
-                        {"role": "user", "content": f"Texto:\n{artifact.get('content_preview', '')[:1000]}"}
+                text = chat(
+                    [
+                        {
+                            "role": "system",
+                            "content": (
+                                "Extrae eventos de riesgo social del texto. Busca: fosas, balaceras, secuestros, trata. "
+                                'Responde SOLO JSON: {"events": [{"event_type": "...", "estado": "...", "municipio": "...", "summary": "...", "confidence": 0.0}]}'
+                            ),
+                        },
+                        {"role": "user", "content": f"Texto:\n{artifact.get('content_preview', '')[:1000]}"},
                     ],
+                    max_tokens=1024,
                 )
-                text = resp.content[0].text
+                if not text:  # no LLM_API_KEY → skip extraction
+                    break
                 start = text.find("{")
                 end = text.rfind("}") + 1
                 if start >= 0 and end > start:

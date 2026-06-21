@@ -2,7 +2,7 @@
 import hashlib
 from datetime import datetime
 import httpx
-from agents.state import AgentState
+from src.agents.state import AgentState
 
 
 def public_web_acquirer(state: AgentState) -> AgentState:
