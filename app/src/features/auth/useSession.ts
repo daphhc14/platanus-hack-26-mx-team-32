@@ -21,7 +21,7 @@ export function useSession() {
 export const signInWithGoogle = () =>
   supabase.auth.signInWithOAuth({
     provider: 'google',
-    options: { redirectTo: import.meta.env.PROD ? 'https://team32.vercel.app/' : window.location.origin },
+    options: { redirectTo: import.meta.env.VERCEL ? 'https://team32.vercel.app/' : window.location.origin },
   })
 
 export const signInWithEmail = (email: string, password: string) =>
