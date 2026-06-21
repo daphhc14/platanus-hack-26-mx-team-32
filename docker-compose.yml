@@ -42,6 +42,9 @@ services:
       # Only update containers carrying the watchtower.enable=true label
       # → backend only, the rest of the stack is left alone.
       WATCHTOWER_LABEL_ENABLE: "true"
+      # Docker 27+ daemons require API >= 1.44; the watchtower client
+      # defaults to 1.25 and the daemon rejects it. Force the version up.
+      DOCKER_API_VERSION: "1.44"
       # Optional — only needed if the GHCR package is PRIVATE.
       # Create a PAT with `read:packages` and export GHCR_TOKEN on the host.
       # REPO_USER: platanus-hack
