@@ -1,7 +1,7 @@
 /**
  * Hilo — Ingester: extracted.json → Supabase
  * ============================================
- * Lee el output del vision extractor y lo inserta en Supabase.
+ * Lee el output del vision extractor y lo inserta en Supabase via pg.
  * Dedupe automático via unique index (permalink o nombre+fecha+estado).
  *
  * Uso:
@@ -9,11 +9,11 @@
  *   npx tsx scripts/fb-scraper/ingest-supabase.ts data/raw/fb_posts/scrape_2026-06-21T07-07-21
  *
  * Requiere .env con:
- *   SUPABASE_URL=https://xxx.supabase.co
- *   SUPABASE_KEY=eyJxxx...   (service_role key para escribir)
+ *   DATABASE_URL=postgresql://postgres.xxx:password@xxx.supabase.co:5432/postgres
  */
 import { readFileSync, existsSync } from "node:fs";
 import { join, basename } from "node:path";
+import pg from "pg";
 
 interface ExtractedFile {
   schema: string;
@@ -66,43 +66,48 @@ interface Ficha {
 }
 
 // ═══════════════════════════════════════════════════════════
-//  SUPABASE CLIENT (raw REST, sin dependencias extra)
+//  SUPABASE CLIENT (pg directo, bypassa RLS)
 // ═══════════════════════════════════════════════════════════
 
-function getSupabaseConfig() {
-  const url = process.env.SUPABASE_URL?.trim();
-  const key = process.env.SUPABASE_KEY?.trim();
-  if (!url || !key) {
-    throw new Error("SUPABASE_URL y SUPABASE_KEY requeridos en .env");
+function getDbConfig() {
+  const connectionString = process.env.DATABASE_URL?.trim();
+  if (!connectionString) {
+    throw new Error("DATABASE_URL requerido en .env");
   }
-  return { url: url.replace(/\/$/, ""), key };
+  return { connectionString, ssl: { rejectUnauthorized: false } };
 }
 
 async function supabaseInsert(table: string, rows: Record<string, unknown>[]): Promise<{ inserted: number; errors: number; duplicates: number }> {
-  const { url, key } = getSupabaseConfig();
+  if (rows.length === 0) return { inserted: 0, errors: 0, duplicates: 0 };
 
-  const res = await fetch(`${url}/rest/v1/${table}`, {
-    method: "POST",
-    headers: {
-      "apikey": key,
-      "authorization": `Bearer ${key}`,
-      "content-type": "application/json",
-      "prefer": "return=representation,resolution=ignore-duplicates",
-    },
-    body: JSON.stringify(rows),
-  });
+  const client = new pg.Client(getDbConfig());
+  try {
+    await client.connect();
 
-  if (!res.ok) {
-    const body = await res.text();
-    throw new Error(`Supabase ${res.status}: ${body.slice(0, 300)}`);
+    const columns = Object.keys(rows[0]);
+    const colList = columns.join(", ");
+    const placeholders = rows.map((_, ri) =>
+      `(${columns.map((_, ci) => `$${ri * columns.length + ci + 1}`).join(", ")})`
+    ).join(", ");
+
+    const values: unknown[] = [];
+    for (const row of rows) {
+      for (const col of columns) {
+        values.push(row[col] ?? null);
+      }
+    }
+
+    const query = `
+      insert into ${table} (${colList})
+      values ${placeholders}
+      on conflict do nothing
+    `;
+
+    const result = await client.query(query, values as any[]);
+    return { inserted: result.rowCount || 0, errors: 0, duplicates: 0 };
+  } finally {
+    await client.end();
   }
-
-  const data = await res.json();
-  return {
-    inserted: Array.isArray(data) ? data.length : 0,
-    errors: 0,
-    duplicates: 0,
-  };
 }
 
 // ═══════════════════════════════════════════════════════════

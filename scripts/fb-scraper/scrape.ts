@@ -126,7 +126,7 @@ async function extractPostsFromFeed(page: Page): Promise<ExtractedPost[]> {
 
       // Find ALL images in the post
       const allImgs: string[] = [];
-      const imgs = post.querySelectorAll("img");
+      const imgs = Array.from(post.querySelectorAll("img"));
       for (const img of imgs) {
         // Skip profile pics, icons, reactions — look for content images
         const src = img.src || "";
@@ -165,7 +165,7 @@ async function extractPostsFromFeed(page: Page): Promise<ExtractedPost[]> {
       // Find caption (text content in the post, not in comments)
       // Caption is usually in a div[dir=auto] that comes BEFORE the image
       let caption: string | null = null;
-      const textEls = post.querySelectorAll("div[dir=auto], span");
+      const textEls = Array.from(post.querySelectorAll("div[dir=auto], span"));
       for (const el of textEls) {
         const text = (el as HTMLElement).innerText?.trim() || "";
         if (text.length > 20 && text.length < 500 && !/^(Like|Comment|Share|Reply)$/i.test(text)) {

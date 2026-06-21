@@ -127,6 +127,31 @@ const server = createServer(async (req, res) => {
   }
   if (url.pathname === "/api/recruitment") { res.writeHead(200, jsonH()); res.end(JSON.stringify(RECRUITMENT)); return; }
 
+  // facebook scam patterns GeoJSON layer for the crime map
+  if (url.pathname === "/api/crime-map") {
+    const d = db();
+    const rows = d.prepare("SELECT * FROM facebook_patterns WHERE location_latitude IS NOT NULL AND location_longitude IS NOT NULL ORDER BY scraped_at DESC").all() as any[];
+    d.close();
+    const features = rows.map((r: any) => ({
+      type: "Feature",
+      geometry: { type: "Point", coordinates: [r.location_longitude, r.location_latitude] },
+      properties: {
+        id: r.id,
+        post_url: r.post_url,
+        tone_description: r.tone_description,
+        tone_keywords: r.tone_keywords ? JSON.parse(r.tone_keywords) : [],
+        image_descriptions: r.image_descriptions ? JSON.parse(r.image_descriptions) : [],
+        location_text: r.location_text,
+        location_region: r.location_region,
+        scraped_at: r.scraped_at,
+        post_content: r.post_content?.slice(0, 200),
+      },
+    }));
+    res.writeHead(200, jsonH());
+    res.end(JSON.stringify({ type: "FeatureCollection", total_patterns: features.length, features }));
+    return;
+  }
+
   // onboarding: search records to link (synthetic demo; RNPDNO has no names)
   if (url.pathname === "/api/search") {
     const q = (url.searchParams.get("q") || "").toLowerCase();
@@ -245,13 +270,13 @@ const UI = `<!doctype html><html lang="es"><head><meta charset="utf-8"><meta nam
 <div class="roles" id="roles"><button data-role="reviewer" class="on">revisora</button><button data-role="readonly">readonly</button></div>
 <div class="ctx" id="ctx"></div></header>
 <main><div id="queue"></div><aside>
-<div class="card"><h4 style="margin:0 0 8px;color:var(--mut)">Mapa: fosas reales + clusters de reclutamiento (predictivo)</h4>
-<div class="layer"><label><input type="checkbox" id="lFosas" checked> fosas (azul)</label> <label><input type="checkbox" id="lRecr" checked> reclutamiento (naranja)</label></div>
+<div class="card"><h4 style="margin:0 0 8px;color:var(--mut)">Mapa: fosas reales + clusters de reclutamiento + estafas (Facebook)</h4>
+<div class="layer"><label><input type="checkbox" id="lFosas" checked> fosas (azul)</label> <label><input type="checkbox" id="lRecr" checked> reclutamiento (naranja)</label> <label><input type="checkbox" id="lFB" checked> estafas FB (rojo)</label></div>
 <div id="mapWrap"><div id="map"></div></div><div class="cnt" id="fosaCnt"></div></div>
 <div class="card" style="font-size:12px;color:var(--mut)">API para el frontend:<br>POST /api/match · GET /api/recruitment · GET /api/search · GET /api/alerts · POST /api/extract · POST /api/detect-offer · __RECRUITMENT__ clusters activos</div>
 </aside></main>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><script>
-let role="reviewer",map=null,lyrF=null,lyrR=null;
+let role="reviewer",map=null,lyrF=null,lyrR=null,lyrFB=null;
 const $=s=>document.querySelector(s);const fmt=n=>Number(n).toLocaleString('es-MX');
 async function load(){const s=await(await fetch('/api/state?role='+role)).json();
 $('#ctx').innerHTML=\`<span><b>\${fmt(s.context.total_desaparecidos_no_loc)}</b> desaparecidos/no-loc (RNPDNO)</span><span><b>\${s.recruitmentClusters}</b> clusters reclutamiento</span><span><b>\${s.confirmedCount}</b> confirmadas</span>\`;
@@ -268,7 +293,11 @@ if(lyrF)map.removeLayer(lyrF);lyrF=L.layerGroup().addTo(map);fosas.features.forE
 const rec=await(await fetch('/api/recruitment')).json();let nr=0;
 if(lyrR)map.removeLayer(lyrR);lyrR=L.layerGroup().addTo(map);rec.features.forEach(ft=>{const[lng,lat]=ft.geometry.coordinates;nr++;L.circleMarker([lat,lng],{radius:6+Math.min(ft.properties.count,18),color:'#d29922',fillColor:'#f0883e',fillOpacity:.6,weight:1}).bindPopup(\`<b>\${ft.properties.municipio}, \${ft.properties.estado}</b><br>\${ft.properties.count} jóvenes · \${ft.properties.minDate}→\${ft.properties.maxDate}<br>\${ft.properties.clusters} clusters\`).addTo(lyrR);});
 $('#fosaCnt').textContent=\`\${fmt(nf)} sitios fosas (\${fmt(ff)} fosas) + \${rec.total_clusters} clusters reclutamiento (\${fmt(rec.total_jovenes)} jóvenes)\`;
-$('#lFosas').onchange=e=>{e.target.checked?lyrF.addTo(map):map.removeLayer(lyrF);};$('#lRecr').onchange=e=>{e.target.checked?lyrR.addTo(map):map.removeLayer(lyrR);};}
+const fb=await(await fetch('/api/crime-map')).json();let nfb=0;
+if(lyrFB)map.removeLayer(lyrFB);lyrFB=L.layerGroup().addTo(map);
+(fb.features||[]).forEach(ft=>{const[lng,lat]=ft.geometry.coordinates;nfb++;const kw=(ft.properties.tone_keywords||[]).join(', ');L.circleMarker([lat,lng],{radius:5,color:'#f85149',fillColor:'#f85149',fillOpacity:.6,weight:1}).bindPopup(\`<b>Estafa reportada</b><br>\${ft.properties.tone_description||'Sin descripción'}<br><small>\${kw}</small><br>\${ft.properties.location_text||''}\`).addTo(lyrFB);});
+$('#fosaCnt').textContent+=\` + \${nfb} patrones estafa Facebook\`;
+$('#lFosas').onchange=e=>{e.target.checked?lyrF.addTo(map):map.removeLayer(lyrF);};$('#lRecr').onchange=e=>{e.target.checked?lyrR.addTo(map):map.removeLayer(lyrR);};$('#lFB').onchange=e=>{e.target.checked?lyrFB.addTo(map):map.removeLayer(lyrFB);};}
 function initMap(){if(map)return;map=L.map('map').setView([23.6,-102],4);L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{attribution:'© OSM'}).addTo(map);}
 $('#roles').querySelectorAll('button').forEach(b=>b.onclick=()=>{role=b.dataset.role;$('#roles').querySelectorAll('button').forEach(x=>x.classList.remove('on'));b.classList.add('on');load();});
 load();

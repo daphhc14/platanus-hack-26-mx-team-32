@@ -121,16 +121,41 @@ Reglas importantes:
 //  LLM CLIENTS (vision-capable)
 // ═══════════════════════════════════════════════════════════
 
-function getConfig() {
-  const apiKey = process.env.LLM_API_KEY || process.env.ANTHROPIC_API_KEY || process.env.OPENAI_API_KEY;
-  const baseUrl = process.env.LLM_BASE_URL;
-  const model = process.env.LLM_MODEL;
-  return { apiKey, baseUrl, model, available: !!apiKey };
-}
+type Provider = "gemini" | "anthropic" | "openai";
 
-function isGemini(): boolean {
-  const cfg = getConfig();
-  return !!cfg.baseUrl && /googleapis\.com/i.test(cfg.baseUrl);
+function getConfig() {
+  const llmApiKey = process.env.LLM_API_KEY;
+  const llmBaseUrl = process.env.LLM_BASE_URL;
+  const llmModel = process.env.LLM_MODEL;
+  const anthropicKey = process.env.ANTHROPIC_API_KEY;
+  const openaiKey = process.env.OPENAI_API_KEY;
+
+  let provider: Provider = "openai";
+  let apiKey: string | undefined;
+  let baseUrl = llmBaseUrl;
+
+  if (llmBaseUrl && /googleapis\.com/i.test(llmBaseUrl)) {
+    provider = "gemini";
+    apiKey = llmApiKey;
+  } else if (llmBaseUrl && /anthropic/i.test(llmBaseUrl)) {
+    provider = "anthropic";
+    apiKey = llmApiKey;
+  } else if (llmBaseUrl) {
+    provider = "openai";
+    apiKey = llmApiKey || openaiKey;
+  } else if (anthropicKey) {
+    provider = "anthropic";
+    apiKey = anthropicKey;
+  } else if (openaiKey) {
+    provider = "openai";
+    apiKey = openaiKey;
+  } else if (llmApiKey) {
+    provider = "openai";
+    apiKey = llmApiKey;
+    if (llmApiKey.startsWith("sk-or-")) baseUrl = baseUrl || "https://openrouter.ai/api/v1";
+  }
+
+  return { apiKey, baseUrl, model: llmModel, provider, available: !!apiKey };
 }
 
 async function extractWithGemini(imageBase64: string, mimeType: string): Promise<VisionResponse> {
@@ -242,11 +267,11 @@ async function extractFicha(imagePath: string): Promise<ExtractedFicha> {
   let text: string;
   let modelUsed: string;
 
-  if (isGemini()) {
+  if (cfg.provider === "gemini") {
     const r = await extractWithGemini(base64, mimeType);
     text = r.text;
     modelUsed = cfg.model || "gemini-2.0-flash";
-  } else if (cfg.baseUrl?.includes("anthropic") || process.env.ANTHROPIC_API_KEY) {
+  } else if (cfg.provider === "anthropic") {
     const r = await extractWithAnthropic(base64, mimeType, cfg.model || "claude-haiku-4-5");
     text = r.text;
     modelUsed = cfg.model || "claude-haiku-4-5";
@@ -318,7 +343,7 @@ async function main() {
   console.log(`\n━━━ Hilo Ficha Extractor ━━━`);
   console.log(`Scraped dir: ${targetDir}`);
   console.log(`Posts a procesar: ${posts.length}`);
-  console.log(`Modelo: ${cfg.model || (isGemini() ? "gemini-2.0-flash" : "default")}`);
+  console.log(`Modelo: ${cfg.model || (cfg.provider === "gemini" ? "gemini-2.0-flash" : "default")}`);
 
   const extracted: ExtractedFicha[] = [];
   let errors = 0;
@@ -358,7 +383,7 @@ async function main() {
   const output = {
     schema: "hilo.fb_extraction.v1",
     extracted_at: new Date().toISOString(),
-    model: cfg.model || (isGemini() ? "gemini-2.0-flash" : "default"),
+    model: cfg.model || (cfg.provider === "gemini" ? "gemini-2.0-flash" : "default"),
     total_extracted: extracted.length,
     errors,
     stats: {
