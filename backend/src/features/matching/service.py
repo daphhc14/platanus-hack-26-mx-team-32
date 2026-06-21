@@ -137,9 +137,9 @@ def preview_match(conn, query: dict, k_retrieve: int | None = None, top_n: int |
 
     by_uuid = {p["id_victimadirecta"]: p for p in personas}
     out = []
-    for r in rank_personas_for_cuerpo(cuerpo, personas, top_k=top_n):
+    for i, r in enumerate(rank_personas_for_cuerpo(cuerpo, personas, top_k=top_n)):
         persona = by_uuid[r["persona_victima_id"]]
-        v = verify_pair(persona, cuerpo, r)
+        v = verify_pair(persona, cuerpo, r, use_llm=i < CONFIG.llm_verify_top_n)
         out.append({
             "persona_victima_id": r["persona_victima_id"],
             "nombre": persona.get("nombre"),

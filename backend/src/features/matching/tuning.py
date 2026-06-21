@@ -15,6 +15,7 @@ class MatchConfig:
     # --- retrieval breadth -------------------------------------------------
     retrieve_k: int = 50          # vector candidates pulled before scoring   (↑ = wider)
     top_k: int = 8                # candidates kept per body                   (↑ = more shown)
+    llm_verify_top_n: int = 3     # only the top N get an LLM narrative        (↓ = faster/cheaper)
 
     # --- señas matching ----------------------------------------------------
     senas_match_threshold: float = 0.4   # token overlap to count as a match  (↓ = looser)

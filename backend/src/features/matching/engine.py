@@ -6,8 +6,10 @@ this module only reads it, so retuning never means hunting through the logic.
 import re
 from datetime import date
 
-from .normalize import estatura_cm, normalize_senas
+from .normalize import estatura_cm, normalize_senas, plausible_estatura
 from .tuning import CONFIG
+
+_NEUTRAL = 0.5  # score for a field we simply can't compare (missing data ≠ mismatch)
 
 
 def _jaccard(a: set, b: set) -> float:
@@ -85,35 +87,52 @@ def block(persona: dict, cuerpo: dict) -> tuple[bool, str | None]:
 
 
 def score_pair(persona: dict, cuerpo: dict) -> dict:
-    senas_s, contradictions, evidence = score_senas(
-        normalize_senas(cuerpo.get("sana_particular")),
-        normalize_senas(persona.get("sana_particular")),
-    )
+    """All evidence/contradictions here are COMPUTED (deterministic) — the LLM
+    never restates them. Uncomparable fields score _NEUTRAL, not 0."""
+    senas_c = normalize_senas(cuerpo.get("sana_particular"))
+    senas_p = normalize_senas(persona.get("sana_particular"))
+    senas_s, contradictions, evidence = score_senas(senas_c, senas_p)
+    if not (senas_c and senas_p):
+        senas_s = _NEUTRAL  # body or ficha has no marks listed → can't compare
 
-    est_c, est_p = cuerpo.get("estatura_cm"), estatura_cm(persona.get("media_filiacion"))
+    # sexo (survivors already passed the block, so state it as a fact)
+    ps, cs = persona.get("sexo"), cuerpo.get("sexo")
+    if ps and cs and ps.upper() == cs.upper():
+        evidence.append(f"sexo coincide: {ps}")
+
+    est_c = plausible_estatura(cuerpo.get("estatura_cm"))
+    est_p = estatura_cm(persona.get("media_filiacion"))
     if est_c and est_p:
         estatura_s = max(0.0, 1 - abs(est_c - est_p) / CONFIG.estatura_tolerance_cm)
-        if estatura_s > 0.7:
-            evidence.append(f"estatura compatible ({est_p}cm ~ {est_c}cm)")
+        evidence.append(f"estatura {'compatible' if estatura_s > 0.6 else 'difiere'}: {est_p}cm vs {est_c}cm")
     else:
-        estatura_s = 0.0
+        estatura_s = _NEUTRAL
 
     pe, lo, hi = persona.get("edad"), cuerpo.get("edad_min"), cuerpo.get("edad_max")
     if pe is not None and lo is not None and hi is not None:
         edad_s = 1.0 if lo <= pe <= hi else max(
             0.0, 1 - min(abs(pe - lo), abs(pe - hi)) / CONFIG.edad_decay_years
         )
+        evidence.append(f"edad {'compatible' if edad_s >= 0.8 else 'parcial'}: ficha {pe}, cuerpo {lo}-{hi}")
     else:
-        edad_s = 0.0
+        edad_s = _NEUTRAL
 
     p_est, c_est = (persona.get("estado") or "").upper(), (cuerpo.get("estado") or "").upper()
-    geo_s = 1.0 if p_est and p_est == c_est else CONFIG.geo_other_state_score
-    if geo_s == 1.0:
-        evidence.append(f"mismo estado ({persona.get('estado')})")
+    if p_est and c_est:
+        geo_s = 1.0 if p_est == c_est else CONFIG.geo_other_state_score
+        if geo_s == 1.0:
+            evidence.append(f"mismo estado: {persona.get('estado')}")
+    else:
+        geo_s = _NEUTRAL
 
     dd = _parse_date(persona.get("fecha_percato") or persona.get("fecha_hechos"))
     dh = _parse_date(cuerpo.get("fecha_hallazgo"))
-    temporal_s = 1.0 if (dd and dh and dd <= dh) else 0.5
+    if dd and dh:
+        temporal_s = 1.0 if dd <= dh else 0.0
+        if dd <= dh:
+            evidence.append(f"temporal coherente: desaparición {dd}, hallazgo {dh} ({(dh - dd).days} días)")
+    else:
+        temporal_s = _NEUTRAL
 
     total = (
         CONFIG.w_senas * senas_s

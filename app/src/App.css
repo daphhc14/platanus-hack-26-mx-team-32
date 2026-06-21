@@ -87,3 +87,123 @@
 .hilo-btn-ghost:hover {
   background: #20242c;
 }
+
+/* --- report finding (match tester) --- */
+.report {
+  width: 100%;
+  max-width: 40rem;
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.report-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.report-option {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  text-align: left;
+  background: #1a1d23;
+  border: 1px solid #2a2e37;
+  border-radius: 10px;
+  padding: 0.8rem 1rem;
+  color: #e8eaed;
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+.report-option:hover { border-color: #2563eb; }
+.report-option span { color: #9aa0a6; font-size: 0.82rem; }
+
+.report-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+  background: #1a1d23;
+  border: 1px solid #2a2e37;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: left;
+}
+.report-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.78rem;
+  color: #9aa0a6;
+}
+.report-form input,
+.report-form select {
+  background: #0f1115;
+  border: 1px solid #2a2e37;
+  border-radius: 6px;
+  padding: 0.45rem 0.55rem;
+  color: #e8eaed;
+  font-size: 0.9rem;
+}
+.report-form-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.report-error {
+  color: #f87171;
+  font-size: 0.85rem;
+}
+
+/* --- results --- */
+.results {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  text-align: left;
+}
+.cand {
+  background: #1a1d23;
+  border: 1px solid #2a2e37;
+  border-radius: 10px;
+  padding: 0.85rem 1rem;
+}
+.cand-head {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.cand-score { margin-left: auto; color: #9aa0a6; font-variant-numeric: tabular-nums; }
+.tier {
+  text-transform: uppercase;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+}
+.tier-alta { background: #064e3b; color: #6ee7b7; }
+.tier-media { background: #78350f; color: #fcd34d; }
+.tier-baja { background: #3f3f46; color: #d4d4d8; }
+
+.ev, .contra {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0;
+  font-size: 0.82rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.ev li { color: #6ee7b7; }
+.contra li { color: #f87171; }
+.razon {
+  margin: 0.6rem 0 0;
+  font-size: 0.84rem;
+  color: #cbd5e1;
+  font-style: italic;
+  border-left: 2px solid #2a2e37;
+  padding-left: 0.7rem;
+}
