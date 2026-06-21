@@ -407,15 +407,13 @@ export async function scrapeAndSeedFacebookPatterns(): Promise<ScrapeSummary> {
         if (error.code === "23505") {
           summary.skipped += 1;
         } else {
-          summary.failed += 1;
-          summary.errors.push(`Post ${post.url}: ${error.message}`);
+          throw new Error(`facebook_patterns upsert failed for ${post.url}: ${error.message}`);
         }
       } else {
         summary.inserted += 1;
       }
     } catch (e) {
-      summary.failed += 1;
-      summary.errors.push(`Post ${post.url}: ${e instanceof Error ? e.message : "unknown"}`);
+      throw e instanceof Error ? e : new Error(String(e));
     }
   }
 
