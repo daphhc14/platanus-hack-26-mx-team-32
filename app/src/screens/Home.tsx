@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useMemo, useRef } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { UserCircle, MessageCircle } from 'lucide-react'
 import { GoogleMap, useJsApiLoader, MarkerF, InfoWindowF, Circle, MarkerClustererF } from '@react-google-maps/api'
@@ -110,7 +110,6 @@ function Map({ staticMarkers, persons, showPersons, filters }: MapProps) {
       }}
       onClick={() => setSelectedStatic(null)}
     >
-      {/* Fosas: áreas azules translúcidas */}
       {fosaMarkers.map(m => (
         <Circle
           key={`area-${m.id}`}
@@ -128,7 +127,6 @@ function Map({ staticMarkers, persons, showPersons, filters }: MapProps) {
         />
       ))}
 
-      {/* Trabajos: puntos naranjas */}
       {trabajosMarkers.map(m => (
         <MarkerF
           key={m.id}
@@ -138,7 +136,6 @@ function Map({ staticMarkers, persons, showPersons, filters }: MapProps) {
         />
       ))}
 
-      {/* InfoWindow para estáticos */}
       {selectedStatic && (
         <InfoWindowF
           position={{ lat: selectedStatic.lat, lng: selectedStatic.lng }}
@@ -152,7 +149,6 @@ function Map({ staticMarkers, persons, showPersons, filters }: MapProps) {
         </InfoWindowF>
       )}
 
-      {/* Personas desaparecidas: puntos rojos agrupados */}
       {showPersons && persons.length > 0 && (
         <MarkerClustererF
           options={{
@@ -379,9 +375,8 @@ export function Home() {
           </div>
         </div>
 
-        {/* Row 2: Notifications + AI Summary */}
+        {/* Notificaciones + AI Summary */}
         <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-          {/* Notificaciones */}
           <div style={{ flex: '0 0 auto', width: 'min(100%, 55%)', minWidth: 280 }}>
             <p style={{ fontSize: 13, fontWeight: 500, color: '#6B6B6B', marginBottom: 10 }}>
               Notificaciones recientes
@@ -406,8 +401,8 @@ export function Home() {
                     </div>
                   </div>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 8 }}>
-                    <span style={{ fontSize: 12, color: '#6B6B6B' }}>{n.time}</span>
-                    <button className="btn-ghost" style={{ padding: '5px 14px', fontSize: 12 }}>
+                    <span style={{ fontSize: 12, color: 'var(--color-text-secondary)' }}>{n.time}</span>
+                    <button className="btn-ghost" style={{ padding: '5px 14px', fontSize: 12, color: 'var(--color-primary)' }}>
                       Ver detalle →
                     </button>
                   </div>
@@ -416,7 +411,6 @@ export function Home() {
             </div>
           </div>
 
-          {/* AI Summary */}
           <div style={{ flex: 1, minWidth: 260, position: 'relative' }}>
             <div
               className="absolute pointer-events-none"

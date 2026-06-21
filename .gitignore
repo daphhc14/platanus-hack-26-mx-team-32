@@ -5,7 +5,6 @@ node_modules/
 dist/
 .env
 .env.*
-!.env.example
 GUIA_EQUIPO.md
 HANDOFF.md
 .DS_Store
@@ -13,11 +12,3 @@ docs/*
 !docs/specs/
 !docs/specs/**
 graphify-out/
-
-# FB scraper — NEVER commit scraped data (PII of real disappeared persons)
-data/raw/fb_posts/
-
-# Debug artifacts
-.commandcode/
-.firecrawl/
-.rtk/

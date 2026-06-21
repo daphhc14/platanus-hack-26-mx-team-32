@@ -9,6 +9,7 @@
     "seed": "tsx scripts/seed.ts",
     "demo": "tsx demo.ts",
     "dev:ui": "tsx app/server.ts",
+    "scrape:facebook": "tsx scripts/scrape-facebook.ts",
     "test:acquisition": "tsx scripts/test-acquisition.ts",
     "test:extractor:live": "tsx scripts/test-extractor-live.ts",
     "test:discovery": "tsx scripts/test-discovery.ts",
@@ -16,6 +17,7 @@
     "agents": "cd backend && uv run python -m src.agents.graph",
     "agents:install": "cd backend && uv sync",
     "typecheck": "tsc --noEmit",
+    "bridge:match": "tsx scripts/bridge-match.ts",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
@@ -27,8 +29,10 @@
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.105.0",
+    "@supabase/supabase-js": "^2.48.0",
     "better-sqlite3": "^11.3.0",
-    "playwright": "^1.61.0"
+    "dotenv": "^16.4.5",
+    "playwright": "^1.45.0"
   },
   "optionalDependencies": {
     "openai": "^4.67.0"
