@@ -10,6 +10,7 @@ Branch: `hilo-engine`.
 - La implementacion base de adquisicion ya existe en `lib/acquisition/` y esta verde.
 - Los extractores LLM ya estan implementados con SDK nativo de Anthropic, structured outputs y fallback deterministico sin key.
 - El smoke test cubre mock provider -> extractor fallback -> extraction_job -> social_risk_event.
+- Lineage multi-artifact + revocacion en cascada + helpers de k-anonimato/copy-safe/redaccion (spec 05) ya estan implementados y cubiertos por el smoke test.
 
 ## 2. Commits base en `origin/hilo-engine`
 
@@ -25,16 +26,17 @@ Este handoff y los extractores deben quedar en commits posteriores.
 
 ## 3. Archivos clave
 
-- `lib/acquisition/types.ts`: tipos del dominio.
+- `lib/acquisition/types.ts`: tipos del dominio (incluye `SocialEventLineage`, `RevocationPropagationResult`).
 - `lib/acquisition/policy.ts`: `evaluateSourcePolicy()` + `acquisitionIdempotencyKey()`.
+- `lib/acquisition/safety.ts`: `kAnonymityCheck()`, `validateCopySafety()`, `redactPii()` (spec 05).
 - `lib/acquisition/provider.ts`: puerto `WebAcquisitionProvider`.
 - `lib/acquisition/providers/firecrawl.ts`: adapter Firecrawl REST v2.
 - `lib/acquisition/providers/mock.ts`: provider mock para demo/tests.
-- `lib/acquisition/repo.ts`: `AcquisitionRepository`.
+- `lib/acquisition/repo.ts`: `AcquisitionRepository` + `attachEventLineage/listEventLineage` + `propagateConsentRevocation()`.
 - `lib/acquisition/extractors/client.ts`: config Anthropic/modelos.
 - `lib/acquisition/extractors/schemas.ts`: carga schemas canonicos.
 - `lib/acquisition/extractors/extract.ts`: extractor structured-output + fallback.
-- `scripts/test-acquisition.ts`: smoke test end-to-end en DB en memoria.
+- `scripts/test-acquisition.ts`: smoke test end-to-end en DB en memoria (incluye lineage, revocacion y safety).
 - `docs/specs/schemas/*.json`: schemas canonicos.
 
 ## 4. Decisiones cerradas
@@ -94,8 +96,13 @@ Esperado:
 
 ## 8. Pendientes no bloqueantes
 
-- Propagacion de revocacion multi-artifact: `social_risk_events.raw_artifact_id` cubre un artifact; un evento derivado de varios artifacts necesitara tabla de lineage.
-- k-anonimato/redaccion/copy seguro siguen como politica; convertirlos en tests/lint cuando exista publicacion agregada.
+Resueltos en commit posterior:
+
+- Lineage multi-artifact: `social_event_artifact_lineage(event_id, raw_artifact_id, role)` + `attachEventLineage/listEventLineage` + `propagateConsentRevocation()` que purga artifacts, falla extraction_jobs y esconde eventos (directos o via lineage) en una sola transaccion, idempotente.
+- k-anonimato / redaccion / copy seguro: `lib/acquisition/safety.ts` con `kAnonymityCheck`, `validateCopySafety` y `redactPii`, derivados del spec 05 y cubiertos por el smoke test. Listos para usarse como lint/validacion cuando la publicacion agregada y la UI existan.
+
+Sigue pendiente (no bloqueante):
+
 - Si se usa API real, agregar un test manual documentado con una URL publica inocua y sin PII.
 
 ## 9. No commitear

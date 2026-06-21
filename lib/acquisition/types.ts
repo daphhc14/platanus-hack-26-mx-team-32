@@ -156,3 +156,22 @@ export interface SocialRiskEvent {
   updated_at: string;
 }
 
+export type LineageRole = "primary" | "supporting" | "duplicate" | "contradicting";
+
+export interface SocialEventLineage {
+  id: string;
+  event_id: string;
+  raw_artifact_id: string;
+  role: LineageRole;
+  created_at: string;
+}
+
+export interface RevocationPropagationResult {
+  consent_id: string;
+  revoked_at: string;
+  artifacts_purged: number;
+  extraction_jobs_affected: number;
+  events_hidden: number;
+  event_ids_hidden: string[];
+}
+
