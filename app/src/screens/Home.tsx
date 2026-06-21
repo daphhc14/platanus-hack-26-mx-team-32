@@ -1,19 +1,10 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { UserCircle, Home as HomeIcon, User } from 'lucide-react'
-import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet'
-import L from 'leaflet'
+import { UserCircle } from 'lucide-react'
+import { MapContainer, TileLayer, Circle, CircleMarker, Popup, useMap } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 import { GlassCard } from '../components/GlassCard'
 import { AgentDot } from '../components/AgentDot'
-
-// Fix Leaflet default icon paths broken by bundlers
-delete (L.Icon.Default.prototype as unknown as Record<string, unknown>)._getIconUrl
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon-2x.png',
-  iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon.png',
-  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
-})
 
 type FilterKey = 'fosas' | 'desaparicion' | 'trabajos'
 
@@ -23,13 +14,26 @@ const FILTER_LABELS: Record<FilterKey, string> = {
   trabajos: 'Puntos de encuentro trabajos falsos',
 }
 
-const MARKER_COLORS: Record<FilterKey, string> = {
-  fosas: '#C53030',
-  desaparicion: '#F2921D',
-  trabajos: '#DD6B20',
+// Colors used in the map
+const MAP_COLORS: Record<FilterKey, string> = {
+  fosas: '#3B82F6',      // blue
+  desaparicion: '#EF4444', // red
+  trabajos: '#F2921D',    // orange
 }
 
-interface MarkerData {
+// Colors for the active chip state (match their map color)
+const CHIP_ACTIVE: Record<FilterKey, { bg: string; text: string; border: string }> = {
+  fosas:       { bg: '#3B82F6', text: '#fff', border: '#3B82F6' },
+  desaparicion: { bg: '#EF4444', text: '#fff', border: '#EF4444' },
+  trabajos:    { bg: '#F2921D', text: '#2D2D2D', border: '#F2921D' },
+}
+const CHIP_INACTIVE: Record<FilterKey, { border: string; text: string }> = {
+  fosas:       { border: 'rgba(59,130,246,0.35)',  text: '#3B82F6' },
+  desaparicion: { border: 'rgba(239,68,68,0.35)',   text: '#EF4444' },
+  trabajos:    { border: 'rgba(242,146,29,0.35)',  text: '#F2921D' },
+}
+
+interface PointData {
   id: number
   lat: number
   lng: number
@@ -38,27 +42,20 @@ interface MarkerData {
   date: string
 }
 
-const MARKERS: MarkerData[] = [
-  { id: 1, lat: 19.74, lng: -101.19, type: 'fosas', name: 'Cerro de la Garza, Zamora', date: '14 feb 2024' },
-  { id: 2, lat: 19.50, lng: -102.08, type: 'fosas', name: 'Rancho El Nance, Apatzingán', date: '3 ene 2024' },
-  { id: 3, lat: 19.31, lng: -101.96, type: 'fosas', name: 'Camino Aguililla-Buenavista', date: '27 nov 2023' },
+// Fosas as areas (circles with radius in metres)
+const FOSAS_AREAS = [
+  { id: 'f1', lat: 19.74, lng: -101.19, radius: 3200, name: 'Cerro de la Garza, Zamora', date: '14 feb 2024' },
+  { id: 'f2', lat: 19.50, lng: -102.08, radius: 2800, name: 'Rancho El Nance, Apatzingán', date: '3 ene 2024' },
+  { id: 'f3', lat: 19.31, lng: -101.96, radius: 4000, name: 'Camino Aguililla-Buenavista', date: '27 nov 2023' },
+]
+
+// Desaparición and trabajos as small circle markers
+const CIRCLE_POINTS: PointData[] = [
   { id: 4, lat: 19.72, lng: -101.20, type: 'desaparicion', name: 'Centro Histórico, Zamora', date: '20 mar 2024' },
   { id: 5, lat: 19.68, lng: -101.15, type: 'desaparicion', name: 'Blvd. Luis Donaldo Colosio, Jacona', date: '12 mar 2023' },
   { id: 6, lat: 19.56, lng: -101.70, type: 'trabajos', name: 'Oferta Tlalpujahua – Pátzcuaro', date: '18 abr 2024' },
+  { id: 7, lat: 19.42, lng: -102.06, type: 'trabajos', name: 'Reclutamiento Apatzingán Centro', date: '2 mar 2024' },
 ]
-
-function createColoredIcon(color: string) {
-  return L.divIcon({
-    html: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="36" viewBox="0 0 24 36">
-      <path d="M12 0C5.373 0 0 5.373 0 12c0 9 12 24 12 24s12-15 12-24C24 5.373 18.627 0 12 0z" fill="${color}" opacity="0.9"/>
-      <circle cx="12" cy="12" r="5" fill="white" opacity="0.9"/>
-    </svg>`,
-    className: '',
-    iconSize: [24, 36],
-    iconAnchor: [12, 36],
-    popupAnchor: [0, -36],
-  })
-}
 
 function MapInvalidator() {
   const map = useMap()
@@ -107,8 +104,6 @@ export function Home() {
     setFilters(prev => ({ ...prev, [key]: !prev[key] }))
   }
 
-  const visibleMarkers = MARKERS.filter(m => filters[m.type])
-
   return (
     <div
       className="min-h-screen w-full flex flex-col"
@@ -138,51 +133,23 @@ export function Home() {
           </span>
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-          {/* Agent status pill */}
-          <div style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: 7,
-            background: 'rgba(242,146,29,0.08)',
-            border: '1px solid rgba(242,146,29,0.2)',
-            borderRadius: 40,
-            padding: '5px 11px',
-          }}>
-            <div
-              className="anim-breath"
-              style={{
-                width: 7,
-                height: 7,
-                borderRadius: '50%',
-                background: 'radial-gradient(circle, #F5E850 0%, #F2921D 100%)',
-                flexShrink: 0,
-              }}
-            />
-            <span style={{ fontSize: 12, color: '#1A1A1A', fontWeight: 500 }}>Agente activo</span>
-          </div>
-
-          <button
-            onClick={() => navigate('/profile')}
-            aria-label="Ir al perfil"
-            style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, display: 'flex', alignItems: 'center' }}
-          >
-            <UserCircle size={28} color="#F2921D" />
-          </button>
-        </div>
+        <button
+          onClick={() => navigate('/profile')}
+          aria-label="Ir al perfil"
+          style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, display: 'flex', alignItems: 'center' }}
+        >
+          <UserCircle size={28} color="#F2921D" />
+        </button>
       </header>
 
       {/* Main content */}
-      <main style={{ flex: 1, padding: '16px 16px 80px', display: 'flex', flexDirection: 'column', gap: 16 }}>
+      <main style={{ flex: 1, padding: '16px 16px 24px', display: 'flex', flexDirection: 'column', gap: 16 }}>
 
         {/* Row 1: Map + sidebar */}
-        <div
-          className="map-row"
-          style={{ display: 'flex', gap: 12, height: 'clamp(280px, 50vh, 420px)' }}
-        >
-          {/* Left sidebar */}
+        <div style={{ display: 'flex', gap: 12, height: 'clamp(280px, 50vh, 420px)' }}>
+
+          {/* Left sidebar — filters */}
           <GlassCard
-            className="hidden md:flex"
             style={{
               width: 192,
               flexShrink: 0,
@@ -197,32 +164,32 @@ export function Home() {
             </span>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-              {(Object.keys(FILTER_LABELS) as FilterKey[]).map(key => (
-                <button
-                  key={key}
-                  onClick={() => toggleFilter(key)}
-                  style={{
-                    padding: '7px 12px',
-                    borderRadius: 40,
-                    fontSize: 12,
-                    fontWeight: filters[key] ? 500 : 400,
-                    cursor: 'pointer',
-                    transition: 'all 0.2s',
-                    fontFamily: 'var(--font-family)',
-                    textAlign: 'left',
-                    background: filters[key] ? '#F2921D' : 'rgba(255,255,255,0.65)',
-                    color: filters[key] ? '#2D2D2D' : '#6B6B6B',
-                    border: filters[key] ? 'none' : '1px solid rgba(242,195,133,0.3)',
-                  }}
-                >
-                  {FILTER_LABELS[key]}
-                </button>
-              ))}
-            </div>
-
-            <div style={{ marginTop: 'auto', paddingTop: 12, borderTop: '1px solid rgba(242,195,133,0.25)', display: 'flex', alignItems: 'center', gap: 8 }}>
-              <AgentDot size={8} breath />
-              <span style={{ fontSize: 11, color: '#6B6B6B' }}>Agente activo</span>
+              {(Object.keys(FILTER_LABELS) as FilterKey[]).map(key => {
+                const active = filters[key]
+                const a = CHIP_ACTIVE[key]
+                const i = CHIP_INACTIVE[key]
+                return (
+                  <button
+                    key={key}
+                    onClick={() => toggleFilter(key)}
+                    style={{
+                      padding: '7px 12px',
+                      borderRadius: 40,
+                      fontSize: 12,
+                      fontWeight: active ? 600 : 400,
+                      cursor: 'pointer',
+                      transition: 'all 0.2s',
+                      fontFamily: 'var(--font-family)',
+                      textAlign: 'left',
+                      background: active ? a.bg : 'rgba(255,255,255,0.65)',
+                      color: active ? a.text : i.text,
+                      border: `1.5px solid ${active ? a.border : i.border}`,
+                    }}
+                  >
+                    {FILTER_LABELS[key]}
+                  </button>
+                )
+              })}
             </div>
           </GlassCard>
 
@@ -239,20 +206,52 @@ export function Home() {
                 url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>'
               />
-              {visibleMarkers.map(m => (
-                <Marker
-                  key={m.id}
-                  position={[m.lat, m.lng]}
-                  icon={createColoredIcon(MARKER_COLORS[m.type])}
+
+              {/* Fosas: blue shaded areas */}
+              {filters.fosas && FOSAS_AREAS.map(a => (
+                <Circle
+                  key={a.id}
+                  center={[a.lat, a.lng]}
+                  radius={a.radius}
+                  pathOptions={{
+                    color: MAP_COLORS.fosas,
+                    fillColor: MAP_COLORS.fosas,
+                    fillOpacity: 0.18,
+                    weight: 1.5,
+                    opacity: 0.6,
+                  }}
                 >
                   <Popup>
                     <div style={{ fontFamily: 'var(--font-family)', minWidth: 160 }}>
-                      <div style={{ fontWeight: 600, fontSize: 13, marginBottom: 2 }}>{m.name}</div>
-                      <div style={{ fontSize: 11, color: '#6B6B6B', marginBottom: 4 }}>{FILTER_LABELS[m.type]}</div>
-                      <div style={{ fontSize: 11, color: '#F2921D', fontWeight: 500 }}>{m.date}</div>
+                      <div style={{ fontWeight: 600, fontSize: 13, marginBottom: 2 }}>{a.name}</div>
+                      <div style={{ fontSize: 11, color: '#3B82F6', marginBottom: 4 }}>Posible fosa</div>
+                      <div style={{ fontSize: 11, color: '#6B6B6B' }}>{a.date}</div>
                     </div>
                   </Popup>
-                </Marker>
+                </Circle>
+              ))}
+
+              {/* Desaparición & trabajos: small colored circle markers */}
+              {CIRCLE_POINTS.filter(p => filters[p.type]).map(p => (
+                <CircleMarker
+                  key={p.id}
+                  center={[p.lat, p.lng]}
+                  radius={7}
+                  pathOptions={{
+                    color: MAP_COLORS[p.type],
+                    fillColor: MAP_COLORS[p.type],
+                    fillOpacity: 0.85,
+                    weight: 1.5,
+                  }}
+                >
+                  <Popup>
+                    <div style={{ fontFamily: 'var(--font-family)', minWidth: 160 }}>
+                      <div style={{ fontWeight: 600, fontSize: 13, marginBottom: 2 }}>{p.name}</div>
+                      <div style={{ fontSize: 11, color: MAP_COLORS[p.type], marginBottom: 4 }}>{FILTER_LABELS[p.type]}</div>
+                      <div style={{ fontSize: 11, color: '#6B6B6B' }}>{p.date}</div>
+                    </div>
+                  </Popup>
+                </CircleMarker>
               ))}
             </MapContainer>
 
@@ -262,7 +261,7 @@ export function Home() {
               bottom: 12,
               left: 12,
               zIndex: 1000,
-              background: 'rgba(255,255,255,0.90)',
+              background: 'rgba(255,255,255,0.92)',
               backdropFilter: 'blur(10px)',
               WebkitBackdropFilter: 'blur(10px)',
               border: '1px solid rgba(242,195,133,0.4)',
@@ -270,53 +269,30 @@ export function Home() {
               padding: '8px 12px',
               display: 'flex',
               flexDirection: 'column',
-              gap: 5,
+              gap: 6,
             }}>
-              {(Object.keys(FILTER_LABELS) as FilterKey[]).map(key => (
-                <div key={key} style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-                  <div style={{ width: 8, height: 8, borderRadius: '50%', background: MARKER_COLORS[key], flexShrink: 0 }} />
-                  <span style={{ fontSize: 10, color: '#6B6B6B', fontFamily: 'var(--font-family)' }}>{FILTER_LABELS[key]}</span>
-                </div>
-              ))}
+              {/* Fosas: square area swatch */}
+              <div style={{ display: 'flex', alignItems: 'center', gap: 7 }}>
+                <div style={{ width: 14, height: 10, borderRadius: 3, background: 'rgba(59,130,246,0.25)', border: '1.5px solid #3B82F6', flexShrink: 0 }} />
+                <span style={{ fontSize: 10, color: '#6B6B6B', fontFamily: 'var(--font-family)' }}>Posibles fosas</span>
+              </div>
+              {/* Desaparicion: red circle */}
+              <div style={{ display: 'flex', alignItems: 'center', gap: 7 }}>
+                <div style={{ width: 10, height: 10, borderRadius: '50%', background: '#EF4444', flexShrink: 0 }} />
+                <span style={{ fontSize: 10, color: '#6B6B6B', fontFamily: 'var(--font-family)' }}>Puntos de desaparición</span>
+              </div>
+              {/* Trabajos: orange circle */}
+              <div style={{ display: 'flex', alignItems: 'center', gap: 7 }}>
+                <div style={{ width: 10, height: 10, borderRadius: '50%', background: '#F2921D', flexShrink: 0 }} />
+                <span style={{ fontSize: 10, color: '#6B6B6B', fontFamily: 'var(--font-family)' }}>Trabajos falsos</span>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Mobile filter chips (below map on small screens) */}
-        <div
-          className="md:hidden"
-          style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}
-        >
-          {(Object.keys(FILTER_LABELS) as FilterKey[]).map(key => (
-            <button
-              key={key}
-              onClick={() => toggleFilter(key)}
-              style={{
-                padding: '6px 14px',
-                borderRadius: 40,
-                fontSize: 12,
-                fontWeight: filters[key] ? 500 : 400,
-                cursor: 'pointer',
-                transition: 'all 0.2s',
-                fontFamily: 'var(--font-family)',
-                background: filters[key] ? '#F2921D' : 'rgba(255,255,255,0.65)',
-                color: filters[key] ? '#2D2D2D' : '#6B6B6B',
-                border: filters[key] ? 'none' : '1px solid rgba(242,195,133,0.3)',
-              }}
-            >
-              {FILTER_LABELS[key]}
-            </button>
-          ))}
-        </div>
-
         {/* Row 2: Notifications + AI Summary */}
-        <div
-          style={{
-            display: 'flex',
-            gap: 12,
-            flexWrap: 'wrap',
-          }}
-        >
+        <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+
           {/* Left: Notifications */}
           <div style={{ flex: '0 0 auto', width: 'min(100%, 55%)', minWidth: 280 }}>
             <p style={{ fontSize: 13, fontWeight: 500, color: '#6B6B6B', marginBottom: 10 }}>
@@ -333,15 +309,12 @@ export function Home() {
                     borderRadius: '0 16px 16px 0',
                   }}
                 >
-                  <div style={{ display: 'flex', alignItems: 'flex-start', gap: 10, marginBottom: 6 }}>
-                    <AgentDot size={20} pulse style={{ marginTop: 2 }} />
-                    <div style={{ flex: 1 }}>
-                      <div style={{ fontSize: 13, fontWeight: 600, color: '#1A1A1A', marginBottom: 2 }}>
-                        {n.title}
-                      </div>
-                      <div style={{ fontSize: 13, color: '#6B6B6B', lineHeight: 1.55 }}>
-                        {n.desc}
-                      </div>
+                  <div style={{ flex: 1, marginBottom: 6 }}>
+                    <div style={{ fontSize: 13, fontWeight: 600, color: '#1A1A1A', marginBottom: 2 }}>
+                      {n.title}
+                    </div>
+                    <div style={{ fontSize: 13, color: '#6B6B6B', lineHeight: 1.55 }}>
+                      {n.desc}
                     </div>
                   </div>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 8 }}>
@@ -357,7 +330,6 @@ export function Home() {
 
           {/* Right: AI Summary */}
           <div style={{ flex: 1, minWidth: 260, position: 'relative' }}>
-            {/* Aura glow */}
             <div
               className="absolute pointer-events-none"
               style={{
@@ -371,10 +343,7 @@ export function Home() {
               }}
             />
 
-            <GlassCard
-              strong
-              style={{ padding: 0, overflow: 'hidden', position: 'relative', zIndex: 1 }}
-            >
+            <GlassCard strong style={{ padding: 0, overflow: 'hidden', position: 'relative', zIndex: 1 }}>
               {/* Header */}
               <div style={{
                 padding: '18px 22px 14px',
@@ -383,26 +352,9 @@ export function Home() {
                 alignItems: 'center',
                 gap: 12,
               }}>
-                <AgentDot size={28} pulse />
                 <span style={{ fontSize: 14, fontWeight: 500, color: '#1A1A1A' }}>
                   Análisis del agente IA
                 </span>
-
-                {/* AI match badge */}
-                <div style={{
-                  marginLeft: 'auto',
-                  padding: '4px 10px',
-                  borderRadius: 40,
-                  background: 'linear-gradient(rgba(245,232,80,0.14), rgba(242,146,29,0.14))',
-                  border: '1px solid rgba(242,146,29,0.38)',
-                  fontSize: 10,
-                  fontWeight: 700,
-                  color: '#F2921D',
-                  letterSpacing: '0.05em',
-                  textTransform: 'uppercase',
-                }}>
-                  Coincidencia IA
-                </div>
               </div>
 
               {/* Body */}
@@ -444,41 +396,6 @@ export function Home() {
           </div>
         </div>
       </main>
-
-      {/* Mobile bottom nav */}
-      <nav
-        className="md:hidden"
-        style={{
-          position: 'fixed',
-          bottom: 0,
-          left: 0,
-          right: 0,
-          zIndex: 200,
-          height: 60,
-          background: 'rgba(255,255,255,0.90)',
-          backdropFilter: 'blur(16px)',
-          WebkitBackdropFilter: 'blur(16px)',
-          borderTop: '1px solid rgba(242,195,133,0.35)',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-around',
-        }}
-      >
-        <button
-          onClick={() => navigate('/home')}
-          style={{ background: 'none', border: 'none', cursor: 'pointer', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 3, color: '#F2921D' }}
-        >
-          <HomeIcon size={22} color="#F2921D" />
-          <span style={{ fontSize: 10, fontFamily: 'var(--font-family)', color: '#F2921D', fontWeight: 500 }}>Inicio</span>
-        </button>
-        <button
-          onClick={() => navigate('/profile')}
-          style={{ background: 'none', border: 'none', cursor: 'pointer', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 3 }}
-        >
-          <User size={22} color="#6B6B6B" />
-          <span style={{ fontSize: 10, fontFamily: 'var(--font-family)', color: '#6B6B6B' }}>Perfil</span>
-        </button>
-      </nav>
     </div>
   )
 }
